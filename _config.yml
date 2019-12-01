@@ -90,11 +90,11 @@ deploy:
 # 第三方插件 #################################################################################################################################
 # 本地搜索
 ## https://github.com/wzpan/hexo-generator-search
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
+# search:
+#   path: search.xml
+#   field: post
+#   format: html
+#   limit: 10000
 # 永久链接
 ## https://github.com/rozbo/hexo-abbrlink
 abbrlink:
