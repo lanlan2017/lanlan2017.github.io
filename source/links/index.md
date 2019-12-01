@@ -36,16 +36,11 @@ comments: false
 - [Java 相关读书笔记](https://lanlan2017.github.io/JavaReadingNotes/)
 - [笔试答案](https://lanlan2017.github.io/exam/)
 
-<div id="localhost">
-
 # 本地站点 #
 - [博客本地](http://127.0.0.1:4007/)
 - [本地工具](http://127.0.0.1:4007/blog/tools/)
 - [笔试题本地](http://localhost:4008/exam/)
     - [Java读书笔记](http://localhost:4010/JavaReadingNotes/)
-
-</div>
-<script>if (navigator.platform.toLowerCase() == 'android'){document.getElementById('localhost').style.display = 'none';}</script>
 
 # 笔试
 - [牛客网](http://m.nowcoder.com/)
@@ -74,6 +69,7 @@ comments: false
 # 在线文档 #
 ## API
 - [Oracle java9 doc](https://docs.oracle.com/javase/9/docs/api/java/lang/System.html)
+
 ## IDE使用教程 ##
 - [IntelliJ IDEA官方文档_w3cschool](https://www.w3cschool.cn/intellij_idea_doc/)
     - [IntelliJ IDEA官方文档_手机](https://m.w3cschool.cn/intellij_idea_doc/)
@@ -137,9 +133,10 @@ comments: false
 - [segmentfault](https://segmentfault.com/)
 
 # 资讯 #
+- [微博热搜](https://s.weibo.com/top/summary)
 - [博客园新闻](https://www.cnblogs.com/news/)
 - [开源中国资讯](https://www.oschina.net/news/industry)
-- [微博热搜](https://s.weibo.com/top/summary)
+- [脚本之家资讯](https://www.jb51.net/news/)
 - [知乎-科技](https://www.zhihu.com/mweb-keji)
 - [网易 科技频道](https://3g.163.com/touch/tech/)
     - [网易科技频道 电脑版](https://tech.163.com/)
