@@ -32,9 +32,10 @@ comments: false
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
 
 # 我的站点 #
-- [读书笔记](https://lanlan2017.github.io/ReadingNotes/)
-- [Java 相关读书笔记](https://lanlan2017.github.io/JavaReadingNotes/)
-- [笔试答案](https://lanlan2017.github.io/exam/)
+- [主站](https://lanlan2017.github.io/)
+    - [读书笔记](https://lanlan2017.github.io/ReadingNotes/)
+    - [读书笔记Java](https://lanlan2017.github.io/JavaReadingNotes/)
+    - [笔试答案](https://lanlan2017.github.io/exam/)
 
 # 本地站点 #
 - [博客本地](http://127.0.0.1:4007/)
