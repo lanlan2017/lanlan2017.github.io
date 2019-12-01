@@ -110,7 +110,7 @@ comments: false
                 if (title.match(MdLinkRegex)) {
                     title = title.replace(MdLinkRegex, '$1');
                 }
-                item = tabs + "- [" + title + "](/blog/links/#" + title + ")" + "\n"
+                item = tabs + "- [" + title + "](/links/#" + title + ")" + "\n"
                 console.log(item);
                 resultStr += item;
             }
