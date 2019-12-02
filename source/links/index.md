@@ -145,7 +145,9 @@ comments: false
 - [中国国家互联网协会](http://www.isc.org.cn/)
 
 # 资讯 #
-- [微博热搜](https://s.weibo.com/top/summary)
+- [微博](https://weibo.com/)
+  - [微博热搜](https://s.weibo.com/top/summary)
+  - [微博搜索](https://s.weibo.com/)
 - [博客园新闻](https://www.cnblogs.com/news/)
 - [开源中国资讯](https://www.oschina.net/news/industry)
 - [脚本之家资讯](https://www.jb51.net/news/)
