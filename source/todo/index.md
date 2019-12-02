@@ -71,6 +71,7 @@ comments: false
 - [x] 百度上提交全部站点地图
 - [x] 更新主题配置文件中SEO需要的content
 - [x] 安装yutube,更新老王,yutube上看视频,速度还行.
+- [x] 移除exam站点上的自定义logo
 
 ## 2019年12月01日
 - [x] 已经关闭那个移动云盘
