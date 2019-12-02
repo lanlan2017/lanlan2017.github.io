@@ -110,7 +110,10 @@ comments: false
 - [Jiumo Search](https://www.jiumodiary.com/)
 - [我的小书屋](mebook.cc)
 
-## 资源搜索
+## 搜索
+- [百度](https://www.baidu.com/)
+- [必应](https://cn.bing.com/)
+- [谷歌](https://www.google.com)
 - [聚合搜索](http://yun.misiai.com/)
 
 # 视屏网站 #
