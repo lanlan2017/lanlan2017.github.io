@@ -21,7 +21,7 @@ comments: false
     - [IDE](/links/#IDE)
     - [依赖包](/links/#依赖包)
     - [电子书下载](/links/#电子书下载)
-    - [资源搜索](/links/#资源搜索)
+- [搜索引擎](/links/#搜索引擎)
 - [视屏网站](/links/#视屏网站)
     - [中国大学MOOC](/links/#中国大学MOOC)
     - [学堂在线](/links/#学堂在线)
