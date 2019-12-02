@@ -9,6 +9,7 @@ categories:
 - [我的博客](https://lanlan2017.github.io/blog/)
 - [读书笔记](https://lanlan2017.github.io/ReadingNotes/)
 - [读书笔记Java](https://lanlan2017.github.io/JavaReadingNotes/)
+- [笔试题答案](https://lanlan2017.github.io/exam/)
 
 # 页面
 - [在线工具](/tools/)
