@@ -93,6 +93,7 @@ comments: false
         if (text == null) {
             result(linksTOC(input.value));
         } else {
+            var toc = '';
             var head = "<div id='my_toc'>\n\n";
             var tail =
                 "\n</div>\n<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}" +
@@ -111,10 +112,12 @@ comments: false
                     title = title.replace(MdLinkRegex, '$1');
                 }
                 item = tabs + "- [" + title + "](/links/#" + title + ")" + "\n"
-                console.log(item);
                 resultStr += item;
             }
-            return head + resultStr + tail;
+            toc = head + resultStr + tail;
+            var regexs=/[<]div id='my_toc'>\n\n(.+\n)+\n<[/]div>\n[<]script>.+<[/]script>\n/m;
+            text=text.replace(regexs,toc);
+            return text;
         }
     }
     function generateIndentation(count) {
