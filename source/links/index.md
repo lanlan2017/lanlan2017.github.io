@@ -108,6 +108,9 @@ comments: false
 - [Jiumo Search](https://www.jiumodiary.com/)
 - [我的小书屋](mebook.cc)
 
+## 资源搜索
+- [聚合搜索](http://yun.misiai.com/)
+
 # 视屏网站 #
 
 ## [中国大学MOOC](https://www.icourse163.org) ##
