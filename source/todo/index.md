@@ -29,7 +29,8 @@ comments: false
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
 - [ ] 在线编程网站收集
 - [ ] https://c.runoob.com/front-end/61
--  https://m.runoob.com/try/try2.php?filename=tryhtml_hr
+- https://m.runoob.com/try/try2.php?filename=tryhtml_hr
+- 修改工具FM程序
 
 
 # 搁置
@@ -51,6 +52,7 @@ comments: false
     - [ ] 修改标记即可
     - [ ] 先写个测试类
     - [ ] 打包，linux下运行
+- [ ] [了解开源协议](https://blog.51cto.com/holison/1930805)
 
 </details>
 
