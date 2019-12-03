@@ -27,7 +27,6 @@ comments: false
 - [ ] 看数据库设计
     - [ ] 中国大学mooc
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
-- [ ] HTTP地址转SSH
 - [ ] 在线编程网站收集
 - [ ] https://c.runoob.com/front-end/61
 -  https://m.runoob.com/try/try2.php?filename=tryhtml_hr
@@ -57,6 +56,10 @@ comments: false
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
+
+## 2019年12月03日
+- [x] HTTPS地址和SSH相互转换
+  - [x] 写相关文章.
 
 ## 2019年12月02日
 - [x] 修复`m date`命令不正确的问题.
