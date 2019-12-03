@@ -30,9 +30,11 @@ comments: false
 - [ ] 在线编程网站收集
 - [ ] https://c.runoob.com/front-end/61
 - https://m.runoob.com/try/try2.php?filename=tryhtml_hr
-- 修改工具FM程序
--日期时间API https://www.cnblogs.com/liqiangchn/p/11974355.html
-
+- [ ] 修改工具FM程序
+- [ ] 日期时间API https://www.cnblogs.com/liqiangchn/p/11974355.html
+- [ ] 提醒 明天中午回宿舍的时候收床单
+- [ ] 提醒 明天早上开会带书
+- [ ] 提醒 打印
 
 # 搁置
 <details><summary>展开搁置/折叠搁置</summary>
