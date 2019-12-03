@@ -26,12 +26,6 @@ comments: false
     - [ ] 设计server
 - [ ] 看数据库设计
     - [ ] 中国大学mooc
-- [ ] 手机上下载的劳动合同注意点.微博收藏中的
-- [ ] 在线编程网站收集
-- [ ] https://c.runoob.com/front-end/61
-- https://m.runoob.com/try/try2.php?filename=tryhtml_hr
-- [ ] 修改工具FM程序
-- [ ] 日期时间API https://www.cnblogs.com/liqiangchn/p/11974355.html
 - [ ] 提醒 明天中午回宿舍的时候收床单
 - [ ] 提醒 明天早上开会带书
 - [ ] 提醒 打印
@@ -39,6 +33,12 @@ comments: false
 # 搁置
 <details><summary>展开搁置/折叠搁置</summary>
 
+- [ ] 手机上下载的劳动合同注意点.微博收藏中的
+- [ ] 在线编程网站收集
+- [ ] https://c.runoob.com/front-end/61
+- https://m.runoob.com/try/try2.php?filename=tryhtml_hr
+- [ ] 修改工具FM程序
+- [ ] 日期时间API https://www.cnblogs.com/liqiangchn/p/11974355.html
 - [ ] eclipse画er图
     - [ ] 下载插件
 - [ ] idea画er图
