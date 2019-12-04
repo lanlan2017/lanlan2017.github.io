@@ -67,4 +67,7 @@ comments: false
   - [x] 提醒 明天早上开会带书
   - [x] 提醒 打印
 
+## 更早之前
+参见:[日记](/categories/日记/)
+
 </details>
