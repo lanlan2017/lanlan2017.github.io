@@ -29,6 +29,7 @@ comments: false
 - [ ] 提醒 明天中午回宿舍的时候收床单
 - [ ] 提醒 明天早上开会带书
 - [ ] 提醒 打印
+- [ ] 8.3 set集合 8.3.1 hashset类，速度很怏，改为宿舍很快
 
 # 搁置
 <details><summary>展开搁置/折叠搁置</summary>
