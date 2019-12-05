@@ -73,6 +73,10 @@ comments: false
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
+## 2019年12月05日
+- [ ] 测试hexo后台，hexo-admin,强大，但是好像不支持分类找文章
+- [ ] hexo-myadmin，UI好，但是bug多，这两个都不好用，
+- [ ] 先手动修改有空再说，我不该操心这个
 
 ## 2019年12月04日
 - [x] 8.3 set集合 8.3.1 hashset类，速度很怏，改为宿舍很快
