@@ -41,10 +41,12 @@ comments: false
     - [笔试答案](https://lanlan2017.github.io/exam/)
 
 # 本地站点 #
+- [主站](http://localhost:4000/)
+  - [本地工具](http://127.0.0.1:4007/tools/)
+- [后台](http://localhost:4000/admin/)
 - [博客本地](http://127.0.0.1:4007/)
-- [本地工具](http://127.0.0.1:4007/blog/tools/)
+- [Java读书笔记](http://localhost:4010/JavaReadingNotes/)
 - [笔试题本地](http://localhost:4008/exam/)
-    - [Java读书笔记](http://localhost:4010/JavaReadingNotes/)
 
 # 笔试
 - [牛客网](http://m.nowcoder.com/)
