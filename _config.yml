@@ -109,7 +109,8 @@ auto_category:
  depth: 
 
 # 后台
-# admin:
-#   username: blue
-#   password_hash: $2y$12$yvIhuSk8JI6Kpuz5NEIR1ehkDiNNUdW.MLRgRPxbf.55wy7nUgpVi
-#   secret: a secret something
+# hexo-admin authentification
+admin:
+  username: blue
+  password_hash: $2a$10$IPiWiNWFjPpB3jeLis42s.Dwl.gQlJP6sht/XRCp8oggHHSB2m4LO
+  secret: my super secret phrase
