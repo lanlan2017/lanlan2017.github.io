@@ -35,6 +35,11 @@ comments: false
 - [ ] 明天还要填组织生活会的表
 - [ ] 还有百强支部网站
 - [ ] 还有会议记录
+- [ ] 了解java新的日期时间API的使用  https://m.jb51.net/article/110245.htm
+- [ ] 深蓝助手
+
+# flag
+- 不看不能记笔记的视频
 
 # 搁置
 <details><summary>展开搁置/折叠搁置</summary>
