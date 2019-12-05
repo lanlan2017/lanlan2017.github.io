@@ -16,10 +16,13 @@ comments: false
 - 我不能把为了拿奖学金发文章
 - 我要好好写文章
 
+<details><summary>展开/折叠</summary>
+
 ## 计算 ##
 <div id='show' style="text-align:center"></div>
 <script>function timeFn() {var dateBegin = Date.parse("2017-3-1");var dateEnd = new Date();var dateDiff = dateEnd.getTime() - dateBegin;var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));var leave1 = dateDiff % (24 * 3600 * 1000);var hours = Math.floor(leave1 / (3600 * 1000));var leave2 = leave1 % (3600 * 1000);var minutes = Math.floor(leave2 / (60 * 1000));var leave3 = leave2 % (60 * 1000);var seconds = Math.round(leave3 / 1000);var leave4 = leave3 % (60 * 1000);var timeFn = "酸臭味持续了:" + dayDiff + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒";document.getElementById('show').innerText = timeFn;}setInterval("timeFn();", 1000);</script>
 <div style="display: none;">
+
 ## 源码 ##
 ```html
 <div id='show' style="text-align:center"></div>
@@ -59,3 +62,6 @@ comments: false
 </script>
 ```
 </div>
+
+
+</details>
