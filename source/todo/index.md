@@ -37,6 +37,7 @@ comments: false
 - [ ] 还有会议记录
 - [ ] 了解java新的日期时间API的使用  https://m.jb51.net/article/110245.htm
 - [ ] 深蓝助手
+- [ ] https://albenw.github.io/posts/4ffa5bc6/
 
 # flag
 - 不看不能记笔记的视频
