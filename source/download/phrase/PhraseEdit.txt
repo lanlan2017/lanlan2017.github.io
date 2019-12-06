@@ -75,16 +75,28 @@ gm,1=git merge
 gb,1=git branch
 gba,1=git branch -a
 gbd,1=git branch -d
+gu,1=lanlan2017
 ;
 ;Linux命令
+cddd,1=cd ..
+cdh,1=cd ~
 cdb,1=cd ~/blog/blog/
 cdbr,1=cd ~/blog/blogRoot/
 cdex,1=cd ~/blog/exam/
-cddd,1=cd ..
-cdh,1=cd ~
 cdmyb,1=cd ~/my/blog/
 cdmybr,1=cd ~/my/blogRoot/
 cdmyj,1=cd ~/my/JavaReadingNotes/
+cdmyex,1=cd ~/my/exam/
+ls,1=ls
+lsa,1=ls -a
+lsal,1=ls -al
+chm,1=chmod
+mk,1=mkdir
+rm,1=rm
+rmr,1=rm -r
+rmrf,1=rm -rf
+chmx,1=chmod +x
+ex,1=exit
 ;
 ; markdown命令
 ;
