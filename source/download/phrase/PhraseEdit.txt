@@ -90,13 +90,15 @@ cdmyex,1=cd ~/my/exam/
 ls,1=ls
 lsa,1=ls -a
 lsal,1=ls -al
-chm,1=chmod
-mk,1=mkdir
 rm,1=rm
 rmr,1=rm -r
 rmrf,1=rm -rf
 chmx,1=chmod +x
 ex,1=exit
+chm,1=chmod
+mk,1=mkdir
+sh,1=sh
+shd,1=./
 ;
 ; markdown命令
 ;
