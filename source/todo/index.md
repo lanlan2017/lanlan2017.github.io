@@ -37,10 +37,10 @@ comments: false
 - [ ] 还有会议记录
 - [ ] 了解java新的日期时间API的使用  https://m.jb51.net/article/110245.htm
 - [ ] 深蓝助手
-- [ ] https://albenw.github.io/posts/4ffa5bc6/
+
 
 # flag
-- 不看不能记笔记的视频
+- [ ] 不看非学习视频
 
 # 搁置
 <details><summary>展开搁置/折叠搁置</summary>
@@ -68,15 +68,22 @@ comments: false
     - [ ] 先写个测试类
     - [ ] 打包，linux下运行
 - [ ] [了解开源协议](https://blog.51cto.com/holison/1930805)
+- [ ] [菜鸟翻译插件](https://www.oschina.net/news/111842/probie-released)
 
 </details>
 
 # 已完成
 <details><summary>展开已完成/折叠已完成</summary>
+
+## 2019年12月06日
+
 ## 2019年12月05日
-- [ ] 测试hexo后台，hexo-admin,强大，但是好像不支持分类找文章
-- [ ] hexo-myadmin，UI好，但是bug多，这两个都不好用，
-- [ ] 先手动修改有空再说，我不该操心这个
+- [x] 不看非学习视频
+- [x] 测试hexo后台，hexo-admin,强大，但是好像不支持分类找文章
+- [x] hexo-myadmin，UI好，但是bug多，这两个都不好用，
+- [x] 先手动修改有空再说，我不该操心这个
+- [x] [hexo-admin后台](https://albenw.github.io/posts/4ffa5bc6/)
+- [x] 最终还是用hexo-admin
 
 ## 2019年12月04日
 - [x] 8.3 set集合 8.3.1 hashset类，速度很怏，改为宿舍很快
