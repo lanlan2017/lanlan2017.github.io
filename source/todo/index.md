@@ -36,7 +36,6 @@ comments: false
 - [ ] 还有百强支部网站
 - [ ] 还有会议记录
 - [ ] 了解java新的日期时间API的使用  https://m.jb51.net/article/110245.htm
-- [ ] 深蓝助手
 
 
 # flag
@@ -69,6 +68,7 @@ comments: false
     - [ ] 打包，linux下运行
 - [ ] [了解开源协议](https://blog.51cto.com/holison/1930805)
 - [ ] [菜鸟翻译插件](https://www.oschina.net/news/111842/probie-released)
+- [ ] 深蓝助手
 
 </details>
 
