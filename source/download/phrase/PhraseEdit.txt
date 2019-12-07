@@ -47,7 +47,7 @@
 ;  你可以用自定义短语来做一个带动态时间的多行回信落款。
 ;  ss,1=#$year年$month月$day_dd日 $fullhour:$minute:$second
 ;
-; 时间函数
+; # 时间函数
 ;
 date,1=#$year年$month_mm月$day_dd日
 time,1=#$fullhour_hh:$minute:$second
@@ -118,6 +118,10 @@ cd ~/blog/blogRoot/
 git pull origin src
 cd ~/my/blogRoot/
 git pull origin src
+
+tuex,1=
+cd ~/blog/exam/
+git pull origin master
 
 ; # markdown命令
 mb,1=****

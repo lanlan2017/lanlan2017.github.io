@@ -9,6 +9,9 @@ comments: false
 - [本地站点](/links/#本地站点)
 - [笔试](/links/#笔试)
 - [学校](/links/#学校)
+- [资讯](/links/#资讯)
+- [搜索引擎](/links/#搜索引擎)
+- [博客](/links/#博客)
 - [官网](/links/#官网)
 - [在线工具](/links/#在线工具)
 - [在线文档](/links/#在线文档)
@@ -21,14 +24,12 @@ comments: false
     - [IDE](/links/#IDE)
     - [依赖包](/links/#依赖包)
     - [电子书下载](/links/#电子书下载)
-- [搜索引擎](/links/#搜索引擎)
 - [视屏网站](/links/#视屏网站)
     - [中国大学MOOC](/links/#中国大学MOOC)
     - [学堂在线](/links/#学堂在线)
     - [其他视频网站](/links/#其他视频网站)
-- [博客](/links/#博客)
+- [需要翻墙](/links/#需要翻墙)
 - [政府网站](/links/#政府网站)
-- [资讯](/links/#资讯)
 
 </div>
 <script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}</script>
