@@ -153,12 +153,12 @@ mk,1=``
 mu,1=- 
 mq,1=> 
 mo,1=1. 
-mh,1=# 
-mhh,1=## 
-mhhh,1=### 
-mhhhh,1=#### 
-mhhhhh,1=#####
-mhhhhhh,1=###### 
+mh,1=## 
+mhh,1=### 
+mhhh,1=#### 
+mhhhh,1=##### 
+mhhhhh,1=###### 
+mhhhhhh,1=####### 
 mcb,1=
 ```
 
