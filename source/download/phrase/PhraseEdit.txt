@@ -55,6 +55,7 @@ datetime,1=#$year年$month_mm月$day_dd日 #$fullhour_hh:$minute:$second
 ; # Git命令
 gs,1=git status
 ga,1=git add .
+gc,1=git clone 
 gcm,1=git commit -m '
 gcmt,1=git commit -m '更新todo页面'
 gcmtl,1=git commit -m '更新tools页面'
@@ -80,6 +81,10 @@ gbd,1=git branch -d
 gu,1=lanlan2017
 gr,1=git restore 
 grs,1=git restore --staged 
+grv,1=git remote -v
+gra,1=git remote add 
+grrm,1=git remote remove 
+grrmo,1=git remote remove origin
 ; # JavaScript代码
 conl,1=console.log();
 fun,1=function  Name(){}
@@ -90,9 +95,11 @@ cdh,1=cd ~
 cdb,1=cd ~/blog/blog/
 cdbr,1=cd ~/blog/blogRoot/
 cdex,1=cd ~/blog/exam/
+cdrn,1=cd ~/blog/ReadingNotes/
 cdmyb,1=cd ~/my/blog/
 cdmybr,1=cd ~/my/blogRoot/
 cdmyj,1=cd ~/my/JavaReadingNotes/
+cdmyrn,1=cd ~/my/ReadingNotes/
 cdmyex,1=cd ~/my/exam/
 ls,1=ls
 lsa,1=ls -a
@@ -120,10 +127,26 @@ git pull origin src
 cd ~/my/blogRoot/
 git pull origin src
 
+tujr,1=
+cd ~/my/JavaReadingNotes/
+git pull origin master
+cd ~/blog/JavaReadingNotes/
+git pull origin master
+
+turn,1=
+cd ~/my/ReadingNotes/
+git pull origin master
+cd ~/blog/ReadingNotes/
+git pull origin master
+
 tuex,1=
 cd ~/blog/exam/
 git pull origin master
-
+; # latex命令
+lats,1=$
+latss,1=$$
+latul,1=\underline{}
+latb,1=\textbf{}
 ; # markdown命令
 mb,1=****
 mk,1=``
