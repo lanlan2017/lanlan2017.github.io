@@ -74,6 +74,7 @@ comments: false
     - [ ] 打包，linux下运行
 - [ ] [了解开源协议](https://blog.51cto.com/holison/1930805)
 - [ ] [菜鸟翻译插件](https://www.oschina.net/news/111842/probie-released)
+- [ ] 交换功能,交换逗号,空格,的顺序.
 
 </details>
 
