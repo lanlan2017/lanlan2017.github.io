@@ -106,6 +106,7 @@ chm,1=chmod
 mk,1=mkdir
 sh,1=sh
 shd,1=./
+tou,1=touch 
 ; # Termux命令
 tublog,1=
 cd ~/blog/blog/
