@@ -59,6 +59,38 @@ comments: false
 - [校园网登陆](http://p.njupt.edu.cn/)
 - [国家开发银行](http://www.csls.cdb.com.cn/)
 
+# 资讯 #
+- [微博](https://weibo.com/)
+  - [微博热搜](https://s.weibo.com/top/summary)
+  - [微博搜索](https://s.weibo.com/)
+- [博客园新闻](https://www.cnblogs.com/news/)
+- [开源中国资讯](https://www.oschina.net/news/industry)
+- [脚本之家资讯](https://www.jb51.net/news/)
+- [知乎-科技](https://www.zhihu.com/mweb-keji)
+- [网易 科技频道](https://3g.163.com/touch/tech/)
+    - [网易科技频道 电脑版](https://tech.163.com/)
+- [科技新闻 央视网](http://news.cctv.com/tech/mobile/)
+- [DoNews-互联网新闻门户网站-IT资讯科技媒体](http://3g.donews.com/)
+- [懒人科技网](http://www.lazykeji.com/m/list.php?tid=76)
+- [科技日报](http://digitalpaper.stdaily.com/)
+- [搜狐科技频道 手机版](https://m.sohu.com/ch/30/)
+    - [搜狐科技频道 电脑版](http://it.sohu.com/)
+- [虎嗅网](https://m.huxiu.com/)
+
+# 搜索引擎
+- [百度](https://www.baidu.com/)
+- [必应](https://cn.bing.com/)
+- [谷歌](https://www.google.com)
+- [聚合搜索](http://yun.misiai.com/)
+
+# 博客 #
+- [廖雪峰的官网网站](https://www.liaoxuefeng.com/)
+- [博客园](https://www.cnblogs.com/)
+- [CSDN](https://www.csdn.net/)
+- [简书](https://www.jianshu.com/)
+- [C语言中文网](http://c.biancheng.net/)
+- [segmentfault](https://segmentfault.com/)
+
 # 官网 #
 - [junit5](https://junit.org/junit5/)
 - [mysql](https://www.mysql.com/cn/)
@@ -113,11 +145,6 @@ comments: false
 - [Jiumo Search](https://www.jiumodiary.com/)
 - [我的小书屋](mebook.cc)
 
-# 搜索引擎
-- [百度](https://www.baidu.com/)
-- [必应](https://cn.bing.com/)
-- [谷歌](https://www.google.com)
-- [聚合搜索](http://yun.misiai.com/)
 
 # 视屏网站 #
 
@@ -141,32 +168,7 @@ comments: false
 # 需要翻墙
 - [p站](https://www.pornhub.com/)
 
-# 博客 #
-- [廖雪峰的官网网站](https://www.liaoxuefeng.com/)
-- [博客园](https://www.cnblogs.com/)
-- [CSDN](https://www.csdn.net/)
-- [简书](https://www.jianshu.com/)
-- [C语言中文网](http://c.biancheng.net/)
-- [segmentfault](https://segmentfault.com/)
-
 # 政府网站 
 - [工信部](http://miit.gov.cn/)
 - [中国国家互联网协会](http://www.isc.org.cn/)
 
-# 资讯 #
-- [微博](https://weibo.com/)
-  - [微博热搜](https://s.weibo.com/top/summary)
-  - [微博搜索](https://s.weibo.com/)
-- [博客园新闻](https://www.cnblogs.com/news/)
-- [开源中国资讯](https://www.oschina.net/news/industry)
-- [脚本之家资讯](https://www.jb51.net/news/)
-- [知乎-科技](https://www.zhihu.com/mweb-keji)
-- [网易 科技频道](https://3g.163.com/touch/tech/)
-    - [网易科技频道 电脑版](https://tech.163.com/)
-- [科技新闻 央视网](http://news.cctv.com/tech/mobile/)
-- [DoNews-互联网新闻门户网站-IT资讯科技媒体](http://3g.donews.com/)
-- [懒人科技网](http://www.lazykeji.com/m/list.php?tid=76)
-- [科技日报](http://digitalpaper.stdaily.com/)
-- [搜狐科技频道 手机版](https://m.sohu.com/ch/30/)
-    - [搜狐科技频道 电脑版](http://it.sohu.com/)
-- [虎嗅网](https://m.huxiu.com/)

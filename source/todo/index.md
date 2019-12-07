@@ -40,7 +40,6 @@ comments: false
 - [ ] 在线编程网站收集
 - [ ] https://c.runoob.com/front-end/61
 - https://m.runoob.com/try/try2.php?filename=tryhtml_hr
-- [ ] 修改工具FM程序
 - [ ] 日期时间API https://www.cnblogs.com/liqiangchn/p/11974355.html
 - [ ] eclipse画er图
     - [ ] 下载插件
@@ -71,44 +70,6 @@ comments: false
 - [x] 修复tools页面的FM按钮
 - [x] 增加一些搜狗输入法windows版个性短语
 
-
-## 2019年12月07日
-- [x] 写文章
-- [x] 约会
-- [x] 不看非学习视频
-- [x] 写搜狗个性短语
-- [x] 写讯飞个性短语
-
-## 2019年12月06日
-- [x] 丢失
-- [x] 搜狗个性短语
-- [x] 讯飞个性短语
-- [x] 媳妇
-    - [x] 明天早起去图书馆占位
-    - [x] 然后10点半去找季老师
-    - [x] 明天在图书馆要给季老师看文章
-    - [x] 下午值班
-    - [x] 直接从图书馆去办公室
-    - [x] 明天还要去还正装
-    - [x] 明天还要填组织生活会的表
-    - [x] 还有百强支部网站
-    - [x] 还有会议记录
-
-## 2019年12月05日
-- [x] 不看非学习视频
-- [x] 测试hexo后台，hexo-admin,强大，但是好像不支持分类找文章
-- [x] hexo-myadmin，UI好，但是bug多，这两个都不好用，
-- [x] 先手动修改有空再说，我不该操心这个
-- [x] [hexo-admin后台](https://albenw.github.io/posts/4ffa5bc6/)
-- [x] 最终还是用hexo-admin
-
-## 2019年12月04日
-- [x] 8.3 set集合 8.3.1 hashset类，速度很怏，改为宿舍很快
-- [x] 修复xunfei程序中audition路径错误问题。
-- [x] 媳妇:
-  - [x] 提醒 明天早上开会带书
-  - [x] 提醒 打印
-  - [x] 提醒 明天中午回宿舍的时候收床单
 
 ## 更早之前
 参见:[日记](/categories/日记/)
