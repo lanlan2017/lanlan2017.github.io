@@ -52,9 +52,7 @@
 date,1=#$year年$month_mm月$day_dd日
 time,1=#$fullhour_hh:$minute:$second
 datetime,1=#$year年$month_mm月$day_dd日 #$fullhour_hh:$minute:$second
-;
-; Git命令集合
-;
+; # Git命令
 gs,1=git status
 ga,1=git add .
 gcm,1=git commit -m '
@@ -82,13 +80,11 @@ gbd,1=git branch -d
 gu,1=lanlan2017
 gr,1=git restore 
 grs,1=git restore --staged 
-;
-; JavaScript代码
+; # JavaScript代码
 conl,1=console.log();
 fun,1=function  Name(){}
 docgebi,1=document.getElementById();
-;
-; Linux命令
+; # Linux命令
 cddd,1=cd ..
 cdh,1=cd ~
 cdb,1=cd ~/blog/blog/
@@ -110,8 +106,7 @@ chm,1=chmod
 mk,1=mkdir
 sh,1=sh
 shd,1=./
-;
-; Termux命令
+; # Termux命令
 tublog,1=
 cd ~/blog/blog/
 git pull origin master
@@ -124,9 +119,7 @@ git pull origin src
 cd ~/my/blogRoot/
 git pull origin src
 
-;
-; markdown命令
-;
+; # markdown命令
 mb,1=****
 mk,1=``
 mu,1=- 
@@ -162,9 +155,7 @@ mcbc,1=
 ```css
 
 ```
-;
-; HTML代码模板
-;
+; # HTML代码
 ht,1=
 <html>
     <head>
@@ -177,7 +168,7 @@ ht,1=
     <body>
     </body>
 </html>
-; Java代码模板
+; # Java代码
 classj,1=
 public class {
 
