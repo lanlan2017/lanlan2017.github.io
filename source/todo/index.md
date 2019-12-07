@@ -25,15 +25,16 @@ comments: false
     - [ ] 设计server
 - [ ] 看数据库设计
     - [ ] 中国大学mooc
-- [ ] 了解java新的日期时间API的使用  https://m.jb51.net/article/110245.htm
-
 
 # flag
 - [ ] 不看非学习视频
+- [ ] 早睡
+- [ ] 早起
 
 # 搁置
 <details><summary>展开搁置/折叠搁置</summary>
 
+- [ ] 了解java新的日期时间API的使用  https://m.jb51.net/article/110245.htm
 - [ ] 下个月关闭,移动网盘,6个月视频会员自动取消
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
 - [ ] 在线编程网站收集
