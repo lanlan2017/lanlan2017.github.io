@@ -60,8 +60,6 @@ comments: false
     - [ ] 打包，linux下运行
 - [ ] [了解开源协议](https://blog.51cto.com/holison/1930805)
 - [ ] [菜鸟翻译插件](https://www.oschina.net/news/111842/probie-released)
-- [ ] 修复tools页面的FM按钮
-
 
 </details>
 
@@ -70,6 +68,7 @@ comments: false
 
 ## 2019年12月07日
 - [x] 早起
+- [x] 修复tools页面的FM按钮
 - [ ] 
 
 
