@@ -77,7 +77,12 @@ gba,1=git branch -a
 gbd,1=git branch -d
 gu,1=lanlan2017
 ;
-;Linux命令
+; JavaScript代码
+conl,1=console.log();
+fun,1=function  Name(){}
+docgebi,1=document.getElementById();
+;
+; Linux命令
 cddd,1=cd ..
 cdh,1=cd ~
 cdb,1=cd ~/blog/blog/

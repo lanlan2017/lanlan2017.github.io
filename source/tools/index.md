@@ -63,8 +63,8 @@ comments: false
     div.posts-expand div.post-block {
         padding-top: 0em;
     }
-    input[type="checkbox"]{
-        background-color:blue;
+    input[type="checkbox"] {
+        background-color: blue;
     }
 </style>
 <script>
@@ -377,20 +377,20 @@ comments: false
         });
         result(text);
     }
-    function frontMatter() {
-        var text = input.value;
-        text = text.replace(/\n/mg, "");
-        var title = text.replace(/^.+source\/_posts.+\/(.+?).md$/, "$1");
-        var dateStr = title.match(/(\d{4}年\d{1,2}月\d{1,2})日/)[1];
-        dateStr = dateStr.replace(/([年月])/g, "-");
-        var now = new Date();
-        dateStr += " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-        console.log(dateStr);
-        var categories = text.replace(/^.+source\/_posts(.+)\/.+?.md$/, "$1");
-        categories = categories.replace(/\//g, "\n  - ");
-        var fm = "---\n" + "title: " + title + "\n" + "categories: " + categories + "\n" + "date: " + dateStr +
-            "\n---\n";
-        result(fm);
+    function frontMatter(text) {
+        if (text == null) {
+            result(frontMatter(input.value))
+        } else {
+            var legalLinuxHexoPostsPath = /^.+\/source\/_posts(\/.+)\/(.+)\.md/;
+            if (legalLinuxHexoPostsPath.test(text)) {
+                var categories = "categories: " + text.replace(legalLinuxHexoPostsPath, "$1").replace(/\//mg,
+                    "\n  - ");
+                var title = "title: " + text.replace(legalLinuxHexoPostsPath, "$2");
+                var fm = "---\n" + title + "\n" + categories + "\n---\n";
+                return fm;
+            }
+            return text;
+        }
     }
     function unNiuke() {
         undo();

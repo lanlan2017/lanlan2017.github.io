@@ -32,7 +32,7 @@ comments: false
 - [ ] 早起
 
 # 搁置
-<details><summary>展开搁置/折叠搁置</summary>
+<details><summary>展开/折叠</summary>
 
 - [ ] 了解java新的日期时间API的使用  https://m.jb51.net/article/110245.htm
 - [ ] 下个月关闭,移动网盘,6个月视频会员自动取消
@@ -60,14 +60,17 @@ comments: false
     - [ ] 打包，linux下运行
 - [ ] [了解开源协议](https://blog.51cto.com/holison/1930805)
 - [ ] [菜鸟翻译插件](https://www.oschina.net/news/111842/probie-released)
+- [ ] 修复tools页面的FM按钮
 
 
 </details>
 
 # 已完成
-<details><summary>展开已完成/折叠已完成</summary>
+<details><summary>展开/折叠</summary>
 
 ## 2019年12月07日
+- [x] 早起
+- [ ] 
 
 
 ## 2019年12月07日
