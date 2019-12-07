@@ -30,6 +30,20 @@ comments: false
 - [ ] 不看非学习视频
 - [ ] 早睡
 - [ ] 早起
+- [ ] 牛客网
+- [ ] 中国大学MOOC
+
+# 已完成
+<details><summary>展开/折叠</summary>
+
+## 2019年12月07日
+- [x] 早起
+- [x] 修复tools页面的FM按钮
+- [x] 增加一些搜狗输入法windows版个性短语
+- [x] 中国大学MOOC
+  - [x] 数据库中
+
+</details>
 
 # 搁置
 <details><summary>展开/折叠</summary>
@@ -61,15 +75,6 @@ comments: false
 - [ ] [菜鸟翻译插件](https://www.oschina.net/news/111842/probie-released)
 
 </details>
-
-# 已完成
-<details><summary>展开/折叠</summary>
-
-## 2019年12月07日
-- [x] 早起
-- [x] 修复tools页面的FM按钮
-- [x] 增加一些搜狗输入法windows版个性短语
-
 
 ## 更早之前
 参见:[日记](/categories/日记/)
