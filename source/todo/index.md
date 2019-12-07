@@ -25,6 +25,7 @@ comments: false
     - [ ] 设计server
 - [ ] 看数据库设计
     - [ ] 中国大学mooc
+      - [ ] 看视频,做笔记,应用.
 
 # flag
 - [ ] 不看非学习视频
@@ -41,7 +42,7 @@ comments: false
 - [x] 修复tools页面的FM按钮
 - [x] 增加一些搜狗输入法windows版个性短语
 - [x] 中国大学MOOC
-  - [x] 数据库中
+  - [x] 哈工大数据库中,总第13讲.
 
 </details>
 
