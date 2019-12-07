@@ -114,6 +114,9 @@ mk,1=mkdir
 sh,1=sh
 shd,1=./
 tou,1=touch 
+npmi,1=npm install
+npmis,1=npm install --save
+npmui,1=npm uninstall --save
 ; # Termux命令
 tublog,1=
 cd ~/blog/blog/
@@ -147,6 +150,8 @@ lats,1=$
 latss,1=$$
 latul,1=\underline{}
 latb,1=\textbf{}
+latddd,1=\cdots
+latdkh,1=\lbrace \rbrace
 ; # markdown命令
 mb,1=****
 mk,1=``
@@ -159,6 +164,7 @@ mhhh,1=####
 mhhhh,1=##### 
 mhhhhh,1=###### 
 mhhhhhh,1=####### 
+mmath,1=mathjax: true
 mcb,1=
 ```
 
