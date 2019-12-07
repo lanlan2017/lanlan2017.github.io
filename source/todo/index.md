@@ -42,7 +42,8 @@ comments: false
 - [x] 修复tools页面的FM按钮
 - [x] 增加一些搜狗输入法windows版个性短语
 - [x] 中国大学MOOC
-  - [x] 哈工大数据库中,总第13讲.
+  - [x] 哈工大数据库中,第3讲
+  - [x] 合工大数据库中,第四讲
 
 </details>
 
