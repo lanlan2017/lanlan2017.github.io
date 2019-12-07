@@ -25,23 +25,44 @@ comments: false
     - [ ] 设计server
 - [ ] 看数据库设计
     - [ ] 中国大学mooc
+      - [ ] 看视频,做笔记,应用.
 
 # flag
-- [ ] 不看非学习视频
 - [ ] 早睡
-- [ ] 早起
-- [ ] 牛客网
+- [ ] 早起,醒了就起
+- [ ] 炎无心
+- [ ] 牛客网刷题,做笔记
 - [ ] 中国大学MOOC
+- [ ] 不看非学习视频
+- [ ] 写东西要精简,有图的话,可以不要文字描述。
 
 # 已完成
 <details><summary>展开/折叠</summary>
+
+## 2019年12月09日
+- [x] 早起,醒了就起
+- [ ] 
+
+## 2019年12月08日
+- [x] 早起
+- [x] 牛客网刷题,做笔记
+- [x] 不看非学习视频
+- [x] chrome浏览器打开**书签栏**:**Ctrl+shift+B**
+  - [x] 写文章
+- [x] 注册免费邮箱**@protonmail.com**
+- [x] 测试**protonVPN**:无法连接
+- [x] Git
+  - [x] 修改git commit -m中的信息
+- [x] JS下载文件
+- [x] 约会,烦心.
 
 ## 2019年12月07日
 - [x] 早起
 - [x] 修复tools页面的FM按钮
 - [x] 增加一些搜狗输入法windows版个性短语
 - [x] 中国大学MOOC
-  - [x] 数据库中
+  - [x] 哈工大数据库中,第3讲
+  - [x] 合工大数据库中,第4讲
 
 </details>
 
@@ -53,7 +74,7 @@ comments: false
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
 - [ ] 在线编程网站收集
 - [ ] https://c.runoob.com/front-end/61
-- https://m.runoob.com/try/try2.php?filename=tryhtml_hr
+- [ ] https://m.runoob.com/try/try2.php?filename=tryhtml_hr
 - [ ] 日期时间API https://www.cnblogs.com/liqiangchn/p/11974355.html
 - [ ] eclipse画er图
     - [ ] 下载插件
@@ -73,6 +94,12 @@ comments: false
     - [ ] 打包，linux下运行
 - [ ] [了解开源协议](https://blog.51cto.com/holison/1930805)
 - [ ] [菜鸟翻译插件](https://www.oschina.net/news/111842/probie-released)
+- [ ] 交换功能,交换逗号,空格,的顺序.
+- [ ] [咖啡种类](https://m.weibo.cn/detail/4446965351461264)
+- [ ] [tar命令](https://jingyan.baidu.com/article/5553fa8292599665a23934bd.html)
+- [ ] [955公司](https://mp.weixin.qq.com/s/TQb2ZmW9lQzxd6YyksNagg)
+- [ ] 996ICU
+- [ ] 收集算法到搜狗输入法中以应对在线笔试题.
 
 </details>
 

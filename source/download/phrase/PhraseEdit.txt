@@ -46,7 +46,9 @@
 ;  具体你可以参考这个文件最下面的例子，实际体验一下就明白了。
 ;  你可以用自定义短语来做一个带动态时间的多行回信落款。
 ;  ss,1=#$year年$month月$day_dd日 $fullhour:$minute:$second
-;
+; 其他
+lgmt,1=LiangGeManTou
+ydzclgmt,1=yidunzhichilianggemantou%9732
 ; # 时间函数
 ;
 date,1=#$year年$month_mm月$day_dd日
@@ -70,7 +72,8 @@ gpom,1=git push origin master
 gpos,1=git push origin src
 gplom,1=git pull origin master
 gplos,1=git pull origin src
-glo,1=git log -10 --pretty=oneline
+glpo,1=git log -10 --pretty=oneline
+glog,1=git log --oneline --graph
 gd,1=git diff
 gf,1=git fetch
 gfomt,1=git fetch origin master:tmp
@@ -85,6 +88,9 @@ grv,1=git remote -v
 gra,1=git remote add 
 grrm,1=git remote remove 
 grrmo,1=git remote remove origin
+grb,1=git rebase 
+grbi,1=git rebase -i 
+grbih,1=git rebase -i HEAD~
 ; # JavaScript代码
 conl,1=console.log();
 fun,1=function  Name(){}
@@ -114,20 +120,25 @@ mk,1=mkdir
 sh,1=sh
 shd,1=./
 tou,1=touch 
+npmi,1=npm install
+npmis,1=npm install --save
+npmui,1=npm uninstall --save
+; # cmd命令
+exp,1=explorer 
 ; # Termux命令
-tublog,1=
+tub,1=
 cd ~/blog/blog/
 git pull origin master
 cd ~/my/blog/
 git pull origin master
 
-tublogr,1=
+tubr,1=
 cd ~/blog/blogRoot/
 git pull origin src
 cd ~/my/blogRoot/
 git pull origin src
 
-tujr,1=
+tujrn,1=
 cd ~/my/JavaReadingNotes/
 git pull origin master
 cd ~/blog/JavaReadingNotes/
@@ -142,11 +153,14 @@ git pull origin master
 tuex,1=
 cd ~/blog/exam/
 git pull origin master
+
 ; # latex命令
 lats,1=$
 latss,1=$$
 latul,1=\underline{}
 latb,1=\textbf{}
+latddd,1=\cdots
+latdkh,1=\lbrace \rbrace
 ; # markdown命令
 mb,1=****
 mk,1=``
@@ -159,6 +173,7 @@ mhhh,1=####
 mhhhh,1=##### 
 mhhhhh,1=###### 
 mhhhhhh,1=####### 
+mmath,1=mathjax: true
 mcb,1=
 ```
 
@@ -209,3 +224,7 @@ pvsm,1=
 public static void main(String[] args){
 
 }
+; # 专业短语
+ert,1=E-R图
+; # 其他
+atpm,1=@protonmail.com
