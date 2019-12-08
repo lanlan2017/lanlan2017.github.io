@@ -53,7 +53,7 @@ comments: false
     }
     /* 文本框样式 */
     textarea {
-        width: 100%;
+        width: 98%;
         margin-right: auto;
     }
     /* 覆盖样式 */
