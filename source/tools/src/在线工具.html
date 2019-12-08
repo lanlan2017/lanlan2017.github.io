@@ -647,7 +647,7 @@
             answer = answer.replace(/(^正确答案: `?[A-Za-z]+`?$)/mg,
                 "\n## 解析\n<details><summary>显示答案/隐藏答案</summary>$1</details>\n\n");
             // 拼接结果
-            text = "\n# 题目" + counter.value + "\n" + problem + selects + answer;
+            text = "\n# 题目" + counter.value + " 考点:\n" + problem + selects + answer;
             // 输出结果
             result(text);
             // 计数器加1

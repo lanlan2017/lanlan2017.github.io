@@ -31,7 +31,7 @@ comments: false
 - [ ] 早睡
 - [ ] 早起
 - [ ] 炎无心
-- [ ] 牛客网
+- [ ] 牛客网刷题,做笔记
 - [ ] 中国大学MOOC
 - [ ] 不看非学习视频
 - [ ] 写东西要精简,有图,可以不要文字描述。
@@ -41,13 +41,16 @@ comments: false
 
 ## 2019年12月08日
 - [x] 早起
-- [x] 牛客网刷题
+- [x] 牛客网刷题,做笔记
 - [x] 不看非学习视频
 - [x] chrome浏览器打开**书签栏**:**Ctrl+shift+B**
   - [x] 写文章
 - [x] 注册免费邮箱**@protonmail.com**
 - [x] 测试**protonVPN**:无法连接
-- [ ] 
+- [x] Git
+  - [x] 修改git commit -m中的信息
+- [x] JS下载文件
+- [x] 约会,烦心.
 
 ## 2019年12月07日
 - [x] 早起
@@ -55,7 +58,7 @@ comments: false
 - [x] 增加一些搜狗输入法windows版个性短语
 - [x] 中国大学MOOC
   - [x] 哈工大数据库中,第3讲
-  - [x] 合工大数据库中,第四讲
+  - [x] 合工大数据库中,第4讲
 
 </details>
 
@@ -67,7 +70,7 @@ comments: false
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
 - [ ] 在线编程网站收集
 - [ ] https://c.runoob.com/front-end/61
-- https://m.runoob.com/try/try2.php?filename=tryhtml_hr
+- [ ] https://m.runoob.com/try/try2.php?filename=tryhtml_hr
 - [ ] 日期时间API https://www.cnblogs.com/liqiangchn/p/11974355.html
 - [ ] eclipse画er图
     - [ ] 下载插件
