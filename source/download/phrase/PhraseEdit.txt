@@ -46,7 +46,9 @@
 ;  具体你可以参考这个文件最下面的例子，实际体验一下就明白了。
 ;  你可以用自定义短语来做一个带动态时间的多行回信落款。
 ;  ss,1=#$year年$month月$day_dd日 $fullhour:$minute:$second
-;
+; 其他
+lgmt,1=LiangGeManTou
+ydzclgmt,1=yidunzhichilianggemantou%9732
 ; # 时间函数
 ;
 date,1=#$year年$month_mm月$day_dd日
@@ -117,6 +119,8 @@ tou,1=touch
 npmi,1=npm install
 npmis,1=npm install --save
 npmui,1=npm uninstall --save
+; # cmd命令
+exp,1=explorer 
 ; # Termux命令
 tublog,1=
 cd ~/blog/blog/
@@ -217,3 +221,5 @@ public static void main(String[] args){
 }
 ; # 专业短语
 ert,1=E-R图
+; # 其他
+atpm,1=@protonmail.com

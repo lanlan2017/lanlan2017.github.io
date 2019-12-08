@@ -37,6 +37,13 @@ comments: false
 # 已完成
 <details><summary>展开/折叠</summary>
 
+## 2019年12月08日
+- [x] 早起
+- [x] 注册免费邮箱**@protonmail.com**
+- [x] 测试**protonVPN**:无法连接
+- [x] 写文章,chrome浏览器打开**书签栏**:Ctrl+shift+B
+
+
 ## 2019年12月07日
 - [x] 早起
 - [x] 修复tools页面的FM按钮
