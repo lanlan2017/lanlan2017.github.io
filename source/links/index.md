@@ -12,6 +12,10 @@ comments: false
 - [资讯](/links/#资讯)
 - [搜索引擎](/links/#搜索引擎)
 - [博客](/links/#博客)
+- [视屏网站](/links/#视屏网站)
+    - [中国大学MOOC](/links/#中国大学MOOC)
+    - [学堂在线](/links/#学堂在线)
+    - [其他视频网站](/links/#其他视频网站)
 - [官网](/links/#官网)
 - [在线工具](/links/#在线工具)
 - [在线文档](/links/#在线文档)
@@ -24,10 +28,6 @@ comments: false
     - [IDE](/links/#IDE)
     - [依赖包](/links/#依赖包)
     - [电子书下载](/links/#电子书下载)
-- [视屏网站](/links/#视屏网站)
-    - [中国大学MOOC](/links/#中国大学MOOC)
-    - [学堂在线](/links/#学堂在线)
-    - [其他视频网站](/links/#其他视频网站)
 - [需要翻墙](/links/#需要翻墙)
 - [政府网站](/links/#政府网站)
 
@@ -42,11 +42,11 @@ comments: false
     - [笔试答案](https://lanlan2017.github.io/exam/)
 
 # 本地站点 #
-- [主站](http://localhost:4000/)
-  - [本地工具](http://127.0.0.1:4007/tools/)
-- [后台](http://localhost:4000/admin/)
+- [主站本地](http://localhost:4000/)
+  - [工具|主站本地](http://127.0.0.1:4000/tools/)
 - [博客本地](http://127.0.0.1:4007/)
-- [Java读书笔记](http://localhost:4010/JavaReadingNotes/)
+- [读书笔记本地](http://localhost:4009/)
+- [Java读书笔记本地](http://localhost:4010/JavaReadingNotes/)
 - [笔试题本地](http://localhost:4008/exam/)
 
 # 笔试
@@ -90,6 +90,24 @@ comments: false
 - [简书](https://www.jianshu.com/)
 - [C语言中文网](http://c.biancheng.net/)
 - [segmentfault](https://segmentfault.com/)
+
+# 视屏网站
+## [中国大学MOOC](https://www.icourse163.org)
+- [计算机学科 中国大学MOOC](https://www.icourse163.org/channel/3002.htm)
+    - [数据库系统(上):模型与语言_哈工大](https://www.icourse163.org/course/HIT-1001516002)
+    - [数据库系统(中):建模与设计_哈工大](https://www.icourse163.org/learn/HIT-1001554030)
+    - [数据库系统(下):管理与技术](https://www.icourse163.org/course/HIT-1001578001)
+
+## [学堂在线](https://next.xuetangx.com/)
+- [学堂在线 计算机学科](https://next.xuetangx.com/search?query=&org=&classify=1&type=&status=&page=1)
+
+## 其他视频网站
+- [慕课网](https://www.imooc.com/)
+- [哔哩哔哩](https://www.bilibili.com/)
+- [网易云课堂](https://study.163.com/)
+- [尚硅谷](http://www.atguigu.com/download.shtml)
+- [实验楼](https://www.shiyanlou.com)
+- [劲爆综艺动漫网](https://kan.jinbaozy.com/)
 
 # 官网 #
 - [junit5](https://junit.org/junit5/)
@@ -145,30 +163,9 @@ comments: false
 - [Jiumo Search](https://www.jiumodiary.com/)
 - [我的小书屋](mebook.cc)
 
-
-# 视屏网站 #
-
-## [中国大学MOOC](https://www.icourse163.org) ##
-- [计算机学科 中国大学MOOC](https://www.icourse163.org/channel/3002.htm)
-    - [数据库系统(上):模型与语言_哈工大](https://www.icourse163.org/course/HIT-1001516002)
-    - [数据库系统(中):建模与设计_哈工大](https://www.icourse163.org/learn/HIT-1001554030)
-    - [数据库系统(下):管理与技术](https://www.icourse163.org/course/HIT-1001578001)
-
-## [学堂在线](https://next.xuetangx.com/) ##
-- [学堂在线 计算机学科](https://next.xuetangx.com/search?query=&org=&classify=1&type=&status=&page=1)
-
-## 其他视频网站 ##
-- [慕课网](https://www.imooc.com/)
-- [哔哩哔哩](https://www.bilibili.com/)
-- [网易云课堂](https://study.163.com/)
-- [尚硅谷](http://www.atguigu.com/download.shtml)
-- [实验楼](https://www.shiyanlou.com)
-- [劲爆综艺动漫网](https://kan.jinbaozy.com/)
-
 # 需要翻墙
 - [p站](https://www.pornhub.com/)
 
 # 政府网站 
 - [工信部](http://miit.gov.cn/)
 - [中国国家互联网协会](http://www.isc.org.cn/)
-
