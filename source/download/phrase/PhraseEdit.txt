@@ -122,19 +122,19 @@ npmui,1=npm uninstall --save
 ; # cmd命令
 exp,1=explorer 
 ; # Termux命令
-tublog,1=
+tub,1=
 cd ~/blog/blog/
 git pull origin master
 cd ~/my/blog/
 git pull origin master
 
-tublogr,1=
+tubr,1=
 cd ~/blog/blogRoot/
 git pull origin src
 cd ~/my/blogRoot/
 git pull origin src
 
-tujr,1=
+tujrn,1=
 cd ~/my/JavaReadingNotes/
 git pull origin master
 cd ~/blog/JavaReadingNotes/
@@ -149,6 +149,7 @@ git pull origin master
 tuex,1=
 cd ~/blog/exam/
 git pull origin master
+
 ; # latex命令
 lats,1=$
 latss,1=$$
