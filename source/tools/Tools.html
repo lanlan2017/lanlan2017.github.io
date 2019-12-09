@@ -5,7 +5,6 @@
 </head>
 
 <body>
-    <link type="text/css" rel="styleSheet" href="Tools.css" />
     <div id="panel">
         <textarea rows="14" id="input" placeholder="请输入" contenteditable="true" class="block"></textarea>
         <span class="tools">
@@ -94,6 +93,8 @@
             </span>
         </span>
     </div>
+    <link type="text/css" rel="styleSheet" href="css/Tools.css" />
+    <script type="text/javascript" src="js/Tools.js"></script>
     <script>
         var input = document.getElementById("input");
         var inputBackup;
@@ -108,7 +109,7 @@
         function backupInput() {
             inputBackup = input.value;
         }
-
+        
         function undo() {
             input.value = inputBackup;
             if (timeOut != null) {
