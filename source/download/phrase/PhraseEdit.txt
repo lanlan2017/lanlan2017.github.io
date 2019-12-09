@@ -58,6 +58,8 @@ datetime,1=#$year年$month_mm月$day_dd日 #$fullhour_hh:$minute:$second
 gs,1=git status
 ga,1=git add .
 gc,1=git clone 
+gcb,1=git clone -b 
+gcma,1=git commit --amend
 gcm,1=git commit -m '
 gcmt,1=git commit -m '更新todo页面'
 gcmtl,1=git commit -m '更新tools页面'
@@ -73,7 +75,7 @@ gpos,1=git push origin src
 gplom,1=git pull origin master
 gplos,1=git pull origin src
 glpo,1=git log -10 --pretty=oneline
-glog,1=git log --oneline --graph
+glgo,1=git log --graph --oneline 
 gd,1=git diff
 gf,1=git fetch
 gfomt,1=git fetch origin master:tmp
