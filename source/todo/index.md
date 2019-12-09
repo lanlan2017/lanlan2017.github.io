@@ -3,6 +3,7 @@ title: todo
 date: 2019-11-08 21:28:10
 comments: false
 ---
+
 # 未完成
 - [ ] 读完疯狂java
     - [ ] 集合
@@ -100,6 +101,7 @@ comments: false
 - [ ] [955公司](https://mp.weixin.qq.com/s/TQb2ZmW9lQzxd6YyksNagg)
 - [ ] 996ICU
 - [ ] 收集算法到搜狗输入法中以应对在线笔试题.
+- [ ] 你没有什么想对我说的吗
 
 </details>
 
