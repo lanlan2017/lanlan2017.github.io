@@ -3,6 +3,7 @@ title: todo
 date: 2019-11-08 21:28:10
 comments: false
 ---
+
 # 未完成
 - [ ] 读完疯狂java
     - [ ] 集合
@@ -30,6 +31,7 @@ comments: false
 # flag
 - [ ] 早睡
 - [ ] 早起
+- [ ] 醒就起不懒床
 - [ ] 炎无心
 - [ ] 牛客网刷题,做笔记
 - [ ] 中国大学MOOC
@@ -95,6 +97,7 @@ comments: false
 - [ ] [tar命令](https://jingyan.baidu.com/article/5553fa8292599665a23934bd.html)
 - [ ] [955公司](https://mp.weixin.qq.com/s/TQb2ZmW9lQzxd6YyksNagg)
 - [ ] 996ICU
+- [ ] 你没有什么想对我说的吗
 
 </details>
 
