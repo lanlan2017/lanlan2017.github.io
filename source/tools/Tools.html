@@ -5,6 +5,7 @@
 </head>
 
 <body>
+    <link type="text/css" rel="styleSheet" href="Tools.css" />
     <div id="panel">
         <textarea rows="14" id="input" placeholder="请输入" contenteditable="true" class="block"></textarea>
         <span class="tools">
@@ -33,7 +34,6 @@
                 <button class="btn btn-color-green" onclick="mdK()">k</button>
                 <button class="btn btn-color-green" onclick="mdKs()">ks</button>
                 <button class="btn btn-color-green" onclick="mdB()">b</button>
-                <button class="btn btn-color-green" onclick="toggleFold()">details</button>
                 <button class="btn btn-color-green" onclick="mdtableCopy()">table</button>
                 <button class="btn btn-color-green" onclick="mdU2T()">u2t</button>
                 <button class="btn btn-color-green" onclick="frontMatter()">FM</button>
@@ -62,6 +62,7 @@
             <span>
                 <button class="btn btn-color-blueviolet" onclick="niuke()">niuke</button>
                 <button class="btn btn-color-blueviolet" onclick="formatJava()">formatJava</button>
+                <button class="btn btn-color-blueviolet" onclick="toggleFold()">details</button>
                 <button class="btn btn-color-blueviolet" onclick="cHeader()">cHeader</button>
             </span>
             <br>
@@ -89,88 +90,10 @@
             </span>
             <span>
                 <button class="btn btn-color-brown" onclick="switchHttpsSsh()">切换HTTPS/SSH</button>
+                <button class="btn btn-color-brown" onclick="swap()">交换</button>
             </span>
         </span>
     </div>
-    <style type="text/css">
-        .btn {
-            background-color: #008CBA;
-            border: none;
-            color: white;
-            padding: 0em 0.2em 0em 0.2em;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            margin: 0.1em 0.1em 0.1em 0.1em;
-            cursor: pointer;
-            min-width: 2em;
-        }
-
-        .tools {
-            display: block;
-            margin: 0.5em;
-        }
-
-        .block {
-            display: block;
-        }
-
-        .btn-color-red {
-            background-color: #f44336;
-        }
-
-        .btn-color-green {
-            background-color: #4CAF50;
-        }
-
-        .btn-color-pink {
-            background-color: #FF00FF;
-        }
-
-        .btn-color-blue {
-            background-color: #008CBA;
-        }
-
-        .btn-color-blueviolet {
-            background-color: BlueViolet;
-        }
-
-        .btn-color-brown {
-            background-color: brown;
-        }
-
-        .btn-color-crimson {
-            background-color: crimson;
-        }
-
-        .btn-color-black {
-            background-color: black;
-        }
-
-        .btn-color-gray {
-            background-color: #555555;
-        }
-
-        /* 文本框样式 */
-        textarea {
-            width: 98%;
-            margin-right: auto;
-        }
-
-        /* 覆盖样式 */
-        header.post-header div.post-meta {
-            margin-bottom: 0.875em;
-        }
-
-        div.posts-expand div.post-block {
-            padding-top: 0em;
-        }
-
-        input[type="checkbox"] {
-            background-color: blue;
-        }
-    </style>
-
     <script>
         var input = document.getElementById("input");
         var inputBackup;
@@ -210,7 +133,7 @@
                 // linksTOC(input.value);
             } else {
                 var toc = '';
-                var head = "<div id='my_toc'>\n\n";
+                var head = "<div id=\"my_toc\">\n\n";
                 var tail =
                     "\n</div>\n<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}" +
                     "<__script>\n".replace("__", "/");
@@ -458,6 +381,19 @@
                 return text;
             }
 
+        }
+
+        function swap(text) {
+            if (text == null) {
+                result(swap(input.value));
+            } else {
+                var LegalInput = /^(.+?)([, _])(.+?)$/;
+                if (LegalInput.test(text)) {
+                    return text.replace(LegalInput, "$3$2$1");
+                } else {
+                    return "非法输入,请输入一个以[,_ ]";
+                }
+            }
         }
 
         // 字符串处理函数 结束

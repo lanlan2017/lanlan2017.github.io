@@ -44,6 +44,11 @@ comments: false
 - [x] 早起,醒了就起
 - [x] Git
   - [x] git rebase 命令尝试,还有些问题.需要合并的冲突有点多,先算了.
+- [x] 更新tools页面
+  - [x] 移动展开折叠按钮位置
+- [x] 解决MathJax中`\\`无法换行的问题.[https://lanlan2017.github.io/blog/eb86e892/](https://lanlan2017.github.io/blog/eb86e892/)
+  - [x] 解决因为引入新的数学插件,而引起自定义目录无法使用的问题.
+- [ ] 
 
 ## 2019年12月08日
 - [x] 早起
@@ -103,6 +108,7 @@ comments: false
 - [ ] 996ICU
 - [ ] 收集算法到搜狗输入法中以应对在线笔试题.
 - [ ] 你没有什么想对我说的吗
+- [ ] 使用Js生成目录,而不是使用java写死在文章中.
 
 </details>
 

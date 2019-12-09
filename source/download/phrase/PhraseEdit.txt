@@ -213,6 +213,8 @@ ht,1=
     <body>
     </body>
 </html>
+linkcss,1=<link rel="stylesheet" type="text/css" href="" />
+scriptsrc,1=<script type="text/javascript" src=""></script>
 ; # Java代码
 classj,1=
 public class {

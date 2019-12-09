@@ -1,0 +1,78 @@
+.btn {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 0em 0.2em 0em 0.2em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.1em 0.1em 0.1em 0.1em;
+    cursor: pointer;
+    min-width: 2em;
+}
+
+.tools {
+    display: block;
+    margin: 0.5em;
+}
+
+.block {
+    display: block;
+}
+
+.btn-color-red {
+    background-color: #f44336;
+}
+
+.btn-color-green {
+    background-color: #4CAF50;
+}
+
+.btn-color-pink {
+    background-color: #FF00FF;
+}
+
+.btn-color-blue {
+    background-color: #008CBA;
+}
+
+.btn-color-blueviolet {
+    background-color: BlueViolet;
+}
+
+.btn-color-brown {
+    background-color: brown;
+}
+
+.btn-color-crimson {
+    background-color: crimson;
+}
+
+.btn-color-black {
+    background-color: black;
+}
+
+.btn-color-gray {
+    background-color: #555555;
+}
+
+/* 文本框样式 */
+
+textarea {
+    width: 98%;
+    margin-right: auto;
+}
+
+/* 覆盖样式 */
+
+header.post-header div.post-meta {
+    margin-bottom: 0.875em;
+}
+
+div.posts-expand div.post-block {
+    padding-top: 0em;
+}
+
+input[type="checkbox"] {
+    background-color: blue;
+}
