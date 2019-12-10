@@ -56,7 +56,11 @@ comments: false
   - [x] 交换功能,交换逗号,空格,的顺序.
 - [x] 解决MathJax中`\\`无法换行的问题.[https://lanlan2017.github.io/blog/eb86e892/](https://lanlan2017.github.io/blog/eb86e892/)
   - [x] 解决因为引入新的数学插件,而引起自定义目录无法使用的问题.
+<<<<<<< HEAD
   - [x] 总结:今天最大的收获就是学会了如何压缩commit
+=======
+- [ ] 牛客网刷题,做笔记
+>>>>>>> e92bdb7... 更新todo页面,更新links页面
 
 ## 2019年12月08日
 - [x] 早起
