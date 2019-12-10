@@ -7,12 +7,12 @@
 <body>
     <div id="panel">
         <table>
-            <tr style="width: 100%;">
+            <tr id="yesInput" style="width: 100%;">
                 <td colspan="2" style="width: 100%;">
                     <textarea rows="14" id="input" placeholder="请输入" contenteditable="true" class="block"></textarea>
                 </td>
             </tr>
-            <tr>
+            <tr class="notInput">
                 <td class="td-right td-padding">工具</td>
                 <td class="td-padding">
                     <button class="mybtn" onclick="clearInput()">clear</button>
@@ -23,7 +23,7 @@
                     <button class="mybtn" onclick="tags()">tags</button>
                 </td>
             </tr>
-            <tr>
+            <tr class="notInput">
                 <td class="td-right td-padding">计数器</td>
                 <td class="td-padding">
                     <input type="text" name="counter" id="counter" value="1" size="3" />
@@ -32,7 +32,7 @@
                     <button class="mybtn red" onclick="minus()">minus</button>
                 </td>
             </tr>
-            <tr>
+            <tr class="notInput">
                 <td class="td-right td-padding">
                     Markdown
                 </td>
@@ -46,7 +46,6 @@
                     <button class="mybtn green" onclick="mdtableCopy()">table</button>
                     <button class="mybtn green" onclick="mdU2T()">u2t</button>
                     <button class="mybtn green" onclick="frontMatter()">FM</button>
-
                     <button class="mybtn green" onclick="mdCb('java')">cb&nbsp;java</button>
                     <button class="mybtn green" onclick="mdCb('javascript')">cb&nbsp;js</button>
                     <button class="mybtn green" onclick="mdCb('html')">cb&nbsp;html</button>
@@ -54,7 +53,7 @@
                     <button class="mybtn green" onclick="mdCb('sql')">cb&nbsp;sql</button>
                 </td>
             </tr>
-            <tr>
+            <tr class="notInput">
                 <td class="td-right td-padding">
                     格式化
                 </td>
@@ -65,7 +64,7 @@
                     <button class="mybtn blueviolet" onclick="cHeader()">cHeader</button>
                 </td>
             </tr>
-            <tr>
+            <tr class="notInput">
                 <td class="td-right td-padding">
                     字符串转换
                 </td>
@@ -124,6 +123,7 @@
         .pink {
             background-color: #FF00FF;
         }
+
         .HotPink {
             background-color: HotPink;
         }
@@ -158,7 +158,7 @@
 
         textarea {
             width: 100%;
-            height: 100%;
+            height: auto;
         }
 
         table {
@@ -187,6 +187,35 @@
             background-color: blue;
         }
     </style>
+    <script>
+        (function () {
+            if (navigator.platform.search('arm') == -1) {
+                var notInput = document.getElementsByClassName("notInput");
+                console.log(notInput.length);
+                var count = 0;
+                for (var i = 0; i < notInput.length; i++) {
+                    console.log("not input tr:" + notInput[i].offsetHeight);
+                    // count += notInput[i].offsetHeight;
+                    // count += notInput[i].clientHeight;
+                    count += notInput[i].offsetHeight;
+                }
+                var title = document.getElementsByClassName("post-title");
+                for (var i = 0; i < title.length; i++) {
+                    console.log("title:" + title[i].offsetHeight);
+                    count += title[i].offsetHeight;
+                }
+                count += 45;
+                console.log("屏幕可视区域高度:" + window.innerHeight + "px")
+                // console.log("屏幕可视区域高度:" + document.documentElement.clientHeight + "px")
+                console.log("其他元素高度:" + count + "px")
+                // var inputHight = (Number)(window.innerHeight - count);
+                var inputHight = (Number)(window.innerHeight - count);
+                console.log("输入框高度:" + inputHight + "px")
+                document.getElementById("input").style.height = inputHight + "px";
+            }
+        })();
+
+    </script>
     <script>
         var input = document.getElementById("input");
         var inputBackup;
