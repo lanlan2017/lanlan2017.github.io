@@ -3,8 +3,78 @@ title: 在线工具
 date: 2019-10-17 12:08:16
 comments: false
 ---
-<div id="panel"><table><tr style="width: 100%;"><td colspan="2" style="width: 100%;"><textarea rows="14" id="input" placeholder="请输入" contenteditable="true" class="block"></textarea></td></tr><tr><td class="td-right">工具</td><td><button class="mybtn" onclick="clearInput()">clear</button><button class="mybtn" onclick="copy()">copy</button><button class="mybtn" onclick="undo()">undo</button><button class="mybtn" onclick="unNiuke()">unNiuke</button><button class="mybtn" onclick="linksTOC()">linksTOC</button><button class="mybtn" onclick="tags()">tags</button></td></tr><tr><td class="td-right">计数器:</td><td><input type="text" name="counter" id="counter" value="1" size="3" /><button class="mybtn red" onclick="document.getElementById('counter').value='1'">reset</button><button class="mybtn red" onclick="plus()">plus</button><button class="mybtn red" onclick="minus()">minus</button></td></tr><tr><td class="td-right">toMarkdown:</td><td><button class="mybtn green" onclick="mdU()">u</button><button class="mybtn green" onclick="mdO()">o</button><button class="mybtn green" onclick="mdQ()">q</button><button class="mybtn green" onclick="mdK()">k</button><button class="mybtn green" onclick="mdKs()">ks</button><button class="mybtn green" onclick="mdB()">b</button><button class="mybtn green" onclick="mdtableCopy()">table</button><button class="mybtn green" onclick="mdU2T()">u2t</button><button class="mybtn green" onclick="frontMatter()">FM</button><br><button class="mybtn green" onclick="mdCb('java')">cb&nbsp;java</button><button class="mybtn green" onclick="mdCb('javascript')">cb&nbsp;js</button><button class="mybtn green" onclick="mdCb('html')">cb&nbsp;html</button><button class="mybtn green" onclick="mdCb('css')">cb&nbsp;css</button><button class="mybtn green" onclick="mdCb('sql')">cb&nbsp;sql</button></td></tr><tr><td class="td-right">格式化</td><td><button class="mybtn blueviolet" onclick="niuke()">niuke</button><button class="mybtn blueviolet" onclick="formatJava()">formatJava</button><button class="mybtn blueviolet" onclick="toggleFold()">details</button><button class="mybtn blueviolet" onclick="cHeader()">cHeader</button></td></tr><tr><td class="td-right">字符串转换</td><td><button class="mybtn brown" onclick="upperCase()">大写</button><button class="mybtn brown" onclick="lowerCase()">小写</button><button class="mybtn brown" onclick="tab()">tab</button><button class="mybtn brown" onclick="unTab()">unTab</button><button class="mybtn brown" onclick="tabTo4Spaces()">tabTo4Spaces</button><button class="mybtn brown" onclick="swap()">交换</button><br><button class="mybtn brown" onclick="deleteSingleLineComment()">删除单行注释</button><button class="mybtn brown" onclick="deleteMultilineComments()">删除多行注释</button><button class="mybtn brown" onclick="deleteBlankLine()">删除空行</button><button class="mybtn brown" onclick="deleteSpaceStart()">删除行头空白</button><button class="mybtn brown" onclick="toOneLine()">toOneLine</button><button class="mybtn brown" onclick="toEnPunctuation()">使用英文标点符号</button><button class="mybtn brown" onclick="miniJava()">miniJava</button><button class="mybtn brown" onclick="toTools()">toTools</button><button class="mybtn brown" onclick="switchHttpsSsh()">切换HTTPS/SSH</button></td></tr></table></div>
-<link type="text/css" rel="styleSheet" href="css/Tools.css" />
+<div id="panel"><table><tr style="width: 100%;"><td colspan="2" style="width: 100%;"><textarea rows="14" id="input" placeholder="请输入" contenteditable="true" class="block"></textarea></td></tr><tr><td class="td-right">工具</td><td class="td-padding"><button class="mybtn" onclick="clearInput()">clear</button><button class="mybtn" onclick="copy()">copy</button><button class="mybtn" onclick="undo()">undo</button><button class="mybtn" onclick="unNiuke()">unNiuke</button><button class="mybtn" onclick="linksTOC()">linksTOC</button><button class="mybtn" onclick="tags()">tags</button></td></tr><tr><td class="td-right">计数器</td><td class="td-padding"><input type="text" name="counter" id="counter" value="1" size="3" /><button class="mybtn red" onclick="document.getElementById('counter').value='1'">reset</button><button class="mybtn red" onclick="plus()">plus</button><button class="mybtn red" onclick="minus()">minus</button></td></tr><tr><td class="td-right">Markdown</td><td class="td-padding"><button class="mybtn green" onclick="mdU()">u</button><button class="mybtn green" onclick="mdO()">o</button><button class="mybtn green" onclick="mdQ()">q</button><button class="mybtn green" onclick="mdK()">k</button><button class="mybtn green" onclick="mdKs()">ks</button><button class="mybtn green" onclick="mdB()">b</button><button class="mybtn green" onclick="mdtableCopy()">table</button><button class="mybtn green" onclick="mdU2T()">u2t</button><button class="mybtn green" onclick="frontMatter()">FM</button><button class="mybtn green" onclick="mdCb('java')">cb&nbsp;java</button><button class="mybtn green" onclick="mdCb('javascript')">cb&nbsp;js</button><button class="mybtn green" onclick="mdCb('html')">cb&nbsp;html</button><button class="mybtn green" onclick="mdCb('css')">cb&nbsp;css</button><button class="mybtn green" onclick="mdCb('sql')">cb&nbsp;sql</button></td></tr><tr><td class="td-right">格式化</td><td class="td-padding"><button class="mybtn blueviolet" onclick="niuke()">niuke</button><button class="mybtn blueviolet" onclick="formatJava()">formatJava</button><button class="mybtn blueviolet" onclick="toggleFold()">details</button><button class="mybtn blueviolet" onclick="cHeader()">cHeader</button></td></tr><tr><td class="td-right">字符串转换</td><td class="td-padding"><button class="mybtn brown" onclick="upperCase()">大写</button><button class="mybtn brown" onclick="lowerCase()">小写</button><button class="mybtn brown" onclick="tab()">tab</button><button class="mybtn brown" onclick="unTab()">unTab</button><button class="mybtn brown" onclick="tabTo4Spaces()">tabTo4Spaces</button><button class="mybtn brown" onclick="swap()">交换</button><button class="mybtn brown" onclick="deleteSingleLineComment()">删除单行注释</button><button class="mybtn brown" onclick="deleteMultilineComments()">删除多行注释</button><button class="mybtn brown" onclick="deleteBlankLine()">删除空行</button><button class="mybtn brown" onclick="deleteSpaceStart()">删除行头空白</button><button class="mybtn brown" onclick="toOneLine()">toOneLine</button><button class="mybtn brown" onclick="toEnPunctuation()">使用英文标点符号</button><button class="mybtn brown" onclick="miniJava()">miniJava</button><button class="mybtn brown" onclick="toTools()">toTools</button><button class="mybtn brown" onclick="switchHttpsSsh()">切换HTTPS/SSH</button></td></tr></table></div>
+<style>
+    .mybtn {
+        background-color: #008CBA;
+        border: none;
+        padding: 0.2em 0.2em 0.2em 0.2em;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0.2em 0.2em 0.2em 0.2em;
+        cursor: pointer;
+        min-width: 2em;
+        border-radius: 0.2em;
+    }
+    .tools {
+        display: block;
+        margin: 0.5em;
+    }
+    .block {
+        display: block;
+    }
+    .red {
+        background-color: #f44336;
+    }
+    .green {
+        background-color: #4CAF50;
+    }
+    .pink {
+        background-color: #FF00FF;
+    }
+    .blue {
+        background-color: #008CBA;
+    }
+    .blueviolet {
+        background-color: BlueViolet;
+    }
+    .brown {
+        background-color: brown;
+    }
+    .crimson {
+        background-color: crimson;
+    }
+    .black {
+        background-color: black;
+    }
+    .gray {
+        background-color: #555555;
+    }
+    textarea {
+        width: 100%;
+        height: 100%;
+    }
+    table {
+        width: 100%;
+    }
+    .td-right {
+        text-align: right;
+    }
+    .td-padding {
+        padding: 0em;
+    }
+    /* 覆盖样式 */
+    header.post-header div.post-meta {
+        margin-bottom: 0.875em;
+    }
+    div.posts-expand div.post-block {
+        padding-top: 0em;
+    }
+    input[type="checkbox"] {
+        background-color: blue;
+    }
+</style>
 <script>
     var input = document.getElementById("input");
     var inputBackup;
