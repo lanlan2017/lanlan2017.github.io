@@ -91,11 +91,14 @@ comments: false
                 console.log("not input tr:" + notInput[i].offsetHeight);
                 count += notInput[i].offsetHeight;
             }
-            var title = document.getElementsByClassName("post-title");
+            var title = document.getElementsByClassName(".post-header");
             for (var i = 0; i < title.length; i++) {
                 console.log("title:" + title[i].offsetHeight);
                 count += title[i].offsetHeight;
             }
+            var header = document.getElementById("header");
+            console.log("header:" + header.offsetHeight);
+            count += header.offsetHeight;
             count += 45;
             console.log("屏幕可视区域高度:" + window.innerHeight + "px")
             console.log("其他元素高度:" + count + "px")

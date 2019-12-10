@@ -201,11 +201,14 @@
                     count += notInput[i].offsetHeight;
                 }
                 // 文章标题的高度
-                var title = document.getElementsByClassName("post-title");
+                var title = document.getElementsByClassName(".post-header");
                 for (var i = 0; i < title.length; i++) {
                     console.log("title:" + title[i].offsetHeight);
                     count += title[i].offsetHeight;
                 }
+                var header = document.getElementById("header");
+                console.log("header:" + header.offsetHeight);
+                count += header.offsetHeight;
                 // 文章的内边距
                 count += 45;
                 console.log("屏幕可视区域高度:" + window.innerHeight + "px")
