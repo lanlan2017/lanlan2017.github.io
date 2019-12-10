@@ -1,14 +1,15 @@
-.btn {
+.mybtn {
     background-color: #008CBA;
     border: none;
-    color: white;
-    padding: 0em 0.2em 0em 0.2em;
+    /* color: white; */
+    padding: 0.2em 0.2em 0.2em 0.2em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin: 0.1em 0.1em 0.1em 0.1em;
+    margin: 0.2em 0.2em 0.2em 0.2em;
     cursor: pointer;
     min-width: 2em;
+    border-radius: 0.2em;
 }
 
 .tools {
@@ -20,47 +21,56 @@
     display: block;
 }
 
-.btn-color-red {
+.red {
     background-color: #f44336;
 }
 
-.btn-color-green {
+.green {
     background-color: #4CAF50;
 }
 
-.btn-color-pink {
+.pink {
     background-color: #FF00FF;
 }
 
-.btn-color-blue {
+.blue {
     background-color: #008CBA;
 }
 
-.btn-color-blueviolet {
+.blueviolet {
     background-color: BlueViolet;
 }
 
-.btn-color-brown {
+.brown {
     background-color: brown;
 }
 
-.btn-color-crimson {
+.crimson {
     background-color: crimson;
 }
 
-.btn-color-black {
+.black {
     background-color: black;
 }
 
-.btn-color-gray {
+.gray {
     background-color: #555555;
 }
 
 /* 文本框样式 */
 
 textarea {
-    width: 98%;
-    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    /* width: auto; */
+}
+
+table {
+    width: 100%;
+}
+
+.td-right {
+    text-align: right;
 }
 
 /* 覆盖样式 */
