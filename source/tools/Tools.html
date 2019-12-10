@@ -14,7 +14,7 @@
             </tr>
             <tr>
                 <td class="td-right">工具</td>
-                <td>
+                <td class="td-padding">
                     <button class="mybtn" onclick="clearInput()">clear</button>
                     <button class="mybtn" onclick="copy()">copy</button>
                     <button class="mybtn" onclick="undo()">undo</button>
@@ -24,8 +24,8 @@
                 </td>
             </tr>
             <tr>
-                <td class="td-right">计数器:</td>
-                <td>
+                <td class="td-right">计数器</td>
+                <td class="td-padding">
                     <input type="text" name="counter" id="counter" value="1" size="3" />
                     <button class="mybtn red" onclick="document.getElementById('counter').value='1'">reset</button>
                     <button class="mybtn red" onclick="plus()">plus</button>
@@ -34,9 +34,9 @@
             </tr>
             <tr>
                 <td class="td-right">
-                    toMarkdown:
+                    Markdown
                 </td>
-                <td>
+                <td class="td-padding">
                     <button class="mybtn green" onclick="mdU()">u</button>
                     <button class="mybtn green" onclick="mdO()">o</button>
                     <button class="mybtn green" onclick="mdQ()">q</button>
@@ -46,7 +46,7 @@
                     <button class="mybtn green" onclick="mdtableCopy()">table</button>
                     <button class="mybtn green" onclick="mdU2T()">u2t</button>
                     <button class="mybtn green" onclick="frontMatter()">FM</button>
-                    <br>
+                    
                     <button class="mybtn green" onclick="mdCb('java')">cb&nbsp;java</button>
                     <button class="mybtn green" onclick="mdCb('javascript')">cb&nbsp;js</button>
                     <button class="mybtn green" onclick="mdCb('html')">cb&nbsp;html</button>
@@ -58,7 +58,7 @@
                 <td class="td-right">
                     格式化
                 </td>
-                <td>
+                <td class="td-padding">
                     <button class="mybtn blueviolet" onclick="niuke()">niuke</button>
                     <button class="mybtn blueviolet" onclick="formatJava()">formatJava</button>
                     <button class="mybtn blueviolet" onclick="toggleFold()">details</button>
@@ -69,14 +69,14 @@
                 <td class="td-right">
                     字符串转换
                 </td>
-                <td>
+                <td class="td-padding">
                     <button class="mybtn brown" onclick="upperCase()">大写</button>
                     <button class="mybtn brown" onclick="lowerCase()">小写</button>
                     <button class="mybtn brown" onclick="tab()">tab</button>
                     <button class="mybtn brown" onclick="unTab()">unTab</button>
                     <button class="mybtn brown" onclick="tabTo4Spaces()">tabTo4Spaces</button>
                     <button class="mybtn brown" onclick="swap()">交换</button>
-                    <br>
+                    
                     <button class="mybtn brown" onclick="deleteSingleLineComment()">删除单行注释</button>
                     <button class="mybtn brown" onclick="deleteMultilineComments()">删除多行注释</button>
                     <button class="mybtn brown" onclick="deleteBlankLine()">删除空行</button>
@@ -90,7 +90,96 @@
             </tr>
         </table>
     </div>
-    <link type="text/css" rel="styleSheet" href="css/Tools.css" />
+    <style>
+        .mybtn {
+            background-color: #008CBA;
+            border: none;
+            padding: 0.2em 0.2em 0.2em 0.2em;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.2em 0.2em 0.2em 0.2em;
+            cursor: pointer;
+            min-width: 2em;
+            border-radius: 0.2em;
+        }
+
+        .tools {
+            display: block;
+            margin: 0.5em;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .red {
+            background-color: #f44336;
+        }
+
+        .green {
+            background-color: #4CAF50;
+        }
+
+        .pink {
+            background-color: #FF00FF;
+        }
+
+        .blue {
+            background-color: #008CBA;
+        }
+
+        .blueviolet {
+            background-color: BlueViolet;
+        }
+
+        .brown {
+            background-color: brown;
+        }
+
+        .crimson {
+            background-color: crimson;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .gray {
+            background-color: #555555;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100%;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .td-right {
+            text-align: right;
+        }
+
+        .td-padding {
+            padding: 0em;
+        }
+
+        /* 覆盖样式 */
+
+        header.post-header div.post-meta {
+            margin-bottom: 0.875em;
+        }
+
+        div.posts-expand div.post-block {
+            padding-top: 0em;
+        }
+
+        input[type="checkbox"] {
+            background-color: blue;
+        }
+    </style>
     <script>
         var input = document.getElementById("input");
         var inputBackup;

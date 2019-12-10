@@ -1,7 +1,6 @@
 .mybtn {
     background-color: #008CBA;
     border: none;
-    /* color: white; */
     padding: 0.2em 0.2em 0.2em 0.2em;
     text-align: center;
     text-decoration: none;
@@ -57,12 +56,9 @@
     background-color: #555555;
 }
 
-/* 文本框样式 */
-
 textarea {
     width: 100%;
     height: 100%;
-    /* width: auto; */
 }
 
 table {
@@ -71,6 +67,10 @@ table {
 
 .td-right {
     text-align: right;
+}
+
+.td-padding0 {
+    padding: 0.2em;
 }
 
 /* 覆盖样式 */
