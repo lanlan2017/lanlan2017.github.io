@@ -3,7 +3,7 @@ title: 在线工具
 date: 2019-10-17 12:08:16
 comments: false
 ---
-<div id="panel"><table><tr id="yesInput" style="width: 100%;"><td colspan="2" style="width: 100%;"><textarea rows="14" id="input" placeholder="请输入" contenteditable="true" class="block"></textarea></td></tr><tr class="notInput"><td class="td-right td-padding">工具</td><td class="td-padding"><button class="mybtn" onclick="clearInput()">clear</button><button class="mybtn" onclick="copy()">copy</button><button class="mybtn" onclick="undo()">undo</button><button class="mybtn" onclick="unNiuke()">unNiuke</button><button class="mybtn" onclick="linksTOC()">linksTOC</button><button class="mybtn" onclick="tags()">tags</button></td></tr><tr class="notInput"><td class="td-right td-padding">计数器</td><td class="td-padding"><input type="text" name="counter" id="counter" value="1" size="3" /><button class="mybtn red" onclick="document.getElementById('counter').value='1'">reset</button><button class="mybtn red" onclick="plus()">plus</button><button class="mybtn red" onclick="minus()">minus</button></td></tr><tr class="notInput"><td class="td-right td-padding">Markdown</td><td class="td-padding"><button class="mybtn green" onclick="mdU()">u</button><button class="mybtn green" onclick="mdO()">o</button><button class="mybtn green" onclick="mdQ()">q</button><button class="mybtn green" onclick="mdK()">k</button><button class="mybtn green" onclick="mdKs()">ks</button><button class="mybtn green" onclick="mdB()">b</button><button class="mybtn green" onclick="mdtableCopy()">table</button><button class="mybtn green" onclick="mdU2T()">u2t</button><button class="mybtn green" onclick="frontMatter()">FM</button><button class="mybtn green" onclick="mdCb('java')">cb&nbsp;java</button><button class="mybtn green" onclick="mdCb('javascript')">cb&nbsp;js</button><button class="mybtn green" onclick="mdCb('html')">cb&nbsp;html</button><button class="mybtn green" onclick="mdCb('css')">cb&nbsp;css</button><button class="mybtn green" onclick="mdCb('sql')">cb&nbsp;sql</button></td></tr><tr class="notInput"><td class="td-right td-padding">格式化</td><td class="td-padding"><button class="mybtn blueviolet" onclick="niuke()">niuke</button><button class="mybtn blueviolet" onclick="formatJava()">formatJava</button><button class="mybtn blueviolet" onclick="toggleFold()">details</button><button class="mybtn blueviolet" onclick="cHeader()">cHeader</button></td></tr><tr class="notInput"><td class="td-right td-padding">字符串转换</td><td class="td-padding"><button class="mybtn HotPink" onclick="upperCase()">大写</button><button class="mybtn HotPink" onclick="lowerCase()">小写</button><button class="mybtn HotPink" onclick="tab()">tab</button><button class="mybtn HotPink" onclick="unTab()">unTab</button><button class="mybtn HotPink" onclick="tabTo4Spaces()">tabTo4Spaces</button><button class="mybtn HotPink" onclick="swap()">交换</button><button class="mybtn HotPink" onclick="deleteSingleLineComment()">删除单行注释</button><button class="mybtn HotPink" onclick="deleteMultilineComments()">删除多行注释</button><button class="mybtn HotPink" onclick="deleteBlankLine()">删除空行</button><button class="mybtn HotPink" onclick="deleteSpaceStart()">删除行头空白</button><button class="mybtn HotPink" onclick="toOneLine()">toOneLine</button><button class="mybtn HotPink" onclick="toEnPunctuation()">使用英文标点符号</button><button class="mybtn HotPink" onclick="miniJava()">miniJava</button><button class="mybtn HotPink" onclick="toTools()">toTools</button><button class="mybtn HotPink" onclick="switchHttpsSsh()">切换HTTPS/SSH</button></td></tr></table></div>
+<div id="panel"><table><tr id="yesInput" style="width: 100%;"><td colspan="2" style="width: 100%;"><textarea rows="10" id="input" placeholder="请输入" contenteditable="true" class="block"></textarea></td></tr><tr class="notInput"><td class="td-right td-padding">工具</td><td class="td-padding"><button class="mybtn" onclick="clearInput()">clear</button><button class="mybtn" onclick="copy()">copy</button><button class="mybtn" onclick="undo()">undo</button><button class="mybtn" onclick="unNiuke()">unNiuke</button><button class="mybtn" onclick="linksTOC()">linksTOC</button><button class="mybtn" onclick="tags()">tags</button></td></tr><tr class="notInput"><td class="td-right td-padding">计数器</td><td class="td-padding"><input type="text" name="counter" id="counter" value="1" size="3" /><button class="mybtn red" onclick="document.getElementById('counter').value='1'">reset</button><button class="mybtn red" onclick="plus()">plus</button><button class="mybtn red" onclick="minus()">minus</button></td></tr><tr class="notInput"><td class="td-right td-padding">Markdown</td><td class="td-padding"><button class="mybtn green" onclick="mdU()">u</button><button class="mybtn green" onclick="mdO()">o</button><button class="mybtn green" onclick="mdQ()">q</button><button class="mybtn green" onclick="mdK()">k</button><button class="mybtn green" onclick="mdKs()">ks</button><button class="mybtn green" onclick="mdB()">b</button><button class="mybtn green" onclick="mdtableCopy()">table</button><button class="mybtn green" onclick="mdU2T()">u2t</button><button class="mybtn green" onclick="frontMatter()">FM</button><button class="mybtn green" onclick="mdCb('java')">cb&nbsp;java</button><button class="mybtn green" onclick="mdCb('javascript')">cb&nbsp;js</button><button class="mybtn green" onclick="mdCb('html')">cb&nbsp;html</button><button class="mybtn green" onclick="mdCb('css')">cb&nbsp;css</button><button class="mybtn green" onclick="mdCb('sql')">cb&nbsp;sql</button></td></tr><tr class="notInput"><td class="td-right td-padding">格式化</td><td class="td-padding"><button class="mybtn blueviolet" onclick="niuke()">niuke</button><button class="mybtn blueviolet" onclick="formatJava()">formatJava</button><button class="mybtn blueviolet" onclick="toggleFold()">details</button><button class="mybtn blueviolet" onclick="cHeader()">cHeader</button></td></tr><tr class="notInput"><td class="td-right td-padding">字符串转换</td><td class="td-padding"><button class="mybtn HotPink" onclick="upperCase()">大写</button><button class="mybtn HotPink" onclick="lowerCase()">小写</button><button class="mybtn HotPink" onclick="tab()">tab</button><button class="mybtn HotPink" onclick="unTab()">unTab</button><button class="mybtn HotPink" onclick="tabTo4Spaces()">tabTo4Spaces</button><button class="mybtn HotPink" onclick="swap()">交换</button><button class="mybtn HotPink" onclick="deleteSingleLineComment()">删除单行注释</button><button class="mybtn HotPink" onclick="deleteMultilineComments()">删除多行注释</button><button class="mybtn HotPink" onclick="deleteBlankLine()">删除空行</button><button class="mybtn HotPink" onclick="deleteSpaceStart()">删除行头空白</button><button class="mybtn HotPink" onclick="toOneLine()">toOneLine</button><button class="mybtn HotPink" onclick="toEnPunctuation()">使用英文标点符号</button><button class="mybtn HotPink" onclick="miniJava()">miniJava</button><button class="mybtn HotPink" onclick="toTools()">toTools</button><button class="mybtn HotPink" onclick="switchHttpsSsh()">切换HTTPS/SSH</button></td></tr></table></div>
 <style>
     .mybtn {
         background-color: #008CBA;
@@ -63,6 +63,7 @@ comments: false
     }
     table {
         width: 100%;
+        margin: 0em;
     }
     .td-right {
         text-align: right;
@@ -77,33 +78,34 @@ comments: false
     div.posts-expand div.post-block {
         padding-top: 0em;
     }
-    input[type="checkbox"] {
-        background-color: blue;
-    }
 </style>
 <script>
     (function () {
-        if (navigator.platform.search('arm') == -1) {
-            var notInput = document.getElementsByClassName("notInput");
-            console.log(notInput.length);
-            var count = 0;
-            for (var i = 0; i < notInput.length; i++) {
-                console.log("not input tr:" + notInput[i].offsetHeight);
-                count += notInput[i].offsetHeight;
-            }
-            var title = document.getElementsByClassName(".post-header");
-            for (var i = 0; i < title.length; i++) {
-                console.log("title:" + title[i].offsetHeight);
-                count += title[i].offsetHeight;
-            }
-            var header = document.getElementById("header");
-            console.log("header:" + header.offsetHeight);
-            count += header.offsetHeight;
-            count += 45;
-            console.log("屏幕可视区域高度:" + window.innerHeight + "px")
-            console.log("其他元素高度:" + count + "px")
-            var inputHight = (Number)(window.innerHeight - count);
-            console.log("输入框高度:" + inputHight + "px")
+        var notInput = document.getElementsByClassName("notInput");
+        var count = 0;
+        for (var i = 0; i < notInput.length; i++) {
+            console.log("not input tr " + i + ":" + notInput[i].offsetHeight);
+            count += notInput[i].offsetHeight;
+        }
+        var title = document.getElementsByClassName("post-header");
+        for (var i = 0; i < title.length; i++) {
+            console.log("title " + i + ":" + title[i].offsetHeight);
+            count += title[i].offsetHeight;
+        }
+        var header = document.getElementById("header");
+        console.log("header :" + header.offsetHeight);
+        if (header.offsetHeight == 0) {
+            count += 40;
+        } else {
+            count += 20;
+        }
+        count += header.offsetHeight;
+        count += 8 + 8 + 22;
+        console.log("屏幕可视区域高度:" + window.innerHeight + "px")
+        console.log("其他元素高度:" + count + "px")
+        var inputHight = (Number)(window.innerHeight - count);
+        console.log("输入框高度:" + inputHight + "px")
+        if (inputHight > 0) {
             document.getElementById("input").style.height = inputHight + "px";
         }
     })();

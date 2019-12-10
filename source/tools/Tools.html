@@ -9,7 +9,7 @@
         <table>
             <tr id="yesInput" style="width: 100%;">
                 <td colspan="2" style="width: 100%;">
-                    <textarea rows="14" id="input" placeholder="请输入" contenteditable="true" class="block"></textarea>
+                    <textarea rows="10" id="input" placeholder="请输入" contenteditable="true" class="block"></textarea>
                 </td>
             </tr>
             <tr class="notInput">
@@ -163,7 +163,9 @@
 
         table {
             width: 100%;
+            margin: 0em;
         }
+
 
         .td-right {
             text-align: right;
@@ -182,43 +184,46 @@
         div.posts-expand div.post-block {
             padding-top: 0em;
         }
-
-        input[type="checkbox"] {
-            background-color: blue;
-        }
     </style>
     <script>
         (function () {
-            if (navigator.platform.search('arm') == -1) {
-                var notInput = document.getElementsByClassName("notInput");
-                console.log(notInput.length);
-                var count = 0;
-                // 其他表格的高度
-                for (var i = 0; i < notInput.length; i++) {
-                    console.log("not input tr:" + notInput[i].offsetHeight);
-                    // count += notInput[i].offsetHeight;
-                    // count += notInput[i].clientHeight;
-                    count += notInput[i].offsetHeight;
-                }
-                // 文章标题的高度
-                var title = document.getElementsByClassName(".post-header");
-                for (var i = 0; i < title.length; i++) {
-                    console.log("title:" + title[i].offsetHeight);
-                    count += title[i].offsetHeight;
-                }
-                var header = document.getElementById("header");
-                console.log("header:" + header.offsetHeight);
-                count += header.offsetHeight;
-                // 文章的内边距
-                count += 45;
-                console.log("屏幕可视区域高度:" + window.innerHeight + "px")
-                // console.log("屏幕可视区域高度:" + document.documentElement.clientHeight + "px")
-                console.log("其他元素高度:" + count + "px")
-                // var inputHight = (Number)(window.innerHeight - count);
-                var inputHight = (Number)(window.innerHeight - count);
-                console.log("输入框高度:" + inputHight + "px")
+
+            var notInput = document.getElementsByClassName("notInput");
+            var count = 0;
+            // 其他表格的高度
+            for (var i = 0; i < notInput.length; i++) {
+                console.log("not input tr " + i + ":" + notInput[i].offsetHeight);
+                count += notInput[i].offsetHeight;
+            }
+            // 文章标题的高度
+            // var title = document.getElementsByClassName("post-title");
+            var title = document.getElementsByClassName("post-header");
+            // console.log(title.length);
+            for (var i = 0; i < title.length; i++) {
+                console.log("title " + i + ":" + title[i].offsetHeight);
+                count += title[i].offsetHeight;
+            }
+            var header = document.getElementById("header");
+            console.log("header :" + header.offsetHeight);
+            if (header.offsetHeight == 0) {
+                count += 40;
+            } else {
+                count += 20;
+            }
+            count += header.offsetHeight;
+            // 文章的内边距
+            count += 8 + 8 + 22;
+            // count += 8 + 8 + 22;
+            console.log("屏幕可视区域高度:" + window.innerHeight + "px")
+            // console.log("屏幕可视区域高度:" + document.documentElement.clientHeight + "px")
+            console.log("其他元素高度:" + count + "px")
+            // var inputHight = (Number)(window.innerHeight - count);
+            var inputHight = (Number)(window.innerHeight - count);
+            console.log("输入框高度:" + inputHight + "px")
+            if (inputHight > 0) {
                 document.getElementById("input").style.height = inputHight + "px";
             }
+
         })();
 
     </script>
