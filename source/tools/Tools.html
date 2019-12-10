@@ -193,17 +193,20 @@
                 var notInput = document.getElementsByClassName("notInput");
                 console.log(notInput.length);
                 var count = 0;
+                // 其他表格的高度
                 for (var i = 0; i < notInput.length; i++) {
                     console.log("not input tr:" + notInput[i].offsetHeight);
                     // count += notInput[i].offsetHeight;
                     // count += notInput[i].clientHeight;
                     count += notInput[i].offsetHeight;
                 }
+                // 文章标题的高度
                 var title = document.getElementsByClassName("post-title");
                 for (var i = 0; i < title.length; i++) {
                     console.log("title:" + title[i].offsetHeight);
                     count += title[i].offsetHeight;
                 }
+                // 文章的内边距
                 count += 45;
                 console.log("屏幕可视区域高度:" + window.innerHeight + "px")
                 // console.log("屏幕可视区域高度:" + document.documentElement.clientHeight + "px")
