@@ -40,6 +40,10 @@ comments: false
 # 已完成
 <details><summary>展开/折叠</summary>
 
+## 2019年12月10日
+- [x] 早起，醒了就起
+
+
 ## 2019年12月09日
 - [x] 早起,醒了就起
 - [x] 牛客网刷题,做笔记
@@ -49,6 +53,7 @@ comments: false
   - [x] git rebase 命令尝试,还有些问题.需要合并的冲突有点多,先算了.
 - [x] 更新tools页面
   - [x] 移动展开折叠按钮位置
+  - [x] 交换功能,交换逗号,空格,的顺序.
 - [x] 解决MathJax中`\\`无法换行的问题.[https://lanlan2017.github.io/blog/eb86e892/](https://lanlan2017.github.io/blog/eb86e892/)
   - [x] 解决因为引入新的数学插件,而引起自定义目录无法使用的问题.
   - [x] 总结:今天最大的收获就是学会了如何压缩commit
@@ -104,7 +109,6 @@ comments: false
     - [ ] 打包，linux下运行
 - [ ] [了解开源协议](https://blog.51cto.com/holison/1930805)
 - [ ] [菜鸟翻译插件](https://www.oschina.net/news/111842/probie-released)
-- [ ] 交换功能,交换逗号,空格,的顺序.
 - [ ] [咖啡种类](https://m.weibo.cn/detail/4446965351461264)
 - [ ] [tar命令](https://jingyan.baidu.com/article/5553fa8292599665a23934bd.html)
 - [ ] [955公司](https://mp.weixin.qq.com/s/TQb2ZmW9lQzxd6YyksNagg)
@@ -112,6 +116,7 @@ comments: false
 - [ ] 收集算法到搜狗输入法中以应对在线笔试题.
 - [ ] 你没有什么想对我说的吗
 - [ ] 使用Js生成目录,而不是使用java写死在文章中.
+- [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
 
 </details>
 
