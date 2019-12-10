@@ -123,6 +123,7 @@ comments: false
 ## CSS
 - [buttons](https://www.bootcss.com/p/buttons/)
 - [CSS3 按钮|菜鸟教程](https://www.runoob.com/css3/css3-buttons.html)
+- [CSS颜色名称](https://www.w3cschool.cn/cssref/css-colornames.html)
 
 ## 教程集合
 - [菜鸟教程](https://www.runoob.com/)

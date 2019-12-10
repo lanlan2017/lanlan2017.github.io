@@ -19,7 +19,7 @@
                     <button class="mybtn" onclick="copy()">copy</button>
                     <button class="mybtn" onclick="undo()">undo</button>
                     <button class="mybtn" onclick="unNiuke()">unNiuke</button>
-                    <button class="mybtn" onclick="linksTOC()">linksTOC</button>
+                    <button class="mybtn" onclick="unMdKs()">unMdKs</button>
                     <button class="mybtn" onclick="tags()">tags</button>
                 </td>
             </tr>
@@ -51,6 +51,7 @@
                     <button class="mybtn green" onclick="mdCb('html')">cb&nbsp;html</button>
                     <button class="mybtn green" onclick="mdCb('css')">cb&nbsp;css</button>
                     <button class="mybtn green" onclick="mdCb('sql')">cb&nbsp;sql</button>
+                    <button class="mybtn green" onclick="linksTOC()">linksTOC</button>
                 </td>
             </tr>
             <tr class="notInput">
@@ -58,10 +59,10 @@
                     格式化
                 </td>
                 <td class="td-padding">
-                    <button class="mybtn blueviolet" onclick="niuke()">niuke</button>
-                    <button class="mybtn blueviolet" onclick="formatJava()">formatJava</button>
-                    <button class="mybtn blueviolet" onclick="toggleFold()">details</button>
-                    <button class="mybtn blueviolet" onclick="cHeader()">cHeader</button>
+                    <button class="mybtn LightSeaGreen" onclick="niuke()">niuke</button>
+                    <button class="mybtn LightSeaGreen" onclick="formatJava()">formatJava</button>
+                    <button class="mybtn LightSeaGreen" onclick="toggleFold()">details</button>
+                    <button class="mybtn LightSeaGreen" onclick="cHeader()">cHeader</button>
                 </td>
             </tr>
             <tr class="notInput">
@@ -80,6 +81,7 @@
                     <button class="mybtn HotPink" onclick="deleteMultilineComments()">删除多行注释</button>
                     <button class="mybtn HotPink" onclick="deleteBlankLine()">删除空行</button>
                     <button class="mybtn HotPink" onclick="deleteSpaceStart()">删除行头空白</button>
+                    <button class="mybtn HotPink" onclick="deleteSpaces()">删除多余空格</button>
                     <button class="mybtn HotPink" onclick="toOneLine()">toOneLine</button>
                     <button class="mybtn HotPink" onclick="toEnPunctuation()">使用英文标点符号</button>
                     <button class="mybtn HotPink" onclick="miniJava()">miniJava</button>
@@ -134,6 +136,10 @@
 
         .blueviolet {
             background-color: BlueViolet;
+        }
+
+        .LightSeaGreen {
+            background-color: LightSeaGreen;
         }
 
         .brown {
@@ -359,7 +365,7 @@
         }
         function deleteSingleLineComment(text) {
             // 没有参数的情况
-            if (typeof (text) == "undefined") {
+            if (text == null) {
                 // 递归调用,输出结果
                 result(deleteSingleLineComment(input.value));
             }
@@ -375,7 +381,7 @@
         // 删除空行
         function deleteBlankLine(text) {
             //没有参数的情况
-            if (typeof (text) == "undefined") {
+            if (text == null) {
                 text = input.value;
                 result(text.replace(/^[ ]*\n/mg, ""));
             }
@@ -392,7 +398,7 @@
         // 删除开头的四个空格
         function unTab(text) {
             // 没有参数的情况
-            if (typeof (text) == "undefined") {
+            if (text == null) {
                 result(unTab(input.value));
             }
             // 传入参数的情况
@@ -403,14 +409,14 @@
         }
         // \t变成4个空格
         function tabTo4Spaces(text) {
-            if (typeof (text) == "undefined") {
+            if (text == null) {
                 result(tabTo4Spaces(input.value));
             } else {
                 return text.replace(/\t/mg, "    ");
             }
         }
         function deleteMultilineComments(text) {
-            if (typeof (text) == "undefined") {
+            if (text == null) {
                 result(deleteMultilineComments(input.value));
             } else {
                 return text.replace(/\/\*{1,2}\n(?:[ ]*\*.*?\n)+/mg, "");
@@ -418,16 +424,23 @@
         }
         // 删除每行开头的空白符.
         function deleteSpaceStart(text) {
-            if (typeof (text) == "undefined") {
+            if (text == null) {
                 result(deleteBlankLine(input.value));
             } else {
                 return text.replace(/^[ ]+/mg, "");
             }
         }
+        function deleteSpaces(text) {
+            if (text == null) {
+                result(deleteSpaces(input.value));
+            } else {
+                return text.replace(/[ ]{2,}/mg," ");
+            }
+        }
         // 变成一行
         function toOneLine(text) {
             // 没有传入参数的情况
-            if (typeof (text) == "undefined") {
+            if (text == null) {
                 // 使用输入框中的文本作为函数的参数递归调用
                 result(toOneLine(input.value));
             }
@@ -441,7 +454,7 @@
         // 转成英文表单符号
         function toEnPunctuation(text) {
             // 没有传入参数的情况
-            if (typeof (text) == "undefined") {
+            if (text == null) {
                 // 使用输入框中的内容作为输入,递归调用
                 result(toEnPunctuation(input.value));
             }
@@ -567,7 +580,7 @@
         // 标出所有的代码.
         function mdKs(text) {
             // 如果没有参数
-            if (typeof (text) == "undefined") {
+            if (text == null) {
                 // console.log("text=" + text)
                 // var text = input.value;
                 result(mdKs(input.value));
@@ -576,6 +589,13 @@
                     "`$1`");
                 text = text.replace(/\(`(.+?)\)`/mg, "(`$1`)");
                 return text;
+            }
+        }
+        function unMdKs(text) {
+            if (text == null) {
+                result(unMdKs(input.value));
+            } else {
+                return text.replace(/`(.+?)`/mg, "$1");
             }
         }
         // 实现markdown加粗.
@@ -756,7 +776,7 @@
         }
         // 设置java代码的缩进和换行符.
         function formatJavaCode(text) {
-            if (typeof (text) == "undefined") {
+            if (text == null) {
                 console.log("请输入参数");
             } else {
                 var lineTemp = '';
@@ -787,7 +807,7 @@
         // 格式化java代码.
         function formatJava(text) {
             // 不带参数的情况
-            if (typeof (text) == "undefined") {
+            if (text == null) {
                 result(formatJava(input.value));
             }
             // 带参数的情况
