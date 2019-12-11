@@ -91,6 +91,8 @@ comments: false
 - [ ] 你没有什么想对我说的吗
 - [ ] 使用Js生成目录,而不是使用java写死在文章中.
 - [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
+- [ ] [面试准备](https://m.weibo.cn/detail/4448389053509435)
+- [ ] [面试常用50题](https://m.weibo.cn/detail/4448391272434927)
 - [ ] 比价页面工具页面:
   - [ ] 两两比价,求单价,单价最小的价格最好.
   - [ ] 多组比价,
