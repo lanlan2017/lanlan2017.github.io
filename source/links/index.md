@@ -37,6 +37,7 @@ comments: false
 # 我的站点 #
 - [主站](https://lanlan2017.github.io/)
     - [在线工具](https://lanlan2017.github.io/tools/)
+    - [计算器|在线工具](http://127.0.0.1:4000/tools/calculator/)
     - [博客](https://lanlan2017.github.io/blog/)
     - [读书笔记](https://lanlan2017.github.io/ReadingNotes/)
     - [读书笔记Java](https://lanlan2017.github.io/JavaReadingNotes/)
