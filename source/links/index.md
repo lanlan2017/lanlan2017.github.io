@@ -45,7 +45,7 @@ comments: false
 # 本地站点 #
 - [主站本地](http://localhost:4000/)
   - [工具|主站本地](http://127.0.0.1:4000/tools/)
-  - [计算器|主站本地](http://127.0.0.1:4000/tools/)
+  - [计算器|主站本地](http://127.0.0.1:4000/tools/calculator/)
 - [博客本地](http://127.0.0.1:4007/)
 - [读书笔记本地](http://localhost:4009/)
 - [Java读书笔记本地](http://localhost:4010/JavaReadingNotes/)
