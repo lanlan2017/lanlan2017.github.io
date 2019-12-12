@@ -72,8 +72,12 @@ gcmmlk,1=更新links页面
 gcmmtl,1=更新tools页面
 gpom,1=git push origin master
 gpos,1=git push origin src
+gpfom,1=git push -f origin master
+gpfos,1=git push -f origin src
 gplom,1=git pull origin master
 gplos,1=git pull origin src
+gplfos,1=git pull -f origin src
+gplfom,1=git pull -f origin master
 glpo,1=git log -10 --pretty=oneline
 glgo,1=git log --graph --oneline 
 gd,1=git diff
