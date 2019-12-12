@@ -21,7 +21,7 @@ comments: false
         var priceInput = document.createElement('input');
         priceInput.type = 'text';
         priceInput.title = "价钱:输入整数或小数";
-        priceInput.pattern = "\d+(?:\.\d+)?";
+        priceInput.pattern = "\\d+(?:\\.\\d+)?";
         priceInput.className = "price";
         priceInput.id = "price_" + newIndex;
         priceTd.appendChild(priceInput);
@@ -30,7 +30,7 @@ comments: false
         var capacityInput = document.createElement('input');
         capacityInput.type = 'text';
         capacityInput.title = "容量:输入整数或小数";
-        capacityInput.pattern = "\d+(?:\.\d+)?";
+        capacityInput.pattern = "\\d+(?:\\.\\d+)?";
         capacityInput.className = "capacity";
         capacityInput.id = "capacity_" + newIndex;
         capacityTd.appendChild(capacityInput);
