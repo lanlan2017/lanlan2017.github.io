@@ -27,6 +27,8 @@ comments: false
 - [ ] 看数据库设计
     - [ ] 中国大学mooc
       - [ ] 看视频,做笔记,应用.
+- [ ] 延期申请.
+- [ ] 见辅导员
 
 # flag
 - [ ] 早睡
@@ -41,6 +43,10 @@ comments: false
 # 已完成
 <details><summary>展开/折叠</summary>
 
+## 2019年12月13日
+- [x] 早起,醒了就起
+- [x] 牛客网刷题,做笔记.
+
 ## 2019年12月12日
 - [x] 早起,醒了就起
 - [x] 炎无心
@@ -50,6 +56,8 @@ comments: false
     - [x] 创建计算器页面,支持商品比价,选出单价最便宜的商品:[计算器|在线工具](https://lanlan2017.github.io/tools/calculator/)
     - [x] 两两比价,求单价,单价最小的价格最好.
     - [x] 多组比价,
+- [x] 看了非学习相关的视频,我真是个贱人.
+- [x] 早睡
 
 </details>
 
@@ -91,6 +99,7 @@ comments: false
 - [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
 - [ ] [面试准备](https://m.weibo.cn/detail/4448389053509435)
 - [ ] [面试常用50题](https://m.weibo.cn/detail/4448391272434927)
+- [ ] 链接：https://pan.baidu.com/s/1tdgbQd5DQaWIZ8YROR9TyA  提取码：q2va
 
 
 </details>
