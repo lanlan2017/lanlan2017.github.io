@@ -39,7 +39,7 @@ comments: false
 - [ ] 牛客网刷题,做笔记
 - [ ] 中国大学MOOC
 - [ ] 不看非学习视频
-- [ ] 写东西要精简,有图的话,可以不要文字描述。
+- [ ] 写东西要精简,能贴图片,不要写文字.
 
 # 已完成
 <details><summary>展开/折叠</summary>
@@ -47,7 +47,10 @@ comments: false
 ## 2019年12月13日
 - [x] 早起,醒了就起
 - [x] 牛客网刷题,做笔记.
-- [x] 辅导员评议，提交链接
+- [x] 看媳妇的视频:链接：https://pan.baidu.com/s/1tdgbQd5DQaWIZ8YROR9TyA  提取码：q2va
+- [x] 中国大学MOOC
+  - [x] 看数据库系统**中**
+- [x] 见辅导员,辅导员评议，提交链接
 
 ## 2019年12月12日
 - [x] 早起,醒了就起
@@ -101,7 +104,6 @@ comments: false
 - [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
 - [ ] [面试准备](https://m.weibo.cn/detail/4448389053509435)
 - [ ] [面试常用50题](https://m.weibo.cn/detail/4448391272434927)
-- [ ] 链接：https://pan.baidu.com/s/1tdgbQd5DQaWIZ8YROR9TyA  提取码：q2va
 
 
 </details>
