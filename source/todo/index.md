@@ -51,6 +51,7 @@ comments: false
 - [x] 看媳妇的视频:链接：https://pan.baidu.com/s/1tdgbQd5DQaWIZ8YROR9TyA  提取码：q2va
 - [x] 中国大学MOOC
   - [x] 看数据库系统**中**
+    - [x] 还是记太多东西了.
 - [x] 见辅导员,辅导员评议，提交链接
 - [x] 午睡
 - [x] 炎无心
@@ -107,7 +108,6 @@ comments: false
 - [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
 - [ ] [面试准备](https://m.weibo.cn/detail/4448389053509435)
 - [ ] [面试常用50题](https://m.weibo.cn/detail/4448391272434927)
-
 
 </details>
 
