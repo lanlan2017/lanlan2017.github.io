@@ -40,6 +40,7 @@ comments: false
 - [ ] 中国大学MOOC
 - [ ] 不看非学习视频
 - [ ] 写东西要精简,能贴图片,不要写文字.
+    - [ ] 先看完视频,再记笔记.
 
 # 已完成
 <details><summary>展开/折叠</summary>
