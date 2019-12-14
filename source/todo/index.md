@@ -45,6 +45,10 @@ comments: false
 # 已完成
 <details><summary>展开/折叠</summary>
 
+## 2019年12月14日
+- [x] 早起
+- [x] 
+
 ## 2019年12月13日
 - [x] 早起,醒了就起
 - [x] 牛客网刷题,做笔记.
@@ -98,7 +102,6 @@ comments: false
     - [ ] 打包，linux下运行
 - [ ] [了解开源协议](https://blog.51cto.com/holison/1930805)
 - [ ] [菜鸟翻译插件](https://www.oschina.net/news/111842/probie-released)
-- [ ] [咖啡种类](https://m.weibo.cn/detail/4446965351461264)
 - [ ] [tar命令](https://jingyan.baidu.com/article/5553fa8292599665a23934bd.html)
 - [ ] [955公司](https://mp.weixin.qq.com/s/TQb2ZmW9lQzxd6YyksNagg)
 - [ ] 996ICU
@@ -108,6 +111,10 @@ comments: false
 - [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
 - [ ] [面试准备](https://m.weibo.cn/detail/4448389053509435)
 - [ ] [面试常用50题](https://m.weibo.cn/detail/4448391272434927)
+- [ ] vue
+- [ ] SpringBoot
+- [ ] redis
+- [ ] queryselectorAll
 
 </details>
 
