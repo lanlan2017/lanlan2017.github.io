@@ -29,6 +29,7 @@ comments: false
       - [ ] 看视频,做笔记,应用.
 - [ ] 延期申请.
 
+
 # flag
 - [ ] 早睡
 - [ ] 早起,醒了就起
@@ -46,8 +47,30 @@ comments: false
 
 ## 2019年12月14日
 - [x] 早起
-- [x] [面试常用50题](https://m.weibo.cn/detail/4448391272434927)
 - [x] 
+
+## 2019年12月13日
+- [x] 早起,醒了就起
+- [x] 牛客网刷题,做笔记.
+- [x] 看媳妇的视频:链接：https://pan.baidu.com/s/1tdgbQd5DQaWIZ8YROR9TyA  提取码：q2va
+- [x] 中国大学MOOC
+  - [x] 看数据库系统**中**
+    - [x] 还是记太多东西了.
+- [x] 见辅导员,辅导员评议，提交链接
+- [x] 午睡
+- [x] 炎无心
+
+## 2019年12月12日
+- [x] 早起,醒了就起
+- [x] 炎无心
+- [x] 牛客网刷题,做笔记
+- [x] 写代码:
+  - [x] 比价页面工具页面:
+    - [x] 创建计算器页面,支持商品比价,选出单价最便宜的商品:[计算器|在线工具](https://lanlan2017.github.io/tools/calculator/)
+    - [x] 两两比价,求单价,单价最小的价格最好.
+    - [x] 多组比价,
+- [x] 看了非学习相关的视频,我真是个贱人.
+- [x] 早睡
 
 </details>
 
@@ -87,8 +110,6 @@ comments: false
 - [ ] 使用Js生成目录,而不是使用java写死在文章中.
 - [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
 - [ ] [面试准备](https://m.weibo.cn/detail/4448389053509435)
-- [ ] [媳妇假期](http://www.njust.edu.cn/3719/list.htm):2020年1月18日~2020年2月23日
-- [ ] [我的假期](http://jwc.njupt.edu.cn/2015/1229/c1528a46789/page.htm):2020年1月11日~2020年2月16日.
 - [ ] [面试常用50题](https://m.weibo.cn/detail/4448391272434927)
 - [ ] vue
 - [ ] SpringBoot
