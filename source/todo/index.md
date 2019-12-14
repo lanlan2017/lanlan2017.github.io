@@ -29,7 +29,6 @@ comments: false
       - [ ] 看视频,做笔记,应用.
 - [ ] 延期申请.
 
-
 # flag
 - [ ] 早睡
 - [ ] 早起,醒了就起
@@ -44,6 +43,9 @@ comments: false
 
 # 已完成
 <details><summary>展开/折叠</summary>
+
+## 2019年12月14日
+- [ ] [面试常用50题](https://m.weibo.cn/detail/4448391272434927)
 
 ## 2019年12月13日
 - [x] 早起,醒了就起
@@ -107,7 +109,9 @@ comments: false
 - [ ] 使用Js生成目录,而不是使用java写死在文章中.
 - [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
 - [ ] [面试准备](https://m.weibo.cn/detail/4448389053509435)
-- [ ] [面试常用50题](https://m.weibo.cn/detail/4448391272434927)
+- [ ] [媳妇假期](http://www.njust.edu.cn/3719/list.htm):2020年1月18日~2020年2月23日
+- [ ] [我的假期](http://jwc.njupt.edu.cn/2015/1229/c1528a46789/page.htm):2020年1月11日~2020年2月16日.
+
 
 </details>
 
