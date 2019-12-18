@@ -5,6 +5,8 @@ comments: false
 ---
 
 # 未完成
+- [ ] [我的寒假](http://jwc.njupt.edu.cn/2015/1229/c1528a46789/page.htm):2020年1月11日至2020年2月16日
+- [ ] [媳妇寒假](http://www.njust.edu.cn/3719/list.htm):2020年1月18日-2020年2月23日
 - [ ] 读完疯狂java
     - [ ] 集合
         - [ ] 之前读完了,还没有第二次读和使用.
@@ -46,16 +48,20 @@ comments: false
 # 已完成
 <details><summary>展开/折叠</summary>
 
-## 2019年12月17日
+## 2019年12月18日
 - [x] 早起
-- [x] 牛客网刷题,做笔记
-- [x] 将FM程序添加到MyJavaTool中,作为一个子模块.
-  - [x] 生成文章目录
-  - [x] 生成网站目录
-  - [x] 删除无用的远程仓库MyHexoFrontMatterTools
-- [x] 更新blog,exam,读书笔记,Java读书笔记各个子站点的文章目录.
-- [x] 还是看了一点无用视屏,幸好及时止住.
-- [ ] 
+- [x] 问老师注册的事情.
+- [x] 订票回家
+- [x] 安装邮箱程序
+  - [x] 找回两个邮箱的密码
+  - [x] 登录邮箱
+- [x] 设置谷歌浏览器主题
+- [x] 完成[面试常用50题](https://m.weibo.cn/detail/4448391272434927)
+- [x] 在鼠标右键上打开Windows Terminal,
+  - [x] 解决cmd中git log中文乱码
+- [x] 问毕设老师,明天去交表.
+- [x] 交学费
+- [x] 找辅导员注册
 
 </details>
 
@@ -92,10 +98,8 @@ comments: false
 - [ ] 996ICU
 - [ ] 收集算法到搜狗输入法中以应对在线笔试题.
 - [ ] 你没有什么想对我说的吗
-- [ ] 使用Js生成目录,而不是使用java写死在文章中.
 - [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
 - [ ] [面试准备](https://m.weibo.cn/detail/4448389053509435)
-- [ ] [面试常用50题](https://m.weibo.cn/detail/4448391272434927)
 - [ ] vue
 - [ ] SpringBoot
 - [ ] redis
