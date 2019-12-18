@@ -60,8 +60,10 @@ comments: false
 - [x] 在鼠标右键上打开Windows Terminal,
   - [x] 解决cmd中git log中文乱码
 - [x] 问毕设老师,明天去交表.
+- [x] [面试准备](https://m.weibo.cn/detail/4448389053509435)
 - [x] 交学费
 - [x] 找辅导员注册
+- [x] 吃完午饭后又看剧了,看了三个小时,千不该万不该
 
 </details>
 
@@ -99,12 +101,12 @@ comments: false
 - [ ] 收集算法到搜狗输入法中以应对在线笔试题.
 - [ ] 你没有什么想对我说的吗
 - [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
-- [ ] [面试准备](https://m.weibo.cn/detail/4448389053509435)
 - [ ] vue
 - [ ] SpringBoot
 - [ ] redis
 - [ ] queryselectorAll
 - [ ] 添加增强:m img支持:支持给markdown图片添加alt
+- [ ] Junit
 
 </details>
 

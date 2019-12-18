@@ -84,6 +84,7 @@ comments: false
 
 # 博客 #
 - [廖雪峰的官网网站](https://www.liaoxuefeng.com/)
+- [阮一峰](https://www.ruanyifeng.com/blog/2016/07/yaml.html)
 - [博客园](https://www.cnblogs.com/)
 - [CSDN](https://www.csdn.net/)
 - [简书](https://www.jianshu.com/)
