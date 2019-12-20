@@ -113,6 +113,12 @@ comments: false
 - [ ] queryselectorAll
 - [ ] 添加增强:m img支持:支持给markdown图片添加alt
 - [ ] Junit
+- [ ] 设计模式
+- [ ] [生活常识](https://mp.weixin.qq.com/s/APx0nIkIwf9tXGc9FTM9VA)
+- [ ] [程序员小灰选择排序](https://mp.weixin.qq.com/s/gDR9QFtl5unJZFcOiX4NNg)
+- [ ] 漫画算法——小灰的算法之旅
+- [ ] 排序算法总结
+- [ ] 微信订阅号开发
 
 </details>
 
