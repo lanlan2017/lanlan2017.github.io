@@ -89,6 +89,7 @@ gba,1=git branch -a
 gbd,1=git branch -d
 gu,1=lanlan2017
 gr,1=git restore 
+gra,1=git restore . 
 grs,1=git restore --staged 
 grv,1=git remote -v
 gra,1=git remote add 
