@@ -5,21 +5,15 @@ comments: false
 ---
 
 # 未完成
-- [ ] [我的寒假](http://jwc.njupt.edu.cn/2015/1229/c1528a46789/page.htm):2020年1月11日至2020年2月16日
-- [ ] [媳妇寒假](http://www.njust.edu.cn/3719/list.htm):2020年1月18日-2020年2月23日
 - [ ] 读完疯狂java
     - [ ] 集合
-        - [ ] 之前读完了,还没有第二次读和使用.
-    - [ ] 泛型
-        - [ ] 读了一小半,明天接着读。
+        - [ ] 之前读完了,还没有第二次读.
     - [ ] 反射
         - [ ] 之前读了一些,到动态代理哪里不理解。
     - [ ] 多线程
         - [ ] 还没有读,
 - [ ] 注意毕设进度，要求12月中旬答辩
     - [ ] 看开题报告，
-    - [ ] 登网站,回学校再登陆吧
-        - [ ] 内容消失了,问问怎么回事
     - [ ] 理解需求
     - [ ] 设计ER
     - [ ] 设计数据库
@@ -29,6 +23,7 @@ comments: false
 - [ ] 看数据库设计
     - [ ] 中国大学mooc
       - [ ] 看视频,做笔记,应用.
+- [ ] 找辅导员,问电动车贴牌,问正方系统.
 
 # flag
 - [ ] 早睡
@@ -47,43 +42,26 @@ comments: false
 # 已完成
 <details><summary>展开/折叠</summary>
 
-## 2019年12月21日
-- [x] 昨晚熬夜,没能早起.
-- [x] 为了排遣,看了些剧,以后就专门睡觉,不要搞这些浪费精力.
-- [x] 今天就多休息吧,养好身体,养好精神.
-- [x] 更新`MyJavaTools`,拆分子参数为单独的命令:
-  - [x] m:专门生成`markdown`程序.
-  - [x] s:专门用来处理字符串
-    - [x] 删除空行
-    - [x] 编程一行
-  - [x] html:专门生成html程序.
-  - [x] suanfa:保存一下常用的算法.
-- [x] 规律饮食
+## 2019年12月26日
+- [x] 昨晚不舒服,熬夜了,没早睡
+- [x] 没早起
+- [x] 先将本地仓库全部推送到远程仓库,然后在压缩,然后再强制推送到远程仓库.
 
-## 2019年12月20日
-- [x] 早起
-  - [x] 今天七点多就醒了,很好.
-- [x] 继续修改`MarkdownTools.`
-- [x] 午睡
-- [x] 更新`Idea`到2019.3版本,下载`Idea2017`
-  - [x] 但是我还是不知道为什么闪退
-- [x] 修改`JVM`内存,看网上的文章乱配的,看来得看`JVM`相关的书籍了.
-- [x] 炎无心
-- [x] 修改`MarkdownTools`,修复参数错误问题.
-  - [x] 合并命令,创建第一个命令参数的快捷命令.
-  - [x] 添加地址转换命令`s cvpath`
-- [x] 身体不舒服,熬夜了,下不为例.
+## 2019年12月25日
+- [x] 看了正方系统还是显示没有注册.
+- [x] 看书:疯狂java
+  - [x] 看完泛型这章了,没有理解透彻,需要反复再看.
+  - [x] 重新看异常处理这一章,更新文章,添加Java9相关文章
+- [x] 
+  - [x] 看完**第9章泛型**这章了,没有理解透彻,需要反复再看.
+  - [x] 重新看**第10章异常处理**这一章,更新文章,添加`Java9`相关文章
+- [x] 找辅导员,问电动车,说下学期再注册.
+- [x] 给**疯狂java讲义4**写书签
 
-## 2019年12月19日
-- [x] 找辅导员注册
-  - [x] 信息办下午一点半后处理
-- [x] 延期申请.
-  - [x] 表格不对,重新填表.
-  - [x] 已经交给贾华老师
-- [x] 约会
-- [x] 保修热水器:18951691953
-- [x] 修改m程序
-- [x] 早睡
+## 2019年12月24日
+- [x] 约会,陪媳妇乱逛新街口.
+- [x] 查看还贷款,还在审批中.
+- [x] 查看正方系统,还是显示没有注册,好奇怪,明天再问问.
 
 </details>
 
@@ -118,26 +96,41 @@ comments: false
 - [ ] [tar命令](https://jingyan.baidu.com/article/5553fa8292599665a23934bd.html)
 - [ ] [955公司](https://mp.weixin.qq.com/s/TQb2ZmW9lQzxd6YyksNagg)
 - [ ] 996ICU
-- [ ] 收集算法到搜狗输入法中以应对在线笔试题.
 - [ ] 你没有什么想对我说的吗
 - [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
 - [ ] vue
 - [ ] SpringBoot
 - [ ] redis
 - [ ] queryselectorAll
-- [ ] 添加增强:m img支持:支持给markdown图片添加alt
 - [ ] Junit
 - [ ] 设计模式
 - [ ] [生活常识](https://mp.weixin.qq.com/s/APx0nIkIwf9tXGc9FTM9VA)
-- [ ] [程序员小灰选择排序](https://mp.weixin.qq.com/s/gDR9QFtl5unJZFcOiX4NNg)
 - [ ] 漫画算法——小灰的算法之旅
-- [ ] 排序算法总结
+- [ ] [排序算法总结](https://mp.weixin.qq.com/s/teOGQlslb6aP4AQrx7TTzA)
 - [ ] 微信订阅号开发
 - [ ] https://mp.weixin.qq.com/s/-RtuGb33X5IvZLD2ufwb_Q
+- [ ] https://mp.weixin.qq.com/s/y_ozO8BnH6YkoFh_Oq8M1w
+- [ ] git checkout 和 git reset 的区别 https://blog.csdn.net/longintchar/article/details/82314102
+- [ ] https://mp.weixin.qq.com/s/npUt5rEoAiCHXqA11RVx-A
+- [ ] https://mp.weixin.qq.com/s/D5oeGq_cbsH4I5tC5jbkhA
+- [ ] https://mp.weixin.qq.com/s/u7DKOlnSPgivPW6hnOj85A
 
 </details>
 
 ## 更早之前
 参见:[日记](/categories/日记/)
+
+</details>
+
+# 备忘录
+<details><summary>展开/折叠</summary>
+
+## 2020年寒假的宿舍安排
+- 本科生宿舍从2020年1月17日—2月9日封闭，学生必须在2020年1月16日12:00以前离校。2020年2月9日9:00起各宿舍楼开始正常运行。
+- 今年寒假无特殊情况（除参加竞赛外的同学尽量不予留校，如果留校统一安排三牌楼住宿）。需要留校的同学要填写汇总表，学生处主页可以下载，于1月1日前发给我。
+- 离校前关好门窗、水、电，勿在宿舍存放现金及贵重物品
+- [我的寒假](http://jwc.njupt.edu.cn/2015/1229/c1528a46789/page.htm):2020年1月11日至2020年2月16日
+- [媳妇寒假](http://www.njust.edu.cn/3719/list.htm):2020年1月18日-2020年2月23日
+- 你买了一张10好的一等座，D953 南京to恩施10:18to16:30
 
 </details>

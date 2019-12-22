@@ -139,6 +139,7 @@ comments: false
 - [易百教程](https://www.yiibai.com/index.html)
 - [微学苑](http://www.weixueyuan.net/)
 - [FastJson 教程](https://www.w3cschool.cn/fastjson/)
+- [批处理教程](https://www.yiibai.com/batch_script)
 
 ## 在线书籍 ##
 - [鸟哥的Linux私房菜 基础版](http://linux.vbird.org/linux_basic/)
@@ -166,7 +167,10 @@ comments: false
 
 # 需要翻墙
 - [p站](https://www.pornhub.com/)
+- [x站](https://www.xvideos.com/)
 - [明星](https://www.modelhub.com/)
+    - [mini-diva](https://www.pornhub.com/model/mini-diva)
+    - [littlereislin](https://www.pornhub.com/model/littlereislin)
 
 # 学校
 - [校园网登陆](http://p.njupt.edu.cn/)
