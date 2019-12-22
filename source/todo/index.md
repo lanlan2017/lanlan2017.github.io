@@ -47,18 +47,15 @@ comments: false
 # 已完成
 <details><summary>展开/折叠</summary>
 
-## 2019年12月21日
-- [x] 昨晚熬夜,没能早起.
-- [x] 为了排遣,看了些剧,以后就专门睡觉,不要搞这些浪费精力.
-- [x] 今天就多休息吧,养好身体,养好精神.
-- [x] 更新`MyJavaTools`,拆分子参数为单独的命令:
-  - [x] m:专门生成`markdown`程序.
-  - [x] s:专门用来处理字符串
-    - [x] 删除空行
-    - [x] 编程一行
-  - [x] `html`:专门生成`html`程序.
-  - [x] `suanfa`:保存一下常用的算法.
-- [x] 规律饮食
+## 2019年12月22日
+- [x] 昨晚没有早睡
+- [x] 早上没有早起
+- [x] 规律吃饭
+- [x] 排序算法:
+  - [x] [鸡尾酒排序](https://mp.weixin.qq.com/s/CoVZrvis6BnxBQgQrdc5kA)
+  - [x] [插入排序](https://mp.weixin.qq.com/s/Iuk8_KFxm-017vbTgFXTVA)
+  - [x] [希尔排序](https://mp.weixin.qq.com/s/b9-dkpAhWJYshuSs5cwnOw)
+- [x] 更新MyJavaTools,配置文件中写上注释,修改一些命令的名称.
 
 </details>
 
@@ -100,13 +97,12 @@ comments: false
 - [ ] SpringBoot
 - [ ] redis
 - [ ] queryselectorAll
-- [ ] 添加增强:m img支持:支持给markdown图片添加alt
 - [ ] Junit
 - [ ] 设计模式
 - [ ] [生活常识](https://mp.weixin.qq.com/s/APx0nIkIwf9tXGc9FTM9VA)
 - [ ] [程序员小灰选择排序](https://mp.weixin.qq.com/s/gDR9QFtl5unJZFcOiX4NNg)
 - [ ] 漫画算法——小灰的算法之旅
-- [ ] 排序算法总结
+- [ ] [排序算法总结](https://mp.weixin.qq.com/s/teOGQlslb6aP4AQrx7TTzA)
 - [ ] 微信订阅号开发
 - [ ] https://mp.weixin.qq.com/s/-RtuGb33X5IvZLD2ufwb_Q
 - [ ] https://mp.weixin.qq.com/s/y_ozO8BnH6YkoFh_Oq8M1w
