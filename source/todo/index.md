@@ -5,8 +5,6 @@ comments: false
 ---
 
 # 未完成
-- [ ] [我的寒假](http://jwc.njupt.edu.cn/2015/1229/c1528a46789/page.htm):2020年1月11日至2020年2月16日
-- [ ] [媳妇寒假](http://www.njust.edu.cn/3719/list.htm):2020年1月18日-2020年2月23日
 - [ ] 读完疯狂java
     - [ ] 集合
         - [ ] 之前读完了,还没有第二次读和使用.
@@ -62,6 +60,8 @@ comments: false
 # 搁置
 <details><summary>展开/折叠</summary>
 
+- [ ] [我的寒假](http://jwc.njupt.edu.cn/2015/1229/c1528a46789/page.htm):2020年1月11日至2020年2月16日
+- [ ] [媳妇寒假](http://www.njust.edu.cn/3719/list.htm):2020年1月18日-2020年2月23日
 - [ ] 了解java新的日期时间API的使用  https://m.jb51.net/article/110245.htm
 - [ ] 下个月关闭,移动网盘,6个月视频会员自动取消
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
@@ -90,7 +90,6 @@ comments: false
 - [ ] [tar命令](https://jingyan.baidu.com/article/5553fa8292599665a23934bd.html)
 - [ ] [955公司](https://mp.weixin.qq.com/s/TQb2ZmW9lQzxd6YyksNagg)
 - [ ] 996ICU
-- [ ] 收集算法到搜狗输入法中以应对在线笔试题.
 - [ ] 你没有什么想对我说的吗
 - [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
 - [ ] vue
@@ -100,7 +99,6 @@ comments: false
 - [ ] Junit
 - [ ] 设计模式
 - [ ] [生活常识](https://mp.weixin.qq.com/s/APx0nIkIwf9tXGc9FTM9VA)
-- [ ] [程序员小灰选择排序](https://mp.weixin.qq.com/s/gDR9QFtl5unJZFcOiX4NNg)
 - [ ] 漫画算法——小灰的算法之旅
 - [ ] [排序算法总结](https://mp.weixin.qq.com/s/teOGQlslb6aP4AQrx7TTzA)
 - [ ] 微信订阅号开发
