@@ -139,6 +139,7 @@ comments: false
 - [易百教程](https://www.yiibai.com/index.html)
 - [微学苑](http://www.weixueyuan.net/)
 - [FastJson 教程](https://www.w3cschool.cn/fastjson/)
+- [批处理教程](https://www.yiibai.com/batch_script)
 
 ## 在线书籍 ##
 - [鸟哥的Linux私房菜 基础版](http://linux.vbird.org/linux_basic/)
