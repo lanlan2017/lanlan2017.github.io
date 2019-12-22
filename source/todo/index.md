@@ -7,17 +7,13 @@ comments: false
 # 未完成
 - [ ] 读完疯狂java
     - [ ] 集合
-        - [ ] 之前读完了,还没有第二次读和使用.
-    - [ ] 泛型
-        - [ ] 读了一小半,明天接着读。
+        - [ ] 之前读完了,还没有第二次读.
     - [ ] 反射
         - [ ] 之前读了一些,到动态代理哪里不理解。
     - [ ] 多线程
         - [ ] 还没有读,
 - [ ] 注意毕设进度，要求12月中旬答辩
     - [ ] 看开题报告，
-    - [ ] 登网站,回学校再登陆吧
-        - [ ] 内容消失了,问问怎么回事
     - [ ] 理解需求
     - [ ] 设计ER
     - [ ] 设计数据库
@@ -27,6 +23,7 @@ comments: false
 - [ ] 看数据库设计
     - [ ] 中国大学mooc
       - [ ] 看视频,做笔记,应用.
+- [ ] 找辅导员,问电动车贴牌,问正方系统.
 
 # flag
 - [ ] 早睡
@@ -45,33 +42,32 @@ comments: false
 # 已完成
 <details><summary>展开/折叠</summary>
 
-## 2019年12月23日
-- [x] 昨晚写代码没能早睡
-- [x] git恢复某个文件的修改:
-  - [x] 查看某个文件的提交记录:`git log --pretty=oneline 文件路径:`
-  - [x] 比较文件两个版本的区别:`git diff commit_id1 commit _id2 -- 文件路径`
-    - [x] 比较文件新的版本对旧的版本做了哪些修改:`git diff 旧版本commit_id 新版本commit_id -- 文件路径`
-  - [x] 取出文件的某个版本:`git checkout commitID 文件路径`
-## 2019年12月22日
-- [x] 昨晚没有早睡
-- [x] 早上没有早起
-- [x] 规律吃饭
-- [x] 排序算法:
-  - [x] [鸡尾酒排序](https://mp.weixin.qq.com/s/CoVZrvis6BnxBQgQrdc5kA)
-  - [x] [插入排序](https://mp.weixin.qq.com/s/Iuk8_KFxm-017vbTgFXTVA)
-  - [x] [希尔排序](https://mp.weixin.qq.com/s/b9-dkpAhWJYshuSs5cwnOw)
-- [x] 更新MyJavaTools,配置文件中写上注释,修改一些命令的名称.
-  - [x] 修改截图工具中的命令依赖
-- [x] 看书疯狂java
-  - [x] 写批处理,启动一下`hexo`本地服务器,生成固定链接后,就杀死本地服务器,免得和自己写的程序冲突.
+## 2019年12月26日
+- [x] 昨晚不舒服,熬夜了,没早睡
+- [x] 没早起
+- [x] 先将本地仓库全部推送到远程仓库,然后在压缩,然后再强制推送到远程仓库.
+
+## 2019年12月25日
+- [x] 看了正方系统还是显示没有注册.
+- [x] 看书:疯狂java
+  - [x] 看完泛型这章了,没有理解透彻,需要反复再看.
+  - [x] 重新看异常处理这一章,更新文章,添加Java9相关文章
+- [x] 
+  - [x] 看完**第9章泛型**这章了,没有理解透彻,需要反复再看.
+  - [x] 重新看**第10章异常处理**这一章,更新文章,添加`Java9`相关文章
+- [x] 找辅导员,问电动车,说下学期再注册.
+- [x] 给**疯狂java讲义4**写书签
+
+## 2019年12月24日
+- [x] 约会,陪媳妇乱逛新街口.
+- [x] 查看还贷款,还在审批中.
+- [x] 查看正方系统,还是显示没有注册,好奇怪,明天再问问.
 
 </details>
 
 # 搁置
 <details><summary>展开/折叠</summary>
 
-- [ ] [我的寒假](http://jwc.njupt.edu.cn/2015/1229/c1528a46789/page.htm):2020年1月11日至2020年2月16日
-- [ ] [媳妇寒假](http://www.njust.edu.cn/3719/list.htm):2020年1月18日-2020年2月23日
 - [ ] 了解java新的日期时间API的使用  https://m.jb51.net/article/110245.htm
 - [ ] 下个月关闭,移动网盘,6个月视频会员自动取消
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
@@ -114,14 +110,27 @@ comments: false
 - [ ] 微信订阅号开发
 - [ ] https://mp.weixin.qq.com/s/-RtuGb33X5IvZLD2ufwb_Q
 - [ ] https://mp.weixin.qq.com/s/y_ozO8BnH6YkoFh_Oq8M1w
-- [ ] 查看两个版本直接究竟修改了那些文件:git diff commitID1 commitID2 --stat
 - [ ] git checkout 和 git reset 的区别 https://blog.csdn.net/longintchar/article/details/82314102
 - [ ] https://mp.weixin.qq.com/s/npUt5rEoAiCHXqA11RVx-A
 - [ ] https://mp.weixin.qq.com/s/D5oeGq_cbsH4I5tC5jbkhA
+- [ ] https://mp.weixin.qq.com/s/u7DKOlnSPgivPW6hnOj85A
 
 </details>
 
 ## 更早之前
 参见:[日记](/categories/日记/)
+
+</details>
+
+# 备忘录
+<details><summary>展开/折叠</summary>
+
+## 2020年寒假的宿舍安排
+- 本科生宿舍从2020年1月17日—2月9日封闭，学生必须在2020年1月16日12:00以前离校。2020年2月9日9:00起各宿舍楼开始正常运行。
+- 今年寒假无特殊情况（除参加竞赛外的同学尽量不予留校，如果留校统一安排三牌楼住宿）。需要留校的同学要填写汇总表，学生处主页可以下载，于1月1日前发给我。
+- 离校前关好门窗、水、电，勿在宿舍存放现金及贵重物品
+- [我的寒假](http://jwc.njupt.edu.cn/2015/1229/c1528a46789/page.htm):2020年1月11日至2020年2月16日
+- [媳妇寒假](http://www.njust.edu.cn/3719/list.htm):2020年1月18日-2020年2月23日
+- 你买了一张10好的一等座，D953 南京to恩施10:18to16:30
 
 </details>

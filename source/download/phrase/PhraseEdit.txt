@@ -78,26 +78,34 @@ gplom,1=git pull origin master
 gplos,1=git pull origin src
 gplfos,1=git pull -f origin src
 gplfom,1=git pull -f origin master
-glpo,1=git log -10 --pretty=oneline
+glpo,1=git log --pretty=oneline 
+glpot,1=git log --pretty=oneline -10
 glgo,1=git log --graph --oneline 
 gd,1=git diff
+gdf,1=git diff -- filePath oldCommitId newCommitId
 gf,1=git fetch
 gfomt,1=git fetch origin master:tmp
+gfost,1=git fetch origin src:tmp
 gm,1=git merge
 gb,1=git branch
 gba,1=git branch -a
 gbd,1=git branch -d
+gbm,1=git branch -m
 gu,1=lanlan2017
-gr,1=git restore 
-gra,1=git restore . 
-grs,1=git restore --staged 
-grv,1=git remote -v
-gra,1=git remote add 
-grrm,1=git remote remove 
-grrmo,1=git remote remove origin
+grss,1=git reset --soft 
+grsh,1=git reset --hard 
+grt,1=git restore 
+grta,1=git restore . 
+grts,1=git restore --staged 
+grmv,1=git remote -v
+grma,1=git remote add 
+grmrm,1=git remote remove 
+grmrmo,1=git remote remove origin
 grb,1=git rebase 
 grbi,1=git rebase -i 
 grbih,1=git rebase -i HEAD~
+# git提交记录数
+grlac,1=git rev-list --all --count
 ; # JavaScript代码
 conl,1=console.log();
 fun,1=function  Name(){}
@@ -133,6 +141,26 @@ npmui,1=npm uninstall --save
 ; # cmd命令
 exp,1=explorer 
 ; # Termux命令
+tuall,1=
+cd ~/blog/blog/
+git pull origin master
+cd ~/my/blog/
+git pull origin master
+cd ~/blog/blogRoot/
+git pull origin src
+cd ~/my/blogRoot/
+git pull origin src
+cd ~/my/JavaReadingNotes/
+git pull origin master
+cd ~/blog/JavaReadingNotes/
+git pull origin master
+cd ~/my/ReadingNotes/
+git pull origin master
+cd ~/blog/ReadingNotes/
+git pull origin master
+cd ~/blog/exam/
+git pull origin master
+
 tub,1=
 cd ~/blog/blog/
 git pull origin master
