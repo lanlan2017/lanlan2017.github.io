@@ -45,6 +45,13 @@ comments: false
 # 已完成
 <details><summary>展开/折叠</summary>
 
+## 2019年12月23日
+- [x] 昨晚写代码没能早睡
+- [x] git恢复某个文件的修改:
+  - [x] 查看某个文件的提交记录:`git log --pretty=oneline 文件路径:`
+  - [x] 比较文件两个版本的区别:`git diff commit_id1 commit _id2 -- 文件路径`
+    - [x] 比较文件新的版本对旧的版本做了哪些修改:`git diff 旧版本commit_id 新版本commit_id -- 文件路径`
+  - [x] 取出文件的某个版本:`git checkout commitID 文件路径`
 ## 2019年12月22日
 - [x] 昨晚没有早睡
 - [x] 早上没有早起
@@ -56,7 +63,7 @@ comments: false
 - [x] 更新MyJavaTools,配置文件中写上注释,修改一些命令的名称.
   - [x] 修改截图工具中的命令依赖
 - [x] 看书疯狂java
-  - [x] 写批处理,启动一下hexo本地服务器,生成固定链接后,就杀死本地服务器,免得和自己写的程序冲突.
+  - [x] 写批处理,启动一下`hexo`本地服务器,生成固定链接后,就杀死本地服务器,免得和自己写的程序冲突.
 
 </details>
 
@@ -107,10 +114,6 @@ comments: false
 - [ ] 微信订阅号开发
 - [ ] https://mp.weixin.qq.com/s/-RtuGb33X5IvZLD2ufwb_Q
 - [ ] https://mp.weixin.qq.com/s/y_ozO8BnH6YkoFh_Oq8M1w
-- [ ] git恢复某个文件的修改:
-- [ ] git log --pretty=oneline 批处理\ for 命 令.md
-- [ ] git reset commitID MainActivity.java
-- [ ] git checkout commitID /path/to/file https://blog.csdn.net/B_H_L/article/details/17266849
 - [ ] 查看两个版本直接究竟修改了那些文件:git diff commitID1 commitID2 --stat
 - [ ] git checkout 和 git reset 的区别 https://blog.csdn.net/longintchar/article/details/82314102
 - [ ] https://mp.weixin.qq.com/s/npUt5rEoAiCHXqA11RVx-A
