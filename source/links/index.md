@@ -166,7 +166,10 @@ comments: false
 
 # 需要翻墙
 - [p站](https://www.pornhub.com/)
+- [xvideos](https://www.xvideos.com/)
 - [明星](https://www.modelhub.com/)
+    - [mini-diva](https://www.pornhub.com/model/mini-diva)
+    - [littlereislin](https://www.pornhub.com/model/littlereislin)
 
 # 学校
 - [校园网登陆](http://p.njupt.edu.cn/)
