@@ -54,6 +54,9 @@ comments: false
   - [x] [插入排序](https://mp.weixin.qq.com/s/Iuk8_KFxm-017vbTgFXTVA)
   - [x] [希尔排序](https://mp.weixin.qq.com/s/b9-dkpAhWJYshuSs5cwnOw)
 - [x] 更新MyJavaTools,配置文件中写上注释,修改一些命令的名称.
+  - [x] 修改截图工具中的命令依赖
+- [x] 看书疯狂java
+  - [x] 写批处理,启动一下hexo本地服务器,生成固定链接后,就杀死本地服务器,免得和自己写的程序冲突.
 
 </details>
 
