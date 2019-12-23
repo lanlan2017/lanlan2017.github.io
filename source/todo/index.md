@@ -107,6 +107,14 @@ comments: false
 - [ ] 微信订阅号开发
 - [ ] https://mp.weixin.qq.com/s/-RtuGb33X5IvZLD2ufwb_Q
 - [ ] https://mp.weixin.qq.com/s/y_ozO8BnH6YkoFh_Oq8M1w
+- [ ] git恢复某个文件的修改:
+- [ ] git log --pretty=oneline 批处理\ for 命 令.md
+- [ ] git reset commitID MainActivity.java
+- [ ] git checkout commitID /path/to/file https://blog.csdn.net/B_H_L/article/details/17266849
+- [ ] 查看两个版本直接究竟修改了那些文件:git diff commitID1 commitID2 --stat
+- [ ] git checkout 和 git reset 的区别 https://blog.csdn.net/longintchar/article/details/82314102
+- [ ] https://mp.weixin.qq.com/s/npUt5rEoAiCHXqA11RVx-A
+- [ ] https://mp.weixin.qq.com/s/D5oeGq_cbsH4I5tC5jbkhA
 
 </details>
 
