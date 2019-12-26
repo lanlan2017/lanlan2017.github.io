@@ -70,8 +70,10 @@ gcmms,1=增加一些搜狗输入法windows版个性短语
 gcmmto,1=更新todo页面
 gcmmlk,1=更新links页面
 gcmmtl,1=更新tools页面
+# 下载代码并合并
 gpom,1=git push origin master
 gpos,1=git push origin src
+# 强制推送到远程
 gpfom,1=git push -f origin master
 gpfos,1=git push -f origin src
 gplom,1=git pull origin master
@@ -81,28 +83,50 @@ gplfom,1=git pull -f origin master
 glpo,1=git log --pretty=oneline 
 glpot,1=git log --pretty=oneline -10
 glgo,1=git log --graph --oneline 
+# 在当前分支下比较不同,git diff 其他分支名,比较当前分支和其他分支的不同
 gd,1=git diff
 gdf,1=git diff -- filePath oldCommitId newCommitId
+# 比较一个文件在不同版本之间的不同
+gdf,1=git diff -- filePath oldCommitId newCommitId
+# 下载代码
 gf,1=git fetch
+# 下载远程的master到tmp 
 gfomt,1=git fetch origin master:tmp
 gfost,1=git fetch origin src:tmp
+# 合并分支
 gm,1=git merge
 gb,1=git branch
+# 显示所有的分支
 gba,1=git branch -a
+# 删除分支
 gbd,1=git branch -d
+# 重命名分支
+gbm,1=git branch -m
 gu,1=lanlan2017
 grss,1=git reset --soft 
 grsh,1=git reset --hard 
 grt,1=git restore 
 grta,1=git restore . 
+# 转到指定版本,不改变工作区
+grss,1=git reset --soft 
+# 回退到指定版本,改变工作区
+grsh,1=git reset --hard 
+grt,1=git restore 
+# 撤销修改
+grta,1=git restore . 
+# 撤销git add的操作
 grts,1=git restore --staged 
 grmv,1=git remote -v
 grma,1=git remote add 
 grmrm,1=git remote remove 
 grmrmo,1=git remote remove origin
 grb,1=git rebase 
-grbi,1=git rebase -i 
+# 从当前压缩到指定版本
+grbi,1=git rebase -i
+# 从当前向后压缩指定次数 
 grbih,1=git rebase -i HEAD~
+# 继续压缩
+grbc,1=git rebase --continue
 # git提交记录数
 grlac,1=git rev-list --all --count
 ; # JavaScript代码
