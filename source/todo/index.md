@@ -23,7 +23,7 @@ comments: false
 - [ ] 看数据库设计
     - [ ] 中国大学mooc
       - [ ] 看视频,做笔记,应用.
-- [ ] 找辅导员,问电动车贴牌,问正方系统.
+- [x] 找辅导员,问电动车贴牌,问正方系统.
 
 # flag
 - [ ] 早睡
@@ -46,7 +46,11 @@ comments: false
 - [x] 昨晚没有早睡
 - [x] 早上没有早起
 - [x] 更新雷电模拟器上面的翻墙软件
-
+- [x] 安装IObit Uninstaller,试用IObit Uninstaller
+- [x] 优化MyJavaTools项目.
+  - [x] 添加m cb j ngs命令
+- [x] 合并截图工具到MyJavaTools
+- [x] 写博客:Idea Swing 中文乱码
 
 </details>
 
@@ -101,16 +105,11 @@ comments: false
 - [ ] https://mp.weixin.qq.com/s/D5oeGq_cbsH4I5tC5jbkhA
 - [ ] https://mp.weixin.qq.com/s/u7DKOlnSPgivPW6hnOj85A
 - [ ] https://m.weibo.cn/detail/4454017255924927
-火绒(安全软件)
-Bandizip(压缩软件)
-Everthing(windows搜索)
-QQ影音（播放器）
-IObit Uninstaller(删除软件)
-Potplayer(播放器)
-格式工厂(转换格式软件)
-Honeyviw(看图工具)
-天若ROC
-CCleaner
+- [ ] 试用软件
+  - [ ] Bandizip(压缩软件)
+  - [ ] Potplayer(播放器)
+  - [ ] Honeyviw(看图工具)
+
 
 </details>
 
