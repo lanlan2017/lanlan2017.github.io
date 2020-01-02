@@ -100,6 +100,17 @@ comments: false
 - [ ] https://mp.weixin.qq.com/s/npUt5rEoAiCHXqA11RVx-A
 - [ ] https://mp.weixin.qq.com/s/D5oeGq_cbsH4I5tC5jbkhA
 - [ ] https://mp.weixin.qq.com/s/u7DKOlnSPgivPW6hnOj85A
+- [ ] https://m.weibo.cn/detail/4454017255924927
+火绒(安全软件)
+Bandizip(压缩软件)
+Everthing(windows搜索)
+QQ影音（播放器）
+IObit Uninstaller(删除软件)
+Potplayer(播放器)
+格式工厂(转换格式软件)
+Honeyviw(看图工具)
+天若ROC
+CCleaner
 
 </details>
 
