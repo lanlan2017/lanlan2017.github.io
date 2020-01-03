@@ -166,6 +166,7 @@ comments: false
 - [stackoverflow](https://stackoverflow.com/)
 
 # 需要翻墙
+- [youtube](https://m.youtube.com/)
 - [p站](https://www.pornhub.com/)
 - [x站](https://www.xvideos.com/)
 - [明星](https://www.modelhub.com/)
