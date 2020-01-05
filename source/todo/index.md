@@ -44,7 +44,9 @@ comments: false
 - [ ] 胯疼--左屁股--今天不疼(2020年01月04日)
 - [ ] 下牙龈溃疡
 - [ ] 姨妈第7天(2020年1月4日)
-- [ ] 买橘子，买蛋糕，买零食。9号的时候
+- [ ] 收拾东西回家:
+    - [ ] 买橘子，买蛋糕，买零食。9号的时候
+    - [ ] U型枕
 -->
 
 # 已完成
@@ -133,8 +135,9 @@ comments: false
   - [ ] Bandizip(压缩软件)
   - [ ] Potplayer(播放器)
   - [ ] Honeyviw(看图工具)
-  - [ ] https://mp.weixin.qq.com/s/92T-F53Qhq05tR_MtI0zBA
-  - [ ] https://mp.weixin.qq.com/s/d2q2kh_TYm4Zklkzebmmkg
+- [ ] https://mp.weixin.qq.com/s/92T-F53Qhq05tR_MtI0zBA
+- [ ] https://mp.weixin.qq.com/s/d2q2kh_TYm4Zklkzebmmkg
+- [ ] 车票退票价格计算
 
 
 </details>
