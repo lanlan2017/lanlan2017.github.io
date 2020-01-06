@@ -16,6 +16,9 @@ comments: false
 - 我不能把为了拿奖学金发文章
 - 我要好好写文章
 
+## 教训
+- 送人东西前要注意看是否快过期
+
 <details><summary>展开/折叠</summary>
 
 ## 计算 ##
