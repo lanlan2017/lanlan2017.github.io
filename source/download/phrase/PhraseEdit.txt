@@ -60,18 +60,12 @@ ga,1=git add .
 gc,1=git clone 
 gcb,1=git clone -b 
 gcma,1=git commit --amend
-gcm,1=git commit -m '
-gcmt,1=git commit -m '更新todo页面'
-gcmtl,1=git commit -m '更新tools页面'
-gcml,1=git commit -m '更新links页面'
-gcmbu,1=git commit -m '更新一些文章'
-gcmexu,1=git commit -m '更新一些笔试题'
-gcmms,1=增加一些搜狗输入法windows版个性短语
-gcmmto,1=更新todo页面
-gcmmlk,1=更新links页面
-gcmmtl,1=更新tools页面
+gcm,1=git commit
+gcmm,1=git commit -m '
 # 下载代码并合并
 gpom,1=git push origin master
+gpome,1=git push origin master && exit
+
 gpos,1=git push origin src
 # 强制推送到远程
 gpfom,1=git push -f origin master
