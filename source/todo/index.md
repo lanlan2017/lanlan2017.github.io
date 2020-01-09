@@ -136,6 +136,10 @@ comments: false
 - [ ] 使用Java NIO重写工具类.
   - [ ] 熟悉Files方法,Paths方法.
   - [ ] 使用Callable接口重写文字识别接口,使用线程的返回值.
+- [ ] https://mp.weixin.qq.com/s/UUhKPb4wwHZ8tqNJ14maGA
+- [ ] https://mp.weixin.qq.com/s/I3IMA8NqfXpdOO2v5jgLjg
+- [ ] 电子票坐火车，https://m.weibo.cn/detail/4458746484900760
+- [ ] 在读证明
 
 
 </details>
@@ -144,6 +148,34 @@ comments: false
 参见:[日记](/categories/日记/)
 
 </details>
+
+# 回家带什么
+## 出行用到
+- 车票
+- 车上吃
+- U型枕
+- 卫生纸
+- 公交卡，钥匙
+- 水杯
+- 雨伞
+- 充电宝
+- 插座
+
+## 回家要用
+- [ ] 耳塞
+- [ ] 牙膏药，
+- [ ] 护手霜
+- [ ] 小瓶子，
+- [ ] 按压瓶
+- [ ] 手机，手机充电器，手机支架
+- [ ] 电脑，电脑充电器，鼠标，鼠标垫
+- [ ] 衣服，家里不冷
+    - [ ] 外套穿一件，带一件
+    - [ ] 秋衣×2
+    - [ ] 普通短袖×2
+ - [ ] 鞋子，穿一个，带一个
+     - [ ] 黑鞋磨损见底穿，回去不在穿回
+ - [ ] 小背包，书包
 
 # 备忘录
 <details><summary>展开/折叠</summary>
