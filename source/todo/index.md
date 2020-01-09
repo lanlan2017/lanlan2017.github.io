@@ -129,6 +129,7 @@ comments: false
 - [ ] 项目实战[](https://mp.weixin.qq.com/s/n3buAILSMumjEoPfO1UgBA)
 - [ ] 数字图像处理
 - [ ] 收集高校新闻
+- [ ] https://mp.weixin.qq.com/s/UUhKPb4wwHZ8tqNJ14maGA
 
 
 </details>
