@@ -130,6 +130,9 @@ comments: false
 - [ ] 数字图像处理
 - [ ] 收集高校新闻
 - [ ] https://mp.weixin.qq.com/s/UUhKPb4wwHZ8tqNJ14maGA
+- [ ] https://mp.weixin.qq.com/s/I3IMA8NqfXpdOO2v5jgLjg
+- [ ] 电子票坐火车，https://m.weibo.cn/detail/4458746484900760
+- [ ] 在读证明
 
 
 </details>
