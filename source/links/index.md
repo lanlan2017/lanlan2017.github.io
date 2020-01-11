@@ -37,7 +37,8 @@ comments: false
 # 我的站点 #
 - [主站](https://lanlan2017.github.io/)
   - [在线工具](https://lanlan2017.github.io/tools/)
-  - [计算器|在线工具](https://lanlan2017.github.io/tools/calculator/)
+  - [tools/calculator/](https://lanlan2017.github.io/tools/calculator/)
+  - [tools/termux/](https://lanlan2017.github.io/tools/termux/)
 - [博客](https://lanlan2017.github.io/blog/)
 - [读书笔记](https://lanlan2017.github.io/ReadingNotes/)
 - [读书笔记Java](https://lanlan2017.github.io/JavaReadingNotes/)
@@ -45,9 +46,10 @@ comments: false
 
 # 本地站点 #
 - [主站本地](http://localhost:4000/)
-  - [工具|主站本地](http://127.0.0.1:4000/tools/)
-  - [计算器|主站本地](http://127.0.0.1:4000/tools/calculator/)
-- [博客本地](http://127.0.0.1:4007/)
+  - [工具|主站本地](http://localhost:4000/tools/)
+  - [tools/calculator/](http://localhost:4000/tools/calculator/)
+  - [tools/termux/](http://localhost:4000/tools/termux/)
+- [博客本地](http://localhost:4007/)
 - [读书笔记本地](http://localhost:4009/)
 - [Java读书笔记本地](http://localhost:4010/JavaReadingNotes/)
 - [笔试题本地](http://localhost:4008/exam/)
