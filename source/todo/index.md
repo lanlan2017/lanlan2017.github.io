@@ -70,6 +70,7 @@ comments: false
 - [x] 隔壁家串门
 - [x] 设置WiFi中继
   - [x] 更新设置WiFi中继的文档
+- [x] [阅读有用微博](https://m.weibo.cn/detail/4454017255924927)
 - [x] 看书疯狂java 第17章 网络编程
 
 </details>
@@ -85,9 +86,6 @@ comments: false
 - [ ] https://c.runoob.com/front-end/61
 - [ ] https://m.runoob.com/try/try2.php?filename=tryhtml_hr
 - [ ] 日期时间API https://www.cnblogs.com/liqiangchn/p/11974355.html
-- [ ] eclipse画er图
-    - [ ] 下载插件
-- [ ] idea画er图
 - [ ] Navicat画ER图.
     - [ ] 根据E-R图生成表
 - [ ] 还钱
@@ -121,15 +119,9 @@ comments: false
 - [ ] 微信订阅号开发
 - [ ] https://mp.weixin.qq.com/s/-RtuGb33X5IvZLD2ufwb_Q
 - [ ] https://mp.weixin.qq.com/s/y_ozO8BnH6YkoFh_Oq8M1w
-- [ ] git checkout 和 git reset 的区别 https://blog.csdn.net/longintchar/article/details/82314102
 - [ ] https://mp.weixin.qq.com/s/npUt5rEoAiCHXqA11RVx-A
 - [ ] https://mp.weixin.qq.com/s/D5oeGq_cbsH4I5tC5jbkhA
 - [ ] https://mp.weixin.qq.com/s/u7DKOlnSPgivPW6hnOj85A
-- [ ] https://m.weibo.cn/detail/4454017255924927
-- [ ] 试用软件
-  - [ ] Bandizip(压缩软件)
-  - [ ] Potplayer(播放器)
-  - [ ] Honeyviw(看图工具)
 - [ ] https://mp.weixin.qq.com/s/92T-F53Qhq05tR_MtI0zBA
 - [ ] https://mp.weixin.qq.com/s/d2q2kh_TYm4Zklkzebmmkg
 - [ ] 车票退票价格计算
