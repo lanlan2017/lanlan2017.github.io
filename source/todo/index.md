@@ -44,6 +44,9 @@ comments: false
     - [ ] 先看完视频,再记笔记.
 
 <!--
+# 2020年01月13日
+- [x] 腰疼
+- [x] 跨疼
 # 2020年01月11日
 - [ ] 腰疼
 - [ ] 腿麻木
@@ -56,6 +59,21 @@ comments: false
 
 # 已完成
 <details><summary>展开/折叠</summary>
+
+## 2020年01月14日
+- [x] 昨晚没有早睡
+- [x] 今天没有早起
+- [x] 看视频,不应该
+- [x] 看书疯狂java
+
+## 2020年01月13日
+- [x] 看书疯狂java,第17章
+- [x] 修改文字识别程序OCR_md
+  - [x] 单行Markdown模式
+  - [x] 多行Markdown模式
+  - [x] markdown无序列表
+  - [x] 使用单例模式重写工具条中的控件
+  - [x] 精简代码
 
 ## 2020年01月12日
 - [x] 没有早起
@@ -134,6 +152,7 @@ comments: false
 - [ ] https://mp.weixin.qq.com/s/UUhKPb4wwHZ8tqNJ14maGA
 - [ ] https://mp.weixin.qq.com/s/I3IMA8NqfXpdOO2v5jgLjg
 - [ ] 移动八元套餐，https://m.weibo.cn/detail/4459481892968407
+
 
 </details>
 
