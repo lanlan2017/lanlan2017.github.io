@@ -7,13 +7,7 @@ comments: false
 # 未完成
 - [ ] 读完疯狂java
     - [ ] 集合
-        - [ ] 之前读完了,还没有第二次读.
     - [ ] 反射
-        - [ ] 之前读了一些,到动态代理哪里不理解。
-    - [ ] 多线程
-        - [ ] 还没有读,
-    - [ ] IO流
-      - [ ] 快看完了,还有一点内容.
 - [ ] 注意毕设进度，要求12月中旬答辩
     - [ ] 看开题报告，
     - [ ] 理解需求
@@ -25,9 +19,6 @@ comments: false
 - [ ] 看数据库设计
     - [ ] 中国大学mooc
       - [ ] 看视频,做笔记,应用.
-      - [ ] Java网络编程精解
-链接：https://pan.baidu.com/s/1pP7b_gFnW2m0_tEi1HIT3g 
-提取码：hbpr
 
 # flag
 - [ ] 早睡
@@ -44,52 +35,37 @@ comments: false
     - [ ] 先看完视频,再记笔记.
 
 <!--
-# 2020年01月13日
-- [x] 腰疼
-- [x] 跨疼
-# 2020年01月11日
-- [ ] 腰疼
-- [ ] 腿麻木
-- [ ] 肩膀疼
-- [ ] 阿姨收灌浓
+# 2020年01月15日
 
-# 2020年01月12日
+# 2020年01月14日
+- [ ] 烤糍粑,烫到手
+- [ ] 左手手腕揉的时候疼
+- [x] 腰疼已经好了
+- [x] 跨疼已经好了
 
 -->
 
 # 已完成
 <details><summary>展开/折叠</summary>
 
-## 2020年01月14日
-- [x] 昨晚没有早睡
-- [x] 今天没有早起
-- [x] 看视频,不应该
+## 2020年01月15日
+- [x] 没有早睡
+- [x] 添加一个多选框切换模式
+- [x] 九点钟起床了,不算早起
+- [x] 洗澡
 - [x] 看书疯狂java
-
-## 2020年01月13日
-- [x] 看书疯狂java,第17章
-- [x] 修改文字识别程序OCR_md
-  - [x] 单行Markdown模式
-  - [x] 多行Markdown模式
-  - [x] markdown无序列表
-  - [x] 使用单例模式重写工具条中的控件
-  - [x] 精简代码
-
-## 2020年01月12日
-- [x] 没有早起
-- [x] 打扫房间,
-- [x] 使用塑料瓶和水管引流
-- [x] 将之前做的凳子搬到卫生间,用来放洗漱用品
-- [x] 洗衣服
-- [x] 剪头发
-- [x] 洗头,洗澡.
-- [x] 打开电脑,写日记
-- [x] 天法家吃饭
-- [x] 隔壁家串门
-- [x] 设置WiFi中继
-  - [x] 更新设置WiFi中继的文档
-- [x] [阅读有用微博](https://m.weibo.cn/detail/4454017255924927)
-- [x] 看书疯狂java 第17章 网络编程
+  - [x] 看第17章 网络编程 TCP编程估计看了一半
+- [x] 累了,看之前攒下的公众号文章: 
+  - [x] [在校生如何面向面试地学习Java](https://mp.weixin.qq.com/s/y_ozO8BnH6YkoFh_Oq8M1w)
+- [x] 测试插座接线,电灯闪烁,
+  - [x] 我接的可能不对,应该接总线上
+  - [x] 明天再试一下,先拉闸,顺便测试那两根红线,上面应该有电
+- [x] 继续看公众号文章
+  - [x] [Java两年来的变化](https://mp.weixin.qq.com/s/92T-F53Qhq05tR_MtI0zBA)
+  - [x] [Github上的斗图工具Sorry](https://mp.weixin.qq.com/s/d2q2kh_TYm4Zklkzebmmkg)
+  - [x] [Idea插件 菜鸟翻译](https://www.oschina.net/news/111842/probie-released)
+  - [x] [生活中常见危险](https://mp.weixin.qq.com/s/APx0nIkIwf9tXGc9FTM9VA)
+- [x] 保存书籍到百度网盘中:链接：https://pan.baidu.com/s/1pP7b_gFnW2m0_tEi1HIT3g 提取码：hbpr
 
 </details>
 
@@ -100,9 +76,6 @@ comments: false
   - [ ] 使用在自定义程序上
 - [ ] 下个月关闭,移动网盘,6个月视频会员自动取消
 - [ ] 手机上下载的劳动合同注意点.微博收藏中的
-- [ ] 在线编程网站收集
-- [ ] https://c.runoob.com/front-end/61
-- [ ] https://m.runoob.com/try/try2.php?filename=tryhtml_hr
 - [ ] 日期时间API https://www.cnblogs.com/liqiangchn/p/11974355.html
 - [ ] Navicat画ER图.
     - [ ] 根据E-R图生成表
@@ -119,33 +92,24 @@ comments: false
     - [ ] 先写个测试类
     - [ ] 打包，linux下运行
 - [ ] [了解开源协议](https://blog.51cto.com/holison/1930805)
-- [ ] [菜鸟翻译插件](https://www.oschina.net/news/111842/probie-released)
 - [ ] [tar命令](https://jingyan.baidu.com/article/5553fa8292599665a23934bd.html)
 - [ ] [955公司](https://mp.weixin.qq.com/s/TQb2ZmW9lQzxd6YyksNagg)
 - [ ] 996ICU
 - [ ] 你没有什么想对我说的吗
-- [ ] [面试书籍](https://mp.weixin.qq.com/s/vwvOtkgILIRETmMjV11rcw)
 - [ ] vue
 - [ ] SpringBoot
 - [ ] redis
 - [ ] queryselectorAll
 - [ ] Junit
 - [ ] 设计模式
-- [ ] [生活常识](https://mp.weixin.qq.com/s/APx0nIkIwf9tXGc9FTM9VA)
 - [ ] 漫画算法——小灰的算法之旅
 - [ ] [排序算法总结](https://mp.weixin.qq.com/s/teOGQlslb6aP4AQrx7TTzA)
 - [ ] 微信订阅号开发
-- [ ] https://mp.weixin.qq.com/s/-RtuGb33X5IvZLD2ufwb_Q
-- [ ] https://mp.weixin.qq.com/s/y_ozO8BnH6YkoFh_Oq8M1w
-- [ ] https://mp.weixin.qq.com/s/npUt5rEoAiCHXqA11RVx-A
 - [ ] https://mp.weixin.qq.com/s/D5oeGq_cbsH4I5tC5jbkhA
 - [ ] https://mp.weixin.qq.com/s/u7DKOlnSPgivPW6hnOj85A
-- [ ] https://mp.weixin.qq.com/s/92T-F53Qhq05tR_MtI0zBA
-- [ ] https://mp.weixin.qq.com/s/d2q2kh_TYm4Zklkzebmmkg
 - [ ] 车票退票价格计算
 - [ ] 项目实战[](https://mp.weixin.qq.com/s/n3buAILSMumjEoPfO1UgBA)
 - [ ] 数字图像处理
-- [ ] 收集高校新闻
 - [ ] 使用Java NIO重写工具类.
   - [ ] 熟悉Files方法,Paths方法.
   - [ ] 使用Callable接口重写文字识别接口,使用线程的返回值.
