@@ -66,6 +66,7 @@ comments: false
   - [微博热搜](https://s.weibo.com/top/summary)
   - [微博搜索](https://s.weibo.com/)
 - [知乎](https://www.zhihu.com/)
+    - [知乎热搜榜](https://www.zhihu.com/topsearch?zh_hide_nav_bar=true)
 - [博客园新闻](https://www.cnblogs.com/news/)
 - [开源中国资讯](https://www.oschina.net/news/industry)
 - [虎嗅网](https://m.huxiu.com/)
