@@ -43,6 +43,10 @@ comments: false
 # 已完成
 <details><summary>展开/折叠</summary>
 
+## 2020年01月27日
+- [ ] 看书:疯狂java讲义第4章
+- [ ] 修复触控板错误:安装:`Synaptics Pointing Device`
+
 ## 红包
 - [ ] 0.99 新年所有愿望都实现
 - [ ] 1.23 蒸蒸日上
@@ -58,11 +62,16 @@ comments: false
 - [ ] 8.88 财源滚滚来
 - [ ] 9.99 好运长久
 
+## 2020年01月26日
+- [ ] 看书:疯狂java第4章
+- [ ] 写代码:
+  - [x] 优化`m cb j`:删除多余的缩进
+
 ## 2020年01月25日
 - [ ] 看书:疯狂java 4 第3章
 - [ ] 写代码:
   - [x] 优化java代码文字识别,
-  - [ ] 优化`m cb j`:如果一段代码的每行前面有最长的公共空格的话,删除掉这些公共的空格
+  - [ ] 优化`m cb j`:删除多余的缩进
 
 ## 2020年01月24日
 - [ ] 看书
@@ -129,7 +138,6 @@ comments: false
 - [ ] https://mp.weixin.qq.com/s/I3IMA8NqfXpdOO2v5jgLjg
 - [ ] 移动八元套餐，https://m.weibo.cn/detail/4459481892968407
 - [ ] [电子书下载](https://mp.weixin.qq.com/s/GSz25LdVEmWbWuyDYwm4Qw)
-
 
 </details>
 
