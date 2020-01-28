@@ -138,6 +138,7 @@ comments: false
 - [ ] https://mp.weixin.qq.com/s/I3IMA8NqfXpdOO2v5jgLjg
 - [ ] 移动八元套餐，https://m.weibo.cn/detail/4459481892968407
 - [ ] [电子书下载](https://mp.weixin.qq.com/s/GSz25LdVEmWbWuyDYwm4Qw)
+- [ ] [如何区分感冒 流感 冠状病毒](https://m.weibo.cn/detail/4465457241243436)
 
 </details>
 
