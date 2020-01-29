@@ -105,6 +105,7 @@ comments: false
 - [ ] https://mp.weixin.qq.com/s/I3IMA8NqfXpdOO2v5jgLjg
 - [ ] 移动八元套餐，https://m.weibo.cn/detail/4459481892968407
 - [ ] [电子书下载](https://mp.weixin.qq.com/s/GSz25LdVEmWbWuyDYwm4Qw)
+- [ ] 浙江省图书馆终身免费知网查询
 
 </details>
 
