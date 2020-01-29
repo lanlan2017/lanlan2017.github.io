@@ -41,11 +41,14 @@ comments: false
 # 已完成
 <details><summary>展开/折叠</summary>
 
+## 2020年01月29日
+- [ ] 看书:疯狂java第4章
+
 ## 2020年01月28日
 - [x] 维修洗手盆,安装洗手盆
   - [x] 洗漱用可以,厨房用不行,有钱买新的
-- [x] 看书:疯狂java讲义4,快看完了
-- [ ] 
+- [x] 看书:疯狂java讲义4,还有最后一节,
+- [ ] 下地干活
 
 ## 2020年01月27日
 - [x] 看书:疯狂java讲义第4章
@@ -102,7 +105,6 @@ comments: false
 - [ ] https://mp.weixin.qq.com/s/I3IMA8NqfXpdOO2v5jgLjg
 - [ ] 移动八元套餐，https://m.weibo.cn/detail/4459481892968407
 - [ ] [电子书下载](https://mp.weixin.qq.com/s/GSz25LdVEmWbWuyDYwm4Qw)
-- [ ] [如何区分感冒 流感 冠状病毒](https://m.weibo.cn/detail/4465457241243436)
 
 </details>
 
