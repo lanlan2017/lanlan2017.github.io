@@ -160,6 +160,8 @@ exp,1=explorer
 ejh,1=echo %JAVA_HOME% 
 setjh,1=set JAVA_HOME=%JAVA_HOME_% 
 setpjn,1=set path=E:\java\java9\jdk-9\bin;%path%
+jcen,1=javac -encoding 
+jcenut,1=javac -encoding utf-8 
 ; # Termux命令
 tuall,1=
 cd ~/blog/blog/
