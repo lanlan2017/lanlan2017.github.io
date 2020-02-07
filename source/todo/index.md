@@ -37,11 +37,29 @@ comments: false
 <!--
 ## 2020年02月04日
 - 姨妈第一天
+  - 还有一天疼(2020年02月06日)
+
+## 2020年02月05日
+- 缝制坐垫的时候被针扎到右手拇指
+  - 不疼了(2020年02月06日)
 
 -->
 
 # 已完成
 <details><summary>展开/折叠</summary>
+
+## 2020年02月07日
+- 写代码:修改FM程序,生成摘要时,在文本后面添加空格,让搜索引擎好看点
+
+## 2020年02月06日
+- [x] 看书
+  - 疯狂java讲义第4版
+    - 看完11.6 AWT菜单了(16:44:41)
+    - 看到11.9剪贴板(20:56:05没心情看下去了)
+- [x] 保存微信公众号文章: [电子书下载](https://mp.weixin.qq.com/s/GSz25LdVEmWbWuyDYwm4Qw)
+- 看视频,长见识:
+  - 科技猿人,
+  - 思维实验室
 
 ## 2020年02月05日
 - [x] 看书:疯狂java讲义第4版,看到11.5.2(18:33:20).看完11.5.7(21:23:22),看完11.6.1(22:19:54)
@@ -108,10 +126,8 @@ comments: false
 - [ ] 使用Java NIO重写工具类.
   - [ ] 熟悉Files方法,Paths方法.
   - [ ] 使用Callable接口重写文字识别接口,使用线程的返回值.
-- [ ] https://mp.weixin.qq.com/s/UUhKPb4wwHZ8tqNJ14maGA
 - [ ] https://mp.weixin.qq.com/s/I3IMA8NqfXpdOO2v5jgLjg
 - [ ] 移动八元套餐，https://m.weibo.cn/detail/4459481892968407
-- [ ] [电子书下载](https://mp.weixin.qq.com/s/GSz25LdVEmWbWuyDYwm4Qw)
 - [ ] 浙江省图书馆终身免费知网查询
 - [ ] https://m.weibo.cn/detail/4468159081716065
 - [ ] https://m.weibo.cn/detail/4468555972343590
