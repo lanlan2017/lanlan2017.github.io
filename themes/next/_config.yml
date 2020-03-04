@@ -138,7 +138,8 @@ menu:
   links: /links/ || link
   # todo: /todo/ || list
   todo: /todo/ || check-square-o
-  admin: /admin/ || lock
+  # admin: /admin/ || lock
+  dir: /dir/ || sitemap
   download: /download/ || download
 
 # Enable / Disable menu icons / item badges.
