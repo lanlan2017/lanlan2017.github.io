@@ -3,7 +3,6 @@ title: todo
 date: 2019-11-08 21:28:10
 comments: false
 ---
-
 # 未完成
 - [ ] 读完疯狂java
   - [ ] 第14章 注解
@@ -34,16 +33,26 @@ comments: false
     - [ ] 先看完视频,再记笔记.
 
 <!--
-## 2020年03月01日
-- 脸关节好了,12:57:55
-- 膝盖还疼,12:59:05
-- 鼻子上火,13:04:55
-- 撞门帘15:06:12
 
 -->
+`DispatcherServlet`装配的各种组件，有些只允许一个实例，比如文件上传解析器`MuliipartResolver`、本地化解析器`LocaleResolver`等；有些则允许多个实例，如处理器映射器`HandlerMapping`、处理器适配器`HandlerAdapter`等，读者需要注意这一点。如果同一类型的组件存在多个，那么它们之间的优先级顺序如何确定呢？因为这些组件都实现了`org.springframework.core.Ordered`接口，所以可以通过`Order`属性确定优先级的顺序，值越小的优先级越高。
+
 
 # 已完成
 <details><summary>展开/折叠</summary>
+
+## 2020年04月03日
+- 查看毕设系统
+- 复习JQuery
+
+## 2020年03月28日
+- 复习完疯狂java讲义第4班 第16章
+
+## 2020年03月27日
+- 复习疯狂java讲义第4版 16.9.2 包装线程不安全的集合 (22:39:01)
+
+## 2020年03月26日
+- 复习疯狂java讲义第4版 看完16.7 线程组和未处理的异常(16:13:38)
 
 </details>
 
@@ -90,19 +99,7 @@ comments: false
 - [ ] https://m.weibo.cn/detail/4468555972343590
 - [ ] https://m.weibo.cn/detail/4468564281453033
 - [ ] https://m.weibo.cn/detail/4470083533900058
-- [ ] 联系老师开题报告
-
-</details>
-
-## 更早之前
-参见:[日记](/categories/日记/)
-
-</details>
-
-# 备忘录
-<details><summary>展开/折叠</summary>
-
-## 2020年寒假的宿舍安排
-- [媳妇寒假](http://www.njust.edu.cn/3719/list.htm):**2020年1月18日-2020年2月23日**
+- [x] 联系老师开题报告
+- [ ] 指导记录
 
 </details>
