@@ -107,11 +107,15 @@ comments: false
         console.log("屏幕可视区域高度:" + window.innerHeight + "px")
         console.log("其他元素高度:" + count + "px")
         var inputHight = (Number)(window.innerHeight - count);
-        console.log("输入框高度:" + inputHight + "px")
+        console.log("输入框高度:" + inputHight + "px");
         if (inputHight > 0) {
             document.getElementById("input").style.height = inputHight + "px";
         }
     })();
+    window.onload = function () {
+        var input = document.getElementById("input");
+        input.focus();
+    }
 </script>
 <script>
     var input = document.getElementById("input");
@@ -603,8 +607,6 @@ comments: false
             input.placeholder = "请先输入不带后缀的头文件名称";
         }
     }
-</script>
-<script>
     Date.prototype.formatDate = function (fmt) {
         var o = {
             "M+": this.getMonth() + 1,                   //月份
