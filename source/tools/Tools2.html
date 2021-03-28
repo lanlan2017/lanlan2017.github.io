@@ -313,7 +313,10 @@
         }
         // 清除输入文本框
         function clearInput() {
+            // 清空输入框
             input.value = "";
+            // 输入框获取焦点
+            input.focus();
         }
         // 将文本框中的内容复制到剪贴板
         function copy() {
@@ -332,6 +335,8 @@
             input.blur();
             // 延时2秒后清除输入框中的内容.
             timeOut = window.setTimeout(clearInput, 10000);
+            // 文本框获取焦点
+            input.focus();
         }
         // 显示处理结果
         function result(text) {

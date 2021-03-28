@@ -177,6 +177,7 @@ comments: false
     }
     function clearInput() {
         input.value = "";
+        input.focus();
     }
     function copy() {
         if (timeOut != null) {
@@ -187,6 +188,7 @@ comments: false
         input.placeholder = "运行结果已经复制到剪贴板中!";
         input.blur();
         timeOut = window.setTimeout(clearInput, 10000);
+        input.focus();
     }
     function result(text) {
         backupInput();
@@ -273,7 +275,7 @@ comments: false
         if (text == null) {
             result(deleteSpaces(input.value));
         } else {
-            return text.replace(/[ ]{2,}/mg," ");
+            return text.replace(/[ ]{2,}/mg, " ");
         }
     }
     function toOneLine(text) {
@@ -624,8 +626,8 @@ comments: false
         }
         return fmt;
     }
-    function formatDateShow(){
-        input.value=new Date().formatDate("yyyy年MM月dd日");
+    function formatDateShow() {
+        input.value = new Date().formatDate("yyyy年MM月dd日");
         copy();
     }
 </script>
