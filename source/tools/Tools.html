@@ -21,6 +21,7 @@
                     <button class="mybtn" onclick="unNiuke()">unNiuke</button>
                     <button class="mybtn" onclick="unMdKs()">unMdKs</button>
                     <button class="mybtn" onclick="tags()">tags</button>
+                    <button class="mybtn" onclick="formatDateShow()">FormatDate</button>
                 </td>
             </tr>
             <tr class="notInput">
@@ -225,13 +226,17 @@
             console.log("其他元素高度:" + count + "px")
             // var inputHight = (Number)(window.innerHeight - count);
             var inputHight = (Number)(window.innerHeight - count);
-            console.log("输入框高度:" + inputHight + "px")
+            console.log("输入框高度:" + inputHight + "px");
             if (inputHight > 0) {
                 document.getElementById("input").style.height = inputHight + "px";
             }
 
         })();
-
+        window.onload = function () {
+            // 网页载入的时候就让输入框获取焦点
+            var input = document.getElementById("input");
+            input.focus();
+        }
     </script>
     <script>
         var input = document.getElementById("input");
@@ -312,7 +317,10 @@
         }
         // 清除输入文本框
         function clearInput() {
+            // 清空输入框
             input.value = "";
+            // 输入框获取焦点
+            input.focus();
         }
         // 将文本框中的内容复制到剪贴板
         function copy() {
@@ -329,8 +337,10 @@
             input.placeholder = "运行结果已经复制到剪贴板中!";
             // 让选中的文本失去焦点.
             input.blur();
-            // 延时2秒后清除输入框中的内容.
-            timeOut = window.setTimeout(clearInput, 10000);
+            // 延时10秒后清除输入框中的内容.
+            timeOut = window.setTimeout(clearInput, 10 * 1000);
+            // 文本框获取焦点
+            input.focus();
         }
         // 显示处理结果
         function result(text) {
@@ -434,7 +444,7 @@
             if (text == null) {
                 result(deleteSpaces(input.value));
             } else {
-                return text.replace(/[ ]{2,}/mg," ");
+                return text.replace(/[ ]{2,}/mg, " ");
             }
         }
         // 变成一行
@@ -714,7 +724,7 @@
             answer = answer.replace(/(^正确答案: `?[A-Za-z]+`?$)/mg,
                 "\n## 解析\n<details><summary>显示答案/隐藏答案</summary>$1</details>\n\n");
             // 拼接结果
-            text = "\n# 题目" + counter.value + " 考点:\n" + problem + selects + answer;
+            text = "\n# 考点" + counter.value + ":\n" + problem + selects + answer;
             // 输出结果
             result(text);
             // 计数器加1
@@ -869,6 +879,67 @@
             } else {
                 input.placeholder = "请先输入不带后缀的头文件名称";
             }
+        }
+    </script>
+    <script>
+        //日期格式化
+        Date.prototype.formatDate = function (fmt) {
+            var o = {
+                "M+": this.getMonth() + 1,                   //月份
+                "d+": this.getDate(),                        //日
+                "h+": this.getHours(),                       //小时
+                "m+": this.getMinutes(),                     //分
+                "s+": this.getSeconds(),                     //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds()                  //毫秒
+            };
+            //  获取年份 
+            // ①
+            if (/(y+)/i.test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            }
+
+            for (var k in o) {
+                // ②
+                if (new RegExp("(" + k + ")", "i").test(fmt)) {
+                    fmt = fmt.replace(
+                        RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                }
+            }
+            return fmt;
+        }
+        // var now = new Date();
+        // console.log(now.format("YYYY-MM-DD"));    // 2021-01-11
+        // console.log(now.format("yyyy年MM月dd日"));
+        // console.log(now.format("MM/dd/yyyy"));
+        // console.log(now.format("yyyyMMdd"));
+        // console.log(now.format("yyyy-MM-dd hh:mm:ss"));
+        function formatDateShow() {
+            // 把格式化日期写入到文本框中
+            input.value = new Date().formatDate("yyyy年MM月dd日");
+            // 把文本框中的内容复制到剪贴板
+            copy();
+        }
+    </script>
+    <script>
+        // 监听键盘事件
+        document.onkeyup = function (event) {
+            // 如果按下alt+N(78)
+            if (event.altKey) {
+                switch (event.keyCode) {
+                    // alt+i
+                    case 73:
+                        // 让输入框获取焦点
+                        input.focus();
+                        break;
+                    // alt+n
+                    case 78:
+                        // 调用方法
+                        niuke();
+                        break;
+                }
+            }
+            // console.log('keyCode=' + event.keyCode);
         }
     </script>
 </body>

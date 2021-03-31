@@ -191,7 +191,7 @@ comments: false
         document.execCommand("Copy");
         input.placeholder = "运行结果已经复制到剪贴板中!";
         input.blur();
-        timeOut = window.setTimeout(clearInput, 10000);
+        timeOut = window.setTimeout(clearInput, 10 * 1000);
         input.focus();
     }
     function result(text) {
@@ -607,6 +607,8 @@ comments: false
             input.placeholder = "请先输入不带后缀的头文件名称";
         }
     }
+</script>
+<script>
     Date.prototype.formatDate = function (fmt) {
         var o = {
             "M+": this.getMonth() + 1,                   //月份
@@ -631,5 +633,19 @@ comments: false
     function formatDateShow() {
         input.value = new Date().formatDate("yyyy年MM月dd日");
         copy();
+    }
+</script>
+<script>
+    document.onkeyup = function (event) {
+        if (event.altKey) {
+            switch (event.keyCode) {
+                case 73:
+                    input.focus();
+                    break;
+                case 78:
+                    niuke();
+                    break;
+            }
+        }
     }
 </script>
