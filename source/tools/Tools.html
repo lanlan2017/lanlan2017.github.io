@@ -232,6 +232,7 @@
             }
 
         })();
+        // 网页载入时就让输入框获取焦点
         window.onload = function () {
             // 网页载入的时候就让输入框获取焦点
             var input = document.getElementById("input");
@@ -262,6 +263,7 @@
             input.select();
             // 复制到剪贴板
             document.execCommand("Copy");
+            // 输入框失去焦点
             input.blur();
         }
         function tags() {
@@ -598,6 +600,8 @@
                 text = text.replace(/`?((?:-(?! ))?[a-zA-Z<][a-zA-Z0-9 ():\_.\/\[\]<>,+="?-]*[a-zA-Z0-9);>/.\*\]])`?/mg,
                     "`$1`");
                 text = text.replace(/\(`(.+?)\)`/mg, "(`$1`)");
+                // 修复错误/`etc/`为`/etc/`
+                text = text.replace(/\/`/mg, "`/");
                 return text;
             }
         }

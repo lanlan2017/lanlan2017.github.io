@@ -397,6 +397,7 @@ comments: false
             text = text.replace(/`?((?:-(?! ))?[a-zA-Z<][a-zA-Z0-9 ():\_.\/\[\]<>,+="?-]*[a-zA-Z0-9);>/.\*\]])`?/mg,
                 "`$1`");
             text = text.replace(/\(`(.+?)\)`/mg, "(`$1`)");
+            text = text.replace(/\/`/mg, "`/");
             return text;
         }
     }
