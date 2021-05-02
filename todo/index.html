@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="未完成  读完疯狂java  第14章 注解    注意毕设进度，要求12月中旬答辩  看开题报告，  理解需求  设计ER  设计数据库  设计po类  配置mybatis  设计server    看数据库设计  中国大学mooc  看视频,做笔记,应用.     flag  早睡  早起,醒了就起  午睡,养足精神  晚睡之前不看视频  规律饮食  炎无心  稍微锻炼身体  牛客网刷题,做笔">
+<meta property="og:type" content="website">
+<meta property="og:title" content="todo">
+<meta property="og:url" content="https://lanlan2017.github.io/todo/index.html">
+<meta property="og:site_name" content="蓝蓝博客">
+<meta property="og:description" content="未完成  读完疯狂java  第14章 注解    注意毕设进度，要求12月中旬答辩  看开题报告，  理解需求  设计ER  设计数据库  设计po类  配置mybatis  设计server    看数据库设计  中国大学mooc  看视频,做笔记,应用.     flag  早睡  早起,醒了就起  午睡,养足精神  晚睡之前不看视频  规律饮食  炎无心  稍微锻炼身体  牛客网刷题,做笔">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-08T21:28:10.000Z">
+<meta property="article:modified_time" content="2021-05-02T07:27:39.217Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="批处理">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/todo/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: false,
+    isPage: true,
+    isArchive: false
+  };
+</script>
+
+  <title>todo | 蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-lover">
+      
+    
+
+    <a href="/lover/" rel="section"><i class="fa fa-fw fa-heart"></i>恋爱</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tools">
+      
+    
+
+    <a href="/tools/" rel="section"><i class="fa fa-fw fa-wrench"></i>工具</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-todo">
+      
+    
+
+    <a href="/todo/" rel="section"><i class="fa fa-fw fa-check-square-o"></i>代办</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-download">
+      
+    
+
+    <a href="/download/" rel="section"><i class="fa fa-fw fa-download"></i>下载</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h2 class="post-title" itemprop="name headline">todo
+
+</h2>
+
+<div class="post-meta">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <h1 id="未完成"><a href="#未完成" class="headerlink" title="未完成"></a>未完成</h1><ul>
+<li><input disabled type="checkbox"> 读完疯狂java<ul>
+<li><input disabled type="checkbox"> 第14章 注解</li>
+</ul>
+</li>
+<li><input disabled type="checkbox"> 注意毕设进度，要求12月中旬答辩<ul>
+<li><input disabled type="checkbox"> 看开题报告，</li>
+<li><input disabled type="checkbox"> 理解需求</li>
+<li><input disabled type="checkbox"> 设计ER</li>
+<li><input disabled type="checkbox"> 设计数据库</li>
+<li><input disabled type="checkbox"> 设计po类</li>
+<li><input disabled type="checkbox"> 配置mybatis</li>
+<li><input disabled type="checkbox"> 设计server</li>
+</ul>
+</li>
+<li><input disabled type="checkbox"> 看数据库设计<ul>
+<li><input disabled type="checkbox"> 中国大学mooc<ul>
+<li><input disabled type="checkbox"> 看视频,做笔记,应用.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h1 id="flag"><a href="#flag" class="headerlink" title="flag"></a>flag</h1><ul>
+<li><input disabled type="checkbox"> 早睡</li>
+<li><input disabled type="checkbox"> 早起,醒了就起</li>
+<li><input disabled type="checkbox"> 午睡,养足精神</li>
+<li><input disabled type="checkbox"> 晚睡之前不看视频</li>
+<li><input disabled type="checkbox"> 规律饮食</li>
+<li><input disabled type="checkbox"> 炎无心</li>
+<li><input disabled type="checkbox"> 稍微锻炼身体</li>
+<li><input disabled type="checkbox"> 牛客网刷题,做笔记</li>
+<li><input disabled type="checkbox"> 中国大学MOOC</li>
+<li><input disabled type="checkbox"> 不看非学习视频</li>
+<li><input disabled type="checkbox"> 写东西要精简,能贴图片,不要写文字.<ul>
+<li><input disabled type="checkbox"> 先看完视频,再记笔记.</li>
+</ul>
+</li>
+</ul><a id="more"></a>
+
+<!--
+
+-->
+<p><code>DispatcherServlet</code>装配的各种组件，有些只允许一个实例，比如文件上传解析器<code>MuliipartResolver</code>、本地化解析器<code>LocaleResolver</code>等；有些则允许多个实例，如处理器映射器<code>HandlerMapping</code>、处理器适配器<code>HandlerAdapter</code>等，读者需要注意这一点。如果同一类型的组件存在多个，那么它们之间的优先级顺序如何确定呢？因为这些组件都实现了<code>org.springframework.core.Ordered</code>接口，所以可以通过<code>Order</code>属性确定优先级的顺序，值越小的优先级越高。</p>
+<h1 id="已完成"><a href="#已完成" class="headerlink" title="已完成"></a>已完成</h1><details><summary>展开/折叠</summary>
+
+<h2 id="2020年04月03日"><a href="#2020年04月03日" class="headerlink" title="2020年04月03日"></a>2020年04月03日</h2><ul>
+<li>查看毕设系统</li>
+<li>复习JQuery</li>
+</ul>
+<h2 id="2020年03月28日"><a href="#2020年03月28日" class="headerlink" title="2020年03月28日"></a>2020年03月28日</h2><ul>
+<li>复习完疯狂java讲义第4班 第16章</li>
+</ul>
+<h2 id="2020年03月27日"><a href="#2020年03月27日" class="headerlink" title="2020年03月27日"></a>2020年03月27日</h2><ul>
+<li>复习疯狂java讲义第4版 16.9.2 包装线程不安全的集合 (22:39:01)</li>
+</ul>
+<h2 id="2020年03月26日"><a href="#2020年03月26日" class="headerlink" title="2020年03月26日"></a>2020年03月26日</h2><ul>
+<li>复习疯狂java讲义第4版 看完16.7 线程组和未处理的异常(16:13:38)</li>
+</ul>
+</details>
+
+<h1 id="搁置"><a href="#搁置" class="headerlink" title="搁置"></a>搁置</h1><details><summary>展开/折叠</summary>
+
+<ul>
+<li><input disabled type="checkbox"> 了解java新的日期时间API的使用  <a href="https://m.jb51.net/article/110245.htm" target="_blank" rel="noopener">https://m.jb51.net/article/110245.htm</a><ul>
+<li><input disabled type="checkbox"> 使用在自定义程序上</li>
+</ul>
+</li>
+<li><input disabled type="checkbox"> 下个月关闭,移动网盘,6个月视频会员自动取消</li>
+<li><input disabled type="checkbox"> 日期时间API <a href="https://www.cnblogs.com/liqiangchn/p/11974355.html" target="_blank" rel="noopener">https://www.cnblogs.com/liqiangchn/p/11974355.html</a></li>
+<li><input disabled type="checkbox"> Navicat画ER图.<ul>
+<li><input disabled type="checkbox"> 根据E-R图生成表</li>
+</ul>
+</li>
+<li><input disabled type="checkbox"> 写使用Gitalk评论系统的文档.</li>
+<li><input checked disabled type="checkbox"> ubuntu中安装软件<ul>
+<li><input disabled type="checkbox"> 安装Mysql</li>
+<li><input disabled type="checkbox"> 安装Navicat.</li>
+</ul>
+</li>
+<li><input disabled type="checkbox"> 有空了解一下</li>
+<li><input disabled type="checkbox"> <a href="https://blog.51cto.com/holison/1930805" target="_blank" rel="noopener">了解开源协议</a></li>
+<li><input disabled type="checkbox"> <a href="https://jingyan.baidu.com/article/5553fa8292599665a23934bd.html" target="_blank" rel="noopener">tar命令</a></li>
+<li><input disabled type="checkbox"> <a href="https://mp.weixin.qq.com/s/TQb2ZmW9lQzxd6YyksNagg" target="_blank" rel="noopener">955公司</a></li>
+<li><input disabled type="checkbox"> 996ICU</li>
+<li><input disabled type="checkbox"> 你没有什么想对我说的吗</li>
+<li><input disabled type="checkbox"> vue</li>
+<li><input disabled type="checkbox"> SpringBoot</li>
+<li><input disabled type="checkbox"> redis</li>
+<li><input disabled type="checkbox"> queryselectorAll</li>
+<li><input disabled type="checkbox"> Junit</li>
+<li><input disabled type="checkbox"> 设计模式</li>
+<li><input disabled type="checkbox"> 漫画算法——小灰的算法之旅</li>
+<li><input disabled type="checkbox"> <a href="https://mp.weixin.qq.com/s/teOGQlslb6aP4AQrx7TTzA" target="_blank" rel="noopener">排序算法总结</a></li>
+<li><input disabled type="checkbox"> 微信订阅号开发</li>
+<li><input disabled type="checkbox"> <a href="https://mp.weixin.qq.com/s/D5oeGq_cbsH4I5tC5jbkhA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/D5oeGq_cbsH4I5tC5jbkhA</a></li>
+<li><input disabled type="checkbox"> <a href="https://mp.weixin.qq.com/s/u7DKOlnSPgivPW6hnOj85A" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/u7DKOlnSPgivPW6hnOj85A</a></li>
+<li><input disabled type="checkbox"> 车票退票价格计算</li>
+<li><input disabled type="checkbox"> 项目实战<a href="https://mp.weixin.qq.com/s/n3buAILSMumjEoPfO1UgBA" target="_blank" rel="noopener"></a></li>
+<li><input disabled type="checkbox"> 数字图像处理</li>
+<li><input disabled type="checkbox"> 使用Java NIO重写工具类.<ul>
+<li><input disabled type="checkbox"> 熟悉Files方法,Paths方法.</li>
+<li><input disabled type="checkbox"> 使用Callable接口重写文字识别接口,使用线程的返回值.</li>
+</ul>
+</li>
+<li><input disabled type="checkbox"> <a href="https://mp.weixin.qq.com/s/I3IMA8NqfXpdOO2v5jgLjg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/I3IMA8NqfXpdOO2v5jgLjg</a></li>
+<li><input disabled type="checkbox"> 移动八元套餐，<a href="https://m.weibo.cn/detail/4459481892968407" target="_blank" rel="noopener">https://m.weibo.cn/detail/4459481892968407</a></li>
+<li><input disabled type="checkbox"> 浙江省图书馆终身免费知网查询</li>
+<li><input disabled type="checkbox"> <a href="https://m.weibo.cn/detail/4468159081716065" target="_blank" rel="noopener">https://m.weibo.cn/detail/4468159081716065</a></li>
+<li><input disabled type="checkbox"> <a href="https://m.weibo.cn/detail/4468555972343590" target="_blank" rel="noopener">https://m.weibo.cn/detail/4468555972343590</a></li>
+<li><input disabled type="checkbox"> <a href="https://m.weibo.cn/detail/4468564281453033" target="_blank" rel="noopener">https://m.weibo.cn/detail/4468564281453033</a></li>
+<li><input disabled type="checkbox"> <a href="https://m.weibo.cn/detail/4470083533900058" target="_blank" rel="noopener">https://m.weibo.cn/detail/4470083533900058</a></li>
+<li><input checked disabled type="checkbox"> 联系老师开题报告</li>
+<li><input disabled type="checkbox"> 指导记录</li>
+</ul>
+</details>
+        
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#未完成"><span class="nav-number">1.</span> <span class="nav-text">未完成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#flag"><span class="nav-number">2.</span> <span class="nav-text">flag</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#已完成"><span class="nav-number">3.</span> <span class="nav-text">已完成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年04月03日"><span class="nav-number">3.1.</span> <span class="nav-text">2020年04月03日</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年03月28日"><span class="nav-number">3.2.</span> <span class="nav-text">2020年03月28日</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年03月27日"><span class="nav-number">3.3.</span> <span class="nav-text">2020年03月27日</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020年03月26日"><span class="nav-number">3.4.</span> <span class="nav-text">2020年03月26日</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搁置"><span class="nav-number">4.</span> <span class="nav-text">搁置</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description">先看视频再看书</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/lanlan2017" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;lanlan2017" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/ReadingNotes/" title="ReadingNotes &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;ReadingNotes&#x2F;"><i class="fa fa-fw fa-book"></i>ReadingNotes</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/" title="blog &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;"><i class="fa fa-fw fa-book"></i>blog</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://lanlan2017.github.io/blog/tools/" title="tools &amp;rarr; https:&#x2F;&#x2F;lanlan2017.github.io&#x2F;blog&#x2F;tools&#x2F;"><i class="fa fa-fw fa-wrench"></i>tools</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里写下你的评论吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

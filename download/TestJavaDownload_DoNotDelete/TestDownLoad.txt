@@ -1,0 +1,287 @@
+# 17.2 Java的基本网络支持
+`Java`为网络支持提供了`java.net`包,该包下的
+- `URL`和`URLConnection`等类提供了以编程方式访问`Web`服务的功能,
+- 而`URLDecoder`和`URLEncoder`则提供了普通字符串和`application/x-www-form-urlencoded MIME`字符串相互转换的静态方法.
+
+# 17.2.1 使用InetAddress
+`Java`提供了`InetAddress`类来代表`IP`地址,`InetAddress`下还有两个子类:`Inet4Address`、`Inet6Adress`它们分别代表`Internet Protocol version 4(IPv4)`地址和`Internet Protocol version 6(IP6)`地址。
+## `InetAddress`类
+### 获取`InetAddress`类对象
+`InetAddress`类没有提供构造器,而是提供了如下两个静态方法来获取`InetAddress`实例
+
+|方法|描述|
+|:--|:--|
+|`static InetAddress getByName(String host)`|根据主机获取对应的`InetAddress`对象|
+|`static InetAddress getByAddress(byte[] addr)`|根据原始`IP`地址来获取对应的`InetAddress`对象|
+
+除此之外,`InetAddress`类还提供了一个`getLocalHost()`方法来获取**本机`IP`地址对应的`InetAddress`实例**。
+
+### 读取`InetAddress`对象的IP地址和主机名
+`InetAddress`还提供了如下三个方法来获取`InetAddress`实例对应的`IP`地址和主机名。
+
+|方法|描述|
+|:--|:--|
+|`String getCanonicalHostName()`|获取此`IP`地址的全限定域名。|
+|`String getHostAddress()`|返回该`InetAddress`实例对应的`IP`地址字符串(以字符串形式)。|
+|`String getHostName()`|获取此`IP`地址的主机名|
+
+### 判断IP地址是否可达
+`Inetaddress`类还提供了一个`isReachable()`方法,用于测试是否可以到达该地址。该方法将尽最大努力试图到达主机,但防火墙和服务器配置可能阻塞请求,使得它在访问某些特定的端口时处于不可达状态。如果可以获得权限,典型的实现将使用`ICMP ECHO REQUEST`；否则它将试图在目标主机的**端口7**(`Echo`)上建立`TCP`连接。
+## 程序示例
+下面程序测试了`InetAddress`类的简单用法。
+```java
+import java.net.*;
+
+public class InetAddressTest {
+    public static void main(String[] args) throws Exception {
+        // 根据主机名来获取对应的InetAddress实例
+        InetAddress ip = InetAddress.getByName("lanlan2017.github.io");
+        // 判断是否可达
+        System.out.println("lanlan2017.github.io是否可达：" + ip.isReachable(2000));
+        // 获取该InetAddress实例的IP字符串
+        System.out.println(ip.getHostAddress());
+        // 根据原始IP地址来获取对应的InetAddress实例
+        InetAddress local = InetAddress.getByAddress(new byte[] { 127, 0, 0, 1 });
+        System.out.println("本机是否可达：" + local.isReachable(5000));
+        // 获取该InetAddress实例对应的全限定域名
+        System.out.println(local.getCanonicalHostName());
+    }
+}
+```
+上面程序简单地示范了`Inetaddress`类的几个方法的用法,`InetAddress`类本身并没有提供太多功能,它代表一个**IP地址对象**,是网络通信的基础,在后面介绍中将大量使用该类
+# 17.2.2 使用URLDecoder和URLEncoder
+`URLDecoder`和`URLEncoder`用于完成普通字符串和`application/x-www-Form-urlencoded MIME`字符串之间的相互转换。可能有读者觉得后一个字符串非常专业,以为又是什么特别高深的知识
+
+当地址栏中的关键字包含中文时,这些关键字就会变成"乱码"
+例如,在搜索引擎中搜索**中秋节**这三个中文关键字:
+我们在地址栏中看到的是:
+```
+https://www.baidu.com/s?wd=中秋节
+```
+但是如果你复制这个地址,就会得到如图下所示的“乱码”:
+```
+https://www.baidu.com/s?wd=%E4%B8%AD%E7%A7%8B%E8%8A%82
+```
+实际上这不是乱码,这就是所谓的`application/x-www-form-urlencoded MIME`字符串。
+
+当`URL`地址里包含**非西欧字符**的字符串时,系统会将这些非西欧字符串转换成类似上面的特殊字符串。编程过程中可能涉及普通字符串和这种特殊字符串的相关转换,这就需要使用`URLDecoder`和`URLEncoder`类。
+
+- `URLDecoder`类包含一个`decode(String s, String enc)`静态方法,它可以将看上去是乱码的`application/x-www-form-urlencode MIME`字符串转换成普通字符串。
+- `URLEncoder`类包含一个`encode(String s, String enc)`静态方法,它可以将普通字符串转换成`application/x-www-form-urlencode MIME`字符串。
+
+### URLDecoder decode方法
+
+|方法|描述|
+|:--|:--|
+|`static String decode(String s)`|**Deprecated**. The resulting string may vary depending on the platform's default encoding.|
+|`static String decode(String s, String enc)`|Decodes an application/x-www-form-urlencoded string using a specific encoding scheme.|
+|`static String decode(String s, Charset charset)`|Decodes an application/x-www-form-urlencoded string using a specific Charset.|
+
+### URLEncoder encode方法
+
+|方法|描述|
+|:--|:--|
+|`static String encode(String s)`|**Deprecated**. The resulting string may vary depending on the platform's default encoding.|
+|`static String encode(String s, String enc)`|Translates a string into application/x-www-form-urlencoded format using a specific encoding scheme.|
+|`static String encode(String s, Charset charset)`|Translates a string into application/x-www-form-urlencoded format using a specific Charset.|
+
+## 程序示例 MIME字符串和普通字符串的相互转换
+下面程序示范了如何将上面的地址栏中的“乱码”转换成普通字符串,并示范了如何将普通字符串转换成`application/x-www-fom-urlencode MIME`字符串
+```java
+import java.net.*;
+
+public class URLDecoderTest {
+    public static void main(String[] args) throws Exception {
+        // 将application/x-www-form-urlencoded字符串转换成普通字符串
+        String mimeStr = "%E4%B8%AD%E7%A7%8B%E8%8A%82";
+        String decodeStr = URLDecoder.decode(mimeStr, "utf-8");
+        System.out.println("解码后得到:" + decodeStr);
+        
+        // 将普通字符串转换成application/x-www-form-urlencoded字符串
+        String encodeStr = URLEncoder.encode("中秋节", "UTF-8");
+        System.out.println("编码后得到:" + encodeStr);
+        System.out.println(encodeStr.equals(mimeStr));
+    }
+}
+```
+上面程序用于完成普通字符串和`application/x-www-Form-urlencoded MIME`字符串之间的转换。运行上面程序,将看到如下输出:
+```
+解码后得到:中秋节
+编码后得到:%E4%B8%AD%E7%A7%8B%E8%8A%82
+true
+```
+## 哪些字符串需要转换
+只有包含西欧字符的普通字符串和`application/x-www-fom-urlencode MIME`字符串无须转换,而**包含中文字符的普通字符串则需要转换**,转换方法是**每个中文字符占两个字节**,每个字节可以转换成两个十六进制的数字,所以每个中文字符将转换成“`%XX%XX`”的形式。当然,采用不同的字符集时,毎个中文字符对应的字节数并不完全相同,所以使用`URLEncoder`和`URLDecoder`进行转换时也需要指定字符集。
+# 17.2.3 URL URLConnection和URLPermission
+## URL
+`URL`(`Uniform Resource Locator`)对象代表**统一资源定位器**,它是指向互联网“资源”的指针。资源可以是简单的文件或目录,也可以是对更为复杂对象的引用,例如对数据库或搜索引擎的查询。在通常情况下,`URL`可以由**协议名**、**主机**、**端口**和**资源**组成,即满足如下格式:
+### URL格式
+```
+protocol://host:port/resourceName
+```
+例如如下的`URL`地址:
+```
+https://lanlan2017.github.io/JavaReadingNotes/
+```
+### URI
+`JDK`中还提供了一个`URI`(`Uniform Resource Identifiers`)类,其实例代表一个**统一资源标识符**,**`Java`的`URI`不能用于定位任何资源,它的唯一作用就是解析**。与此对应的是**`URL`则包含一个`可打开到达该资源`的输入流**,可以将`URL`理解成`URI`的特例.
+### URL方法
+`URL`类提供了多个构造器用于创建`URL`对象,一旦获得了`URL`对象之后,就可以调用如下方法来访问该`URL`对应的资源。
+
+|方法|描述|
+|:--|:--|
+|`String getFile()`|获取该`URL`的资源名|
+|`String getHost()`|获取该`URL`的主机名|
+|`String getPath()`|获取该`URL`的路径部分|
+|`int getPort()`|获取该`URL`的端口号|
+|`String getProtocol()`|获取该`URL`的协议名称|
+|`String getQuery()`|获取该`URL`的查询字符串部分|
+|`URLConnection openConnection()`|返回一个`URLConnection`对象,它代表了与`URL`所引用的远程对象的连接|
+|`InputStream openStream()`|打开与此`URL`的连接,并返回一个用于读取该`URL`资源的`InputStream`|
+
+## 程序示例 多线程下载工具类
+`URL`对象中的前面几个方法都非常容易理解,而该对象提供的`openStream`方法可以读取该`URL`资源的`InputStream`,通过该方法可以非常方便地读取远程资源—甚至实现多线程下载。如下程序实现了一个多线程下载工具类。
+```java
+import java.io.InputStream;
+import java.io.RandomAccessFile;
+import java.net.*;
+
+public class DownUtil {
+    // 定义下载资源的路径
+    private String path;
+    // 指定所下载的文件的保存位置
+    private String targetFile;
+    // 定义需要使用多少线程下载资源
+    private int threadNum;
+    // 定义下载的线程对象
+    private DownThread[] threads;
+    // 定义下载的文件的总大小
+    private int fileSize;
+
+    public DownUtil(String path, String targetFile, int threadNum) {
+        this.path = path;
+        this.threadNum = threadNum;
+        // 初始化threads数组
+        threads = new DownThread[threadNum];
+        this.targetFile = targetFile;
+    }
+
+    public void download() throws Exception {
+        URL url = new URL(path);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setConnectTimeout(5 * 1000);
+        conn.setRequestMethod("GET");
+        conn.setRequestProperty("Accept",
+                "image/gif, image/jpeg, image/pjpeg, image/pjpeg, "
+                        + "application/x-shockwave-flash, application/xaml+xml, "
+                        + "application/vnd.ms-xpsdocument, application/x-ms-xbap, "
+                        + "application/x-ms-application, application/vnd.ms-excel, "
+                        + "application/vnd.ms-powerpoint, application/msword, */*");
+        conn.setRequestProperty("Accept-Language", "zh-CN");
+        conn.setRequestProperty("Charset", "UTF-8");
+        conn.setRequestProperty("Connection", "Keep-Alive");
+        // 得到文件大小
+        fileSize = conn.getContentLength();
+        conn.disconnect();
+        int currentPartSize = fileSize / threadNum + 1;
+        RandomAccessFile file = new RandomAccessFile(targetFile, "rw");
+        // 设置本地文件的大小
+        file.setLength(fileSize);
+        file.close();
+        for (int i = 0; i < threadNum; i++) {
+            // 计算每条线程的下载的开始位置
+            int startPos = i * currentPartSize;
+            // 每个线程使用一个RandomAccessFile进行下载
+            RandomAccessFile currentPart = new RandomAccessFile(targetFile, "rw");
+            // 定位该线程的下载位置
+            currentPart.seek(startPos);
+            // 创建下载线程
+            threads[i] = new DownThread(startPos, currentPartSize, currentPart);
+            // 启动下载线程
+            threads[i].start();
+        }
+    }
+
+    // 获取下载的完成百分比
+    public double getCompleteRate() {
+        // 统计多条线程已经下载的总大小
+        int sumSize = 0;
+        for (int i = 0; i < threadNum; i++) {
+            sumSize += threads[i].length;
+        }
+        // 返回已经完成的百分比
+        return sumSize * 1.0 / fileSize;
+    }
+
+    private class DownThread extends Thread {
+        // 当前线程的下载位置
+        private int startPos;
+        // 定义当前线程负责下载的文件大小
+        private int currentPartSize;
+        // 当前线程需要下载的文件块
+        private RandomAccessFile currentPart;
+        // 定义已经该线程已下载的字节数
+        public int length;
+
+        public DownThread(int startPos, int currentPartSize, RandomAccessFile currentPart) {
+            this.startPos = startPos;
+            this.currentPartSize = currentPartSize;
+            this.currentPart = currentPart;
+        }
+
+        @Override
+        public void run() {
+            try {
+                URL url = new URL(path);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setConnectTimeout(5 * 1000);
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Accept",
+                        "image/gif, image/jpeg, image/pjpeg, image/pjpeg, "
+                                + "application/x-shockwave-flash, application/xaml+xml, "
+                                + "application/vnd.ms-xpsdocument, application/x-ms-xbap, "
+                                + "application/x-ms-application, application/vnd.ms-excel, "
+                                + "application/vnd.ms-powerpoint, application/msword, */*");
+                conn.setRequestProperty("Accept-Language", "zh-CN");
+                conn.setRequestProperty("Charset", "UTF-8");
+                InputStream inStream = conn.getInputStream();
+                // 跳过startPos个字节，表明该线程只下载自己负责哪部分文件。
+                inStream.skip(this.startPos);
+                byte[] buffer = new byte[1024];
+                int hasRead = 0;
+                // 读取网络数据，并写入本地文件
+                while (length < currentPartSize && (hasRead = inStream.read(buffer)) != -1) {
+                    currentPart.write(buffer, 0, hasRead);
+                    // 累计该线程下载的总大小
+                    length += hasRead;
+                }
+                currentPart.close();
+                inStream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+```
+上面程序中定义了`DownThread`线程类,该线程负责读取从`start`开始,到`end`结束的所有字节数据,并写入`RandomAccessfile`对象。这个`DownThread`线程类的`run()`方法就是一个简单的输入、输出实现。
+程序中`DownUtils`类中的`download`方法负责按如下步骤来实现多线程下载
+1. 创建`URL`对象。
+2. 获取指定`URL`对象所指向资源的大小(通过`getContentLength()`方法获得),此处用到了`URLConnection`类,该类代表`Java`应用程序和`URL`之间的通信链接。后面还有关于`URLConnection`更详细的介绍。
+3. 在本地磁盘上创建一个与网络资源具有相同大小的空文件。
+4. 计算每个线程应该下载网络资源的哪个部分(从哪个字节开始,到哪个字节结束)
+5. 依次创建、启动多个线程来下载网络资源的指定部分。
+
+### 如何实现断点下载
+上面程序已经实现了多线程下载的核心代码,如果要实现断点下载,则需要额外増加个配置文件(读者可以发现,所有的断点下载工具都会在下载开始时生成两个文件:一个是与网络资源具有相同大小的空文件,一个是配置文件),**该配置文件分别记录每个线程已经下载到哪个字节,当网络断开后再次开始下载时,每个线程根据配置文件里记录的位置向后下载即可**。
+有了上面的`DownUtils`工具类之后,接下来就可以在主程序中调用该工具类的`down()`方法执行下载,如下程序所示。
+
+
+
+运行上面程序,即可看到程序从`www.crazyit.org`下载得到一份名为`ios.png`的图片文件。
+上面程序还用到`URLConnection`和`HttpurlconneCtion`对象,其中`URLConnection`表示应用程序和`URL`之间的通信连接,`HttpurlconneCtion`表示与`URL`之间的`HTTP`连接。程序可以通过`URLConnection`实例向该`URL`发送请求、读取`URL`引用的资源
+## `URLPermission`
+`Java8`新增了一个`URLPermission`工具类,用于管理`HttpurlconneCtion`的权限问题,如果在`HttpurlconneCtion`安装了安全管理器,通过该对象打开连接时就需要先获得权限。
+
+通常创建一个和`URL`的连接,并发送请求、读取此`URL`引用的资源需要如下几个步骤
