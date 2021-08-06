@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/exam/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/exam/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/exam/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/exam/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/exam/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/exam/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/exam/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="考点1&amp;nbsp;考点2&amp;nbsp;考点3&amp;nbsp;考点4&amp;nbsp;考点5&amp;nbsp;考点6&amp;nbsp;考点7&amp;nbsp;考点8&amp;nbsp;考点9&amp;nbsp;考点10&amp;nbsp; .header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019年10月31日 计算机网络 1">
+<meta property="og:url" content="https://lanlan2017.github.io/exam/3fcd8c5a/index.html">
+<meta property="og:site_name" content="笔试题|蓝蓝博客">
+<meta property="og:description" content="考点1&amp;nbsp;考点2&amp;nbsp;考点3&amp;nbsp;考点4&amp;nbsp;考点5&amp;nbsp;考点6&amp;nbsp;考点7&amp;nbsp;考点8&amp;nbsp;考点9&amp;nbsp;考点10&amp;nbsp; .header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-10-31T12:20:41.000Z">
+<meta property="article:modified_time" content="2021-03-21T08:40:52.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/exam/3fcd8c5a/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>2019年10月31日 计算机网络 1 | 笔试题|蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/exam/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">笔试题|蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/exam/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/exam/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/exam/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/exam/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/exam/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/exam/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/3fcd8c5a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">2019年10月31日 计算机网络 1
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-31 20:20:41" itemprop="dateCreated datePublished" datetime="2019-10-31T20:20:41+08:00">2019-10-31</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 16:40:52" itemprop="dateModified" datetime="2021-03-21T16:40:52+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/3fcd8c5a/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/3fcd8c5a/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/exam/3fcd8c5a/#考点1" class="header_1">考点1</a>&nbsp;<br><a href="/exam/3fcd8c5a/#考点2" class="header_1">考点2</a>&nbsp;<br><a href="/exam/3fcd8c5a/#考点3" class="header_1">考点3</a>&nbsp;<br><a href="/exam/3fcd8c5a/#考点4" class="header_1">考点4</a>&nbsp;<br><a href="/exam/3fcd8c5a/#考点5" class="header_1">考点5</a>&nbsp;<br><a href="/exam/3fcd8c5a/#考点6" class="header_1">考点6</a>&nbsp;<br><a href="/exam/3fcd8c5a/#考点7" class="header_1">考点7</a>&nbsp;<br><a href="/exam/3fcd8c5a/#考点8" class="header_1">考点8</a>&nbsp;<br><a href="/exam/3fcd8c5a/#考点9" class="header_1">考点9</a>&nbsp;<br><a href="/exam/3fcd8c5a/#考点10" class="header_1">考点10</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="考点1"><a href="#考点1" class="headerlink" title="考点1"></a>考点1</h1><p>ARP 的功能是将IP地址解析为MAC地址。</p>
+<ul>
+<li>A 正确</li>
+<li>B 错误</li>
+</ul>
+<p>正确答案: A</p>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>ARP 协议（Address Resolution Protocol），或称地址解析协议。在以太网链路上仅仅知道某台主机的IP address，并不能立即将封包传送过去，必须先查明该主机的实体地址(Physical address/MAC address)才能真正发送出去，而ARP协议的功用就是在于将IP address转换成实体地址，查询目标设备的MAC地址，以保证通信的顺利进行。</p>
+<p>并且只能在区域网路内使用，解析网路装置的MAC位址，ARP是TCP/IP设计者利用乙太网的广播性质，设计出来的位址解释协定；它的主要特性和优点是它的位址对应关系是动态的，它以查询的方式来获得IP位址和实体位</p>
+<h1 id="考点2"><a href="#考点2" class="headerlink" title="考点2"></a>考点2</h1><p>OSI七层模型中,物理层，数据链路层，网络层，传输层的单位是什么（）</p>
+<ul>
+<li>A 帧frame，包packet，段segment，比特bit</li>
+<li>B 比特bit，帧frame，包packet，段segment</li>
+<li>C 帧frame，比特bit，段segment，包packet</li>
+<li>D 比特bit，包packet，帧frame，段segment</li>
+</ul>
+<p>正确答案: B</p>
+<h2 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h2><p>比特成帧，帧成报文，报文成包，包成段</p>
+<h1 id="考点3"><a href="#考点3" class="headerlink" title="考点3"></a>考点3</h1><p>The lower layers of the OSI model are in correct order ( )</p>
+<ul>
+<li>A physical,system,network,logical</li>
+<li>B physical,logical,network,system</li>
+<li>C physical,transport,network,datalink</li>
+<li>D physical,datalink,network,transport</li>
+</ul>
+<p>正确答案: D</p>
+<h2 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h2><p>从下往上是：物理层，数据链路层，网络层，传输层</p>
+<h1 id="考点4"><a href="#考点4" class="headerlink" title="考点4"></a>考点4</h1><p>在 OSI 参考模型的物理层、数据链路层、网络层传送的数据单位分别为 （）。</p>
+<ul>
+<li>A 比特、帧、分组</li>
+<li>B 比特、分组、帧</li>
+<li>C 帧、分组、比特</li>
+<li>D 分组、比特、帧</li>
+</ul>
+<p>正确答案: A</p>
+<h2 id="解析-3"><a href="#解析-3" class="headerlink" title="解析"></a>解析</h2><h1 id="考点5"><a href="#考点5" class="headerlink" title="考点5"></a>考点5</h1><p>承载信息量的基本信号单位是 （） 。</p>
+<ul>
+<li>A 码元</li>
+<li>B 比特</li>
+<li>C 数据传输速率</li>
+<li>D 误码率</li>
+</ul>
+<p>正确答案: A</p>
+<h2 id="解析-4"><a href="#解析-4" class="headerlink" title="解析"></a>解析</h2><h1 id="考点6"><a href="#考点6" class="headerlink" title="考点6"></a>考点6</h1><p>帧中继网是一种（ ）。</p>
+<ul>
+<li>A 广域网</li>
+<li>B 局域网</li>
+<li>C ATM网</li>
+<li>D 以太网</li>
+</ul>
+<p>正确答案: A</p>
+<h2 id="解析-5"><a href="#解析-5" class="headerlink" title="解析"></a>解析</h2><p>几种常用的广域网：<br>公用电话交换网（ P S T N）、<br>分组交换网（X . 2 5）、<br>数字数据网（ D D N）、<br>帧中继（ F R）、<br>交换式多兆位数据服务（ S M D S）和<br>异步传输模式（AT M）。</p>
+<h1 id="考点7"><a href="#考点7" class="headerlink" title="考点7"></a>考点7</h1><p>在TCP/IP模型中，数据从应用层到网际接口层所经历的传输格式分别是(    )。</p>
+<ul>
+<li>A 报文或字节流—&gt;IP数据报—&gt;网络帧—&gt;传输协议分组</li>
+<li>B 报文或字节流—&gt;传输协议分组—&gt;IP数据报—&gt;网络帧</li>
+<li>C 传输协议分组—&gt;IP数据报—&gt;网络帧—&gt;报文或字节流</li>
+<li>D IP数据报—&gt;报文或字节流—&gt;网络帧—&gt;传输协议分组</li>
+</ul>
+<p>正确答案: B</p>
+<h2 id="解析-6"><a href="#解析-6" class="headerlink" title="解析"></a>解析</h2><p>OSI:<br>物理层——比特流<br>数据链路层——帧<br>网络层——包<br>传输层——段/消息<br>表示层——字符或字<br>应用层——程序<br>TCP/IP为四层模型<br>应用层：报文<br>运输层：传输层协议<br>网际层：数据报<br>网络接口层：网络帧</p>
+<h1 id="考点8"><a href="#考点8" class="headerlink" title="考点8"></a>考点8</h1><p>下列地址中哪些是私有地址</p>
+<ul>
+<li>A 172.32.0.1</li>
+<li>B 172.0.0.1</li>
+<li>C 172.16.0.255</li>
+<li>D 172.15.255.255</li>
+</ul>
+<p>正确答案: C</p>
+<h2 id="解析-7"><a href="#解析-7" class="headerlink" title="解析"></a>解析</h2><p>私有地址如下：<br>A类：10.0.0.0到10.255.255.255<br>B类：172.16.0.0到172.31.255.255<br>C类：192.168.0.0到192.168.255.255</p>
+<h1 id="考点9"><a href="#考点9" class="headerlink" title="考点9"></a>考点9</h1><p>在某办公室内铺设一个小型局域网,总共有4台PC机需要通过一台集线器连接起来。采用的线缆类型为5类双绞线。则理论上任意两台PC机的最大间隔距离是()</p>
+<ul>
+<li>A 400米</li>
+<li>B 100米</li>
+<li>C 200米</li>
+<li>D 500米</li>
+</ul>
+<p>正确答案: B</p>
+<h2 id="解析-8"><a href="#解析-8" class="headerlink" title="解析"></a>解析</h2><p>5类双绞线的最大传输距离为100，意思是两个节点之间的总距离应该在100以内，否则传输就会造成损耗。所以集线器节点-集线器-节点距离应为100米，集线器只是将线缆汇集的一个中心。</p>
+<h1 id="考点10"><a href="#考点10" class="headerlink" title="考点10"></a>考点10</h1><p>以下请求是一个订单提交的请求，请观察该请求包，说出你认为可能存在的安全风险点（）：<br>POST <a href="http://test.mi.cn/insert.html" target="_blank" rel="noopener">http://test.mi.cn/insert.html</a> HTTP/1.1<br>Host: test.mi.com<br>Referer: <a href="http://test.mi.cn/index.php?data=58" target="_blank" rel="noopener">http://test.mi.cn/index.php?data=58</a><br>Cookie: uid=1504174654; </p>
+<p>addressid=1&amp;productid=123&amp;num=1&amp;price=120</p>
+<ul>
+<li>A CSRF</li>
+<li>B 订单金额篡改</li>
+<li>C 越权操作</li>
+<li>D SQL 注入</li>
+</ul>
+<p>正确答案: ABCD</p>
+<h2 id="解析-9"><a href="#解析-9" class="headerlink" title="解析"></a>解析</h2><p>看不到这题什么意思</p>
+<blockquote>
+<p>原文链接: <a href="https://lanlan2017.github.io/blog/3fcd8c5a/">2019年10月31日 计算机网络 1</a></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/exam/3fcd8c5a/" title="2019年10月31日 计算机网络 1">https://lanlan2017.github.io/exam/3fcd8c5a/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/exam/788290b8/" rel="next" title="2019年10月30日 java 4">
+                  <i class="fa fa-chevron-left"></i> 2019年10月30日 java 4
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/exam/b97b7079/" rel="prev" title="2019年10月31日 智力题1">
+                  2019年10月31日 智力题1 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#考点1"><span class="nav-number">1.</span> <span class="nav-text">考点1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">1.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点2"><span class="nav-number">2.</span> <span class="nav-text">考点2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-1"><span class="nav-number">2.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点3"><span class="nav-number">3.</span> <span class="nav-text">考点3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-2"><span class="nav-number">3.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点4"><span class="nav-number">4.</span> <span class="nav-text">考点4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-3"><span class="nav-number">4.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点5"><span class="nav-number">5.</span> <span class="nav-text">考点5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-4"><span class="nav-number">5.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点6"><span class="nav-number">6.</span> <span class="nav-text">考点6</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-5"><span class="nav-number">6.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点7"><span class="nav-number">7.</span> <span class="nav-text">考点7</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-6"><span class="nav-number">7.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点8"><span class="nav-number">8.</span> <span class="nav-text">考点8</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-7"><span class="nav-number">8.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点9"><span class="nav-number">9.</span> <span class="nav-text">考点9</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-8"><span class="nav-number">9.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点10"><span class="nav-number">10.</span> <span class="nav-text">考点10</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-9"><span class="nav-number">10.1.</span> <span class="nav-text">解析</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/exam/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/exam/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/exam/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/exam/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/exam/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/exam/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/exam/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/exam/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/exam/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/exam/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/exam/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里写下你的评论吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

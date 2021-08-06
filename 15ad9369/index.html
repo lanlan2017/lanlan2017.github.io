@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/exam/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/exam/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/exam/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/exam/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/exam/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/exam/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/exam/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="考点1:DHCP分配固定IP地址&amp;nbsp;考点2:切换超级用户&amp;nbsp;考点3:路由设置:route add -net 目的网络 gw 网关地址&amp;nbsp;考点4:UNIX在退出系统账户后继续运行进程&amp;nbsp;考点5:vi编辑器命令模式复制当前行快捷键&amp;nbsp;考点6:Linux环境变量配置文件&amp;nbsp;考点7:Linux可执行文件开头的特征字符&amp;nbsp;考点8:&#x2F;etc&#x2F;sysctl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021年04月17日Linux专项联系1">
+<meta property="og:url" content="https://lanlan2017.github.io/exam/15ad9369/index.html">
+<meta property="og:site_name" content="笔试题|蓝蓝博客">
+<meta property="og:description" content="考点1:DHCP分配固定IP地址&amp;nbsp;考点2:切换超级用户&amp;nbsp;考点3:路由设置:route add -net 目的网络 gw 网关地址&amp;nbsp;考点4:UNIX在退出系统账户后继续运行进程&amp;nbsp;考点5:vi编辑器命令模式复制当前行快捷键&amp;nbsp;考点6:Linux环境变量配置文件&amp;nbsp;考点7:Linux可执行文件开头的特征字符&amp;nbsp;考点8:&#x2F;etc&#x2F;sysctl">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-19T17:29:50.000Z">
+<meta property="article:modified_time" content="2021-05-17T05:59:20.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/exam/15ad9369/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>2021年04月17日Linux专项联系1 | 笔试题|蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/exam/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">笔试题|蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/exam/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/exam/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/exam/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/exam/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/exam/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/exam/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/15ad9369/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">2021年04月17日Linux专项联系1
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2021-04-20 01:29:50" itemprop="dateCreated datePublished" datetime="2021-04-20T01:29:50+08:00">2021-04-20</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-17 13:59:20" itemprop="dateModified" datetime="2021-05-17T13:59:20+08:00">2021-05-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Linux/2021%E5%B9%B404%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年04月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/15ad9369/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/15ad9369/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/exam/15ad9369/#考点1-DHCP分配固定IP地址" class="header_1">考点1:DHCP分配固定IP地址</a>&nbsp;<br><a href="/exam/15ad9369/#考点2-切换超级用户" class="header_1">考点2:切换超级用户</a>&nbsp;<br><a href="/exam/15ad9369/#考点3-路由设置-route-add-net-目的网络-gw-网关地址" class="header_1">考点3:路由设置:route add -net 目的网络 gw 网关地址</a>&nbsp;<br><a href="/exam/15ad9369/#考点4-UNIX在退出系统账户后继续运行进程" class="header_1">考点4:UNIX在退出系统账户后继续运行进程</a>&nbsp;<br><a href="/exam/15ad9369/#考点5-vi编辑器命令模式复制当前行快捷键" class="header_1">考点5:vi编辑器命令模式复制当前行快捷键</a>&nbsp;<br><a href="/exam/15ad9369/#考点6-Linux环境变量配置文件" class="header_1">考点6:Linux环境变量配置文件</a>&nbsp;<br><a href="/exam/15ad9369/#考点7-Linux可执行文件开头的特征字符" class="header_1">考点7:Linux可执行文件开头的特征字符</a>&nbsp;<br><a href="/exam/15ad9369/#考点8-etc-sysctl-conf开启流量转发功能的参数" class="header_1">考点8:/etc/sysctl.conf开启流量转发功能的参数</a>&nbsp;<br><a href="/exam/15ad9369/#考点9-线程" class="header_1">考点9:线程</a>&nbsp;<br><a href="/exam/15ad9369/#考点10-Linux创建文件的命令" class="header_1">考点10:Linux创建文件的命令</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="考点1-DHCP分配固定IP地址"><a href="#考点1-DHCP分配固定IP地址" class="headerlink" title="考点1:DHCP分配固定IP地址"></a>考点1:DHCP分配固定IP地址</h1><p>在dhcpd.conf中用于向某个客户主机分配固定IP地址的参数是 (   )</p>
+<ul>
+<li>A <code>server-name</code></li>
+<li>B <code>fixed-address</code></li>
+<li>C <code>filename</code></li>
+<li>D <code>hardware</code></li>
+</ul>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+<p>fixed是固定的意思 address是地址的意思</p>
+<h1 id="考点2-切换超级用户"><a href="#考点2-切换超级用户" class="headerlink" title="考点2:切换超级用户"></a>考点2:切换超级用户</h1><p>linux中哪个命令可以将普通用户转换成超级用户？()</p>
+<ul>
+<li>A <code>super</code></li>
+<li>B <code>passwd</code></li>
+<li>C <code>tar</code></li>
+<li>D <code>su</code></li>
+</ul>
+<h2 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+
+<h1 id="考点3-路由设置-route-add-net-目的网络-gw-网关地址"><a href="#考点3-路由设置-route-add-net-目的网络-gw-网关地址" class="headerlink" title="考点3:路由设置:route add -net 目的网络 gw 网关地址"></a>考点3:路由设置:route add -net 目的网络 gw 网关地址</h1><p>局域网的网络地址192.168.1.0/24,局域网络连接其它网络的网关地址是192.168.1.1。主机192.168.1.20访问172.16.1.0/24网络时,其路由设置正确的是？</p>
+<ul>
+<li>A <code>route add</code> –<code>net 192.168.1.0 gw 192.168.1.1 netmask 255.255.255.0 metric 1</code></li>
+<li>B <code>route add</code> –<code>net 172.16.1.0 gw 192.168.1.1 netmask 255.255.255.0 metric 1</code></li>
+<li>C <code>route add</code> –<code>net 172.16.1.0 gw 172.16.1.1 netmask 255.255.255.0 metric 1</code></li>
+<li>D <code>route add default 192.168.1.0 netmask 172.168.1.1 metric 1</code></li>
+</ul>
+<h2 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+<p>-net 后面跟的是目标网络，gw就是gateway（网关入口）就是你从哪个网关去到那个目标网络。明白这两项这题就能选了。</p>
+<h1 id="考点4-UNIX在退出系统账户后继续运行进程"><a href="#考点4-UNIX在退出系统账户后继续运行进程" class="headerlink" title="考点4:UNIX在退出系统账户后继续运行进程"></a>考点4:UNIX在退出系统账户后继续运行进程</h1><p>在退出unix系统账户之后还需要继续运行某个进程,那么可用()</p>
+<ul>
+<li>A <code>awk</code></li>
+<li>B <code>sed</code></li>
+<li>C <code>crontab</code></li>
+<li>D <code>nohup</code></li>
+</ul>
+<h2 id="解析-3"><a href="#解析-3" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+<p>nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户/关闭终端之后继续运行相应的进程。nohup就是不挂起的意思<br>awk 对数据分析的</p>
+<p>sed  编辑文件的</p>
+<p>crontab<br>用于设置周期性被执行的指令</p>
+<p> nohup</p>
+<p>在注销后使用<br>nohup<br> 命令运行后台中的程序。</p>
+<h1 id="考点5-vi编辑器命令模式复制当前行快捷键"><a href="#考点5-vi编辑器命令模式复制当前行快捷键" class="headerlink" title="考点5:vi编辑器命令模式复制当前行快捷键"></a>考点5:vi编辑器命令模式复制当前行快捷键</h1><p>在命令行下使用 vi 编辑一个文件时, 如何复制当前行？(最佳选项)</p>
+<ul>
+<li>A <code>cc</code></li>
+<li>B <code>dd</code></li>
+<li>C <code>yy</code></li>
+<li>D <code>Ctrl + c</code></li>
+</ul>
+<h2 id="解析-4"><a href="#解析-4" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: C</details>
+
+<p>cc 多数unix通过此调用它们的C编译程序<br>dd  删除光标所在的一整行<br>yy 复制光标所在的一整行<br>p 将已复制的数据在光标的下一行粘贴<br>P 将已复制的数据在光标的上一行粘贴</p>
+<p>yy复制当前行 nyy复制从当前行开始的n行。 pp是对应的粘贴操作，与yy对应，</p>
+<h1 id="考点6-Linux环境变量配置文件"><a href="#考点6-Linux环境变量配置文件" class="headerlink" title="考点6:Linux环境变量配置文件"></a>考点6:Linux环境变量配置文件</h1><p>使用shell时,默认的环境变量放在哪里？</p>
+<ul>
+<li>A ~/.<code>bash_profile</code></li>
+<li>B ~/.<code>bash</code></li>
+<li>C <code>/etc/profile.d</code></li>
+<li>D ~<code>/bash</code></li>
+</ul>
+<h2 id="解析-5"><a href="#解析-5" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: A</details>
+
+<p>/etc/profile:<br>此文件为系统的为每个用户设置环境信息,当用户第一次登录时,该文件被执行.并从/etc/profile.d目录的配置文件中搜集shell的设置.</p>
+<p>/etc/bashrc<br>:为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取.</p>
+<p>~/.bash_profile<br>:每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该文件仅仅执行一次!默认情况下,他设置一些环境变量,执行用户的.bashrc文件.</p>
+<p>~/.bashrc<br>:该文件包含专用于你的bash shell的bash信息,当登录时以及每次打开新的shell时,该该文件被读取.</p>
+<p>~/.bash_logout :<br>当每次退出系统(退出bash shell)时,执行该文件. </p>
+<p>.bash_profile、.bashrc、和.bash_logout</p>
+<p>上面这三个文件是bash shell的用户环境配置文件，位于用户的主目录下。</p>
+<p>.bash_profile是最重要的一个配置文件，它在用户每次登录系统时被读取，里面的所有<br>命令都会被bash执行。.profile(由Bourne Shell和Korn Shell使用)和.login(由C Shell使用)两个文件是.bash_profile的同义词，目的是为了兼容其它Shell。<br>在Debian中使用.profile文件代替.bash_profile文件。</p>
+<p>.bashrc<br>文件会在bash shell调用另一个bash<br>shell时读取，也就是在shell中再键入bash命令启动一个新shell时就会去读该文件。这样可有效分离登录和子shell所需的环境。但一般 来说都会在.bash_profile里调用.bashrc脚本以便统一配置用户环境。</p>
+<p>.bash_logout<br>在退出shell时被读取。所以我们可把一些清理工作的命令放到这文件中。</p>
+<p>登录Linux时，首先启动 /etc/profile 文件，然后再启动用户目录下的 ~/.bash_profile、<br>~/.bash_login或<br>~/.profile文件中的其中一个(根据不同的linux操作系统的不同，命名不一样)，执行的顺序为：~/.bash_profile、<br>~/.bash_login、 ~/.profile。</p>
+<p>如果 ~/.bash_profile文件存在的话，一般还会执行 ~/.bashrc文件。</p>
+<h1 id="考点7-Linux可执行文件开头的特征字符"><a href="#考点7-Linux可执行文件开头的特征字符" class="headerlink" title="考点7:Linux可执行文件开头的特征字符"></a>考点7:Linux可执行文件开头的特征字符</h1><p>Linux的可执行文件开头的特征字符串是什么</p>
+<ul>
+<li>A <code>PE</code></li>
+<li>B <code>MZ</code></li>
+<li>C <code>ELF</code></li>
+<li>D <code>LNX</code></li>
+</ul>
+<h2 id="解析-6"><a href="#解析-6" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: C</details>
+
+<p>Executable Linkable File 可执行可链接文件<br>可移植可执行文件（Portable Executable，PE）是一种用于可执行、目标文件和动态链接库的文件格式，主要用于Windows，<br>而使用于Linux和多数Unix系统中的是可执行与可链接格式（ELF），Mac OS中则主要使用Mach-O；</p>
+<h1 id="考点8-etc-sysctl-conf开启流量转发功能的参数"><a href="#考点8-etc-sysctl-conf开启流量转发功能的参数" class="headerlink" title="考点8:/etc/sysctl.conf开启流量转发功能的参数"></a>考点8:/etc/sysctl.conf开启流量转发功能的参数</h1><p>修改/etc/sysctl.conf如下哪项参数可以开启Linux流量转发功能()</p>
+<ul>
+<li>A <code>net.ipv4.conf.all.rp_filter = 0</code></li>
+<li>B <code>net.ipv4.conf.default.rp_filter = 0</code></li>
+<li>C <code>net.ipv4.ip_forward = 1</code></li>
+<li>D <code>net.ipv4.conf.all.rp_filter = 1</code></li>
+<li>E <code>net.ipv4.conf.default.rp_filter = 1</code></li>
+<li>F <code>net.ipv4.ip_forward = 0</code></li>
+</ul>
+<h2 id="解析-7"><a href="#解析-7" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: C</details>
+
+<p>可以通过命令：cat /proc/sys/net/ipv4/ip_forward查看，1为开启Linux流量转发，0为禁止使用。<br>rp_filter参数有三个值，0、1、2，具体含义：</p>
+<p>0：不开启源地址校验。</p>
+<p>1：开启严格的反向路径校验。对每个进来的数据包，校验其反向路径是否是最佳路径。如果反向路径不是最佳路径，则直接丢弃该数据包。</p>
+<p>2：开启松散的反向路径校验。对每个进来的数据包，校验其源地址是否可达，即反向路径是否能通（通过任意网口），如果反向路径不同，则直接丢弃该数据包。</p>
+<h1 id="考点9-线程"><a href="#考点9-线程" class="headerlink" title="考点9:线程"></a>考点9:线程</h1><p>有关线程说法正确的是( )</p>
+<ul>
+<li>A 线程是程序的多个顺序的流动态执行</li>
+<li>B 线程有自己独立的地址空间</li>
+<li>C 线程不能够独立执行,必须依存在应用程序中,由应用程序提供多个线程执行控制</li>
+<li>D 线程是系统进行资源分配和调度的一个独立单位</li>
+</ul>
+<h2 id="解析-8"><a href="#解析-8" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: AC</details>
+
+<p>进程是具有一定独立功能的程序关于某个数据集合上的一次运行活动，是<strong>操作系统进行资源分配和调度的一个独立单位</strong>；</p>
+<p>线程是进程的一个实体，一个进程中包含多个线程。是CPU调度和分派的基本单位，是比进程更小的能独立运行的基本单位</p>
+<p>进程有独立的地址空间，线程没有。<br><strong>线程是共享进程的地址空间</strong>，因此B错误</p>
+<p><strong>进程是操作系统进行资源分配和调度的一个独立单位</strong>，而<strong>线程只是CPU调度和分派的基本单位</strong>，因此D错误</p>
+<p>进程有独立的地址空间，线程没有。线程是共享进程的地址空间</p>
+<h1 id="考点10-Linux创建文件的命令"><a href="#考点10-Linux创建文件的命令" class="headerlink" title="考点10:Linux创建文件的命令"></a>考点10:Linux创建文件的命令</h1><p>linux 创建文件的命令有()</p>
+<ul>
+<li>A <code>ls</code></li>
+<li>B <code>touch</code></li>
+<li>C <code>cat</code></li>
+<li>D <code>vi/vim</code></li>
+<li>E <code>&gt;</code></li>
+</ul>
+<h2 id="解析-9"><a href="#解析-9" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: BDE</details>
+
+<p>touch filename 新建文件<br>将几个文件合并为一个文件 ——-cat file1 file2 &gt; file</p>
+<p>vi/vim filename 表示用vi或vim打开文件，如果不存在该文件则新建文</p>
+<p>ls -查看当前目录下的文件<br>touch filename 新建文件<br>cat : 三个功能：<br>  1.一次显示整个文件：cat filename<br>  2.创建新文件，不能 编辑已有文件：cat &gt; filename<br>  3.将几个文件合并为一个文件：cat file1 file2 &gt; file<br><code>vi/vim filename</code>表示用vi或vim打开文件，如果不存在该文件则新建文件<br><code>&gt;</code> 是定向输出到文件，如果文件不存在，就创建文件；如果文件存在，就将其清空；<br><code>&gt;</code> firename 将空装入文件firename，如果没有会自动创建</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/exam/15ad9369/" title="2021年04月17日Linux专项联系1">https://lanlan2017.github.io/exam/15ad9369/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/exam/fe4a753b/" rel="next" title="2021年04月18日Linux专项练习1">
+                  <i class="fa fa-chevron-left"></i> 2021年04月18日Linux专项练习1
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/exam/5cba7af/" rel="prev" title="《第一周单元测验》(一)">
+                  《第一周单元测验》(一) <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#考点1-DHCP分配固定IP地址"><span class="nav-number">1.</span> <span class="nav-text">考点1:DHCP分配固定IP地址</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">1.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点2-切换超级用户"><span class="nav-number">2.</span> <span class="nav-text">考点2:切换超级用户</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-1"><span class="nav-number">2.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点3-路由设置-route-add-net-目的网络-gw-网关地址"><span class="nav-number">3.</span> <span class="nav-text">考点3:路由设置:route add -net 目的网络 gw 网关地址</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-2"><span class="nav-number">3.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点4-UNIX在退出系统账户后继续运行进程"><span class="nav-number">4.</span> <span class="nav-text">考点4:UNIX在退出系统账户后继续运行进程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-3"><span class="nav-number">4.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点5-vi编辑器命令模式复制当前行快捷键"><span class="nav-number">5.</span> <span class="nav-text">考点5:vi编辑器命令模式复制当前行快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-4"><span class="nav-number">5.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点6-Linux环境变量配置文件"><span class="nav-number">6.</span> <span class="nav-text">考点6:Linux环境变量配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-5"><span class="nav-number">6.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点7-Linux可执行文件开头的特征字符"><span class="nav-number">7.</span> <span class="nav-text">考点7:Linux可执行文件开头的特征字符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-6"><span class="nav-number">7.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点8-etc-sysctl-conf开启流量转发功能的参数"><span class="nav-number">8.</span> <span class="nav-text">考点8:&#x2F;etc&#x2F;sysctl.conf开启流量转发功能的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-7"><span class="nav-number">8.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点9-线程"><span class="nav-number">9.</span> <span class="nav-text">考点9:线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-8"><span class="nav-number">9.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点10-Linux创建文件的命令"><span class="nav-number">10.</span> <span class="nav-text">考点10:Linux创建文件的命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-9"><span class="nav-number">10.1.</span> <span class="nav-text">解析</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/exam/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/exam/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/exam/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/exam/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/exam/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/exam/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/exam/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/exam/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/exam/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/exam/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/exam/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里写下你的评论吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

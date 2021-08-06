@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/exam/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/exam/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/exam/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/exam/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/exam/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/exam/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/exam/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="考点1&amp;nbsp;考点2&amp;nbsp;考点3&amp;nbsp;考点4&amp;nbsp;考点5&amp;nbsp;考点6&amp;nbsp;考点7&amp;nbsp;考点8&amp;nbsp;考点9&amp;nbsp; .header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.heade">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019年11月8日 Java1">
+<meta property="og:url" content="https://lanlan2017.github.io/exam/3942cc4b/index.html">
+<meta property="og:site_name" content="笔试题|蓝蓝博客">
+<meta property="og:description" content="考点1&amp;nbsp;考点2&amp;nbsp;考点3&amp;nbsp;考点4&amp;nbsp;考点5&amp;nbsp;考点6&amp;nbsp;考点7&amp;nbsp;考点8&amp;nbsp;考点9&amp;nbsp; .header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.heade">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-08T11:36:23.000Z">
+<meta property="article:modified_time" content="2021-03-21T08:40:51.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/exam/3942cc4b/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>2019年11月8日 Java1 | 笔试题|蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/exam/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">笔试题|蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/exam/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/exam/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/exam/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/exam/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/exam/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/exam/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/3942cc4b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">2019年11月8日 Java1
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-08 19:36:23" itemprop="dateCreated datePublished" datetime="2019-11-08T19:36:23+08:00">2019-11-08</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 16:40:51" itemprop="dateModified" datetime="2021-03-21T16:40:51+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/2019%E5%B9%B411%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2019年11月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/3942cc4b/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/3942cc4b/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/exam/3942cc4b/#考点1" class="header_1">考点1</a>&nbsp;<br><a href="/exam/3942cc4b/#考点2" class="header_1">考点2</a>&nbsp;<br><a href="/exam/3942cc4b/#考点3" class="header_1">考点3</a>&nbsp;<br><a href="/exam/3942cc4b/#考点4" class="header_1">考点4</a>&nbsp;<br><a href="/exam/3942cc4b/#考点5" class="header_1">考点5</a>&nbsp;<br><a href="/exam/3942cc4b/#考点6" class="header_1">考点6</a>&nbsp;<br><a href="/exam/3942cc4b/#考点7" class="header_1">考点7</a>&nbsp;<br><a href="/exam/3942cc4b/#考点8" class="header_1">考点8</a>&nbsp;<br><a href="/exam/3942cc4b/#考点9" class="header_1">考点9</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="考点1"><a href="#考点1" class="headerlink" title="考点1"></a>考点1</h1><p>关于下面代码 int[] x=new int[25]; 描述正确的是（）</p>
+<ul>
+<li>A x[25]存放了数据“\0”。</li>
+<li>B x[24] 存放了数据“\0”。</li>
+<li>C 若访问x[25]，程序将抛出异常。</li>
+<li>D x[1]访问此数组的第一个元素。</li>
+</ul>
+<p>正确答案: C</p>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>A:不存在x[25] 索引从0开始到length-1<br>B:x[24]<br>存的是默认值0(java中没有’\0’这一说)<br>C:超出内存 正确<br>D:第二元素</p>
+<h1 id="考点2"><a href="#考点2" class="headerlink" title="考点2"></a>考点2</h1><p>以下表达式的类型和值是什么？（注意整数除法）（）<br>-5 + 1/4 + 2*-3 + 5.0</p>
+<ul>
+<li>A int -3</li>
+<li>B int -4</li>
+<li>C double -5.5</li>
+<li>D double -6.0</li>
+</ul>
+<p>正确答案: D</p>
+<h2 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h2><p>注意题目说整数除法，所以1/4 = 0</p>
+<h1 id="考点3"><a href="#考点3" class="headerlink" title="考点3"></a>考点3</h1><p>下列修饰符中，能够使得某个成员变量可被它所在包访问到和它的子类访问到的是（ ）</p>
+<ul>
+<li>A protected</li>
+<li>B public</li>
+<li>C private</li>
+<li>D 应不加修饰符</li>
+</ul>
+<p>正确答案: A</p>
+<h2 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">位置</th>
+<th style="text-align:left">public</th>
+<th style="text-align:left">protected</th>
+<th style="text-align:left">default</th>
+<th style="text-align:left">private</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">同一个类中</td>
+<td style="text-align:left">√</td>
+<td style="text-align:left">√</td>
+<td style="text-align:left">√</td>
+<td style="text-align:left">√</td>
+</tr>
+<tr>
+<td style="text-align:left">同一个包中</td>
+<td style="text-align:left">√</td>
+<td style="text-align:left">√</td>
+<td style="text-align:left">√</td>
+<td style="text-align:left">✘</td>
+</tr>
+<tr>
+<td style="text-align:left">子类中</td>
+<td style="text-align:left">√</td>
+<td style="text-align:left">√</td>
+<td style="text-align:left">✘</td>
+<td style="text-align:left">✘</td>
+</tr>
+<tr>
+<td style="text-align:left">全局</td>
+<td style="text-align:left">√</td>
+<td style="text-align:left">✘</td>
+<td style="text-align:left">✘</td>
+<td style="text-align:left">✘</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="考点4"><a href="#考点4" class="headerlink" title="考点4"></a>考点4</h1><p>内部类（也叫成员内部类）可以有4种访问权限。（  ）</p>
+<ul>
+<li>A 正确</li>
+<li>B 错误</li>
+</ul>
+<p>正确答案: A</p>
+<h2 id="解析-3"><a href="#解析-3" class="headerlink" title="解析"></a>解析</h2><h3 id="为什么外部类只能public和默认修饰"><a href="#为什么外部类只能public和默认修饰" class="headerlink" title="为什么外部类只能public和默认修饰"></a>为什么外部类只能public和默认修饰</h3><p>外部类的上一级程序单元是包，所以其有两个作用域：同一包内和任何位置。因此只需要2种访问权限：包访问权限和公开访问权限，正好对应的省略访问控制符和public。省略访问控制符是包访问权限，即同一个包内的其他类可以访问省略访问控制符的成员。因此，如果一个外部类不使用任何访问控制符修饰，则只能被同一个包的其他类访问。</p>
+<h3 id="为什么内部类可以使用四个访问控制符"><a href="#为什么内部类可以使用四个访问控制符" class="headerlink" title="为什么内部类可以使用四个访问控制符"></a>为什么内部类可以使用四个访问控制符</h3><p>而内部类的上一级程序单元是外部类，它就具有4个作用域：同一个类、同一个包、父子类和任何位置。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>你就把内部类理解成类的成员，成员有4种访问权限吧，内部类也是！分别为private、protected、public以及默认的访问权限</p>
+<h1 id="考点5"><a href="#考点5" class="headerlink" title="考点5"></a>考点5</h1><p>以下关于集合类ArrayList、LinkedList、HashMap描述错误的是（）</p>
+<ul>
+<li>A HashMap实现Map接口，它允许任何类型的键和值对象，并允许将null用作键或值</li>
+<li>B ArrayList和LinkedList均实现了List接口</li>
+<li>C 添加和删除元素时，ArrayList的表现更佳</li>
+<li>D ArrayList的访问速度比LinkedList快</li>
+</ul>
+<p>正确答案: C</p>
+<h2 id="解析-4"><a href="#解析-4" class="headerlink" title="解析"></a>解析</h2><ol>
+<li><strong>List 是一个有序集合</strong>，可以存放重复的数据 (有序：存进是什么顺序，取出时还是什么顺序)<br>(1).ArrayList 底层是数组适合查询，不适合增删元素。<br>(2).LiskedList 底层是双向链表适合增删元素，不适合查询操作。<br>(3).Vector 底层和ArrayList相同，但是Vector是线程安全的，效率较低很少使用</li>
+<li><strong>Set 是一个无序集合</strong>，不允许放重复的数据 (无序可重复，存进和取出的顺序不一样)<br>(1).HashSet 底层是哈希表/散列表<br>(2).TreeSet 继承sartedSet接口（无需不可重复，但存进去的元素可以按照元素的大小自动排序）</li>
+<li>Map 是一个无序集合，以键值对的方式存放数据，键对象不允许重复，值对象可以重复。<br>(1).HashMap实现不同步，线程不安全。<strong>HashTable线程安全</strong><br>(2).HashMap中的key-value都是存储在Entry中的。<br>(3).HashMap可以存null键和null值，不保证元素的顺序恒久不变，它的底层使用的是数组和链表，通过hashCode()方法和equals方法保证键的唯一性<h3 id="数组插入删除效率低"><a href="#数组插入删除效率低" class="headerlink" title="数组插入删除效率低"></a>数组插入删除效率低</h3>数组的插入和删除效率比较低，读取的效率高，因为地址是连续的</li>
+</ol>
+<h1 id="考点6"><a href="#考点6" class="headerlink" title="考点6"></a>考点6</h1><p>以下代码段执行后的输出结果为<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(test());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(temp);</span><br><span class="line">            <span class="keyword">return</span> ++temp;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            System.out.println(temp);</span><br><span class="line">            <span class="keyword">return</span> ++temp;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            ++temp;</span><br><span class="line">            System.out.println(temp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>A 1,2,2</li>
+<li>B 1,2,3</li>
+<li>C 1,3,3</li>
+<li>D 1,3,2</li>
+</ul>
+<p>正确答案: D</p>
+<h2 id="解析-5"><a href="#解析-5" class="headerlink" title="解析"></a>解析</h2><p>finally代码块在try语句的return之前执行。try的return的值会被放入临时空间，然后执行finally代码块，如果finally中有return，会刷新临时空间的值，方法结束返回临时空间值，也就是finally中的return会覆盖try中的return。</p>
+<h1 id="考点7"><a href="#考点7" class="headerlink" title="考点7"></a>考点7</h1><p>Hashtable 和 HashMap 的区别是：</p>
+<ul>
+<li>A Hashtable 是一个哈希表，该类继承了 AbstractMap，实现了 Map 接口</li>
+<li>B HashMap 是内部基于哈希表实现，该类继承AbstractMap，实现Map接口</li>
+<li>C Hashtable 线程安全的，而 HashMap 是线程不安全的</li>
+<li>D Properties 类 继承了 Hashtable 类，而 Hashtable 类则继承Dictionary 类</li>
+<li>E HashMap允许将 null 作为一个 entry 的 key 或者 value，而 Hashtable 不允许。</li>
+</ul>
+<p>正确答案: BCDE</p>
+<h2 id="解析-6"><a href="#解析-6" class="headerlink" title="解析"></a>解析</h2><p>选B、C、D、E。</p>
+<h3 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h3><p>（1）Hashtable 是一个<strong>散列表</strong>，它存储的内容是键值对(key-value)映射。<br>（2）Hashtable 的函数都是同步的，这意味着<strong>HashTable是线程安全的</strong>。它的key、value都不可以为null。<br>（3）HashTable直接使用对象的hashCode。</p>
+<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>（1）由<strong>数组+链表</strong>组成的，基于<strong>哈希表</strong>的Map实现，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的。<br>（2）<strong>HashMap是线程<code>不</code>安全的</strong>，HashMap可以接受为null的键(key)和值(value)。<br>（3）HashMap重新计算hash值</p>
+<h3 id="Hashtable继承Dictionary"><a href="#Hashtable继承Dictionary" class="headerlink" title="Hashtable继承Dictionary"></a>Hashtable继承Dictionary</h3><p>Properties继承关系如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hashtable</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">extends</span> <span class="title">Dictionary</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="HashMap继承AbstractMap"><a href="#HashMap继承AbstractMap" class="headerlink" title="HashMap继承AbstractMap"></a>HashMap继承AbstractMap</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HashMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;<span class="keyword">extends</span> <span class="title">AbstractMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; <span class="keyword">implements</span> <span class="title">Map</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt;, <span class="title">Cloneable</span>, <span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="Properties继承Hashtable"><a href="#Properties继承Hashtable" class="headerlink" title="Properties继承Hashtable"></a>Properties继承Hashtable</h3><h1 id="考点8"><a href="#考点8" class="headerlink" title="考点8"></a>考点8</h1><p>下面几个关于Java里queue的说法哪些是正确的（）？</p>
+<ul>
+<li>A LinkedBlockingQueue是一个可选有界队列，不允许null值</li>
+<li>B PriorityQueue，LinkedBlockingQueue都是线程不安全的</li>
+<li>C PriorityQueue是一个无界队列，不允许null值，入队和出队的时间复杂度是O（log(n)）</li>
+<li>D PriorityQueue，ConcurrentLinkedQueue都遵循FIFO原则</li>
+</ul>
+<p>正确答案: AC</p>
+<h2 id="解析-7"><a href="#解析-7" class="headerlink" title="解析"></a>解析</h2><p>A对、LinkedBlockingQueue是一个基于节点链接的<strong>可选是否有界</strong>的阻塞队列，不允许null值。<br>B错、LinkedBlockingQueue是一个<strong>线程安全</strong>的阻塞队列，实现了先进先出等特性。<br>C、PriorityQueue是一个无界队列，不允许null值，入队和出队的时间复杂度是O（log(n)）。<br>D、PriorityQueue是不同于先进先出队列的另一种队列。每次从队列中取出的是具有最高优先权的元素。ConcurrentLinkedQueue是一个基于链接节点的无界线程安全队列，该队列的元素遵循FIFO原则。</p>
+<h1 id="考点9"><a href="#考点9" class="headerlink" title="考点9"></a>考点9</h1><p>关于Java的一些概念，下面哪些描述是正确的：(        )</p>
+<ul>
+<li>A 所有的Java异常和错误的基类都是java.lang.Exception, 包括java.lang.RuntimeException</li>
+<li>B 通过try … catch … finally语句，finally中的语句部分无论发生什么异常都会得到执行</li>
+<li>C java中所有的数据都是对象</li>
+<li>D Java通过垃圾回收回收不再引用的变量，垃圾回收时对象的finallize方法一定会得到执行</li>
+<li>E Java是跨平台的语言，无论通过哪个版本的Java编写的程序都能在所有的Java运行平台中运行</li>
+<li>F Java通过synchronized进行访问的同步，synchronized作用非静态成员方法和静态成员方法上同步的目标是不同的</li>
+</ul>
+<p>正确答案: BF</p>
+<h2 id="解析-8"><a href="#解析-8" class="headerlink" title="解析"></a>解析</h2><p>A:Java中所有错误和异常的父类是java.lang.Throwable<br>C：基本数据类型不是对象，不能用new的方法获取，但是每个基本数据类型都对应着封装类型，这些封装类型为了解决基本数据类型面向对象用的。<br>D:Java垃圾回收器负责回收无用对象占据的内存资源,但对象没有使用new获取了一块特殊区域，这块特殊区域的回收使用finallize（）<br>E：Java跨平台是因为有JVM的存在，Java的三个版本的运行需要各自不同的环境。<br>F: Synchronized修饰非静态方法，实际上是对调用该方法的对象加锁，俗称“对象锁”Synchronized修饰静态方法，实际上是对该类对象加锁，俗称“类锁”。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/exam/3942cc4b/" title="2019年11月8日 Java1">https://lanlan2017.github.io/exam/3942cc4b/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/exam/3a826652/" rel="next" title="2019年11月7日 计算机网络1">
+                  <i class="fa fa-chevron-left"></i> 2019年11月7日 计算机网络1
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/exam/8e48d9cb/" rel="prev" title="2019年11月9日 java2">
+                  2019年11月9日 java2 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#考点1"><span class="nav-number">1.</span> <span class="nav-text">考点1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">1.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点2"><span class="nav-number">2.</span> <span class="nav-text">考点2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-1"><span class="nav-number">2.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点3"><span class="nav-number">3.</span> <span class="nav-text">考点3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-2"><span class="nav-number">3.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点4"><span class="nav-number">4.</span> <span class="nav-text">考点4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-3"><span class="nav-number">4.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么外部类只能public和默认修饰"><span class="nav-number">4.1.1.</span> <span class="nav-text">为什么外部类只能public和默认修饰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么内部类可以使用四个访问控制符"><span class="nav-number">4.1.2.</span> <span class="nav-text">为什么内部类可以使用四个访问控制符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">4.1.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点5"><span class="nav-number">5.</span> <span class="nav-text">考点5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-4"><span class="nav-number">5.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组插入删除效率低"><span class="nav-number">5.1.1.</span> <span class="nav-text">数组插入删除效率低</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点6"><span class="nav-number">6.</span> <span class="nav-text">考点6</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-5"><span class="nav-number">6.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点7"><span class="nav-number">7.</span> <span class="nav-text">考点7</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-6"><span class="nav-number">7.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hashtable"><span class="nav-number">7.1.1.</span> <span class="nav-text">Hashtable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">7.1.2.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hashtable继承Dictionary"><span class="nav-number">7.1.3.</span> <span class="nav-text">Hashtable继承Dictionary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap继承AbstractMap"><span class="nav-number">7.1.4.</span> <span class="nav-text">HashMap继承AbstractMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties继承Hashtable"><span class="nav-number">7.1.5.</span> <span class="nav-text">Properties继承Hashtable</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点8"><span class="nav-number">8.</span> <span class="nav-text">考点8</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-7"><span class="nav-number">8.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点9"><span class="nav-number">9.</span> <span class="nav-text">考点9</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-8"><span class="nav-number">9.1.</span> <span class="nav-text">解析</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/exam/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/exam/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/exam/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/exam/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/exam/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/exam/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/exam/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/exam/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/exam/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/exam/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/exam/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里写下你的评论吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

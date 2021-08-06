@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/exam/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/exam/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/exam/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/exam/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/exam/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/exam/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/exam/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="考点1:vi 末行模式相关命令&amp;nbsp;考点2:Linux默认的Shell&amp;nbsp;考点3:如何退出交互式Shell&amp;nbsp;考点4:Linux查找字符串grep&amp;nbsp;考点5:Linux任务计划&amp;nbsp;考点6:导致进程从用户态切换到内核态的情况&amp;nbsp;考点7:Linux统计重复行uniq 按行排序sort 查看文件头head&amp;nbsp;考点8:授权 修改属主 修改属组&amp;nbsp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021年04月12日Linux专项练习2">
+<meta property="og:url" content="https://lanlan2017.github.io/exam/f050cb01/index.html">
+<meta property="og:site_name" content="笔试题|蓝蓝博客">
+<meta property="og:description" content="考点1:vi 末行模式相关命令&amp;nbsp;考点2:Linux默认的Shell&amp;nbsp;考点3:如何退出交互式Shell&amp;nbsp;考点4:Linux查找字符串grep&amp;nbsp;考点5:Linux任务计划&amp;nbsp;考点6:导致进程从用户态切换到内核态的情况&amp;nbsp;考点7:Linux统计重复行uniq 按行排序sort 查看文件头head&amp;nbsp;考点8:授权 修改属主 修改属组&amp;nbsp">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-12T14:54:27.000Z">
+<meta property="article:modified_time" content="2021-04-13T17:43:05.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/exam/f050cb01/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>2021年04月12日Linux专项练习2 | 笔试题|蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/exam/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">笔试题|蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/exam/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/exam/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/exam/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/exam/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/exam/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/exam/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/f050cb01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">2021年04月12日Linux专项练习2
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2021-04-12 22:54:27" itemprop="dateCreated datePublished" datetime="2021-04-12T22:54:27+08:00">2021-04-12</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-14 01:43:05" itemprop="dateModified" datetime="2021-04-14T01:43:05+08:00">2021-04-14</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Linux/2021%E5%B9%B404%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年04月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/f050cb01/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/f050cb01/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/exam/f050cb01/#考点1-vi-末行模式相关命令" class="header_1">考点1:vi 末行模式相关命令</a>&nbsp;<br><a href="/exam/f050cb01/#考点2-Linux默认的Shell" class="header_1">考点2:Linux默认的Shell</a>&nbsp;<br><a href="/exam/f050cb01/#考点3-如何退出交互式Shell" class="header_1">考点3:如何退出交互式Shell</a>&nbsp;<br><a href="/exam/f050cb01/#考点4-Linux查找字符串grep" class="header_1">考点4:Linux查找字符串grep</a>&nbsp;<br><a href="/exam/f050cb01/#考点5-Linux任务计划" class="header_1">考点5:Linux任务计划</a>&nbsp;<br><a href="/exam/f050cb01/#考点6-导致进程从用户态切换到内核态的情况" class="header_1">考点6:导致进程从用户态切换到内核态的情况</a>&nbsp;<br><a href="/exam/f050cb01/#考点7-Linux统计重复行uniq-按行排序sort-查看文件头head" class="header_1">考点7:Linux统计重复行uniq 按行排序sort 查看文件头head</a>&nbsp;<br><a href="/exam/f050cb01/#考点8-授权-修改属主-修改属组" class="header_1">考点8:授权 修改属主 修改属组</a>&nbsp;<br><a href="/exam/f050cb01/#考点9-makefile" class="header_1">考点9:makefile</a>&nbsp;<br><a href="/exam/f050cb01/#考点10-硬链接" class="header_1">考点10:硬链接</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="考点1-vi-末行模式相关命令"><a href="#考点1-vi-末行模式相关命令" class="headerlink" title="考点1:vi 末行模式相关命令"></a>考点1:vi 末行模式相关命令</h1><p>你使用命令”vi/etc/inittab”查看该文件的内容,你不小心改动了一些内容,为了防止系统出为,你不想保存所修改的内容,你应该如何操作:</p>
+<ul>
+<li>A 在末行模式下,键入<code>:wq</code></li>
+<li>B 在末行模式下,键入<code>:q!</code></li>
+<li>C 在末行模式下,键入<code>:x!</code></li>
+<li>D 在编辑模式下,键入”ESC”键直接退出vi</li>
+</ul>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">vi末行模式命令</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">:wq</td>
+<td style="text-align:left">强制性写入文件并退出。即使文件没有被修改也强制写入，并更新文件的修改时间。</td>
+</tr>
+<tr>
+<td style="text-align:left">:q！</td>
+<td style="text-align:left">直接强制退出</td>
+</tr>
+<tr>
+<td style="text-align:left">:x！</td>
+<td style="text-align:left">写入文件并退出。仅当文件被修改时才写入，并更新文件修改时间，否则不会更新文件修改时间。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>在编辑模式下，键入”ESC”键不退出vi 直接进入命令模式</p>
+<h1 id="考点2-Linux默认的Shell"><a href="#考点2-Linux默认的Shell" class="headerlink" title="考点2:Linux默认的Shell"></a>考点2:Linux默认的Shell</h1><p>shell不仅仅是用户命令解释器,同时一种强大的编程语言,linux缺省的shell是什么</p>
+<ul>
+<li>A <code>bash</code></li>
+<li>B <code>ruby</code></li>
+<li>C <code>PHP</code></li>
+<li>D <code>perl</code></li>
+</ul>
+<h2 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: A</details>
+
+
+<h1 id="考点3-如何退出交互式Shell"><a href="#考点3-如何退出交互式Shell" class="headerlink" title="考点3:如何退出交互式Shell"></a>考点3:如何退出交互式Shell</h1><p>退出交互式的shell,应键入(    )</p>
+<ul>
+<li>A <code>Esc</code></li>
+<li>B <code>q</code></li>
+<li>C <code>exit</code></li>
+<li>D <code>quit</code></li>
+</ul>
+<h2 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: C</details>
+
+<ul>
+<li>esc，在vi的插入模式或者底行命令模式下进入命令模式 </li>
+<li>q，用来退出 man 手册查看命令或者配置文件的状态，或者more、less等命令查看文件的状态 </li>
+<li>exit，一般用于退出会话式程序或者交互式命令行，如ssh远程连接，切换 shell（Linux中） </li>
+<li>quit，一般用于图形界面的退出 </li>
+</ul>
+<p>以上的exit和quit仅是个人总结，非权威，python中的exit()和quit()都可以用来退出python的交互式shell</p>
+<h1 id="考点4-Linux查找字符串grep"><a href="#考点4-Linux查找字符串grep" class="headerlink" title="考点4:Linux查找字符串grep"></a>考点4:Linux查找字符串grep</h1><p>Linux系统中在给定文件中查找与设定条件相符字符串的命令为？</p>
+<ul>
+<li>A <code>grep</code></li>
+<li>B <code>gzip</code></li>
+<li>C <code>find</code></li>
+<li>D <code>sort</code></li>
+</ul>
+<h2 id="解析-3"><a href="#解析-3" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: A</details>
+
+<p>grep：查找文件内的内容<br>gzip：压缩文件，文件经压缩后会增加.gz扩展名<br>find：在指定目录下查找文件<br>sort：排序</p>
+<h1 id="考点5-Linux任务计划"><a href="#考点5-Linux任务计划" class="headerlink" title="考点5:Linux任务计划"></a>考点5:Linux任务计划</h1><p>假如你想计划让系统自动在每个月的第一天早上4点钟执行一个维护工作,以下哪个cron是正确的？</p>
+<ul>
+<li>A <code>00 4 1 1-12 * /maintenance.pl</code></li>
+<li>B <code>4 1 * * ~/maintenance.pl</code></li>
+<li>C <code>0 4 31 /1 * * ~/maintenance.pl</code></li>
+<li>D <code>1 4 00 ~/maintenance.pl</code></li>
+</ul>
+<h2 id="解析-4"><a href="#解析-4" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: A</details>
+
+<h3 id="Linux计划任务格式"><a href="#Linux计划任务格式" class="headerlink" title="Linux计划任务格式"></a>Linux计划任务格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">分 时 日 月 周  命令&#x2F;脚本</span><br></pre></td></tr></table></figure>
+<p>上面的周，1表示星期天，…6表示星期六，0，表示星期天</p>
+<h3 id="如何查看任务计划表"><a href="#如何查看任务计划表" class="headerlink" title="如何查看任务计划表"></a>如何查看任务计划表</h3><p>你们可以打开 /etc/crontab 里面就是任务计划表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;crontab</span><br></pre></td></tr></table></figure><br>运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]&amp;#35; cat &#x2F;etc&#x2F;crontab</span><br><span class="line">SHELL&#x3D;&#x2F;bin&#x2F;bash</span><br><span class="line">PATH&#x3D;&#x2F;sbin:&#x2F;bin:&#x2F;usr&#x2F;sbin:&#x2F;usr&#x2F;bin</span><br><span class="line">MAILTO&#x3D;root</span><br><span class="line"></span><br><span class="line">&amp;#35; For details see man 4 crontabs</span><br><span class="line"></span><br><span class="line">&amp;#35; Example of job definition:</span><br><span class="line">&amp;#35; .---------------- minute (0 - 59)</span><br><span class="line">&amp;#35; |  .------------- hour (0 - 23)</span><br><span class="line">&amp;#35; |  |  .---------- day of month (1 - 31)</span><br><span class="line">&amp;#35; |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span><br><span class="line">&amp;#35; |  |  |  |  .---- day of week (0 - 6) (Sunday&#x3D;0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span><br><span class="line">&amp;#35; |  |  |  |  |</span><br><span class="line">&amp;#35; *  *  *  *  * user-name  command to be executed</span><br><span class="line"></span><br><span class="line">[root@localhost ~]&amp;#35;</span><br></pre></td></tr></table></figure></p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>每天04:00<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 4 * * * 要执行的命令</span><br></pre></td></tr></table></figure><br>周二和周五18:00<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 18 * * 2,5 要执行的命令</span><br></pre></td></tr></table></figure><br>1月到3月份， 周二和周五18:00<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 18 * 1-3 2,5 要执行的命令</span><br></pre></td></tr></table></figure><br>周一到周五17:30发广播，然后17:45分关机<br>写两条计划任务，不是只能写一条<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">30 17 * * 1-5 &#x2F;usr&#x2F;bin&#x2F;wall &lt; &#x2F;root&#x2F;msg </span><br><span class="line">45 17 * * 1-5 &#x2F;sbin&#x2F;shutdown -h now</span><br></pre></td></tr></table></figure><br>中午12点到14点，每两分钟(偶数)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#x2F;2 12-14 * * * 命令</span><br></pre></td></tr></table></figure></p>
+<h1 id="考点6-导致进程从用户态切换到内核态的情况"><a href="#考点6-导致进程从用户态切换到内核态的情况" class="headerlink" title="考点6:导致进程从用户态切换到内核态的情况"></a>考点6:导致进程从用户态切换到内核态的情况</h1><p>下列选项中,会导致用户进程从用户态切换到内核的操作是?<br>I. 整数除以零<br>II. sin( )函数调用<br>III. read系统调用</p>
+<ul>
+<li>A 仅 I、II</li>
+<li>B 仅 I、III</li>
+<li>C 仅 II 、III</li>
+<li>D I、II和III</li>
+</ul>
+<h2 id="解析-5"><a href="#解析-5" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+<h3 id="用户态切换到内核态的3种方式"><a href="#用户态切换到内核态的3种方式" class="headerlink" title="用户态切换到内核态的3种方式"></a>用户态切换到内核态的3种方式</h3><p>a. 系统调用<br>b. 异常<br>c. 外围设备的中断</p>
+<h1 id="考点7-Linux统计重复行uniq-按行排序sort-查看文件头head"><a href="#考点7-Linux统计重复行uniq-按行排序sort-查看文件头head" class="headerlink" title="考点7:Linux统计重复行uniq 按行排序sort 查看文件头head"></a>考点7:Linux统计重复行uniq 按行排序sort 查看文件头head</h1><p>有一个文件ip.txt,每行一条ip记录,共若干行,已排好序,下面哪个命令可以实现”统计出现次数最多的前3个ip及其次数”？( )</p>
+<ul>
+<li>A uniq -c ip.txt</li>
+<li>B uniq -c ip.txt | sort -nr | head -n 3</li>
+<li>C cat ip.txt | count -n | sort -rn | head -n 3</li>
+<li>D cat ip.txt | count -n</li>
+</ul>
+<h2 id="解析-6"><a href="#解析-6" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+
+
+<p><code>uniq</code>命令：报告或删去重复行，加上<code>-n</code>参数可以统计重复行出现的次数（放在每行开头）。<br><code>sort</code>命令：对文本按行进行排序，<code>-n</code>参数表示根据数字大小排序；<code>-r</code>，对应英文单词是reverse，意思是反转排序结果，<code>sort</code>默认是从小到大排序，加上这个参数可以实现从大到小排序。<br><code>head</code>命令：取文件的前一部分（默认输出前10行）。加<code>-n [数字]</code>可以指定到底是前几行。<br>把这三个命令的作用都搞懂，再加上一点 <em>Linux管道符</em> 的知识，这道题目也就很容易解决了。最好是自己动手在命令行下实践几次，加深印象，容易记牢。</p>
+<h1 id="考点8-授权-修改属主-修改属组"><a href="#考点8-授权-修改属主-修改属组" class="headerlink" title="考点8:授权 修改属主 修改属组"></a>考点8:授权 修改属主 修改属组</h1><p>软件项目存储于/ftproot,允许apache用户修改所有程序,设置访问权限的指令？</p>
+<ul>
+<li>A <code>chmod 777 /ftproot</code></li>
+<li>B <code>chgrp apache /frproot</code></li>
+<li>C <code>chown apache /ftproot</code></li>
+<li>D <code>chmod apache /ftproot</code></li>
+</ul>
+<h2 id="解析-7"><a href="#解析-7" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: A</details>
+
+<p>chmod +权限 +文件或目录<br>chown +属主.属组+文件或目录<br>chgrp +属组 +目录<br>就本题目而言，设置目录的权限可以这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 &#x2F;ftproot</span><br></pre></td></tr></table></figure><br>但是这样做的话所有的用户都可以操作该目录，不是个很好的解决方案。</p>
+<p>也可以直接设置目录的属主为apache：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown apache &#x2F;ftproot</span><br></pre></td></tr></table></figure><br>然后再加上权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 7xx &#x2F;ftproot</span><br></pre></td></tr></table></figure><br>把文件夹的属主改成了apache也不代表apache用户能修改所有程序，因为文件所有者权限有可能不可写。</p>
+<blockquote>
+<p>这个题目有问题，如果<code>/ftproot</code>是个目录，这样的话，<code>chmod 777 -r /ftproot</code>才能修改该目录下的所有程序。</p>
+</blockquote>
+<h1 id="考点9-makefile"><a href="#考点9-makefile" class="headerlink" title="考点9:makefile"></a>考点9:makefile</h1><p>下列关于makefile描述正确的有？</p>
+<ul>
+<li>A <code>makefile</code>文件保存了编译器和连接器的参数选项</li>
+<li>B 主要包含了五个东西:显式规则、隐晦规则、变量定义、文件指示和注释</li>
+<li>C 默认的情况下,<code>make</code>命令会在当前目录下按顺序找寻文件名为”<code>GNUmakefile</code>“、”<code>makefile</code>“、”<code>Makefile</code>“的文件, 找到了解释这个文件</li>
+<li>D 在<code>Makefile</code>不可以使用<code>include</code>关键字把别的<code>Makefile</code>包含进来</li>
+</ul>
+<h2 id="解析-8"><a href="#解析-8" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: ABC</details>
+
+
+<p>makefile文件保存了编译器和连接器的参数选项,还表述了所有源文件之间的关系(源代码文件需要的特定的包含文件,可执行文件要求包含的目标文件模块及库等).创建程序(make程序)首先读取makefile文件,然后再激活编译器,汇编器,资源编译器和连接器以便产生最后的输出,最后输出并生成的通常是可执行文件.创建程序利用内置的推理规则来激活编译器,以便通过对特定CPP文件的编译来产生特定的OBJ文件.<br>Makefile里主要包含了五个东西：显式规则、隐晦规则、变量定义、文件指示和注释。<br>1、显式规则。显式规则说明了，如何生成一个或多的的目标文件。这是由Makefile的书写者明显指出，要生成的文件，文件的依赖文件，生成的命令。<br>2、隐晦规则。由于我们的make有自动推导的功能，所以隐晦的规则可以让我们比较粗糙地简略地书写Makefile，这是由make所支持的。<br>3、变量的定义。在Makefile中我们要定义一系列的变量，变量一般都是字符串，这个有点你C语言中的宏，当Makefile被执行时，其中的变量都会被扩展到相应的引用位置上。<br>4、文件指示。其包括了三个部分，一个是在一个Makefile中引用另一个Makefile，就像C语言中的include一样；另一个是指根据某些情况指定Makefile中的有效部分，就像C语言中的预编译#if一样；还有就是定义一个多行的命令。有关这一部分的内容，我会在后续的部分中讲述。<br>5、注释。Makefile中只有行注释，和UNIX的Shell脚本一样，其注释是用“#”字符，这个就像C/C++中的“//”一样。如果你要在你的Makefile中使用“#”字符，可以用反斜框进行转义，如：“#”。<br>默认的情况下，make命令会在当前目录下按顺序找寻文件名为“GNUmakefile”、“makefile”、“Makefile”的文件，找到了解释这个文件。在这三个文件名中，最好使用“Makefile”这个文件名，因为，这个文件名第一个字符为大写，这样有一种显目的感觉。最好不要用 “GNUmakefile”，这个文件是GNU的make识别的。有另外一些make只对全小写的“makefile”文件名敏感，但是基本上来说，大多数的make都支持“makefile”和“Makefile”这两种默认文件名。<br>在Makefile使用include关键字可以把别的Makefile包含进来，这很像C语言的#include，被包含的文件会原模原样的放在当前文件的包含位置。include的语法是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include &lt;filename&gt;;</span><br></pre></td></tr></table></figure><br>filename可以是当前操作系统Shell的文件模式（可以保含路径和通配符）</p>
+<h1 id="考点10-硬链接"><a href="#考点10-硬链接" class="headerlink" title="考点10:硬链接"></a>考点10:硬链接</h1><p>在Linux系统,关于硬链接的描述正确的是()</p>
+<ul>
+<li>A 跨文件系统</li>
+<li>B 不可以跨文件系统</li>
+<li>C 为链接文件创建新的i节点</li>
+<li>D 链接文件的i节点与被链接文件的i节点相同</li>
+</ul>
+<h2 id="解析-9"><a href="#解析-9" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: BD</details>
+
+<h3 id="链接分硬链接和符号链接"><a href="#链接分硬链接和符号链接" class="headerlink" title="链接分硬链接和符号链接"></a>链接分硬链接和符号链接</h3><ul>
+<li>符号链接可以建立对于文件和目录的链接。</li>
+<li>符号链接可以跨文件系统，即可以跨磁盘分区。</li>
+<li>符号链接的文件类型位是l，链接文件具有新的i节点。</li>
+</ul>
+<ul>
+<li>硬链接不可以跨文件系统。它只能建立对文件的链接，</li>
+<li>硬链接的文件类型位是－，且硬链接文件的i节点同被链接文件的i节点相同。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/exam/f050cb01/" title="2021年04月12日Linux专项练习2">https://lanlan2017.github.io/exam/f050cb01/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/exam/b9682126/" rel="next" title="2021年04月12日Linux专项练习1">
+                  <i class="fa fa-chevron-left"></i> 2021年04月12日Linux专项练习1
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/exam/5766400a/" rel="prev" title="2021年04月12日Linux专项练习3">
+                  2021年04月12日Linux专项练习3 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#考点1-vi-末行模式相关命令"><span class="nav-number">1.</span> <span class="nav-text">考点1:vi 末行模式相关命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">1.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点2-Linux默认的Shell"><span class="nav-number">2.</span> <span class="nav-text">考点2:Linux默认的Shell</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-1"><span class="nav-number">2.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点3-如何退出交互式Shell"><span class="nav-number">3.</span> <span class="nav-text">考点3:如何退出交互式Shell</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-2"><span class="nav-number">3.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点4-Linux查找字符串grep"><span class="nav-number">4.</span> <span class="nav-text">考点4:Linux查找字符串grep</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-3"><span class="nav-number">4.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点5-Linux任务计划"><span class="nav-number">5.</span> <span class="nav-text">考点5:Linux任务计划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-4"><span class="nav-number">5.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux计划任务格式"><span class="nav-number">5.1.1.</span> <span class="nav-text">Linux计划任务格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何查看任务计划表"><span class="nav-number">5.1.2.</span> <span class="nav-text">如何查看任务计划表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">5.1.2.1.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点6-导致进程从用户态切换到内核态的情况"><span class="nav-number">6.</span> <span class="nav-text">考点6:导致进程从用户态切换到内核态的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-5"><span class="nav-number">6.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户态切换到内核态的3种方式"><span class="nav-number">6.1.1.</span> <span class="nav-text">用户态切换到内核态的3种方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点7-Linux统计重复行uniq-按行排序sort-查看文件头head"><span class="nav-number">7.</span> <span class="nav-text">考点7:Linux统计重复行uniq 按行排序sort 查看文件头head</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-6"><span class="nav-number">7.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点8-授权-修改属主-修改属组"><span class="nav-number">8.</span> <span class="nav-text">考点8:授权 修改属主 修改属组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-7"><span class="nav-number">8.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点9-makefile"><span class="nav-number">9.</span> <span class="nav-text">考点9:makefile</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-8"><span class="nav-number">9.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点10-硬链接"><span class="nav-number">10.</span> <span class="nav-text">考点10:硬链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-9"><span class="nav-number">10.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链接分硬链接和符号链接"><span class="nav-number">10.1.1.</span> <span class="nav-text">链接分硬链接和符号链接</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/exam/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/exam/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/exam/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/exam/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/exam/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/exam/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/exam/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/exam/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/exam/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/exam/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/exam/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里写下你的评论吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

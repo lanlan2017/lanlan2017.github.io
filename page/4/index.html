@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/exam/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/exam/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/exam/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/exam/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/exam/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/exam/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/exam/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="笔试题|蓝蓝博客">
+<meta property="og:url" content="https://lanlan2017.github.io/exam/page/4/index.html">
+<meta property="og:site_name" content="笔试题|蓝蓝博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/exam/page/4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>笔试题|蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/exam/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">笔试题|蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/exam/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/exam/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/exam/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/exam/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/exam/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/exam/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/c8b56ff4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/exam/c8b56ff4/" class="post-title-link" itemprop="url">2019年12月17日 java1</a>
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-17 01:25:55" itemprop="dateCreated datePublished" datetime="2019-12-17T01:25:55+08:00">2019-12-17</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 16:40:52" itemprop="dateModified" datetime="2021-03-21T16:40:52+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/2019%E5%B9%B412%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2019年12月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/c8b56ff4/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/c8b56ff4/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><div id='my_toc'><a href="/exam/c8b56ff4/#考点1-JSP内置对象" class="header_1">考点1 JSP内置对象</a>&nbsp;<br><a href="/exam/c8b56ff4/#考点2-集合-异常-接口-继承" class="header_1">考点2 集合 异常 接口 继承</a>&nbsp;<br><a href="/exam/c8b56ff4/#考点3-静态成员和普通成员的执行顺序" class="header_1">考点3 静态成员和普通成员的执行顺序</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/exam/c8b56ff4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/1d7732bf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/exam/1d7732bf/" class="post-title-link" itemprop="url">2019年12月16日 java1</a>
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-17 01:21:09" itemprop="dateCreated datePublished" datetime="2019-12-17T01:21:09+08:00">2019-12-17</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 16:40:52" itemprop="dateModified" datetime="2021-03-21T16:40:52+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/2019%E5%B9%B412%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2019年12月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/1d7732bf/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/1d7732bf/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><div id='my_toc'><a href="/exam/1d7732bf/#考点1-case穿透" class="header_1">考点1 case穿透</a>&nbsp;<br><a href="/exam/1d7732bf/#考点2-servlet内置对象" class="header_1">考点2 servlet内置对象</a>&nbsp;<br><a href="/exam/1d7732bf/#考点3-运算符优先级" class="header_1">考点3 运算符优先级</a>&nbsp;<br><a href="/exam/1d7732bf/#考点4-持久区jvm堆内存溢出" class="header_1">考点4 持久区jvm堆内存溢出</a>&nbsp;<br><a href="/exam/1d7732bf/#考点5-CMS垃圾回收器" class="header_1">考点5 CMS垃圾回收器</a>&nbsp;<br><a href="/exam/1d7732bf/#考点6-序列化" class="header_1">考点6 序列化</a>&nbsp;<br><a href="/exam/1d7732bf/#考点7-网络编程" class="header_1">考点7 网络编程</a>&nbsp;<br><a href="/exam/1d7732bf/#考点8-HashMap" class="header_1">考点8 HashMap</a>&nbsp;<br><a href="/exam/1d7732bf/#考点9-补码运算" class="header_1">考点9 补码运算</a>&nbsp;<br><a href="/exam/1d7732bf/#考点10-反射机制" class="header_1">考点10 反射机制</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/exam/1d7732bf/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/1982e282/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/exam/1982e282/" class="post-title-link" itemprop="url">2019年12月14日 java1</a>
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-15 15:06:27" itemprop="dateCreated datePublished" datetime="2019-12-15T15:06:27+08:00">2019-12-15</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 16:40:51" itemprop="dateModified" datetime="2021-03-21T16:40:51+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/2019%E5%B9%B412%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2019年12月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/1982e282/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/1982e282/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><div id='my_toc'><a href="/exam/'1982e282'/#考点1-进制加权展开" class="header_1">考点1 进制加权展开</a>&nbsp;<br><a href="/exam/'1982e282'/#考点2-字符流-字节流" class="header_1">考点2 字符流 字节流</a>&nbsp;<br><a href="/exam/'1982e282'/#考点3-字符集" class="header_1">考点3 字符集</a>&nbsp;<br><a href="/exam/'1982e282'/#考点4-EJB" class="header_1">考点4 EJB</a>&nbsp;<br><a href="/exam/'1982e282'/#考点5-中间件" class="header_1">考点5 中间件</a>&nbsp;<br><a href="/exam/'1982e282'/#考点6-存根类-适配器模式" class="header_1">考点6 存根类 适配器模式 </a>&nbsp;<br><a href="/exam/'1982e282'/#考点7-静态方法" class="header_1">考点7 静态方法</a>&nbsp;<br><a href="/exam/'1982e282'/#考点8-lambda表达式" class="header_1">考点8 lambda表达式</a>&nbsp;<br><a href="/exam/'1982e282'/#考点9-Servlet过滤器" class="header_1">考点9 Servlet过滤器</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/exam/1982e282/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/fb5ef9fb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/exam/fb5ef9fb/" class="post-title-link" itemprop="url">2019年12月13日 java1</a>
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-14 11:38:43" itemprop="dateCreated datePublished" datetime="2019-12-14T11:38:43+08:00">2019-12-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 16:40:51" itemprop="dateModified" datetime="2021-03-21T16:40:51+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/2019%E5%B9%B412%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2019年12月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/fb5ef9fb/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/fb5ef9fb/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><div id='my_toc'><a href="/exam/fb5ef9fb/#考点1-二维数组的遍历" class="header_1">考点1 二维数组的遍历</a>&nbsp;<br><a href="/exam/fb5ef9fb/#考点2-main方法的书写" class="header_1">考点2 main方法的书写</a>&nbsp;<br><a href="/exam/fb5ef9fb/#考点3-数据库-事务隔离级别" class="header_1">考点3 数据库 事务隔离级别</a>&nbsp;<br><a href="/exam/fb5ef9fb/#考点4-子类调用父类构造器" class="header_1">考点4 子类调用父类构造器</a>&nbsp;<br><a href="/exam/fb5ef9fb/#考点5-检查异常" class="header_1">考点5 检查异常</a>&nbsp;<br><a href="/exam/fb5ef9fb/#考点6-排序-快速排序" class="header_1">考点6 排序 快速排序</a>&nbsp;<br><a href="/exam/fb5ef9fb/#考点7-线程" class="header_1">考点7 线程</a>&nbsp;<br><a href="/exam/fb5ef9fb/#考点8-java编译" class="header_1">考点8 java编译</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/exam/fb5ef9fb/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/6257a841/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/exam/6257a841/" class="post-title-link" itemprop="url">2019年12月13日 java2</a>
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-14 11:38:43" itemprop="dateCreated datePublished" datetime="2019-12-14T11:38:43+08:00">2019-12-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 16:40:51" itemprop="dateModified" datetime="2021-03-21T16:40:51+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/2019%E5%B9%B412%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2019年12月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/6257a841/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/6257a841/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><div id='my_toc'><a href="/exam/6257a841/#考点1-修饰符混用" class="header_1">考点1 修饰符混用</a>&nbsp;<br><a href="/exam/6257a841/#考点2-求余运算" class="header_1">考点2 求余运算</a>&nbsp;<br><a href="/exam/6257a841/#考点3-java只有值传递" class="header_1">考点3 java只有值传递</a>&nbsp;<br><a href="/exam/6257a841/#考点4-多态-编译看左边-运行看右边" class="header_1">考点4 多态 编译看左边 运行看右边</a>&nbsp;<br><a href="/exam/6257a841/#考点5" class="header_1">考点5 </a>&nbsp;<br><a href="/exam/6257a841/#考点6-Math-round四舍五入-舍变小入变大" class="header_1">考点6 Math.round四舍五入 舍变小入变大</a>&nbsp;<br><a href="/exam/6257a841/#考点7-Log4j" class="header_1">考点7 Log4j</a>&nbsp;<br><a href="/exam/6257a841/#考点8-默认构造器" class="header_1">考点8 默认构造器</a>&nbsp;<br><a href="/exam/6257a841/#考点9-线程安全集合" class="header_1">考点9 线程安全集合</a>&nbsp;<br><a href="/exam/6257a841/#考点10-java内存区域" class="header_1">考点10 java内存区域</a>&nbsp;<br><a href="/exam/6257a841/#考点11-编译原理-循环优化" class="header_1">考点11 编译原理 循环优化</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/exam/6257a841/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/c17e8611/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/exam/c17e8611/" class="post-title-link" itemprop="url">职场就业面试最常问的50题</a>
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-14 11:31:22" itemprop="dateCreated datePublished" datetime="2019-12-14T11:31:22+08:00">2019-12-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 04:39:04" itemprop="dateModified" datetime="2021-03-21T04:39:04+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/c17e8611/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/c17e8611/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><div id='my_toc'><a href="/exam/c17e8611/#1到10题" class="header_1">1到10题</a>&nbsp;<br><a href="/exam/c17e8611/#Q1请自我介绍一下" class="header_2">Q1请自我介绍一下</a>&nbsp;<br><a href="/exam/c17e8611/#Q2你最大的优点和缺点" class="header_2">Q2你最大的优点和缺点</a>&nbsp;<br><a href="/exam/c17e8611/#Q3你是否能够接受加班" class="header_2">Q3你是否能够接受加班?</a>&nbsp;<br><a href="/exam/c17e8611/#Q4你对薪资的要求" class="header_2">Q4你对薪资的要求</a>&nbsp;<br><a href="/exam/c17e8611/#Q5在五年的时间内-你的职业规划" class="header_2">Q5在五年的时间内,你的职业规划</a>&nbsp;<br><a href="/exam/c17e8611/#Q6我们为什么要聘用你" class="header_2">Q6我们为什么要聘用你</a>&nbsp;<br><a href="/exam/c17e8611/#Q7你对于我们公司了解多少" class="header_2">Q7你对于我们公司了解多少</a>&nbsp;<br><a href="/exam/c17e8611/#Q8你为什么愿意到我们公司来工作" class="header_2">Q8你为什么愿意到我们公司来工作</a>&nbsp;<br><a href="/exam/c17e8611/#Q9就你申请的这个职位-你认为自己欠缺什么" class="header_2">Q9就你申请的这个职位,你认为自己欠缺什么</a>&nbsp;<br><a href="/exam/c17e8611/#Q10在完成某项顶工作时-你觉得领导的指示不对-你会怎么做" class="header_2">Q10在完成某项顶工作时,你觉得领导的指示不对,你会怎么做?</a>&nbsp;<br><a href="/exam/c17e8611/#11到20题" class="header_1">11到20题</a>&nbsp;<br><a href="/exam/c17e8611/#Q11你缺乏工作经验-如何能胜任这项工作" class="header_2">Q11你缺乏工作经验,如何能胜任这项工作?</a>&nbsp;<br><a href="/exam/c17e8611/#Q12如果我们没有录取你-你下步有什么打算" class="header_2">Q12如果我们没有录取你,你下步有什么打算?</a>&nbsp;<br><a href="/exam/c17e8611/#Q13如果你的工作出现失误-给公司造成损失-你认为该怎么办" class="header_2">Q13如果你的工作出现失误,给公司造成损失,你认为该怎么办?</a>&nbsp;<br><a href="/exam/c17e8611/#Q14如果你的工作成绩很突出;得到领导肯定-但却发现同事们因此孤立你-你如何处理" class="header_2">Q14如果你的工作成绩很突出;得到领导肯定,但却发现同事们因此孤立你,你如何处理?</a>&nbsp;<br><a href="/exam/c17e8611/#Q15工作中如果难以和同事、上司相处-你该怎么办" class="header_2">Q15工作中如果难以和同事、上司相处,你该怎么办?</a>&nbsp;<br><a href="/exam/c17e8611/#Q16你何时可以入职" class="header_2">Q16你何时可以入职?</a>&nbsp;<br><a href="/exam/c17e8611/#Q17你选离职的原因是什么" class="header_2">Q17你选离职的原因是什么?</a>&nbsp;<br><a href="/exam/c17e8611/#Q18你并排毕业于名牌学校" class="header_2">Q18你并排毕业于名牌学校?</a>&nbsp;<br><a href="/exam/c17e8611/#Q19我怎样相信你是这个职位最好的人选呢" class="header_2">Q19我怎样相信你是这个职位最好的人选呢?</a>&nbsp;<br><a href="/exam/c17e8611/#Q20为什么你还没有找到工作" class="header_2">Q20为什么你还没有找到工作?</a>&nbsp;<br><a href="/exam/c17e8611/#21到30题" class="header_1">21到30题</a>&nbsp;<br><a href="/exam/c17e8611/#Q21你认为你在学校属于好学生吗" class="header_2">Q21你认为你在学校属于好学生吗?</a>&nbsp;<br><a href="/exam/c17e8611/#Q22你在大学里的学习成绩、不敢恭维-你如何解释呢" class="header_2">Q22你在大学里的学习成绩、不敢恭维,你如何解释呢?</a>&nbsp;<br><a href="/exam/c17e8611/#Q23假如我们聘用你-但有时需要做些倒茶端水的杂务-你会反对吗" class="header_2">Q23假如我们聘用你,但有时需要做些倒茶端水的杂务,你会反对吗?</a>&nbsp;<br><a href="/exam/c17e8611/#Q24假如你流落荒岛-可以拥有一本书-你会选择哪一本-为什么" class="header_2">Q24假如你流落荒岛,可以拥有一本书,你会选择哪一本?为什么?</a>&nbsp;<br><a href="/exam/c17e8611/#Q25你有哪些兴趣爱好" class="header_2">Q25你有哪些兴趣爱好?</a>&nbsp;<br><a href="/exam/c17e8611/#Q26你人生中最令你受挫的事情是什么" class="header_2">Q26你人生中最令你受挫的事情是什么?</a>&nbsp;<br><a href="/exam/c17e8611/#Q27你朋友对你的评价" class="header_2">Q27你朋友对你的评价?</a>&nbsp;<br><a href="/exam/c17e8611/#Q28谈谈你过去做过的成功案例" class="header_2">Q28谈谈你过去做过的成功案例?</a>&nbsp;<br><a href="/exam/c17e8611/#Q29如果你做的一顶工作受到上级领导的表扬-但你主管领导却说是他做的-你该怎样" class="header_2">Q29如果你做的一顶工作受到上级领导的表扬,但你主管领导却说是他做的,你该怎样?</a>&nbsp;<br><a href="/exam/c17e8611/#Q30你能为我们公司带来什么呢" class="header_2">Q30你能为我们公司带来什么呢?</a>&nbsp;<br><a href="/exam/c17e8611/#31到40题" class="header_1">31到40题</a>&nbsp;<br><a href="/exam/c17e8611/#Q31喜欢这份工作的哪点" class="header_2">Q31喜欢这份工作的哪点?</a>&nbsp;<br><a href="/exam/c17e8611/#Q32说你对行业、技术发展趋势的看法" class="header_2">Q32说你对行业、技术发展趋势的看法?</a>&nbsp;<br><a href="/exam/c17e8611/#Q33说说你的家庭" class="header_2">Q33说说你的家庭?</a>&nbsp;<br><a href="/exam/c17e8611/#Q34谈你对别槽的看法" class="header_2">Q34谈你对别槽的看法?</a>&nbsp;<br><a href="/exam/c17e8611/#Q35你工作的期望与目标" class="header_2">Q35你工作的期望与目标?</a>&nbsp;<br><a href="/exam/c17e8611/#Q36如果你被录用了-但工作一段你发现你并不适合这个职位-你怎么办" class="header_2">Q36如果你被录用了,但工作一段你发现你并不适合这个职位,你怎么办?</a>&nbsp;<br><a href="/exam/c17e8611/#Q37你和别人发生过争执吗-你是怎样解决的" class="header_2">Q37你和别人发生过争执吗?你是怎样解决的?</a>&nbsp;<br><a href="/exam/c17e8611/#Q38你会如何处理别人的批评" class="header_2">Q38你会如何处理别人的批评?</a>&nbsp;<br><a href="/exam/c17e8611/#Q39你很努力-但客户始终不满意并投诉-你怎么做" class="header_2">Q39你很努力,但客户始终不满意并投诉,你怎么做?</a>&nbsp;<br><a href="/exam/c17e8611/#Q40对这项工作-你有哪些可预见的困难" class="header_2">Q40对这项工作,你有哪些可预见的困难?</a>&nbsp;<br><a href="/exam/c17e8611/#41到50题" class="header_1">41到50题</a>&nbsp;<br><a href="/exam/c17e8611/#Q41如果我录用你-你将怎样开展工作" class="header_2">Q41如果我录用你,你将怎样开展工作?</a>&nbsp;<br><a href="/exam/c17e8611/#Q42你希望与什么样的上级共事" class="header_2">Q42你希望与什么样的上级共事?</a>&nbsp;<br><a href="/exam/c17e8611/#Q43怎样看待学历和能力" class="header_2">Q43怎样看待学历和能力?</a>&nbsp;<br><a href="/exam/c17e8611/#Q44你做的哪件事最自豪" class="header_2">Q44你做的哪件事最自豪?</a>&nbsp;<br><a href="/exam/c17e8611/#Q45假如你要送同学去机场可单位临时有事非你办不可-怎么办" class="header_2">Q45假如你要送同学去机场可单位临时有事非你办不可,怎么办?</a>&nbsp;<br><a href="/exam/c17e8611/#Q46为什么选择这个职务" class="header_2">Q46为什么选择这个职务?</a>&nbsp;<br><a href="/exam/c17e8611/#Q47对这个职务的期许" class="header_2">Q47对这个职务的期许?</a>&nbsp;<br><a href="/exam/c17e8611/#Q48谈谈如何适应新环境" class="header_2">Q48谈谈如何适应新环境?</a>&nbsp;<br><a href="/exam/c17e8611/#Q49除了本公司外-还应聘了哪些公司" class="header_2">Q49除了本公司外,还应聘了哪些公司?</a>&nbsp;<br><a href="/exam/c17e8611/#Q50请问你还有问题要问吗" class="header_2">Q50请问你还有问题要问吗?</a>&nbsp;<br><a href="/exam/c17e8611/#参考资料" class="header_1">参考资料</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/exam/c17e8611/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/149c92c5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/exam/149c92c5/" class="post-title-link" itemprop="url">2019年12月12日 java1</a>
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-12 15:50:56" itemprop="dateCreated datePublished" datetime="2019-12-12T15:50:56+08:00">2019-12-12</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 16:40:51" itemprop="dateModified" datetime="2021-03-21T16:40:51+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/2019%E5%B9%B412%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2019年12月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/149c92c5/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/149c92c5/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><div id='my_toc'><a href="/exam/149c92c5/#考点1-GUI" class="header_1">考点1 GUI</a>&nbsp;<br><a href="/exam/149c92c5/#考点2-JDBC" class="header_1">考点2 JDBC</a>&nbsp;<br><a href="/exam/149c92c5/#考点3-EJB" class="header_1">考点3 EJB</a>&nbsp;<br><a href="/exam/149c92c5/#考点4-多线程" class="header_1">考点4 多线程</a>&nbsp;<br><a href="/exam/149c92c5/#考点5-线程生命周期" class="header_1">考点5 线程生命周期</a>&nbsp;<br><a href="/exam/149c92c5/#考点6-标识符命名" class="header_1">考点6 标识符命名</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/exam/149c92c5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/fe6723d4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/exam/fe6723d4/" class="post-title-link" itemprop="url">2019年12月10日 java3</a>
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-11 15:41:23" itemprop="dateCreated datePublished" datetime="2019-12-11T15:41:23+08:00">2019-12-11</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 16:40:51" itemprop="dateModified" datetime="2021-03-21T16:40:51+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/2019%E5%B9%B412%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2019年12月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/fe6723d4/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/fe6723d4/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><div id='my_toc'><a href="/exam/fe6723d4/#考点1-数组声明" class="header_1">考点1 数组声明</a>&nbsp;<br><a href="/exam/fe6723d4/#考点2-异常处理" class="header_1">考点2 异常处理</a>&nbsp;<br><a href="/exam/fe6723d4/#考点3-异常继承树" class="header_1">考点3 异常继承树</a>&nbsp;<br><a href="/exam/fe6723d4/#考点4-数据表述范围-值传递" class="header_1">考点4 数据表述范围 值传递</a>&nbsp;<br><a href="/exam/fe6723d4/#考点5-设计模式-单例模式" class="header_1">考点5 设计模式 单例模式</a>&nbsp;<br><a href="/exam/fe6723d4/#考点6-final关键字-异常处理" class="header_1">考点6 final关键字 异常处理</a>&nbsp;<br><a href="/exam/fe6723d4/#考点7-循环-等差数列" class="header_1">考点7 循环 等差数列</a>&nbsp;<br><a href="/exam/fe6723d4/#考点8-JVM内存分类" class="header_1">考点8 JVM内存分类</a>&nbsp;<br><a href="/exam/fe6723d4/#考点9" class="header_1">考点9 </a>&nbsp;<br><a href="/exam/fe6723d4/#考点10-JVM堆内存" class="header_1">考点10 JVM堆内存</a>&nbsp;<br><a href="/exam/fe6723d4/#考点11-Hibernate" class="header_1">考点11 Hibernate</a>&nbsp;<br><a href="/exam/fe6723d4/#考点12-Struts" class="header_1">考点12 Struts</a>&nbsp;<br><a href="/exam/fe6723d4/#考点13-hibernate-POJO" class="header_1">考点13 hibernate POJO</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/exam/fe6723d4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/89601342/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/exam/89601342/" class="post-title-link" itemprop="url">2019年12月10日 java2</a>
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-11 15:41:23" itemprop="dateCreated datePublished" datetime="2019-12-11T15:41:23+08:00">2019-12-11</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 16:40:51" itemprop="dateModified" datetime="2021-03-21T16:40:51+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/2019%E5%B9%B412%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2019年12月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/89601342/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/89601342/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><div id='my_toc'><a href="/exam/'89601342'/#考点1-正则表达式" class="header_1">考点1 正则表达式</a>&nbsp;<br><a href="/exam/'89601342'/#考点2-抽象类和接口" class="header_1">考点2 抽象类和接口</a>&nbsp;<br><a href="/exam/'89601342'/#考点3-java内存区域" class="header_1">考点3 java内存区域</a>&nbsp;<br><a href="/exam/'89601342'/#考点4-Spring依赖注入方式" class="header_1">考点4 Spring依赖注入方式</a>&nbsp;<br><a href="/exam/'89601342'/#考点5-整型除法结果为整型" class="header_1">考点5 整型除法结果为整型</a>&nbsp;<br><a href="/exam/'89601342'/#考点6-基本数据类型占用字节数" class="header_1">考点6 基本数据类型占用字节数</a>&nbsp;<br><a href="/exam/'89601342'/#考点7-jsp页面导入" class="header_1">考点7 jsp页面导入</a>&nbsp;<br><a href="/exam/'89601342'/#考点8-queue" class="header_1">考点8 queue</a>&nbsp;<br><a href="/exam/'89601342'/#考点9-字符串-字符" class="header_1">考点9 字符串 字符</a>&nbsp;<br><a href="/exam/'89601342'/#考点10-异常处理" class="header_1">考点10 异常处理</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/exam/89601342/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/6b20adaa/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/exam/6b20adaa/" class="post-title-link" itemprop="url">2019年12月10日 java1</a>
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-11 15:41:23" itemprop="dateCreated datePublished" datetime="2019-12-11T15:41:23+08:00">2019-12-11</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 16:40:51" itemprop="dateModified" datetime="2021-03-21T16:40:51+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/2019%E5%B9%B412%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2019年12月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/6b20adaa/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/6b20adaa/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><div id='my_toc'><a href="/exam/6b20adaa/#考点1-java包的用途" class="header_1">考点1 java包的用途</a>&nbsp;<br><a href="/exam/6b20adaa/#考点2-构造器的修饰符" class="header_1">考点2 构造器的修饰符</a>&nbsp;<br><a href="/exam/6b20adaa/#考点3-抽象" class="header_1">考点3 抽象</a>&nbsp;<br><a href="/exam/6b20adaa/#考点4" class="header_1">考点4 </a>&nbsp;<br><a href="/exam/6b20adaa/#考点5-图形界面" class="header_1">考点5 图形界面</a>&nbsp;<br><a href="/exam/6b20adaa/#考点6" class="header_1">考点6 </a>&nbsp;<br><a href="/exam/6b20adaa/#考点7-Java标识符" class="header_1">考点7 Java标识符</a>&nbsp;<br><a href="/exam/6b20adaa/#考点8-循环语句" class="header_1">考点8 循环语句</a>&nbsp;<br><a href="/exam/6b20adaa/#考点9-构造器修饰符-native-import" class="header_1">考点9 构造器修饰符 native import</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/exam/6b20adaa/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </article>
+  
+  
+  
+
+    
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/exam/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/exam/">1</a><span class="space">&hellip;</span><a class="page-number" href="/exam/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/exam/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/exam/page/10/">10</a><a class="extend next" rel="next" href="/exam/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/exam/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/exam/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/exam/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/exam/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/exam/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/exam/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/exam/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/exam/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/exam/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/exam/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/exam/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+    <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+    <script>
+      
+        window.addEventListener('load', () => {
+      
+        quicklink({
+          timeout: 3000,
+          priority: true,
+          ignores: [uri => uri.includes('#'),uri => uri == 'https://lanlan2017.github.io/exam/page/4/',]
+        });
+      
+        });
+      
+    </script>
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里写下你的评论吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

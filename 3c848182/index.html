@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/exam/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/exam/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/exam/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/exam/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/exam/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/exam/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/exam/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="考点1&amp;nbsp;考点2&amp;nbsp;考点3&amp;nbsp;考点4&amp;nbsp;考点5&amp;nbsp;考点6&amp;nbsp;考点7&amp;nbsp;考点8&amp;nbsp;考点9&amp;nbsp;考点10&amp;nbsp; .header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019年11月4日 java 1">
+<meta property="og:url" content="https://lanlan2017.github.io/exam/3c848182/index.html">
+<meta property="og:site_name" content="笔试题|蓝蓝博客">
+<meta property="og:description" content="考点1&amp;nbsp;考点2&amp;nbsp;考点3&amp;nbsp;考点4&amp;nbsp;考点5&amp;nbsp;考点6&amp;nbsp;考点7&amp;nbsp;考点8&amp;nbsp;考点9&amp;nbsp;考点10&amp;nbsp; .header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-05T02:45:35.000Z">
+<meta property="article:modified_time" content="2021-03-21T08:40:51.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/exam/3c848182/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>2019年11月4日 java 1 | 笔试题|蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/exam/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">笔试题|蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/exam/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/exam/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/exam/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/exam/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/exam/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/exam/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/3c848182/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">2019年11月4日 java 1
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-05 10:45:35" itemprop="dateCreated datePublished" datetime="2019-11-05T10:45:35+08:00">2019-11-05</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 16:40:51" itemprop="dateModified" datetime="2021-03-21T16:40:51+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Java/2019%E5%B9%B411%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2019年11月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/3c848182/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/3c848182/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/exam/3c848182/#考点1" class="header_1">考点1</a>&nbsp;<br><a href="/exam/3c848182/#考点2" class="header_1">考点2</a>&nbsp;<br><a href="/exam/3c848182/#考点3" class="header_1">考点3</a>&nbsp;<br><a href="/exam/3c848182/#考点4" class="header_1">考点4</a>&nbsp;<br><a href="/exam/3c848182/#考点5" class="header_1">考点5</a>&nbsp;<br><a href="/exam/3c848182/#考点6" class="header_1">考点6</a>&nbsp;<br><a href="/exam/3c848182/#考点7" class="header_1">考点7</a>&nbsp;<br><a href="/exam/3c848182/#考点8" class="header_1">考点8</a>&nbsp;<br><a href="/exam/3c848182/#考点9" class="header_1">考点9</a>&nbsp;<br><a href="/exam/3c848182/#考点10" class="header_1">考点10</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="考点1"><a href="#考点1" class="headerlink" title="考点1"></a>考点1</h1><p>在面向对象编程里，经常使用is-a来说明对象之间的继承关系，下列对象中不具备继承关系的是？（）</p>
+<ul>
+<li>A 手机与小米手机</li>
+<li>B 企业家与雷军</li>
+<li>C 编程语言与Java</li>
+<li>D 中国与北京</li>
+</ul>
+<p>正确答案: D</p>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>is-a 的关系：<br>A：小米手机是一个手机，没毛病<br>B：雷军是一个企业家，没毛病<br>C：Java是一门编程语言，没毛病<br>D：北京是一个中国，不对</p>
+<h3 id="use-a-has-a-is-a"><a href="#use-a-has-a-is-a" class="headerlink" title="use-a has-a is-a"></a>use-a has-a is-a</h3><p>类之间存在以下几种常见的关系</p>
+<ul>
+<li>use-a :是依赖关系</li>
+<li>has-a :一般是组合关系</li>
+<li>is-a : 一般是继承关系</li>
+</ul>
+<h1 id="考点2"><a href="#考点2" class="headerlink" title="考点2"></a>考点2</h1><p>下面关于垃圾收集的描述哪个是错误的？</p>
+<ul>
+<li>A 使用垃圾收集的程序不需要明确释放对象</li>
+<li>B 现代垃圾收集能够处理循环引用问题</li>
+<li>C 垃圾收集能提高程序员效率</li>
+<li>D 使用垃圾收集的语言没有内在泄漏问题</li>
+</ul>
+<p>正确答案: D</p>
+<h2 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h2><h3 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h3><p>内存泄露(Memory Leak)是指<strong>一个不再被使用的对象或者变量还在内存中占有存储空间</strong>。<br>在C/C++语言中，内存泄露出现在开发人员忘记释放已分配的内存就会造成内存泄露。<br>在java语言中引入垃圾回收机制，有GC负责进行回收不再使用的对象，释放内存。但是还是会存在内存泄露的问题。</p>
+<h3 id="内存泄露主要有两种情况"><a href="#内存泄露主要有两种情况" class="headerlink" title="内存泄露主要有两种情况"></a>内存泄露主要有两种情况</h3><ol>
+<li>在堆中申请的空间没有释放。</li>
+<li>对象已不再被使用(注意：这里的不在被使用是指对程序来说没有用处，如数据库连接使用后没有关。但是还是存在着引用)，但是仍然在内存中保留着。GC机制的引入只能解决第一种情况，对于第2种情况无法保证不再使用的对象会被释放。java语言中的内存泄露主要指第2种情况。</li>
+</ol>
+<h3 id="内存泄露的原因"><a href="#内存泄露的原因" class="headerlink" title="内存泄露的原因"></a>内存泄露的原因</h3><ol>
+<li>静态集合类。如HashMap和Vector。这些容器是静态的，生命周期和程序的生命周期一致，那么在容器中对象的生命周期也和其一样，对象在程序结束之前将不能被释放，从而会造成内存泄露。</li>
+<li>各种连接，如数据库连接，网络连接，IO连接，不再使用时如果连接不释放容易造成内存泄露。</li>
+<li>监听器，释放对象时往往没有相应的删除监听器，可能会导致内存泄露。</li>
+</ol>
+<h3 id="内存溢出"><a href="#内存溢出" class="headerlink" title="内存溢出"></a>内存溢出</h3><p>内存溢出（OOM）是指程序在申请内存时没有足够的内存供使用，进而导致程序崩溃这是结果描述。</p>
+<p>内存泄露（Memory Leak）最终会导致内存溢出。</p>
+<h3 id="Java的内存分配策略"><a href="#Java的内存分配策略" class="headerlink" title="Java的内存分配策略"></a>Java的内存分配策略</h3><p>Java 程序运行时的内存分配策略有三种,分别是<br><strong>静态分配</strong>,<strong>栈式分配</strong>,和<strong>堆式分配</strong>，对应的，<br>三种存储策略使用的内存空间主要分别是<strong>静态存储区</strong>（也称<strong>方法区</strong>）、<strong>栈区</strong>和<strong>堆区</strong>。</p>
+<ul>
+<li><strong>静态存储区（方法区）</strong>：主要存放静态数据、全局 static 数据和常量。这块内存在程序编译时就已经分配好，并且在程序整个运行期间都存在。</li>
+<li><strong>栈区</strong>：当方法被执行时，方法体内的局部变量（其中包括基础数据类型、对象的引用）都在栈上创建，并在方法执行结束时这些局部变量所持有的内存将会自动被释放。因为栈内存分配运算内置于处理器的指令集中，效率很高，但是分配的内存容量有限。</li>
+<li><strong>堆区</strong> ： 又称动态内存分配，通常就是指在程序运行时直接 new 出来的内存，也就是对象的实例（包括该对象其中的所有成员变量）。这部分内存在不使用时将会由 Java 垃圾回收器来负责回收。</li>
+</ul>
+<h3 id="Java中的内存管理"><a href="#Java中的内存管理" class="headerlink" title="Java中的内存管理"></a>Java中的内存管理</h3><p>Java的内存管理就是对象的分配和释放问题。在 Java 中，程序员需要通过关键字 new 为每个对象申请内存空间 (基本类型除外)，所有的对象都在堆 (Heap)中分配空间。</p>
+<h3 id="关于提高效率"><a href="#关于提高效率" class="headerlink" title="关于提高效率"></a>关于提高效率</h3><p>对象的释放是由 GC 决定和执行的。在 Java 中，内存的分配是由程序完成的，而内存的释放是由 GC 完成的，这种收支两条线的方法确实简化了程序员的工作。但同时，它也加重了JVM的工作。</p>
+<h3 id="关于消除循环引用"><a href="#关于消除循环引用" class="headerlink" title="关于消除循环引用"></a>关于消除循环引用</h3><p>Java使用<strong>有向图</strong>的方式进行内存管理，可以消除引用循环的问题。<br>例如有三个对象，相互引用，只要它们和根进程不可达的，那么GC也是可以回收它们的。这种方式的优点是管理内存的精度很高，但是效率较低。<br>另外一种常用的内存管理技术是使用<strong>计数器</strong>。具体如下：gc清理时的引用计数方式：<br>当引用连接至新对象时，引用计数+1；<br>当某个引用离开作用域或被设置为null时，引用计数-1，<br>GC发现这个计数为0时，就回收其占用的内存。这个开销会在引用程序的整个生命周期发生，并且不能处理循环引用的情况。所以这种方式只是用来说明GC的工作方式，而不会被任何一种Java虚拟机应用。例如COM模型采用计数器方式管理构件，它与有向图相比，精度行低(很难处理循环引用的问题)，但执行效率很高。</p>
+<h3 id="什么是内存泄漏"><a href="#什么是内存泄漏" class="headerlink" title="什么是内存泄漏"></a>什么是内存泄漏</h3><p>在Java中，内存泄漏就是存在一些被分配的对象，这些对象有下面两个特点，</p>
+<ul>
+<li>首先，这些对象是可达的，即在有向图中，存在通路可以与其相连；</li>
+<li>其次，这些对象是无用的，即程序以后不会再使用这些对象。如果对象满足这两个条件，这些对象就可以判定为Java中的内存泄漏，这些对象不会被GC所回收，然而它却占用内存。</li>
+</ul>
+<p>有兴趣看引起内存泄漏的原因的可以参考这篇文章<a href="http://www.jb51.net/article/92311.htm" target="_blank" rel="noopener">http://www.jb51.net/article/92311.htm</a></p>
+<h1 id="考点3"><a href="#考点3" class="headerlink" title="考点3"></a>考点3</h1><p>下面的输出结果是什么？<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    String str=<span class="keyword">new</span> String(<span class="string">"hello"</span>);</span><br><span class="line">    <span class="keyword">if</span>(str==<span class="string">"hello"</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      System.out.println(<span class="string">"true"</span>);</span><br><span class="line">    &#125;      </span><br><span class="line">    <span class="keyword">else</span>     &#123;</span><br><span class="line">      System.out.println(<span class="string">"false"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>A true</li>
+<li>B false</li>
+</ul>
+<p>正确答案: B</p>
+<h2 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h2><p>这种题烂大街</p>
+<h1 id="考点4"><a href="#考点4" class="headerlink" title="考点4"></a>考点4</h1><p>类方法中可以直接调用对象变量。（ ）</p>
+<ul>
+<li>A 正确</li>
+<li>B 错误</li>
+</ul>
+<p>正确答案: B</p>
+<h2 id="解析-3"><a href="#解析-3" class="headerlink" title="解析"></a>解析</h2><h3 id="静态成员不能调用非静态成员"><a href="#静态成员不能调用非静态成员" class="headerlink" title="静态成员不能调用非静态成员"></a>静态成员不能调用非静态成员</h3><p>静态方法中不能调用对象的变量，因为静态方法在类加载时就初始化，对象变量需要在新建对象后才能使用</p>
+<h1 id="考点5"><a href="#考点5" class="headerlink" title="考点5"></a>考点5</h1><p>下列java程序的输出结果为<em>__</em>。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example</span></span>&#123;</span><br><span class="line">    String str=<span class="keyword">new</span> String(<span class="string">"hello"</span>);</span><br><span class="line">    <span class="keyword">char</span>[]ch=&#123;<span class="string">'a'</span>,<span class="string">'b'</span>&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Example ex=<span class="keyword">new</span> Example();</span><br><span class="line">        ex.change(ex.str,ex.ch);</span><br><span class="line">        System.out.print(ex.str+<span class="string">" and "</span>);</span><br><span class="line">        System.out.print(ex.ch);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(String str,<span class="keyword">char</span> ch[])</span></span>&#123;</span><br><span class="line">        str=<span class="string">"test ok"</span>;</span><br><span class="line">        ch[<span class="number">0</span>]=<span class="string">'c'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>A hello and ab</li>
+<li>B hello and cb</li>
+<li>C hello and a</li>
+<li>D test ok and ab</li>
+<li>E test ok and cb</li>
+<li>F test ok and c</li>
+</ul>
+<p>正确答案: B</p>
+<h2 id="解析-4"><a href="#解析-4" class="headerlink" title="解析"></a>解析</h2><p>java中只有值传递，改变形参的地址不影响到实参</p>
+<h1 id="考点6"><a href="#考点6" class="headerlink" title="考点6"></a>考点6</h1><p>类Parent和Child定义如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>  <span class="title">Parent</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">float</span>  <span class="title">aFun</span><span class="params">(<span class="keyword">float</span> a, <span class="keyword">float</span> b)</span> </span>&#123; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span>  <span class="title">Child</span>  <span class="keyword">extends</span>  <span class="title">Parent</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>将以下哪种方法插入行5是不合法的。（    ）</p>
+<ul>
+<li>A float aFun(float a, float b){ }</li>
+<li>B public int aFun(int a, int b) { }</li>
+<li>C public float aFun(float p, float q){ }</li>
+<li>D private int aFun(int a, int b){ }</li>
+</ul>
+<p>正确答案: - A }<br>将以下哪种方法插入行5是不合法的。（    ）</p>
+<ul>
+<li>A float aFun(float a, float b){ }</li>
+<li>B public int aFun(int a, int b) { }</li>
+<li>C public float aFun(float p, float q){ }</li>
+<li>D private int aFun(int a, int b){ }</li>
+</ul>
+<p>正确答案: A</p>
+<h2 id="解析-5"><a href="#解析-5" class="headerlink" title="解析"></a>解析</h2><p>A.方法重写。子类方法不能缩小父类方法的访问权限，错误。<br>B.方法重载。参数列表不同，满足重载条件，正确。<br>C.方法重写。方法声明和父类相同，满足重写条件，正确。<br>D.方法重载。参数列表不同，满足重载条件，正确。</p>
+<h3 id="方法重写-两同两小一大"><a href="#方法重写-两同两小一大" class="headerlink" title="方法重写 两同两小一大"></a>方法重写 两同两小一大</h3><p>方法重写要遵循“两同两小一大”规则，</p>
+<ul>
+<li>“两同”即方法名相同、形参列表相同；</li>
+<li>“两小”指的是子类方法返回值类型应比父类方法返回值类型更小或相等，子类方法声明抛出的异常类应比父类方法声明抛出的异常类更小或相等；</li>
+<li>“一大”指的是子类方法的访问权限应比父类方法的访问权限更大或相等。</li>
+<li>并且，覆盖方法和被覆盖方法要么都是类方法，要么都是实例方法，不能一个是类方法一个是实例方法。</li>
+</ul>
+<h1 id="考点7"><a href="#考点7" class="headerlink" title="考点7"></a>考点7</h1><p>下面哪几个函数 public void example(){….} 的重载函数？（）</p>
+<ul>
+<li>A public void example(int m){…}</li>
+<li>B public int example(){..}</li>
+<li>C public void example2(){..}</li>
+<li>D public int example(int m,float f){…}</li>
+</ul>
+<p>正确答案: AD</p>
+<h2 id="解析-6"><a href="#解析-6" class="headerlink" title="解析"></a>解析</h2><h3 id="方法重载-两同一不同"><a href="#方法重载-两同一不同" class="headerlink" title="方法重载 两同一不同"></a>方法重载 两同一不同</h3><p>同一个类中，方法名相同，形参列表不同<br>方法重载只用关心两个点：<br>1.方法名相同<br>2.参数列表不同（个数不同、顺序不同、类型不同）</p>
+<h1 id="考点8"><a href="#考点8" class="headerlink" title="考点8"></a>考点8</h1><p>在Jdk1.7中，下述说法中抽象类与接口的区别与联系正确的有哪些？</p>
+<ul>
+<li>A 抽象类中可以有普通成员变量，接口中没有普通成员变量。</li>
+<li>B 抽象类和接口中都可以包含静态成员常量。</li>
+<li>C 一个类可以实现多个接口，但只能继承一个抽象类</li>
+<li>D 抽象类中可以包含非抽象的普通方法，接口中的方法必须是抽象的，不能有非抽象的普通方法。</li>
+</ul>
+<p>正确答案: ABCD</p>
+<h2 id="解析-7"><a href="#解析-7" class="headerlink" title="解析"></a>解析</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">特点</th>
+<th style="text-align:left">抽象类</th>
+<th style="text-align:left">接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">构造方法</td>
+<td style="text-align:left">有</td>
+<td style="text-align:left">无</td>
+</tr>
+<tr>
+<td style="text-align:left">普通成员变量</td>
+<td style="text-align:left">有</td>
+<td style="text-align:left">无</td>
+</tr>
+<tr>
+<td style="text-align:left">普通方法</td>
+<td style="text-align:left">可以有非抽象的</td>
+<td style="text-align:left">必须是抽象的</td>
+</tr>
+<tr>
+<td style="text-align:left">抽象方法的访问类型</td>
+<td style="text-align:left">public、protected和默认</td>
+<td style="text-align:left">只能是public的，默认public abstract</td>
+</tr>
+<tr>
+<td style="text-align:left">静态方法</td>
+<td style="text-align:left">可以有</td>
+<td style="text-align:left">无</td>
+</tr>
+<tr>
+<td style="text-align:left">静态成员变量</td>
+<td style="text-align:left">有</td>
+<td style="text-align:left">有 public static final的</td>
+</tr>
+<tr>
+<td style="text-align:left">其他类</td>
+<td style="text-align:left">只能继承一个抽象类</td>
+<td style="text-align:left">可以实现多个接口</td>
+</tr>
+<tr>
+<td style="text-align:left">应用场景</td>
+<td style="text-align:left">模块之间通信契约</td>
+<td style="text-align:left">代码重用</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="考点9"><a href="#考点9" class="headerlink" title="考点9"></a>考点9</h1><p>jdk1.8中，下面有关java 抽象类和接口的区别，说法错误的是？</p>
+<ul>
+<li>A 抽象类可以有构造方法，接口中不能有构造方法</li>
+<li>B 抽象类中可以包含非抽象的普通方法，接口中的方法必须是抽象的，不能有非抽象的普通方法</li>
+<li>C 一个类可以实现多个接口，但只能继承一个抽象类</li>
+<li>D 接口中可以有普通成员变量，抽象类中没有普通成员变量</li>
+</ul>
+<p>正确答案: BD</p>
+<h2 id="解析-8"><a href="#解析-8" class="headerlink" title="解析"></a>解析</h2><p>B 的后半句是错误的，java8在接口中允许有方法体，不过必须是静态方法；<br>接口中不能有普通成员变量，所以D错误</p>
+<h1 id="考点10"><a href="#考点10" class="headerlink" title="考点10"></a>考点10</h1><p>以下哪种JAVA得变量声明方式可以避免程序在多线程竞争情况下读到不正确的值(  )</p>
+<ul>
+<li>A volatile</li>
+<li>B static volatile</li>
+<li>C synchronized</li>
+<li>D static</li>
+</ul>
+<p>正确答案: AB</p>
+<h2 id="解析-9"><a href="#解析-9" class="headerlink" title="解析"></a>解析</h2><p>synchronized不是修饰变量的 它修饰方法或代码块或对象</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/exam/3c848182/" title="2019年11月4日 java 1">https://lanlan2017.github.io/exam/3c848182/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/exam/d4314bc1/" rel="next" title="2019年11月2日 java 1">
+                  <i class="fa fa-chevron-left"></i> 2019年11月2日 java 1
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/exam/e64ad3fc/" rel="prev" title="2019年11月6日 java1">
+                  2019年11月6日 java1 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#考点1"><span class="nav-number">1.</span> <span class="nav-text">考点1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">1.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#use-a-has-a-is-a"><span class="nav-number">1.1.1.</span> <span class="nav-text">use-a has-a is-a</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点2"><span class="nav-number">2.</span> <span class="nav-text">考点2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-1"><span class="nav-number">2.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存泄露"><span class="nav-number">2.1.1.</span> <span class="nav-text">内存泄露</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存泄露主要有两种情况"><span class="nav-number">2.1.2.</span> <span class="nav-text">内存泄露主要有两种情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存泄露的原因"><span class="nav-number">2.1.3.</span> <span class="nav-text">内存泄露的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存溢出"><span class="nav-number">2.1.4.</span> <span class="nav-text">内存溢出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java的内存分配策略"><span class="nav-number">2.1.5.</span> <span class="nav-text">Java的内存分配策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java中的内存管理"><span class="nav-number">2.1.6.</span> <span class="nav-text">Java中的内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于提高效率"><span class="nav-number">2.1.7.</span> <span class="nav-text">关于提高效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于消除循环引用"><span class="nav-number">2.1.8.</span> <span class="nav-text">关于消除循环引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是内存泄漏"><span class="nav-number">2.1.9.</span> <span class="nav-text">什么是内存泄漏</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点3"><span class="nav-number">3.</span> <span class="nav-text">考点3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-2"><span class="nav-number">3.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点4"><span class="nav-number">4.</span> <span class="nav-text">考点4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-3"><span class="nav-number">4.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态成员不能调用非静态成员"><span class="nav-number">4.1.1.</span> <span class="nav-text">静态成员不能调用非静态成员</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点5"><span class="nav-number">5.</span> <span class="nav-text">考点5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-4"><span class="nav-number">5.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点6"><span class="nav-number">6.</span> <span class="nav-text">考点6</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-5"><span class="nav-number">6.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法重写-两同两小一大"><span class="nav-number">6.1.1.</span> <span class="nav-text">方法重写 两同两小一大</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点7"><span class="nav-number">7.</span> <span class="nav-text">考点7</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-6"><span class="nav-number">7.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法重载-两同一不同"><span class="nav-number">7.1.1.</span> <span class="nav-text">方法重载 两同一不同</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点8"><span class="nav-number">8.</span> <span class="nav-text">考点8</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-7"><span class="nav-number">8.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点9"><span class="nav-number">9.</span> <span class="nav-text">考点9</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-8"><span class="nav-number">9.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点10"><span class="nav-number">10.</span> <span class="nav-text">考点10</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-9"><span class="nav-number">10.1.</span> <span class="nav-text">解析</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/exam/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/exam/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/exam/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/exam/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/exam/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/exam/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/exam/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/exam/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/exam/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/exam/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/exam/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里写下你的评论吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/exam/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/exam/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/exam/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/exam/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/exam/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/exam/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/exam/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="考点1:Linux修改权限命令_chmod命令&amp;nbsp;考点2:UNIX目录结构&amp;nbsp;考点3:Linux的.Z文件的解压缩命令&amp;nbsp;考点4:记录已经加载的文件系统的文件&amp;nbsp;考点5:Linux列举当前目录&amp;nbsp;考点6:Linux查看文件命令&amp;nbsp;考点7:Linux查看CPU Swap分区 硬盘信息命令&amp;nbsp;考点8:日志文件系统有哪些&amp;nbsp;考点9:系统调用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021年03月31日Linux专项练习1">
+<meta property="og:url" content="https://lanlan2017.github.io/exam/d5fcd365/index.html">
+<meta property="og:site_name" content="笔试题|蓝蓝博客">
+<meta property="og:description" content="考点1:Linux修改权限命令_chmod命令&amp;nbsp;考点2:UNIX目录结构&amp;nbsp;考点3:Linux的.Z文件的解压缩命令&amp;nbsp;考点4:记录已经加载的文件系统的文件&amp;nbsp;考点5:Linux列举当前目录&amp;nbsp;考点6:Linux查看文件命令&amp;nbsp;考点7:Linux查看CPU Swap分区 硬盘信息命令&amp;nbsp;考点8:日志文件系统有哪些&amp;nbsp;考点9:系统调用">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-30T19:17:33.000Z">
+<meta property="article:modified_time" content="2021-04-14T15:27:22.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/exam/d5fcd365/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>2021年03月31日Linux专项练习1 | 笔试题|蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/exam/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">笔试题|蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/exam/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/exam/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/exam/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/exam/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/exam/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/exam/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/d5fcd365/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">2021年03月31日Linux专项练习1
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2021-03-31 03:17:33" itemprop="dateCreated datePublished" datetime="2021-03-31T03:17:33+08:00">2021-03-31</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-14 23:27:22" itemprop="dateModified" datetime="2021-04-14T23:27:22+08:00">2021-04-14</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Linux/2021%E5%B9%B403%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年03月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/d5fcd365/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/d5fcd365/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/exam/d5fcd365/#考点1-Linux修改权限命令-chmod命令" class="header_1">考点1:Linux修改权限命令_chmod命令</a>&nbsp;<br><a href="/exam/d5fcd365/#考点2-UNIX目录结构" class="header_1">考点2:UNIX目录结构</a>&nbsp;<br><a href="/exam/d5fcd365/#考点3-Linux的-Z文件的解压缩命令" class="header_1">考点3:Linux的.Z文件的解压缩命令</a>&nbsp;<br><a href="/exam/d5fcd365/#考点4-记录已经加载的文件系统的文件" class="header_1">考点4:记录已经加载的文件系统的文件</a>&nbsp;<br><a href="/exam/d5fcd365/#考点5-Linux列举当前目录" class="header_1">考点5:Linux列举当前目录</a>&nbsp;<br><a href="/exam/d5fcd365/#考点6-Linux查看文件命令" class="header_1">考点6:Linux查看文件命令</a>&nbsp;<br><a href="/exam/d5fcd365/#考点7-Linux查看CPU-Swap分区-硬盘信息命令" class="header_1">考点7:Linux查看CPU Swap分区 硬盘信息命令</a>&nbsp;<br><a href="/exam/d5fcd365/#考点8-日志文件系统有哪些" class="header_1">考点8:日志文件系统有哪些</a>&nbsp;<br><a href="/exam/d5fcd365/#考点9-系统调用" class="header_1">考点9:系统调用</a>&nbsp;<br><a href="/exam/d5fcd365/#考点10-Linux2-6默认支持的文件系统" class="header_1">考点10:Linux2.6默认支持的文件系统</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="考点1-Linux修改权限命令-chmod命令"><a href="#考点1-Linux修改权限命令-chmod命令" class="headerlink" title="考点1:Linux修改权限命令_chmod命令"></a>考点1:Linux修改权限命令_chmod命令</h1><p>Linux下,为某个脚本赋予可执行权限()</p>
+<ul>
+<li>A <code>chmod +x filename.sh</code></li>
+<li>B <code>chown +x filename.sh</code></li>
+<li>C <code>chmod +r filename.sh</code></li>
+<li>D <code>chown +r filename.sh</code></li>
+</ul>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: A</details>
+
+<p>chmod命令修改权限 +x表示增加执行权限，+r表示增加读取权限，+w表示增加写权限<br>chown将指定文件的拥有者改为指定的用户或组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l</span><br><span class="line">total 3766</span><br><span class="line">-rwxr-xr-x 1 lan 197609     183  3月 19 21:32 hexos.sh*</span><br></pre></td></tr></table></figure><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rwx</span><br><span class="line">111</span><br><span class="line">421</span><br></pre></td></tr></table></figure></p>
+<h1 id="考点2-UNIX目录结构"><a href="#考点2-UNIX目录结构" class="headerlink" title="考点2:UNIX目录结构"></a>考点2:UNIX目录结构</h1><p>在UNIX系统中,目录结构采用( )</p>
+<ul>
+<li>A 单级目录结构</li>
+<li>B 二级目录结构</li>
+<li>C 单纯树形目录结构</li>
+<li>D 带链接树形目录结构</li>
+</ul>
+<h2 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+<p>带链接树形目录结构又称非循环图目录结构,它是指访问一文件(或目录)可以有多条路径。一般常说UNIX的文件系统是树形结构，其实是指带链接的树形结构，而不是纯树形目录结构。 </p>
+<h1 id="考点3-Linux的-Z文件的解压缩命令"><a href="#考点3-Linux的-Z文件的解压缩命令" class="headerlink" title="考点3:Linux的.Z文件的解压缩命令"></a>考点3:Linux的.Z文件的解压缩命令</h1><p>一个文件名字为rr.Z,可以用来解压缩的命令是？</p>
+<ul>
+<li>A <code>tar</code></li>
+<li>B <code>gzip</code></li>
+<li>C <code>compress</code></li>
+<li>D <code>uncompress</code></li>
+</ul>
+<h2 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>tar</code></td>
+<td style="text-align:left">操作<code>.tar</code>的命令</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gzip</code></td>
+<td style="text-align:left">压缩<code>.gz</code>压缩包的命令</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>compress</code></td>
+<td style="text-align:left">压缩.Z文件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>uncompress</code></td>
+<td style="text-align:left">解压缩.Z文件</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="考点4-记录已经加载的文件系统的文件"><a href="#考点4-记录已经加载的文件系统的文件" class="headerlink" title="考点4:记录已经加载的文件系统的文件"></a>考点4:记录已经加载的文件系统的文件</h1><p>系统当前已经加载的所有文件系统在<strong><strong>_</strong></strong>文件中得到反映。</p>
+<ul>
+<li>A <code>/usr/sbin/cfdisk</code></li>
+<li>B <code>/sbin/fdisk</code></li>
+<li>C <code>/etc/mtab</code></li>
+<li>D <code>/etc/fstab</code></li>
+</ul>
+<h2 id="解析-3"><a href="#解析-3" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: C</details>
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">/etc/文件</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>/etc/mtab</code></td>
+<td style="text-align:left">记载的是现在系统已经装载的文件系统，包括操作系统建立的虚拟文件等；而/etc/fstab是系统准备装载的</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/etc/fstab</code></td>
+<td style="text-align:left">记录了计算机上硬盘分区的相关信息，启动Linux的时候，检查分区的fsck命令，和挂载分区的mount命令，都需要fstab中的信息，来正确的检查和挂载硬盘。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="考点5-Linux列举当前目录"><a href="#考点5-Linux列举当前目录" class="headerlink" title="考点5:Linux列举当前目录"></a>考点5:Linux列举当前目录</h1><p>在linux中,列举当前目录下文件的是哪个命令<strong>__</strong>。</p>
+<ul>
+<li>A <code>ps</code></li>
+<li>B <code>cd</code></li>
+<li>C <code>mv</code></li>
+<li>D <code>ls</code></li>
+</ul>
+<h2 id="解析-4"><a href="#解析-4" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ps</td>
+<td style="text-align:left">查看运行中的进程</td>
+</tr>
+<tr>
+<td style="text-align:left">cd</td>
+<td style="text-align:left">进入某个目录</td>
+</tr>
+<tr>
+<td style="text-align:left">mv</td>
+<td style="text-align:left">移动文件或者文件夹</td>
+</tr>
+<tr>
+<td style="text-align:left">ls</td>
+<td style="text-align:left">list的缩写，列出某个目录下的文件或者文件夹</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="考点6-Linux查看文件命令"><a href="#考点6-Linux查看文件命令" class="headerlink" title="考点6:Linux查看文件命令"></a>考点6:Linux查看文件命令</h1><p>在Linux下查看文件有多种方法,若希望在查看文件内容过程中,可以按空格实现翻页,应使用(      )命令</p>
+<ul>
+<li>A <code>cat</code></li>
+<li>B <code>more</code></li>
+<li>C <code>less</code></li>
+<li>D <code>head</code></li>
+</ul>
+<h2 id="解析-5"><a href="#解析-5" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: BC</details>
+
+<ul>
+<li>cat：由第一行开始显示文件所有内容； </li>
+<li>tac：从最后一行开始显示文件的所有内容，<ul>
+<li>注意 tac 与cat 写法正好相反； </li>
+</ul>
+</li>
+<li>more：一页一页的显示文件内容，只能向后翻页； </li>
+<li>less：也是一页一页显示文件内容，但是可以通过键盘上的【pagedown】，【pageup】控制向后，向前翻页； </li>
+<li>head：显示一个文件的前几行； </li>
+<li>tail：显示一个文件的后几行； </li>
+</ul>
+<h1 id="考点7-Linux查看CPU-Swap分区-硬盘信息命令"><a href="#考点7-Linux查看CPU-Swap分区-硬盘信息命令" class="headerlink" title="考点7:Linux查看CPU Swap分区 硬盘信息命令"></a>考点7:Linux查看CPU Swap分区 硬盘信息命令</h1><p>如何在命令行查看一台linux机器的CPU、SWAP分区信息、硬盘信息?</p>
+<ul>
+<li>A <code>cat /proc/cpuinfo</code></li>
+<li>B <code>du</code></li>
+<li>C <code>cat /proc/swaps</code></li>
+<li>D <code>df -lh</code></li>
+</ul>
+<h2 id="解析-6"><a href="#解析-6" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: ACD</details>
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>cat /proc/cpuinfo</code></td>
+<td style="text-align:left">查看一台<code>linux</code>机器的<code>CPU</code>信息</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>cat /proc/swaps</code></td>
+<td style="text-align:left">查看<code>SWAP</code>分区信息</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>du</code></td>
+<td style="text-align:left">查看该目录占用文件系统数据块的情况</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>df -lh</code></td>
+<td style="text-align:left">查看硬盘信息</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="cat-proc-cpuinfo查看CPU信息"><a href="#cat-proc-cpuinfo查看CPU信息" class="headerlink" title="cat /proc/cpuinfo查看CPU信息"></a>cat /proc/cpuinfo查看CPU信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cat &#x2F;proc&#x2F;cpuinfo </span><br><span class="line">Processor    : AArch64 Processor rev 4 (aarch64)</span><br><span class="line">processor    : 0</span><br><span class="line">processor    : 1</span><br><span class="line">processor    : 2</span><br><span class="line">processor    : 3</span><br><span class="line">processor    : 4</span><br><span class="line">processor    : 5</span><br><span class="line">processor    : 6</span><br><span class="line">processor    : 7</span><br><span class="line">Features    : fp asimd evtstrm aes pmull sha1 sha2 crc32 </span><br><span class="line">CPU implementer    : 0x41</span><br><span class="line">CPU architecture: 8</span><br><span class="line">CPU variant    : 0x0</span><br><span class="line">CPU part    : 0xd03</span><br><span class="line">CPU revision    : 4</span><br><span class="line"></span><br><span class="line">Hardware    : Qualcomm Technologies, Inc MSM8976</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<h3 id="cat-proc-swaps查看swap分区信息"><a href="#cat-proc-swaps查看swap分区信息" class="headerlink" title="cat /proc/swaps查看swap分区信息"></a>cat /proc/swaps查看swap分区信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cat &#x2F;proc&#x2F;swaps</span><br><span class="line">Filename                Type        Size    Used    Priority</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<h3 id="du查看文件或目录占用大小"><a href="#du查看文件或目录占用大小" class="headerlink" title="du查看文件或目录占用大小"></a>du查看文件或目录占用大小</h3><p>查看当前目录下各个文件或目录的占用大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# du -h -d 1</span><br><span class="line">8.0K    .&#x2F;.pki</span><br><span class="line">20K    .&#x2F;.ssh</span><br><span class="line">2.6M    .&#x2F;.nvm</span><br><span class="line">12K    .&#x2F;.config</span><br><span class="line">42M    .&#x2F;.npm</span><br><span class="line">104K    .&#x2F;C_Test</span><br><span class="line">12K    .&#x2F;Shell_Test</span><br><span class="line">8.0K    .&#x2F;Linux_Test</span><br><span class="line">45M    .</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure></p>
+<h3 id="df-h查看磁盘空间占用情况"><a href="#df-h查看磁盘空间占用情况" class="headerlink" title="df -h查看磁盘空间占用情况"></a>df -h查看磁盘空间占用情况</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# df -h</span><br><span class="line">文件系统                                容量  已用  可用 已用% 挂载点</span><br><span class="line">&#x2F;dev&#x2F;block&#x2F;bootdevice&#x2F;by-name&#x2F;userdata   55G   15G   40G   28% &#x2F;</span><br><span class="line">tmpfs                                   1.8G  364K  1.8G    1% &#x2F;dev</span><br><span class="line">tmpfs                                   1.8G     0  1.8G    0% &#x2F;dev&#x2F;shm</span><br><span class="line">&#x2F;data&#x2F;media                              55G   15G   40G   28% &#x2F;mnt&#x2F;files</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<h3 id="free-h查看内存占用情况"><a href="#free-h查看内存占用情况" class="headerlink" title="free -h查看内存占用情况"></a>free -h查看内存占用情况</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# free -h</span><br><span class="line">              total        used        free      shared  buff&#x2F;cache   available</span><br><span class="line">Mem:           3.5G        1.8G         64M        8.7M        1.6G        1.6G</span><br><span class="line">Swap:            0B          0B          0B</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<h1 id="考点8-日志文件系统有哪些"><a href="#考点8-日志文件系统有哪些" class="headerlink" title="考点8:日志文件系统有哪些"></a>考点8:日志文件系统有哪些</h1><p>以下哪个是日志文件系统()</p>
+<ul>
+<li>A <code>ext2</code></li>
+<li>B <code>fat32</code></li>
+<li>C <code>ntfs</code></li>
+<li>D <code>ext3</code></li>
+<li>E <code>ext4</code></li>
+</ul>
+<h2 id="解析-7"><a href="#解析-7" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: CDE</details>
+
+<h3 id="日志文件系统"><a href="#日志文件系统" class="headerlink" title="日志文件系统"></a>日志文件系统</h3><p>日志文件系统（英语：Journaling file system）是一种文件系统。在发生变化时，它先把相关的信息写入一个被称为日志的区域，然后再把变化写入主文件系统。在文件系统发生故障（如内核崩溃或突然停电）时，日志文件系统更容易保持一致性，并且可以较快恢复。</p>
+<h3 id="常见的日志文件系统"><a href="#常见的日志文件系统" class="headerlink" title="常见的日志文件系统"></a>常见的日志文件系统</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">文件系统</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">JFS</td>
+<td style="text-align:left">IBM的 Journaled File System, 最早的日志文件系统。</td>
+</tr>
+<tr>
+<td style="text-align:left">Ext4/Ext3文件系统</td>
+<td style="text-align:left">由Ext2文件系统演化而成的日志文件系统，广泛用于Linux系统。</td>
+</tr>
+<tr>
+<td style="text-align:left">XFS文件系统</td>
+<td style="text-align:left">广泛用于Linux系统，取代了Ext4。</td>
+</tr>
+<tr>
+<td style="text-align:left">ReiserFS</td>
+<td style="text-align:left">用B+树作为数据结构的日志文件系统，在处理小文件时有较好的性能。</td>
+</tr>
+<tr>
+<td style="text-align:left">Btrfs</td>
+<td style="text-align:left">用B树作为数据结构，被认为是下一代Linux文件系统。</td>
+</tr>
+<tr>
+<td style="text-align:left">NTFS</td>
+<td style="text-align:left">微软的NTFS也是日志文件系统，也是Windows下最常用的文件系统。</td>
+</tr>
+<tr>
+<td style="text-align:left">HFS+</td>
+<td style="text-align:left">苹果公司发展的OS X操作系统下主要使用的文件系统。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="考点9-系统调用"><a href="#考点9-系统调用" class="headerlink" title="考点9:系统调用"></a>考点9:系统调用</h1><p>Linux执行ls,会引起哪些系统调用()</p>
+<ul>
+<li>A <code>nmap</code></li>
+<li>B <code>read</code></li>
+<li>C <code>execve</code></li>
+<li>D <code>fork</code></li>
+</ul>
+<h2 id="解析-8"><a href="#解析-8" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: BCD</details>
+
+<p>任何shell都会执行exec和fork，而ls会执行read。<br>三个加起来就是read,execve,fork</p>
+<h1 id="考点10-Linux2-6默认支持的文件系统"><a href="#考点10-Linux2-6默认支持的文件系统" class="headerlink" title="考点10:Linux2.6默认支持的文件系统"></a>考点10:Linux2.6默认支持的文件系统</h1><p>linux 2.6.* 内核默认支持的文件系统有哪些？</p>
+<ul>
+<li>A <code>ext3</code></li>
+<li>B <code>ext2</code></li>
+<li>C <code>ext4</code></li>
+<li>D <code>xfs</code></li>
+<li>E <code>ufs</code></li>
+</ul>
+<h2 id="解析-9"><a href="#解析-9" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: ABCD</details>
+
+<p>背答案算了</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/exam/d5fcd365/" title="2021年03月31日Linux专项练习1">https://lanlan2017.github.io/exam/d5fcd365/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/exam/7b887ccd/" rel="next" title="2021年03月31日Linux专项联系2">
+                  <i class="fa fa-chevron-left"></i> 2021年03月31日Linux专项联系2
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/exam/3a8d0894/" rel="prev" title="2021年03月23日Linux专项练习4">
+                  2021年03月23日Linux专项练习4 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#考点1-Linux修改权限命令-chmod命令"><span class="nav-number">1.</span> <span class="nav-text">考点1:Linux修改权限命令_chmod命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">1.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点2-UNIX目录结构"><span class="nav-number">2.</span> <span class="nav-text">考点2:UNIX目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-1"><span class="nav-number">2.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点3-Linux的-Z文件的解压缩命令"><span class="nav-number">3.</span> <span class="nav-text">考点3:Linux的.Z文件的解压缩命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-2"><span class="nav-number">3.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点4-记录已经加载的文件系统的文件"><span class="nav-number">4.</span> <span class="nav-text">考点4:记录已经加载的文件系统的文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-3"><span class="nav-number">4.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点5-Linux列举当前目录"><span class="nav-number">5.</span> <span class="nav-text">考点5:Linux列举当前目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-4"><span class="nav-number">5.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点6-Linux查看文件命令"><span class="nav-number">6.</span> <span class="nav-text">考点6:Linux查看文件命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-5"><span class="nav-number">6.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点7-Linux查看CPU-Swap分区-硬盘信息命令"><span class="nav-number">7.</span> <span class="nav-text">考点7:Linux查看CPU Swap分区 硬盘信息命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-6"><span class="nav-number">7.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cat-proc-cpuinfo查看CPU信息"><span class="nav-number">7.1.1.</span> <span class="nav-text">cat &#x2F;proc&#x2F;cpuinfo查看CPU信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cat-proc-swaps查看swap分区信息"><span class="nav-number">7.1.2.</span> <span class="nav-text">cat &#x2F;proc&#x2F;swaps查看swap分区信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#du查看文件或目录占用大小"><span class="nav-number">7.1.3.</span> <span class="nav-text">du查看文件或目录占用大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#df-h查看磁盘空间占用情况"><span class="nav-number">7.1.4.</span> <span class="nav-text">df -h查看磁盘空间占用情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#free-h查看内存占用情况"><span class="nav-number">7.1.5.</span> <span class="nav-text">free -h查看内存占用情况</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点8-日志文件系统有哪些"><span class="nav-number">8.</span> <span class="nav-text">考点8:日志文件系统有哪些</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-7"><span class="nav-number">8.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日志文件系统"><span class="nav-number">8.1.1.</span> <span class="nav-text">日志文件系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的日志文件系统"><span class="nav-number">8.1.2.</span> <span class="nav-text">常见的日志文件系统</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点9-系统调用"><span class="nav-number">9.</span> <span class="nav-text">考点9:系统调用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-8"><span class="nav-number">9.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点10-Linux2-6默认支持的文件系统"><span class="nav-number">10.</span> <span class="nav-text">考点10:Linux2.6默认支持的文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-9"><span class="nav-number">10.1.</span> <span class="nav-text">解析</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/exam/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/exam/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/exam/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/exam/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/exam/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/exam/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/exam/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/exam/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/exam/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/exam/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/exam/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里写下你的评论吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

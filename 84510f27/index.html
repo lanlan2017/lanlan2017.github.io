@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/exam/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/exam/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/exam/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/exam/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/exam/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/exam/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/exam/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="考点1:Linux八进制文件权限&amp;nbsp;考点2:ls -al&amp;nbsp;考点3:Linux路由设置&amp;nbsp;考点4:Linux环境变量&amp;nbsp;考点5:grep命令&amp;nbsp;考点6:tar解压参数&amp;nbsp;考点7:软链接硬链接&amp;nbsp;考点8:环境变量&amp;nbsp;考点9:shell脚本参数&amp;nbsp;考点10:进程间通讯方式&amp;nbsp; .header_1{margin-left:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021年03月22日Linux专项练习2">
+<meta property="og:url" content="https://lanlan2017.github.io/exam/84510f27/index.html">
+<meta property="og:site_name" content="笔试题|蓝蓝博客">
+<meta property="og:description" content="考点1:Linux八进制文件权限&amp;nbsp;考点2:ls -al&amp;nbsp;考点3:Linux路由设置&amp;nbsp;考点4:Linux环境变量&amp;nbsp;考点5:grep命令&amp;nbsp;考点6:tar解压参数&amp;nbsp;考点7:软链接硬链接&amp;nbsp;考点8:环境变量&amp;nbsp;考点9:shell脚本参数&amp;nbsp;考点10:进程间通讯方式&amp;nbsp; .header_1{margin-left:">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-22T00:30:08.000Z">
+<meta property="article:modified_time" content="2021-04-12T09:15:00.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/exam/84510f27/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>2021年03月22日Linux专项练习2 | 笔试题|蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/exam/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">笔试题|蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/exam/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/exam/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/exam/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/exam/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/exam/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/exam/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/84510f27/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">2021年03月22日Linux专项练习2
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2021-03-22 08:30:08" itemprop="dateCreated datePublished" datetime="2021-03-22T08:30:08+08:00">2021-03-22</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-12 17:15:00" itemprop="dateModified" datetime="2021-04-12T17:15:00+08:00">2021-04-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Linux/2021%E5%B9%B403%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年03月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/84510f27/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/84510f27/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/exam/84510f27/#考点1-Linux八进制文件权限" class="header_1">考点1:Linux八进制文件权限</a>&nbsp;<br><a href="/exam/84510f27/#考点2-ls-al" class="header_1">考点2:ls -al</a>&nbsp;<br><a href="/exam/84510f27/#考点3-Linux路由设置" class="header_1">考点3:Linux路由设置</a>&nbsp;<br><a href="/exam/84510f27/#考点4-Linux环境变量" class="header_1">考点4:Linux环境变量</a>&nbsp;<br><a href="/exam/84510f27/#考点5-grep命令" class="header_1">考点5:grep命令</a>&nbsp;<br><a href="/exam/84510f27/#考点6-tar解压参数" class="header_1">考点6:tar解压参数</a>&nbsp;<br><a href="/exam/84510f27/#考点7-软链接硬链接" class="header_1">考点7:软链接硬链接</a>&nbsp;<br><a href="/exam/84510f27/#考点8-环境变量" class="header_1">考点8:环境变量</a>&nbsp;<br><a href="/exam/84510f27/#考点9-shell脚本参数" class="header_1">考点9:shell脚本参数</a>&nbsp;<br><a href="/exam/84510f27/#考点10-进程间通讯方式" class="header_1">考点10:进程间通讯方式</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="考点1-Linux八进制文件权限"><a href="#考点1-Linux八进制文件权限" class="headerlink" title="考点1:Linux八进制文件权限"></a>考点1:Linux八进制文件权限</h1><p> 权限为765的文件,下列哪个是正确的权限位标记()?</p>
+<ul>
+<li>A <code>-rw-rw-r-x</code></li>
+<li>B <code>-rw-r-xr-r</code></li>
+<li>C <code>-rwxrw-r-x</code></li>
+<li>D <code>-rwxr-xrwx</code></li>
+</ul>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: C</details>
+
+<p>首先在 rwx 中r=4，w=2，x=1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7&#x3D;4+2+1</span><br><span class="line">6&#x3D;4+2</span><br><span class="line">5&#x3D;4+1</span><br></pre></td></tr></table></figure><br>因此是<code>rwxrw-r-x</code>，选C<br>至于最前面那位，如果是文件夹的话为d，否则为-</p>
+<h1 id="考点2-ls-al"><a href="#考点2-ls-al" class="headerlink" title="考点2:ls -al"></a>考点2:ls -al</h1><p>用ls –al 命令列出下面的文件列表,哪个文件是符号连接文件？</p>
+<ul>
+<li>A -rw-rw-rw- 2 hel-s users 56 Sep 09 11:05 hello</li>
+<li>B -rwxrwxrwx 2 hel-s users 56 Sep 09 11:05 goodbye</li>
+<li>C drwxr—r— 1 hel users 1024 Sep 10 08:10 zhang</li>
+<li>D lrwxr—r— 1 hel users 2024 Sep 12 08:12 cheng &gt; peng.yan1</li>
+</ul>
+<h2 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+<h3 id="ls-l第一列含义"><a href="#ls-l第一列含义" class="headerlink" title="ls -l第一列含义"></a>ls -l第一列含义</h3><p>ls -l的第一列的</p>
+<ul>
+<li>第1个字符表示文件的类型，<ul>
+<li><code>-</code> 表示文件；</li>
+<li><code>d</code> 表示目录directory；</li>
+<li><code>l</code> 表示软链接link。软链接 类似于快捷方式，当源文件丢失时，软链接也失败。</li>
+</ul>
+</li>
+<li>第2，3，4个字符是文件所属主的权限，</li>
+<li>第5，6，7个字符是，所属组的权限，、</li>
+<li>第8，9，10个字符是其他用户的权限</li>
+</ul>
+<p>软链接就类似windows的快捷方式，删掉源文件快捷方式就不能用了。 而硬链接源文件和新文件是同等地位的，删了源文件，用新文件依旧可以访问，只是有一个记录链接数的参数会减一。</p>
+<h1 id="考点3-Linux路由设置"><a href="#考点3-Linux路由设置" class="headerlink" title="考点3:Linux路由设置"></a>考点3:Linux路由设置</h1><p>局域网的网络地址192.168.1.0/24,局域网络连接其它网络的网关地址是192.168.1.1。主机192.168.1.20访问172.16.1.0/24网络时,其路由设置正确的是？</p>
+<ul>
+<li>A route add –net 192.168.1.0 gw 192.168.1.1 netmask 255.255.255.0 metric 1</li>
+<li>B route add –net 172.16.1.0 gw 192.168.1.1 netmask 255.255.255.0 metric 1</li>
+<li>C route add –net 172.16.1.0 gw 172.16.1.1 netmask 255.255.255.0 metric 1</li>
+<li>D route add default 192.168.1.0 netmask 172.168.1.1 metric 1</li>
+</ul>
+<h2 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+<p>-net 后面跟的是目标网络，gw就是gateway（网关入口）就是你从哪个网关去到那个目标网络。</p>
+<h1 id="考点4-Linux环境变量"><a href="#考点4-Linux环境变量" class="headerlink" title="考点4:Linux环境变量"></a>考点4:Linux环境变量</h1><p>以下哪个环境变量表示当前路径 () 。</p>
+<ul>
+<li>A <code>PATH</code></li>
+<li>B <code>PWD</code></li>
+<li>C <code>HOME</code></li>
+<li>D <code>ROOT</code></li>
+</ul>
+<h2 id="解析-3"><a href="#解析-3" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+<h3 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h3><p>命令pwd是print working directory的缩写，打印当前工作目录</p>
+<h3 id="PWD环境变量"><a href="#PWD环境变量" class="headerlink" title="PWD环境变量"></a>PWD环境变量</h3><p>大写的PWD代表环境变量，小写的pwd是shell命令输出当前工作目录。</p>
+<h4 id="查看PWD环境变量"><a href="#查看PWD环境变量" class="headerlink" title="查看PWD环境变量:"></a>查看PWD环境变量:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $PWD</span><br></pre></td></tr></table></figure>
+<h3 id="PWD和OLDPWD环境变量"><a href="#PWD和OLDPWD环境变量" class="headerlink" title="PWD和OLDPWD环境变量"></a>PWD和OLDPWD环境变量</h3><p><code>PWD</code>记录当前的目录路径，当利用<code>cd</code>命令切换当前目录时，系统自动更新<code>PWD</code>的值，<br><code>OLDPWD</code>记录旧的工作目录，即用户所处的前一个目录。</p>
+<h3 id="env命令"><a href="#env命令" class="headerlink" title="env命令"></a>env命令</h3><p>查看系统中所有环境变量可以使用env命令,可以看到PWD的值会随着工作目录变化而变化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# env</span><br><span class="line">NVM_RC_VERSION&#x3D;</span><br><span class="line">HOSTNAME&#x3D;localhost</span><br><span class="line">NVM_CD_FLAGS&#x3D;</span><br><span class="line">TERM&#x3D;xterm</span><br><span class="line">SHELL&#x3D;&#x2F;bin&#x2F;bash</span><br><span class="line">HISTSIZE&#x3D;1000</span><br><span class="line">SSH_CLIENT&#x3D;192.168.1.4 5694 22</span><br><span class="line">SSH_TTY&#x3D;&#x2F;dev&#x2F;pts&#x2F;5</span><br><span class="line">NVM_DIR&#x3D;&#x2F;root&#x2F;.nvm</span><br><span class="line">JRE_HOME&#x3D;&#x2F;opt&#x2F;java&#x2F;jdk1.8.0_281&#x2F;jre</span><br><span class="line">USER&#x3D;root</span><br><span class="line">LS_COLORS&#x3D;rs&#x3D;0:di&#x3D;01;34:ln&#x3D;01;36:mh&#x3D;00:pi&#x3D;40;33:so&#x3D;01;35:do&#x3D;01;35:bd&#x3D;40;33;01:cd&#x3D;40;33;01:or&#x3D;40;31;01:mi&#x3D;01;05;37;41:su&#x3D;37;41:sg&#x3D;30;43:ca&#x3D;30;41:tw&#x3D;30;42:ow&#x3D;34;42:st&#x3D;37;44:ex&#x3D;01;32:*.tar&#x3D;01;31:*.tgz&#x3D;01;31:*.arc&#x3D;01;31:*.arj&#x3D;01;31:*.taz&#x3D;01;31:*.lha&#x3D;01;31:*.lz4&#x3D;01;31:*.lzh&#x3D;01;31:*.lzma&#x3D;01;31:*.tlz&#x3D;01;31:*.txz&#x3D;01;31:*.tzo&#x3D;01;31:*.t7z&#x3D;01;31:*.zip&#x3D;01;31:*.z&#x3D;01;31:*.Z&#x3D;01;31:*.dz&#x3D;01;31:*.gz&#x3D;01;31:*.lrz&#x3D;01;31:*.lz&#x3D;01;31:*.lzo&#x3D;01;31:*.xz&#x3D;01;31:*.bz2&#x3D;01;31:*.bz&#x3D;01;31:*.tbz&#x3D;01;31:*.tbz2&#x3D;01;31:*.tz&#x3D;01;31:*.deb&#x3D;01;31:*.rpm&#x3D;01;31:*.jar&#x3D;01;31:*.war&#x3D;01;31:*.ear&#x3D;01;31:*.sar&#x3D;01;31:*.rar&#x3D;01;31:*.alz&#x3D;01;31:*.ace&#x3D;01;31:*.zoo&#x3D;01;31:*.cpio&#x3D;01;31:*.7z&#x3D;01;31:*.rz&#x3D;01;31:*.cab&#x3D;01;31:*.jpg&#x3D;01;35:*.jpeg&#x3D;01;35:*.gif&#x3D;01;35:*.bmp&#x3D;01;35:*.pbm&#x3D;01;35:*.pgm&#x3D;01;35:*.ppm&#x3D;01;35:*.tga&#x3D;01;35:*.xbm&#x3D;01;35:*.xpm&#x3D;01;35:*.tif&#x3D;01;35:*.tiff&#x3D;01;35:*.png&#x3D;01;35:*.svg&#x3D;01;35:*.svgz&#x3D;01;35:*.mng&#x3D;01;35:*.pcx&#x3D;01;35:*.mov&#x3D;01;35:*.mpg&#x3D;01;35:*.mpeg&#x3D;01;35:*.m2v&#x3D;01;35:*.mkv&#x3D;01;35:*.webm&#x3D;01;35:*.ogm&#x3D;01;35:*.mp4&#x3D;01;35:*.m4v&#x3D;01;35:*.mp4v&#x3D;01;35:*.vob&#x3D;01;35:*.qt&#x3D;01;35:*.nuv&#x3D;01;35:*.wmv&#x3D;01;35:*.asf&#x3D;01;35:*.rm&#x3D;01;35:*.rmvb&#x3D;01;35:*.flc&#x3D;01;35:*.avi&#x3D;01;35:*.fli&#x3D;01;35:*.flv&#x3D;01;35:*.gl&#x3D;01;35:*.dl&#x3D;01;35:*.xcf&#x3D;01;35:*.xwd&#x3D;01;35:*.yuv&#x3D;01;35:*.cgm&#x3D;01;35:*.emf&#x3D;01;35:*.axv&#x3D;01;35:*.anx&#x3D;01;35:*.ogv&#x3D;01;35:*.ogx&#x3D;01;35:*.aac&#x3D;01;36:*.au&#x3D;01;36:*.flac&#x3D;01;36:*.mid&#x3D;01;36:*.midi&#x3D;01;36:*.mka&#x3D;01;36:*.mp3&#x3D;01;36:*.mpc&#x3D;01;36:*.ogg&#x3D;01;36:*.ra&#x3D;01;36:*.wav&#x3D;01;36:*.axa&#x3D;01;36:*.oga&#x3D;01;36:*.spx&#x3D;01;36:*.xspf&#x3D;01;36:</span><br><span class="line">MAIL&#x3D;&#x2F;var&#x2F;spool&#x2F;mail&#x2F;root</span><br><span class="line">PATH&#x3D;&#x2F;opt&#x2F;java&#x2F;jdk1.8.0_281&#x2F;bin:&#x2F;opt&#x2F;java&#x2F;jdk1.8.0_281&#x2F;jre&#x2F;bin:&#x2F;usr&#x2F;local&#x2F;sbin:&#x2F;usr&#x2F;local&#x2F;bin:&#x2F;usr&#x2F;sbin:&#x2F;usr&#x2F;bin:&#x2F;root&#x2F;bin:&#x2F;usr&#x2F;local&#x2F;git&#x2F;bin:&#x2F;root&#x2F;bin</span><br><span class="line">PWD&#x3D;&#x2F;root</span><br><span class="line">JAVA_HOME&#x3D;&#x2F;opt&#x2F;java&#x2F;jdk1.8.0_281</span><br><span class="line">LANG&#x3D;zh_CN.UTF-8</span><br><span class="line">HISTCONTROL&#x3D;ignoredups</span><br><span class="line">SHLVL&#x3D;1</span><br><span class="line">HOME&#x3D;&#x2F;root</span><br><span class="line">LOGNAME&#x3D;root</span><br><span class="line">CLASSPATH&#x3D;.:JAVA_HOME&#x2F;lib:JRE_HOME&#x2F;lib:</span><br><span class="line">SSH_CONNECTION&#x3D;192.168.1.4 5694 192.168.1.3 22</span><br><span class="line">LESSOPEN&#x3D;||&#x2F;usr&#x2F;bin&#x2F;lesspipe.sh %s</span><br><span class="line">_&#x3D;&#x2F;usr&#x2F;bin&#x2F;env</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure></p>
+<h3 id="PATH环境变量"><a href="#PATH环境变量" class="headerlink" title="PATH环境变量"></a>PATH环境变量</h3><p><code>PATH</code>是<code>Linux</code>中一个极为重要的环境变量，它用于帮助<code>Shell</code>找到用户输入的命令。用户所输入的每个命令实际上是一个源代码文件，计算机执行这个文件里的代码以实现这个命令的功能，这些源代码文件称为可执行文件。可执行文件存在于各种各样的目录下，<code>PATH</code>就记录了一系列的目录列表，<code>Shell</code>为每个输入命令搜索<code>PATH</code>中的目录列表。</p>
+<h3 id="HOME环境变量"><a href="#HOME环境变量" class="headerlink" title="HOME环境变量"></a>HOME环境变量</h3><p><code>HOME</code>记录当前用户的目录，由<code>/etc/passwd</code>的倒数第2个域决定，<code>HOME</code>目录用于保存用户自己的文件。</p>
+<pre>
+[root@localhost ~]&#35; cat /etc/passwd|grep root
+root:x:0:0:root:<mark>/root</mark>:/bin/bash
+operator:x:11:0:operator:/root:/sbin/nologin
+[root@localhost ~]&#35; 
+</pre>
+
+<h1 id="考点5-grep命令"><a href="#考点5-grep命令" class="headerlink" title="考点5:grep命令"></a>考点5:grep命令</h1><p>在Linux系统中, 为找到文件try_grep含有以a字母为行开头的内容, 可以使用命令？</p>
+<ul>
+<li>A grep -E #$ try_grep</li>
+<li>B grep -E #a try_grep</li>
+<li>C grep -E ^$ try_grep</li>
+<li>D grep -E ^a try_grep</li>
+</ul>
+<h2 id="解析-4"><a href="#解析-4" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+<h3 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h3><p><code>-E</code>参数：表示使用扩展的正则表达式</p>
+<p><code>^</code>：开始行<br><code>$</code>: 结束行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grep  -E  ^a  try_grep #匹配以a开头的行</span><br><span class="line">grep  -E  a$  try_grep #匹配以a结束的行</span><br></pre></td></tr></table></figure>
+<h1 id="考点6-tar解压参数"><a href="#考点6-tar解压参数" class="headerlink" title="考点6:tar解压参数"></a>考点6:tar解压参数</h1><p>tar命令用于解压的参数是？</p>
+<ul>
+<li>A -v</li>
+<li>B -x</li>
+<li>C -c</li>
+<li>D -f</li>
+</ul>
+<h2 id="解析-5"><a href="#解析-5" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+<h3 id="tar参数"><a href="#tar参数" class="headerlink" title="tar参数"></a>tar参数</h3><p>主要参数：</p>
+<ul>
+<li>c：创建新的档案文件。如果用户想备份一个目录或是一些文件，就要选择这个选项。相当于<strong>打包</strong>。 </li>
+<li>x：从档案文件中释放文件。相当于<strong>拆包</strong>。</li>
+</ul>
+<p>辅助参数：</p>
+<ul>
+<li>z：是否同时具有 gzip 的属性？亦即是否需要用gzip 压缩或解压？ 一般格式为xx.tar.gz或xx. tgz </li>
+<li>j：是否同时具有 bzip2 的属性？亦即是否需要用bzip2 压缩或解压？一般格式为xx.tar.bz2   </li>
+<li>v：压缩的过程中显示文件！这个常用 </li>
+<li>f：使用档名，请留意，在 f 之后要立即接档名喔！不要再加其他参数！ </li>
+<li>p：使用原文件的原来属性（属性不会依据使用者而变） </li>
+<li>—exclude FILE：在压缩的过程中，不要将 FILE 打包！ </li>
+</ul>
+<h1 id="考点7-软链接硬链接"><a href="#考点7-软链接硬链接" class="headerlink" title="考点7:软链接硬链接"></a>考点7:软链接硬链接</h1><p>Linux中包括两种链接:硬链接(Hard Link)和软链接(Soft Link),下列说法正确的是()</p>
+<ul>
+<li>A 软链接可以跨文件系统进行连接,硬链接不可以</li>
+<li>B 当删除原文件的时候软链接文件仍然存在,且指向的内容不变</li>
+<li>C 硬链接被删除,磁盘上的数据文件会同时被删除</li>
+<li>D 硬链接会重新建立一个<code>inode</code>,软链接不会</li>
+</ul>
+<h2 id="解析-6"><a href="#解析-6" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: A</details>
+
+<h3 id="什么是链接"><a href="#什么是链接" class="headerlink" title="什么是链接"></a>什么是链接</h3><p>链接操作实际上是给系统中已有的某个文件指定另外一个可用于访问它的名称。对于这个新的文件名，我们可以为之指定不同的</p>
+<h3 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h3><p>硬链接只能引用同一文件系统中的文件。<br>它引用的是文件在文件系统中的物理索引(也称为 inode)。<br>当您移动或删除原始文件时，硬链接不会被破坏，因为它所引用的是文件的物理数据而不是文件在文件结构中的位置。<br>硬链接的文件不需要用户有访问原始文件的权限，也不会显示原始文件的位置，这样有助于文件的安全。<br>如果您删除的文件有相应的硬链接，那么这个文件依然会保留，直到所有对它的引用都被删除。</p>
+<h3 id="软链接（符号链接）"><a href="#软链接（符号链接）" class="headerlink" title="软链接（符号链接）"></a>软链接（符号链接）</h3><p>软链接，其实就是新建立一个文件，这个文件就是专门用来指向别的文件的（那就和windows 下的快捷方式的那个文件有很接近的意味）。<br>软链接产生的是一个新的文件，但这个文件的作用就是专门指向某个文件的，删了这个软链接文件，那就等于不需要这个连接，和原来的存在的实体原文件没有任何关系，<br>但删除原来的文件，则相应的软链接不可用（cat那个软链接文件，则提示“没有该文件或目录“）。</p>
+<h3 id="硬链接与软链接的区别"><a href="#硬链接与软链接的区别" class="headerlink" title="硬链接与软链接的区别"></a>硬链接与软链接的区别</h3><h4 id="硬链接不会创建inode-不可跨越文件系统"><a href="#硬链接不会创建inode-不可跨越文件系统" class="headerlink" title="硬链接不会创建inode 不可跨越文件系统"></a>硬链接不会创建inode 不可跨越文件系统</h4><p>硬链接是不会建立inode的，他只是在文件原来的inode link count域再增加1而已，也因此硬链接是不可以跨越文件系统的。</p>
+<h4 id="软链接会重新创建inode"><a href="#软链接会重新创建inode" class="headerlink" title="软链接会重新创建inode"></a>软链接会重新创建inode</h4><p>相反都是软链接会重新建立一个inode，当然inode的结构跟其他的不一样，他只是一个指明源文件的字符串信息。一旦删除源文件，那么软链接将变得毫无意义。</p>
+<h4 id="删除硬链接的时候-文件可能不会被删除"><a href="#删除硬链接的时候-文件可能不会被删除" class="headerlink" title="删除硬链接的时候 文件可能不会被删除"></a>删除硬链接的时候 文件可能不会被删除</h4><p>而硬链接删除的时候，系统调用会检查inode link count的数值，如果他大于等于1，那么inode不会被回收。因此文件的内容不会被删除。</p>
+<h4 id="硬链接的链接文件和源文件是同一个文件"><a href="#硬链接的链接文件和源文件是同一个文件" class="headerlink" title="硬链接的链接文件和源文件是同一个文件"></a>硬链接的链接文件和源文件是同一个文件</h4><p>硬链接实际上是为文件建一个别名，链接文件和原文件实际上是同一个文件。</p>
+<p>可以通过ls -i来查看一下，这两个文件的inode号是同一个，说明它们是同一个文件；</p>
+<p>而软链接建立的是一个指向，即链接文件内的内容是指向原文件的指针，它们是两个文件。</p>
+<h4 id="软链接可以跨文件系统"><a href="#软链接可以跨文件系统" class="headerlink" title="软链接可以跨文件系统"></a>软链接可以跨文件系统</h4><p>软链接可以跨文件系统，硬链接不可以；</p>
+<h4 id="硬链接的文件必须存在-软链接可以对不存在的文件进行链接"><a href="#硬链接的文件必须存在-软链接可以对不存在的文件进行链接" class="headerlink" title="硬链接的文件必须存在 软链接可以对不存在的文件进行链接"></a>硬链接的文件必须存在 软链接可以对不存在的文件进行链接</h4><p>软链接可以对一个不存在的文件名(filename)进行链接（当然此时如果你vi这个软链接文件，linux会自动新建一个文件名为filename的文件）,<br>硬链接不可以（其文件必须存在，inode必须存在）；</p>
+<h4 id="软链接可以对目录进行链接-硬链接不可以"><a href="#软链接可以对目录进行链接-硬链接不可以" class="headerlink" title="软链接可以对目录进行链接 硬链接不可以"></a>软链接可以对目录进行链接 硬链接不可以</h4><p>软链接可以对目录进行连接，硬链接不可以。</p>
+<h3 id="如何创建链接"><a href="#如何创建链接" class="headerlink" title="如何创建链接"></a>如何创建链接</h3><p>两种链接都可以通过命令ln 来创建。</p>
+<h4 id="创建硬链接ln"><a href="#创建硬链接ln" class="headerlink" title="创建硬链接ln"></a>创建硬链接ln</h4><p><code>ln</code>默认创建的是硬链接。</p>
+<h4 id="创建软链接ls-s"><a href="#创建软链接ls-s" class="headerlink" title="创建软链接ls -s"></a>创建软链接ls -s</h4><p>使用<code>ln -s</code>可以创建软链接。</p>
+<h1 id="考点8-环境变量"><a href="#考点8-环境变量" class="headerlink" title="考点8:环境变量"></a>考点8:环境变量</h1><p>在RHEL5系统中,下面关于shell环境变量配置文件的描述,正确的是(  )</p>
+<ul>
+<li>A 用户登录系统时,<code>bash</code>首先执行<code>/etc/profile</code>配置文件和<code>/etc/profile.d/</code>目录下的配置文件,这些配置文件对所有用户都有效</li>
+<li>B 用户登录系统时,<code>bash</code>首先执行<code>.bash_profile</code>文件和<code>.bashrc</code>文件,这些配置文件对所有用户都有效</li>
+<li>C 用户主目录下的.<code>bashrc</code>设置为每次登录时执行,而<code>.bash_profile</code>则为每次打开新的终端时执行</li>
+<li>D 执行用户主目录下的环境变量配置文件时,不可以重复设置用户登录时配置文件中已经设置的选项</li>
+</ul>
+<h2 id="解析-7"><a href="#解析-7" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: A</details>
+
+<p><a href="https://www.jianshu.com/p/6d32b166f47d" target="_blank" rel="noopener">https://www.jianshu.com/p/6d32b166f47d</a></p>
+<h3 id="ect-profile"><a href="#ect-profile" class="headerlink" title="/ect/profile"></a>/ect/profile</h3><p>此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行.并从<code>/etc/profile.d</code>目录的配置文件中搜集shell的设置.</p>
+<h3 id="etc-bashrc"><a href="#etc-bashrc" class="headerlink" title="/etc/bashrc"></a>/etc/bashrc</h3><p>为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取.</p>
+<h3 id="bash-profile"><a href="#bash-profile" class="headerlink" title="~/.bash_profile"></a>~/.bash_profile</h3><p>每个用户都可使用该文件输入<br>专用于 自己使用的shell信息,<strong>当用户登录时,该文件仅仅执行一次</strong>!默认情况下,他设置一些环境变量,执行~/.bashrc文件.</p>
+<h3 id="bashrc"><a href="#bashrc" class="headerlink" title="~/.bashrc"></a>~/.bashrc</h3><p>该文件包含专用于用户的bash shell的bash信息,当登录时以及每次打开新的shell时,该该文件被读取.</p>
+<h3 id="bash-logout"><a href="#bash-logout" class="headerlink" title="~/.bash_logout"></a>~/.bash_logout</h3><blockquote>
+<p><a href="https://blog.csdn.net/wackycrazy/article/details/47998747" target="_blank" rel="noopener">https://blog.csdn.net/wackycrazy/article/details/47998747</a><br>/etc/profile 文件中设定的环境变量，运行的命令或脚本，针对所有用户有效<br>/etc/bashrc 文件中设定的本地变量，定义的别名，针对所有启动的shell程序的用户有效<br>这两个配置文件是全局的。<br>~/.bash_profile 作用跟/etc/profile是一样的，只不过针对的是某一个用户<br>~/.bashrc的作用跟/etc/bashrc也是一样的，只不过针对的也是某一个用户</p>
+<p><a href="https://blog.csdn.net/ithomer/article/details/6322892" target="_blank" rel="noopener">https://blog.csdn.net/ithomer/article/details/6322892</a><br>（1） /etc/profile： 此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行. 并从/etc/profile.d目录的配置文件中搜集shell的设置。<br>（2） /etc/bashrc: 为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取（即每次新开一个终端，都会执行bashrc）。<br>（3） ~/.bash_profile: 每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该文件仅仅执行一次。默认情况下,设置一些环境变量,执行用户的.bashrc文件。<br>（4） ~/.bashrc: 该文件包含专用于你的bash shell的bash信息,当登录时以及每次打开新的shell时,该该文件被读取。<br>（5） ~/.bash_logout: 当每次退出系统(退出bash shell)时,执行该文件. 另外,/etc/profile中设定的变量(全局)的可以作用于任何用户,而~/.bashrc等中设定的变量(局部)只能继承 /etc/profile中的变量,他们是”父子”关系。<br>（6） ~/.bash_profile: 是交互式、login 方式进入 bash 运行的~/.bashrc 是交互式 non-login 方式进入 bash 运行的通常二者设置大致相同，所以通常前者会调用后者。</p>
+<p><a href="https://www.linuxprobe.com/diff-bashrcprofile.html" target="_blank" rel="noopener">https://www.linuxprobe.com/diff-bashrcprofile.html</a><br>profile<br>其实看名字就能了解大概了, profile 是某个用户唯一的用来设置环境变量的地方, 因为用户可以有多个 shell 比如 bash, sh, zsh 之类的, 但像环境变量这种其实只需要在统一的一个地方初始化就可以了, 而这就是 profile.<br>bashrc<br>bashrc 也是看名字就知道, 是专门用来给 bash 做初始化的比如用来初始化 bash 的设置, bash 的代码补全, bash 的别名, bash 的颜色. 以此类推也就还会有 shrc, zshrc 这样的文件存在了, 只是 bash 太常用了而已.<br>期望的执行顺序</p>
+<p><a href="https://zhuanlan.zhihu.com/p/25944849" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/25944849</a><br>~/.bashrc<br>该文件存储的是专属于个人bash shell的信息，当登录时以及每次打开一个新的shell时,执行这个文件。在这个文件里可以自定义用户专属的个人信息。<br>相关文件的读取顺序<br>在刚登录Linux时，首先启动 /etc/profile 文件，然后再启动用户目录下的 ~/.bash_profile、 ~/.bash_login或 ~/.profile文件中的其中一个，执行的顺序为：~/.bash_profile、 ~/.bash_login、 ~/.profile。如果 ~/.bash_profile文件存在的话，一般还会执行 ~/.bashrc文件。</p>
+<p><a href="http://blog.itpub.net/27040306/viewspace-732343/" target="_blank" rel="noopener">http://blog.itpub.net/27040306/viewspace-732343/</a><br>/etc/profile、/etc/bashrc、~/.bash_profile、~/.bashrc很容易混淆，他们之间有什么区别？它们的作用到底是什么？<br>/etc/profile: 用来设置系统环境参数，比如$PATH. 这里面的环境变量是对系统内所有用户生效的。<br>/etc/bashrc:  这个文件设置系统bash shell相关的东西，对系统内所有用户生效。只要用户运行bash命令，那么这里面的东西就在起作用。<br>~/.bash_profile: 用来设置一些环境变量，功能和/etc/profile 类似，但是这个是针对用户来设定的，也就是说，你在/home/user1/.bash_profile 中设定了环境变量，那么这个环境变量只针对 user1 这个用户生效.<br>~/.bashrc: 作用类似于/etc/bashrc, 只是针对用户自己而言，不对其他用户生效。<br>另外/etc/profile中设定的变量(全局)的可以作用于任何用户,而~/.bashrc等中设定的变量(局部)只能继承/etc/profile中的变量,他们是”父子”关系.<br>~/.bash_profile 是交互式、login 方式进入 bash 运行的，意思是只有用户登录时才会生效。<br>~/.bashrc 是交互式 non-login 方式进入 bash 运行的，用户不一定登录，只要以该用户身份运行命令行就会读取该文件。</p>
+</blockquote>
+<p><a href="https://cloud.tencent.com/developer/article/1148535" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1148535</a></p>
+<blockquote>
+<p>/etc/profile<br>为系统的每个用户设置环境信息和启动程序，当用户第一次登录时，该文件被执行，其配置对所有登录的用户都有效。当被修改时，必须重启才会生效。英文描述：”System wide environment and startup programs, for login setup.”<br>/etc/environment<br>系统的环境变量，/etc/profile是所有用户的环境变量，前者与登录用户无关，后者与登录用户有关，当同一变量在两个文件里有冲突时，以用户环境为准。<br>/etc/bashrc<br>为每个运行 bash shell 的用户执行该文件，当 bash shell 打开时，该文件被执行，其配置对所有使用bash的用户打开的每个bash都有效。当被修改后，不用重启只需要打开一个新的 bash 即可生效。英文描述：”System wide functions and aliases.”<br>~/.bash_profile<br>为当前用户设置专属的环境信息和启动程序，当用户登录时该文件执行一次。默认情况下，它用于设置环境变量，并执行当前用户的 .bashrc 文件。理念类似于 /etc/profile，只不过只对当前用户有效，也需要重启才能生效。(注意：Centos7系统命名为.bash_profile，其他系统可能是.bash_login或.profile。)<br>~/.bashrc<br>为当前用户设置专属的 bash 信息，当每次打开新的shell时，该文件被执行。理念类似于/etc/bashrc，只不过只对当前用户有效，不需要重启只需要打开新的shell即可生效。<br>~/.bash_logout<br>为当前用户，每次退出bash shell时执行该文件，可以把一些清理工作的命令放进这个文件。<br>/etc/profile.d/<br>此文件夹里是除/etc/profile之外其他的”application-specific startup files”。英文描述为”The /etc/profile file sets the environment variables at startup of the Bash shell. The /etc/profile.d directory contains other scripts that contain application-specific startup files, which are also executed at startup time by the shell.” 同时，这些文件”are loaded via /etc/profile which makes them a part of the bash “profile” in the same way anyway.” 因此可以简单的理解为是/etc/profile的一部分，只不过按类别或功能拆分成若干个文件进行配置了（方便维护和理解）。<br>注意事项<br>以上需要重启才能生效的文件，其实可以通过source xxx暂时生效。<br> 文件的执行顺序为：当登录Linux时，首先启动/etc/environment和/etc/profile，然后启动当前用户目录下的/.bash_profile，执行此文件时一般会调用/.bashrc文件，而执行/.bashrc时一般会调用/etc/bashrc，最后退出shell时，执行/.bash_logout。简单来说顺序为：<br>  （登录时）/etc/environment –&gt; /etc/profile(以及/etc/profile.d/里的文件) –&gt; ~/.bash_profile –&gt; （打开shell时）~/.bashrc –&gt; /etc/bashrc –&gt; （退出shell时）~/.bash_logout</p>
+</blockquote>
+<h1 id="考点9-shell脚本参数"><a href="#考点9-shell脚本参数" class="headerlink" title="考点9:shell脚本参数"></a>考点9:shell脚本参数</h1><p>如果参数列表个数为1则执行<script type="math/tex"><1` , 如果参数列表个数为2则执行`$<2<</script> ,其他情况则……,补充下面的命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Case (  ) in</span><br><span class="line"><span class="meta">1&gt;</span></span><br><span class="line"><span class="meta">   $</span><span class="bash">&lt;1</span></span><br><span class="line"><span class="meta">2&gt;</span></span><br><span class="line"><span class="meta">   $</span><span class="bash">&lt;2&lt;<span class="variable">$1</span></span></span><br><span class="line">Default &gt; </span><br><span class="line">   echo ……</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>A $$</li>
+<li>B $#</li>
+<li>C $@</li>
+<li>D $*</li>
+</ul>
+<h2 id="解析-8"><a href="#解析-8" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>$#</code></td>
+<td style="text-align:left">是传给脚本的参数个数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$0</code></td>
+<td style="text-align:left">是脚本本身的名字</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$1</code></td>
+<td style="text-align:left">是传递给该shell脚本的第一个参数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$2</code></td>
+<td style="text-align:left">是传递给该shell脚本的第二个参数</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$@</code></td>
+<td style="text-align:left">是传给脚本的所有参数的列表</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$*</code></td>
+<td style="text-align:left">是以一个单字符串显示所有向脚本传递的参数，与位置变量不同，参数可超过9个</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$$</code></td>
+<td style="text-align:left">是脚本运行的当前进程ID号</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$?</code></td>
+<td style="text-align:left">是显示最后命令的退出状态，0表示没有错误，其他表示有错误</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="考点10-进程间通讯方式"><a href="#考点10-进程间通讯方式" class="headerlink" title="考点10:进程间通讯方式"></a>考点10:进程间通讯方式</h1><p>进程间通讯方式有哪些？</p>
+<ul>
+<li>A 管道</li>
+<li>B 消息队列</li>
+<li>C 共享内存</li>
+<li>D 文件和记录锁定</li>
+</ul>
+<h2 id="解析-9"><a href="#解析-9" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: ABCD</details>
+
+<h3 id="UNIX的通信方式"><a href="#UNIX的通信方式" class="headerlink" title="UNIX的通信方式"></a>UNIX的通信方式</h3><h4 id="1-文件和记录锁定"><a href="#1-文件和记录锁定" class="headerlink" title="1 文件和记录锁定"></a>1 文件和记录锁定</h4><p>为避免两个进程间同时要求访问同一共享资源而引起访问和操作的混乱，在进程对共享资源进行访问前必须对其进行锁定，该进程访问完后再释放。这是UNIX为共享资源提供的互斥性保障。</p>
+<h4 id="2-管道"><a href="#2-管道" class="headerlink" title="2 管道"></a>2 管道</h4><p>管道一般用于两个不同进程之间的通信。当一个进程创建一个管道，并调用fork创建自己的一个子进程后，父进程关闭读管道端，子进程关闭写管道端，这样 提供了两个进程之间数据流动的一种方式。</p>
+<h4 id="3-FIFO"><a href="#3-FIFO" class="headerlink" title="3 FIFO"></a>3 FIFO</h4><p>FIFO是一种先进先出的队列。它类似于一个管道，只允许数据的单向流动。每个FIFO都有一个名字，允许不相关的进程访问同一个FIFO。因此也成为命名管。</p>
+<h4 id="4-消息队列"><a href="#4-消息队列" class="headerlink" title="4 消息队列"></a>4 消息队列</h4><p>UNIX下不同进程之间可实现共享资源的一种机制；UNIX允许不同进程将格式化的数据流以消息形式发送给任意进程。对消息队列具有操作权限的进程都可以使用msget完成对消息队列的操作控制。通过使用消息类型，进程可以按任何顺序读消息，或为消息安排优先级顺序。</p>
+<h4 id="5-信号灯"><a href="#5-信号灯" class="headerlink" title="5 信号灯"></a>5 信号灯</h4><p>作为进程间通讯的一种方法，它不是用于交换大批数据，而用于多进程之间的同步（协调对共享存储段的存取）。</p>
+<h4 id="6-共享内存"><a href="#6-共享内存" class="headerlink" title="6 共享内存"></a>6 共享内存</h4><p>通过信号灯实现存储共享（类似“红灯停、绿灯行”）</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/exam/84510f27/" title="2021年03月22日Linux专项练习2">https://lanlan2017.github.io/exam/84510f27/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/exam/f3563fb1/" rel="next" title="2021年03月22日Linux专项练习3">
+                  <i class="fa fa-chevron-left"></i> 2021年03月22日Linux专项练习3
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/exam/8c8ce85/" rel="prev" title="2021年03月22日 HTML1">
+                  2021年03月22日 HTML1 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#考点1-Linux八进制文件权限"><span class="nav-number">1.</span> <span class="nav-text">考点1:Linux八进制文件权限</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">1.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点2-ls-al"><span class="nav-number">2.</span> <span class="nav-text">考点2:ls -al</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-1"><span class="nav-number">2.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-l第一列含义"><span class="nav-number">2.1.1.</span> <span class="nav-text">ls -l第一列含义</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点3-Linux路由设置"><span class="nav-number">3.</span> <span class="nav-text">考点3:Linux路由设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-2"><span class="nav-number">3.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点4-Linux环境变量"><span class="nav-number">4.</span> <span class="nav-text">考点4:Linux环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-3"><span class="nav-number">4.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pwd命令"><span class="nav-number">4.1.1.</span> <span class="nav-text">pwd命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PWD环境变量"><span class="nav-number">4.1.2.</span> <span class="nav-text">PWD环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看PWD环境变量"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">查看PWD环境变量:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PWD和OLDPWD环境变量"><span class="nav-number">4.1.3.</span> <span class="nav-text">PWD和OLDPWD环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#env命令"><span class="nav-number">4.1.4.</span> <span class="nav-text">env命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PATH环境变量"><span class="nav-number">4.1.5.</span> <span class="nav-text">PATH环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HOME环境变量"><span class="nav-number">4.1.6.</span> <span class="nav-text">HOME环境变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点5-grep命令"><span class="nav-number">5.</span> <span class="nav-text">考点5:grep命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-4"><span class="nav-number">5.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#grep命令"><span class="nav-number">5.1.1.</span> <span class="nav-text">grep命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点6-tar解压参数"><span class="nav-number">6.</span> <span class="nav-text">考点6:tar解压参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-5"><span class="nav-number">6.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tar参数"><span class="nav-number">6.1.1.</span> <span class="nav-text">tar参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点7-软链接硬链接"><span class="nav-number">7.</span> <span class="nav-text">考点7:软链接硬链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-6"><span class="nav-number">7.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是链接"><span class="nav-number">7.1.1.</span> <span class="nav-text">什么是链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬链接"><span class="nav-number">7.1.2.</span> <span class="nav-text">硬链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软链接（符号链接）"><span class="nav-number">7.1.3.</span> <span class="nav-text">软链接（符号链接）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬链接与软链接的区别"><span class="nav-number">7.1.4.</span> <span class="nav-text">硬链接与软链接的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬链接不会创建inode-不可跨越文件系统"><span class="nav-number">7.1.4.1.</span> <span class="nav-text">硬链接不会创建inode 不可跨越文件系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软链接会重新创建inode"><span class="nav-number">7.1.4.2.</span> <span class="nav-text">软链接会重新创建inode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除硬链接的时候-文件可能不会被删除"><span class="nav-number">7.1.4.3.</span> <span class="nav-text">删除硬链接的时候 文件可能不会被删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬链接的链接文件和源文件是同一个文件"><span class="nav-number">7.1.4.4.</span> <span class="nav-text">硬链接的链接文件和源文件是同一个文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软链接可以跨文件系统"><span class="nav-number">7.1.4.5.</span> <span class="nav-text">软链接可以跨文件系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬链接的文件必须存在-软链接可以对不存在的文件进行链接"><span class="nav-number">7.1.4.6.</span> <span class="nav-text">硬链接的文件必须存在 软链接可以对不存在的文件进行链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#软链接可以对目录进行链接-硬链接不可以"><span class="nav-number">7.1.4.7.</span> <span class="nav-text">软链接可以对目录进行链接 硬链接不可以</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何创建链接"><span class="nav-number">7.1.5.</span> <span class="nav-text">如何创建链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建硬链接ln"><span class="nav-number">7.1.5.1.</span> <span class="nav-text">创建硬链接ln</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建软链接ls-s"><span class="nav-number">7.1.5.2.</span> <span class="nav-text">创建软链接ls -s</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点8-环境变量"><span class="nav-number">8.</span> <span class="nav-text">考点8:环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-7"><span class="nav-number">8.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ect-profile"><span class="nav-number">8.1.1.</span> <span class="nav-text">&#x2F;ect&#x2F;profile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#etc-bashrc"><span class="nav-number">8.1.2.</span> <span class="nav-text">&#x2F;etc&#x2F;bashrc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bash-profile"><span class="nav-number">8.1.3.</span> <span class="nav-text">~&#x2F;.bash_profile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bashrc"><span class="nav-number">8.1.4.</span> <span class="nav-text">~&#x2F;.bashrc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bash-logout"><span class="nav-number">8.1.5.</span> <span class="nav-text">~&#x2F;.bash_logout</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点9-shell脚本参数"><span class="nav-number">9.</span> <span class="nav-text">考点9:shell脚本参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-8"><span class="nav-number">9.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点10-进程间通讯方式"><span class="nav-number">10.</span> <span class="nav-text">考点10:进程间通讯方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-9"><span class="nav-number">10.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UNIX的通信方式"><span class="nav-number">10.1.1.</span> <span class="nav-text">UNIX的通信方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-文件和记录锁定"><span class="nav-number">10.1.1.1.</span> <span class="nav-text">1 文件和记录锁定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-管道"><span class="nav-number">10.1.1.2.</span> <span class="nav-text">2 管道</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-FIFO"><span class="nav-number">10.1.1.3.</span> <span class="nav-text">3 FIFO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-消息队列"><span class="nav-number">10.1.1.4.</span> <span class="nav-text">4 消息队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-信号灯"><span class="nav-number">10.1.1.5.</span> <span class="nav-text">5 信号灯</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-共享内存"><span class="nav-number">10.1.1.6.</span> <span class="nav-text">6 共享内存</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/exam/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/exam/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/exam/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/exam/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/exam/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/exam/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/exam/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/exam/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/exam/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/exam/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/exam/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里写下你的评论吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

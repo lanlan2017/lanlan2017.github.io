@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/exam/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/exam/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/exam/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/exam/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/exam/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/exam/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/exam/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="考点1:常见Linux命令&amp;nbsp;考点2:八进制权限&amp;nbsp;考点3:unix授权命令&amp;nbsp;考点4:Linux终止前台进程&amp;nbsp;考点5:Linux内核子系统&amp;nbsp;考点6:Linux查看系统负载命令&amp;nbsp;考点7:[-z string] 短路与 短路或&amp;nbsp;考点8:Redhat9安装方式&amp;nbsp;考点9:批量删除当前目录下的文件&amp;nbsp;考点10:查看Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021年04月12日Linux专项练习1">
+<meta property="og:url" content="https://lanlan2017.github.io/exam/b9682126/index.html">
+<meta property="og:site_name" content="笔试题|蓝蓝博客">
+<meta property="og:description" content="考点1:常见Linux命令&amp;nbsp;考点2:八进制权限&amp;nbsp;考点3:unix授权命令&amp;nbsp;考点4:Linux终止前台进程&amp;nbsp;考点5:Linux内核子系统&amp;nbsp;考点6:Linux查看系统负载命令&amp;nbsp;考点7:[-z string] 短路与 短路或&amp;nbsp;考点8:Redhat9安装方式&amp;nbsp;考点9:批量删除当前目录下的文件&amp;nbsp;考点10:查看Linux">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-11T16:44:51.000Z">
+<meta property="article:modified_time" content="2021-04-14T10:01:47.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/exam/b9682126/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>2021年04月12日Linux专项练习1 | 笔试题|蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/exam/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">笔试题|蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/exam/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/exam/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/exam/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/exam/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/exam/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/exam/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/b9682126/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">2021年04月12日Linux专项练习1
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2021-04-12 00:44:51" itemprop="dateCreated datePublished" datetime="2021-04-12T00:44:51+08:00">2021-04-12</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-14 18:01:47" itemprop="dateModified" datetime="2021-04-14T18:01:47+08:00">2021-04-14</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Linux/2021%E5%B9%B404%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年04月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/b9682126/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/b9682126/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/exam/b9682126/#考点1-常见Linux命令" class="header_1">考点1:常见Linux命令</a>&nbsp;<br><a href="/exam/b9682126/#考点2-八进制权限" class="header_1">考点2:八进制权限</a>&nbsp;<br><a href="/exam/b9682126/#考点3-unix授权命令" class="header_1">考点3:unix授权命令</a>&nbsp;<br><a href="/exam/b9682126/#考点4-Linux终止前台进程" class="header_1">考点4:Linux终止前台进程</a>&nbsp;<br><a href="/exam/b9682126/#考点5-Linux内核子系统" class="header_1">考点5:Linux内核子系统</a>&nbsp;<br><a href="/exam/b9682126/#考点6-Linux查看系统负载命令" class="header_1">考点6:Linux查看系统负载命令</a>&nbsp;<br><a href="/exam/b9682126/#考点7-z-string-短路与-短路或" class="header_1">考点7:[-z string] 短路与 短路或</a>&nbsp;<br><a href="/exam/b9682126/#考点8-Redhat9安装方式" class="header_1">考点8:Redhat9安装方式</a>&nbsp;<br><a href="/exam/b9682126/#考点9-批量删除当前目录下的文件" class="header_1">考点9:批量删除当前目录下的文件</a>&nbsp;<br><a href="/exam/b9682126/#考点10-查看Linux主机的默认路由" class="header_1">考点10:查看Linux主机的默认路由</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="考点1-常见Linux命令"><a href="#考点1-常见Linux命令" class="headerlink" title="考点1:常见Linux命令"></a>考点1:常见Linux命令</h1><p>以下不属于Linux系统命令的是:</p>
+<ul>
+<li>A <code>kill</code></li>
+<li>B <code>ifconfig</code></li>
+<li>C <code>mv</code></li>
+<li>D <code>remove</code></li>
+</ul>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+<p>Linux没有remove命令，但是有rm</p>
+<h1 id="考点2-八进制权限"><a href="#考点2-八进制权限" class="headerlink" title="考点2:八进制权限"></a>考点2:八进制权限</h1><p>linux系统中某文件的组外成员的权限为只读;所有者有全部权限;组内的权限为读与写,则该文件的权限为:</p>
+<ul>
+<li>A 753</li>
+<li>B 763</li>
+<li>C 754</li>
+<li>D 764</li>
+</ul>
+<h2 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+
+<h1 id="考点3-unix授权命令"><a href="#考点3-unix授权命令" class="headerlink" title="考点3:unix授权命令"></a>考点3:unix授权命令</h1><p>在unix系统下执行chmod(“/usr/test/sample”,0753)之后该文件sample的访问权限为</p>
+<ul>
+<li>A 拥有者可读写执行,同组用户可写可执行,其他用户可读可执行</li>
+<li>B 拥有者可读写执行,同组用户可读写,其他用户可读可执行</li>
+<li>C 拥有者可读写执行,同组用户可读可执行,其他用户可写可执行</li>
+<li>D 拥有者可读写执行,同组用户可读可执行,其他用户可读写</li>
+</ul>
+<h2 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: C</details>
+
+
+<h1 id="考点4-Linux终止前台进程"><a href="#考点4-Linux终止前台进程" class="headerlink" title="考点4:Linux终止前台进程"></a>考点4:Linux终止前台进程</h1><p>终止一个前台进程可能用到的命令和操作是？</p>
+<ul>
+<li>A <code>kill</code></li>
+<li>B <code>ctrl+C</code></li>
+<li>C <code>shut down</code></li>
+<li>D <code>halt</code></li>
+</ul>
+<h2 id="解析-3"><a href="#解析-3" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+<h3 id="Linux如何终止前台进程"><a href="#Linux如何终止前台进程" class="headerlink" title="Linux如何终止前台进程"></a>Linux如何终止前台进程</h3><p>终止一个前台进程用<br>ctrl+C；</p>
+<h3 id="Linux如何终止后台进程"><a href="#Linux如何终止后台进程" class="headerlink" title="Linux如何终止后台进程"></a>Linux如何终止后台进程</h3><p>终止一个后台进程：<br>1、使用kill命令；<br>2、使用fg命令将后台进程变为前台进程，然后ctrl+C。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">kill</td>
+<td style="text-align:left">无参数表示向进程输入关闭的指令</td>
+</tr>
+<tr>
+<td style="text-align:left">Ctrl+C</td>
+<td style="text-align:left">关闭当前（前台）进程</td>
+</tr>
+<tr>
+<td style="text-align:left">Chrl+Z</td>
+<td style="text-align:left">暂停当前（前台）进程</td>
+</tr>
+<tr>
+<td style="text-align:left">shutdown</td>
+<td style="text-align:left">关机</td>
+</tr>
+<tr>
+<td style="text-align:left">halt</td>
+<td style="text-align:left">就是调用shutdown -h(立即关机)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="考点5-Linux内核子系统"><a href="#考点5-Linux内核子系统" class="headerlink" title="考点5:Linux内核子系统"></a>考点5:Linux内核子系统</h1><p>内核不包括的子系统是 。</p>
+<ul>
+<li>A 进程管理系统</li>
+<li>B 内存管理系统</li>
+<li>C <code>I/O</code>管理系统</li>
+<li>D 硬件管理系统</li>
+</ul>
+<h2 id="解析-4"><a href="#解析-4" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+<p>内核分为 <strong>进程管理系统 、 内存管理系统 、 I/O管理系统 和文件管理系统</strong>等四个子系统。<br>硬件管理系统一听就不切实际阿 因为内核是一串指令。</p>
+<h1 id="考点6-Linux查看系统负载命令"><a href="#考点6-Linux查看系统负载命令" class="headerlink" title="考点6:Linux查看系统负载命令"></a>考点6:Linux查看系统负载命令</h1><p>下面有关linux查看系统负载的命令,说法错误的是？</p>
+<ul>
+<li>A <code>uptime</code>命令主要用于获取主机运行时间和查询<code>linux</code>系统负载等信息</li>
+<li>B <code>vmstat</code>命令可以查看查看<code>cpu</code>负载</li>
+<li>C <code>sar</code>命令可以查看网络接口信息</li>
+<li>D <code>free</code>命令可以查看磁盘负载情况</li>
+</ul>
+<h2 id="解析-5"><a href="#解析-5" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# uptime</span><br><span class="line"> 01:17:27 up 2 days, 13:36,  1 user,  load average: 8.92, 8.93, 9.28</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat</span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st</span><br><span class="line"> 3  0      0 124912 116352 1516588    0    0    34    27   31   21 15  5 79  0  0</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<h3 id="vmstat帮助文档"><a href="#vmstat帮助文档" class="headerlink" title="vmstat帮助文档"></a>vmstat帮助文档</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat --help</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line"> vmstat [options] [delay [count]]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line"> -a, --active           active&#x2F;inactive memory</span><br><span class="line"> -f, --forks            number of forks since boot</span><br><span class="line"> -m, --slabs            slabinfo</span><br><span class="line"> -n, --one-header       do not redisplay header</span><br><span class="line"> -s, --stats            event counter statistics</span><br><span class="line"> -d, --disk             disk statistics</span><br><span class="line"> -D, --disk-sum         summarize disk statistics</span><br><span class="line"> -p, --partition &lt;dev&gt;  partition specific statistics</span><br><span class="line"> -S, --unit &lt;char&gt;      define display unit</span><br><span class="line"> -w, --wide             wide output</span><br><span class="line"> -t, --timestamp        show timestamp</span><br><span class="line"></span><br><span class="line"> -h, --help     display this help and exit</span><br><span class="line"> -V, --version  output version information and exit</span><br><span class="line"></span><br><span class="line">For more details see vmstat(8).</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<h3 id="uptime帮助文档"><a href="#uptime帮助文档" class="headerlink" title="uptime帮助文档"></a>uptime帮助文档</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# uptime --help</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line"> uptime [options]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line"> -p, --pretty   show uptime in pretty format</span><br><span class="line"> -h, --help     display this help and exit</span><br><span class="line"> -s, --since    system up since</span><br><span class="line"> -V, --version  output version information and exit</span><br><span class="line"></span><br><span class="line">For more details see uptime(1).</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<h3 id="free命令"><a href="#free命令" class="headerlink" title="free命令"></a>free命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# free</span><br><span class="line">              total        used        free      shared  buff&#x2F;cache   available</span><br><span class="line">Mem:        3686064     1917344      154528        1508     1614192     1733323</span><br><span class="line">Swap:             0           0           0</span><br><span class="line">[root@localhost ~]# free -h</span><br><span class="line">              total        used        free      shared  buff&#x2F;cache   available</span><br><span class="line">Mem:           3.5G        1.8G        151M        1.5M        1.5G        1.7G</span><br><span class="line">Swap:            0B          0B          0B</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<p>free描述的是内存使用情况，不是磁盘负载。<br>free查看内存使用情况，并非磁盘。磁盘可以使用df命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# free -h</span><br><span class="line">              total        used        free      shared  buff&#x2F;cache   available</span><br><span class="line">Mem:           3.5G        1.8G         92M        1.5M        1.6G        1.6G</span><br><span class="line">Swap:            0B          0B          0B</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure><br>可以看到当前Linux的内存有3.5G,已经使用了1.8G内存。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# df -h</span><br><span class="line">文件系统                                容量  已用  可用 已用% 挂载点</span><br><span class="line">&#x2F;dev&#x2F;block&#x2F;bootdevice&#x2F;by-name&#x2F;userdata   55G   14G   41G   26% &#x2F;</span><br><span class="line">tmpfs                                   1.8G  368K  1.8G    1% &#x2F;dev</span><br><span class="line">tmpfs                                   1.8G     0  1.8G    0% &#x2F;dev&#x2F;shm</span><br><span class="line">&#x2F;data&#x2F;media                              55G   14G   41G   26% &#x2F;mnt&#x2F;files</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure><br>可以看到磁盘容量为55G，已用14G，有41G可以用。</p>
+<h1 id="考点7-z-string-短路与-短路或"><a href="#考点7-z-string-短路与-短路或" class="headerlink" title="考点7:[-z string] 短路与 短路或"></a>考点7:[-z string] 短路与 短路或</h1><p>命令:<code>[-z&quot;&quot;]&amp;&amp;echo 0 ||echo 1</code>的输出是什么</p>
+<ul>
+<li>A 1</li>
+<li>B 0</li>
+</ul>
+<h2 id="解析-6"><a href="#解析-6" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+<h3 id="z-STRING-命令-n-string-命令"><a href="#z-STRING-命令-n-string-命令" class="headerlink" title="[-z STRING]命令[-n string]命令"></a>[-z STRING]命令[-n string]命令</h3><p><code>[-z STRING]</code> “STRING” 的长度为零则为真<br><code>[-z &quot;&quot;]</code>长度为零，返回1，故执行&amp;&amp;后面的语句 echo 0显示“0”,返回1，故不执行echo 1 最终结果为0 </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>[-z string]</code></td>
+<td style="text-align:left">“<code>string</code>”的长度为零则为真。我的理解是<code>[-z string]</code>就是<code>[-zero string]</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[-n string] or [string]</code></td>
+<td style="text-align:left">“<code>string</code>”的长度为非零，则为真。<code>[-n string]</code>就是<code>[non-zero string]</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="考点8-Redhat9安装方式"><a href="#考点8-Redhat9安装方式" class="headerlink" title="考点8:Redhat9安装方式"></a>考点8:Redhat9安装方式</h1><p>Redhat9 所支持的安装方式有()</p>
+<ul>
+<li>A 从本地硬盘驱动器进行安装</li>
+<li>B 通过<code>Telnet</code>进行网络安装</li>
+<li>C 通过<code>NFS</code>进行网络安装</li>
+<li>D 通过<code>HTTP</code>进行网络安装</li>
+</ul>
+<h2 id="解析-7"><a href="#解析-7" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: ACD</details>
+
+<p><strong>没用过红帽好伐，所以百度鸟解了一哈🤣</strong><br>从安装启动方式可以分为:软盘启动 光盘启动 U盘启动(红帽9还支持制作安装启动软盘的,只是软盘现在基本见不到了) 从软件安装来源可以分为:光盘、硬盘、nfs服务器、ftp服务器、http服务器<br>最简单的方式就是光盘引导，光盘安装。<br>其他安装方式还有KickStart无人值守安装等。</p>
+<h1 id="考点9-批量删除当前目录下的文件"><a href="#考点9-批量删除当前目录下的文件" class="headerlink" title="考点9:批量删除当前目录下的文件"></a>考点9:批量删除当前目录下的文件</h1><p>批量删除当前目录下后缀名为.c的文件。如a.c、b.c。</p>
+<ul>
+<li>A rm *.c</li>
+<li>B find . -name “*.c” -maxdepth 1 | xargs rm</li>
+<li>C find . -name “*.c” | xargs rm</li>
+<li>D 以上都不正确</li>
+</ul>
+<h2 id="解析-8"><a href="#解析-8" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: AB</details>
+
+<p>xargs是给命令传递参数的一个过滤器，也是组合多个命令的一个工具。它能够捕获一个命令的输出，然后传递给另外一个命令，当你尝试用rm 由于题目中是说删除当前目录下后缀名为.c的文件，故需要加上-maxdepth 1，表示是当前目录，不包括其子目录。</p>
+<p><code>find . -name &quot;*.c&quot; -maxdepth 1</code>表示找到.(当前目录下)名字为以“.c”为后缀的文件，-maxdepth 1表示目录深度为1，也就是寻找当前目录 </p>
+<h1 id="考点10-查看Linux主机的默认路由"><a href="#考点10-查看Linux主机的默认路由" class="headerlink" title="考点10:查看Linux主机的默认路由"></a>考点10:查看Linux主机的默认路由</h1><p>下面那些命令可以用来查看Linux主机的默认路由()</p>
+<ul>
+<li>A <code>route</code></li>
+<li>B <code>ifconfig</code></li>
+<li>C <code>ping</code></li>
+<li>D <code>netstat</code></li>
+</ul>
+<h2 id="解析-9"><a href="#解析-9" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: AD</details>
+
+<p>直接route命令就可以显示默认路由，netstat命令需要加一个参数-route<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">young@young-Lenovo-G470:~$ route</span><br><span class="line">内核 IP 路由表</span><br><span class="line">目标 网关 子网掩码 标志 跃点 引用 使用 接口</span><br><span class="line">default 172.28.234.1 0.0.0.0 UG 0 0 0 wlan0</span><br><span class="line">172.28.234.0 * 255.255.254.0 U 9 0 0 wlan0</span><br><span class="line">young@young-Lenovo-G470:~$ netstat -route</span><br><span class="line">内核 IP 路由表</span><br><span class="line">目标 网关 子网掩码 标志 跃点 引用 使用 接口</span><br><span class="line">default 172.28.234.1 0.0.0.0 UG 0 0 0 wlan0</span><br><span class="line">172.28.234.0 * 255.255.254.0 U 9 0 0 wlan0</span><br><span class="line">young@young-Lenovo-G470:~$</span><br></pre></td></tr></table></figure></p>
+<p>route命令用来显示目前本机路由表的内容，并且还可以针对路由表中的记录来进行相应的添加、删除或修改等操作。<br>ifconfig命令用来来检测和设置本机的网络接口。<br>ping命令用来检测两部主机之间的传输信道是否畅通，或远程主机是否正常<br>netstat命令用来查看主机的连接状态 </p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/exam/b9682126/" title="2021年04月12日Linux专项练习1">https://lanlan2017.github.io/exam/b9682126/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/exam/80108c66/" rel="next" title="2021年04月11日Linux专项练习1">
+                  <i class="fa fa-chevron-left"></i> 2021年04月11日Linux专项练习1
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/exam/f050cb01/" rel="prev" title="2021年04月12日Linux专项练习2">
+                  2021年04月12日Linux专项练习2 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#考点1-常见Linux命令"><span class="nav-number">1.</span> <span class="nav-text">考点1:常见Linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">1.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点2-八进制权限"><span class="nav-number">2.</span> <span class="nav-text">考点2:八进制权限</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-1"><span class="nav-number">2.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点3-unix授权命令"><span class="nav-number">3.</span> <span class="nav-text">考点3:unix授权命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-2"><span class="nav-number">3.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点4-Linux终止前台进程"><span class="nav-number">4.</span> <span class="nav-text">考点4:Linux终止前台进程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-3"><span class="nav-number">4.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux如何终止前台进程"><span class="nav-number">4.1.1.</span> <span class="nav-text">Linux如何终止前台进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux如何终止后台进程"><span class="nav-number">4.1.2.</span> <span class="nav-text">Linux如何终止后台进程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点5-Linux内核子系统"><span class="nav-number">5.</span> <span class="nav-text">考点5:Linux内核子系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-4"><span class="nav-number">5.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点6-Linux查看系统负载命令"><span class="nav-number">6.</span> <span class="nav-text">考点6:Linux查看系统负载命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-5"><span class="nav-number">6.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vmstat帮助文档"><span class="nav-number">6.1.1.</span> <span class="nav-text">vmstat帮助文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uptime帮助文档"><span class="nav-number">6.1.2.</span> <span class="nav-text">uptime帮助文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#free命令"><span class="nav-number">6.1.3.</span> <span class="nav-text">free命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点7-z-string-短路与-短路或"><span class="nav-number">7.</span> <span class="nav-text">考点7:[-z string] 短路与 短路或</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-6"><span class="nav-number">7.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#z-STRING-命令-n-string-命令"><span class="nav-number">7.1.1.</span> <span class="nav-text">[-z STRING]命令[-n string]命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点8-Redhat9安装方式"><span class="nav-number">8.</span> <span class="nav-text">考点8:Redhat9安装方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-7"><span class="nav-number">8.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点9-批量删除当前目录下的文件"><span class="nav-number">9.</span> <span class="nav-text">考点9:批量删除当前目录下的文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-8"><span class="nav-number">9.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点10-查看Linux主机的默认路由"><span class="nav-number">10.</span> <span class="nav-text">考点10:查看Linux主机的默认路由</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-9"><span class="nav-number">10.1.</span> <span class="nav-text">解析</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/exam/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/exam/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/exam/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/exam/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/exam/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/exam/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/exam/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/exam/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/exam/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/exam/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/exam/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里写下你的评论吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

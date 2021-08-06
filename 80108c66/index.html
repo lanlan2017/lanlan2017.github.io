@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/exam/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/exam/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/exam/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/exam/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/exam/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/exam/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/exam/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="考点1:查看文件内容的命令&amp;nbsp;考点2:查看线程信息功能的gdb命令&amp;nbsp;考点3:八进制文件权限授权命令&amp;nbsp;考点4:查看硬盘占用空间和剩余空间&amp;nbsp;考点5:八进制文件权限&amp;nbsp;考点6:fork()方法短路或&amp;nbsp;考点7:Linux守护进程&amp;nbsp;考点8:Linux多线程编程pthread库函数&amp;nbsp;考点9:Nginx配置文件nginx.conf&amp;nb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021年04月11日Linux专项练习1">
+<meta property="og:url" content="https://lanlan2017.github.io/exam/80108c66/index.html">
+<meta property="og:site_name" content="笔试题|蓝蓝博客">
+<meta property="og:description" content="考点1:查看文件内容的命令&amp;nbsp;考点2:查看线程信息功能的gdb命令&amp;nbsp;考点3:八进制文件权限授权命令&amp;nbsp;考点4:查看硬盘占用空间和剩余空间&amp;nbsp;考点5:八进制文件权限&amp;nbsp;考点6:fork()方法短路或&amp;nbsp;考点7:Linux守护进程&amp;nbsp;考点8:Linux多线程编程pthread库函数&amp;nbsp;考点9:Nginx配置文件nginx.conf&amp;nb">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-11T08:16:19.000Z">
+<meta property="article:modified_time" content="2021-04-12T09:15:54.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/exam/80108c66/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>2021年04月11日Linux专项练习1 | 笔试题|蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/exam/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">笔试题|蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/exam/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/exam/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/exam/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/exam/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/exam/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/exam/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/80108c66/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">2021年04月11日Linux专项练习1
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2021-04-11 16:16:19" itemprop="dateCreated datePublished" datetime="2021-04-11T16:16:19+08:00">2021-04-11</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-12 17:15:54" itemprop="dateModified" datetime="2021-04-12T17:15:54+08:00">2021-04-12</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">牛客网</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">专项练习</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E7%89%9B%E5%AE%A2%E7%BD%91/%E4%B8%93%E9%A1%B9%E7%BB%83%E4%B9%A0/Linux/2021%E5%B9%B404%E6%9C%88/" itemprop="url" rel="index"><span itemprop="name">2021年04月</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/80108c66/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/80108c66/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/exam/80108c66/#考点1-查看文件内容的命令" class="header_1">考点1:查看文件内容的命令</a>&nbsp;<br><a href="/exam/80108c66/#考点2-查看线程信息功能的gdb命令" class="header_1">考点2:查看线程信息功能的gdb命令</a>&nbsp;<br><a href="/exam/80108c66/#考点3-八进制文件权限授权命令" class="header_1">考点3:八进制文件权限授权命令</a>&nbsp;<br><a href="/exam/80108c66/#考点4-查看硬盘占用空间和剩余空间" class="header_1">考点4:查看硬盘占用空间和剩余空间</a>&nbsp;<br><a href="/exam/80108c66/#考点5-八进制文件权限" class="header_1">考点5:八进制文件权限</a>&nbsp;<br><a href="/exam/80108c66/#考点6-fork-方法短路或" class="header_1">考点6:fork()方法短路或</a>&nbsp;<br><a href="/exam/80108c66/#考点7-Linux守护进程" class="header_1">考点7:Linux守护进程</a>&nbsp;<br><a href="/exam/80108c66/#考点8-Linux多线程编程pthread库函数" class="header_1">考点8:Linux多线程编程pthread库函数</a>&nbsp;<br><a href="/exam/80108c66/#考点9-Nginx配置文件nginx-conf" class="header_1">考点9:Nginx配置文件nginx.conf</a>&nbsp;<br><a href="/exam/80108c66/#考点10-DNS服务主配置文件有哪些" class="header_1">考点10:DNS服务主配置文件有哪些</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="考点1-查看文件内容的命令"><a href="#考点1-查看文件内容的命令" class="headerlink" title="考点1:查看文件内容的命令"></a>考点1:查看文件内容的命令</h1><p>在Linux系统上,下面那个命令不可以用来查看文件内容()</p>
+<ul>
+<li>A <code>cat</code></li>
+<li>B <code>ls</code></li>
+<li>C <code>less</code></li>
+<li>D <code>more</code></li>
+</ul>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+
+<h1 id="考点2-查看线程信息功能的gdb命令"><a href="#考点2-查看线程信息功能的gdb命令" class="headerlink" title="考点2:查看线程信息功能的gdb命令"></a>考点2:查看线程信息功能的gdb命令</h1><p>写出完成gdb查看线程信息功能的gdb命令。</p>
+<ul>
+<li>A <code>bt</code></li>
+<li>B <code>info thread</code></li>
+<li>C <code>set scheduler-locking off</code></li>
+<li>D <code>info break</code></li>
+</ul>
+<h2 id="解析-1"><a href="#解析-1" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>backtrace bt</strong></td>
+<td style="text-align:left">打印当前的函数调用栈的所有信息。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>info threads</strong></td>
+<td style="text-align:left">显示当前可调试的所有线程，每个线程会有一个GDB为其分配的ID，后面操作线程的时候会用到这个ID。前面有*的是当前调试的线程。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>set scheduler-locking</strong></td>
+<td style="text-align:left">线程调试 显示线程状态,参数<strong>off</strong>表示不锁定任何线程</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>info break</strong></td>
+<td style="text-align:left">可列出所有断点信息，info break 后也可设置要查看的break num</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="考点3-八进制文件权限授权命令"><a href="#考点3-八进制文件权限授权命令" class="headerlink" title="考点3:八进制文件权限授权命令"></a>考点3:八进制文件权限授权命令</h1><p>在linux中,将文件属性设置为所有者只读,其余无任何权限的命令为(假设文件名为myfile)</p>
+<ul>
+<li>A <code>chown 400 myfile</code></li>
+<li>B <code>chmod 750 myfile</code></li>
+<li>C <code>chown u+r myfile</code></li>
+<li>D <code>chmod 400 myfile</code></li>
+</ul>
+<h2 id="解析-2"><a href="#解析-2" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+
+<h1 id="考点4-查看硬盘占用空间和剩余空间"><a href="#考点4-查看硬盘占用空间和剩余空间" class="headerlink" title="考点4:查看硬盘占用空间和剩余空间"></a>考点4:查看硬盘占用空间和剩余空间</h1><p>什么命令用来查看硬盘被占用了多少空间和剩余多少空间？</p>
+<ul>
+<li>A <code>du</code></li>
+<li>B <code>df</code></li>
+<li>C <code>free</code></li>
+<li>D <code>vmstat</code></li>
+</ul>
+<h2 id="解析-3"><a href="#解析-3" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: B</details>
+
+
+<h3 id="du-disk-usage"><a href="#du-disk-usage" class="headerlink" title="du(disk usage)"></a>du(disk usage)</h3><p>统计目录(或文件)所占磁盘空间的大小<br>查看/root目录占用磁盘空间的大小：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# du -h -d 0 &#x2F;root</span><br><span class="line">45M    &#x2F;root</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure><br>查看/root目录以及/root目录的一级子目录所占的磁盘空间大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# du -h -d 1 &#x2F;root</span><br><span class="line">8.0K    &#x2F;root&#x2F;.pki</span><br><span class="line">20K    &#x2F;root&#x2F;.ssh</span><br><span class="line">2.6M    &#x2F;root&#x2F;.nvm</span><br><span class="line">12K    &#x2F;root&#x2F;.config</span><br><span class="line">42M    &#x2F;root&#x2F;.npm</span><br><span class="line">84K    &#x2F;root&#x2F;C_Test</span><br><span class="line">45M    &#x2F;root</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure></p>
+<h3 id="df-disk-free"><a href="#df-disk-free" class="headerlink" title="df(disk free)"></a>df(disk free)</h3><p>用于显示文件系统的磁盘使用情况<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# df</span><br><span class="line">文件系统                                  1K-块     已用     可用 已用% 挂载点</span><br><span class="line">&#x2F;dev&#x2F;block&#x2F;bootdevice&#x2F;by-name&#x2F;userdata 56814352 14404892 42393076   26% &#x2F;</span><br><span class="line">tmpfs                                   1822552      368  1822184    1% &#x2F;dev</span><br><span class="line">tmpfs                                   1843032        0  1843032    0% &#x2F;dev&#x2F;shm</span><br><span class="line">&#x2F;data&#x2F;media                            56763152 14421276 42341876   26% &#x2F;mnt&#x2F;files</span><br><span class="line">[root@localhost ~]# df -h</span><br><span class="line">文件系统                                容量  已用  可用 已用% 挂载点</span><br><span class="line">&#x2F;dev&#x2F;block&#x2F;bootdevice&#x2F;by-name&#x2F;userdata   55G   14G   41G   26% &#x2F;</span><br><span class="line">tmpfs                                   1.8G  368K  1.8G    1% &#x2F;dev</span><br><span class="line">tmpfs                                   1.8G     0  1.8G    0% &#x2F;dev&#x2F;shm</span><br><span class="line">&#x2F;data&#x2F;media                              55G   14G   41G   26% &#x2F;mnt&#x2F;files</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure></p>
+<h3 id="free"><a href="#free" class="headerlink" title="free"></a>free</h3><p>可以显示当前系统未使用的和已使用的内存数目，还可以显示被内核使用的内存缓冲区<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# free</span><br><span class="line">              total        used        free      shared  buff&#x2F;cache   available</span><br><span class="line">Mem:        3686064     1383564      673684        2108     1628816     2266427</span><br><span class="line">Swap:             0           0           0</span><br><span class="line">[root@localhost ~]# free -h</span><br><span class="line">              total        used        free      shared  buff&#x2F;cache   available</span><br><span class="line">Mem:           3.5G        1.3G        657M        2.1M        1.6G        2.2G</span><br><span class="line">Swap:            0B          0B          0B</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure></p>
+<h3 id="vmstat"><a href="#vmstat" class="headerlink" title="vmstat"></a>vmstat</h3><p>命令报告关于内核线程、虚拟内存、磁盘、陷阱和 CPU 活动的统计信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vmstat</span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st</span><br><span class="line"> 1  0      0 669372 164900 1529292    0    0    33    27    5   21 15  5 80  0  0</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure></p>
+<h1 id="考点5-八进制文件权限"><a href="#考点5-八进制文件权限" class="headerlink" title="考点5:八进制文件权限"></a>考点5:八进制文件权限</h1><p>linux系统中某文件的组外成员的权限为只读;所有者有全部权限;组内的权限为读与写,则该文件的权限为:</p>
+<ul>
+<li>A 753</li>
+<li>B 763</li>
+<li>C 754</li>
+<li>D 764</li>
+</ul>
+<h2 id="解析-4"><a href="#解析-4" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: D</details>
+
+<h3 id="ls-l第一列第1位含义"><a href="#ls-l第一列第1位含义" class="headerlink" title="ls -l第一列第1位含义"></a>ls -l第一列第1位含义</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost blog]# ls -l</span><br><span class="line">总用量 14056</span><br><span class="line">-rw-r--r--.   1 root root     3196 3月  18 14:47 _config.yml</span><br><span class="line">-rw-r--r--.   1 root root 14159968 3月  20 22:46 db.json</span><br><span class="line">......</span><br><span class="line">drwxr-xr-x. 307 root root     8192 3月  18 14:49 node_modules</span><br><span class="line">-rw-r--r--.   1 root root      817 3月  18 14:49 package.json</span><br><span class="line">......</span><br><span class="line">drwxr-xr-x.   3 root root     4096 3月  18 14:47 themes</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">ls -l第一列第一位</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">l</td>
+<td style="text-align:left">链接文件</td>
+</tr>
+<tr>
+<td style="text-align:left">d</td>
+<td style="text-align:left">目录</td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+<td style="text-align:left">文件</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="ls-l第1列第2到10为含义"><a href="#ls-l第1列第2到10为含义" class="headerlink" title="ls -l第1列第2到10为含义"></a>ls -l第1列第2到10为含义</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# ls -l</span><br><span class="line">总用量 4</span><br><span class="line">lrwxrwxrwx. 1 root root   15 3月  19 02:30 blog -&gt; &#x2F;opt&#x2F;hexo&#x2F;blog&#x2F;</span><br><span class="line">drwxr-xr-x. 2 root root 4096 4月   3 22:48 C_Test</span><br><span class="line">lrwxrwxrwx. 1 root root   14 3月  19 21:17 exam -&gt; &#x2F;opt&#x2F;hexo&#x2F;exam</span><br><span class="line">lrwxrwxrwx. 1 root root   11 3月  22 02:43 share -&gt; &#x2F;mnt&#x2F;files&#x2F;</span><br><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">ls -l第一列第2~10位</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">二进制</th>
+<th style="text-align:left">八进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">r</td>
+<td style="text-align:left">读</td>
+<td style="text-align:left">100</td>
+<td style="text-align:left">4</td>
+</tr>
+<tr>
+<td style="text-align:left">w</td>
+<td style="text-align:left">写</td>
+<td style="text-align:left">010</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">x</td>
+<td style="text-align:left">执行</td>
+<td style="text-align:left">001</td>
+<td style="text-align:left">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="chmod-八进制写法"><a href="#chmod-八进制写法" class="headerlink" title="chmod 八进制写法"></a>chmod 八进制写法</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">ls -l结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>chmod 777 _config.yml</code></td>
+<td style="text-align:left"><code>-rwxrwxrwx.   1 root root     3196 3月  18 14:47 _config.yml</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>chmod 776 _config.yml</code></td>
+<td style="text-align:left"><code>-rwxrwxrw-.   1 root root     3196 3月  18 14:47 _config.yml</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>chmod 775 _config.yml</code></td>
+<td style="text-align:left"><code>-rwxrwxr-x.   1 root root     3196 3月  18 14:47 _config.yml</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>chmod 774 _config.yml</code></td>
+<td style="text-align:left"><code>-rwxrwxr--.   1 root root     3196 3月  18 14:47 _config.yml</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>chmod 773 _config.yml</code></td>
+<td style="text-align:left"><code>-rwxrwx-wx.   1 root root     3196 3月  18 14:47 _config.yml</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>chmod 772 _config.yml</code></td>
+<td style="text-align:left"><code>-rwxrwx-w-.   1 root root     3196 3月  18 14:47 _config.yml</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>chmod 771 _config.yml</code></td>
+<td style="text-align:left"><code>-rwxrwx--x.   1 root root     3196 3月  18 14:47 _config.yml</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>chmod 770 _config.yml</code></td>
+<td style="text-align:left"><code>-rwxrwx---.   1 root root     3196 3月  18 14:47 _config.yml</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>u-g-o：用户-组内用户-其他用户<br>r-w-x：用4-2-1表示。<br>所有者u有全部权限：rwx; = 7<br>组内g的权限为读与写:rw- = 6<br>组外成员o的权限为只读：r— = 4 </p>
+<h1 id="考点6-fork-方法短路或"><a href="#考点6-fork-方法短路或" class="headerlink" title="考点6:fork()方法短路或"></a>考点6:fork()方法短路或</h1><p>int main(){fork()||fork();}共创建几个进程:<em>_</em></p>
+<ul>
+<li>A 1</li>
+<li>B 2</li>
+<li>C 3</li>
+<li>D 4</li>
+<li>E 5</li>
+<li>F 6</li>
+</ul>
+<h2 id="解析-5"><a href="#解析-5" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: C</details>
+
+<h3 id="fork-返回值"><a href="#fork-返回值" class="headerlink" title="fork()返回值"></a>fork()返回值</h3><p>fork()<strong>给子进程返回一个零值</strong>，而<strong>给父进程返回一个非零值</strong>；<br>在main这个主进程中，首先执行<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fork()|| fork()</span><br></pre></td></tr></table></figure><br>左边的fork()会复制父进程得到一个子进程，然后左边这个fork()该子进程的ID，也就是返回一个非零值，根据||的短路原则，前面的表达式为真时，后面的表达式不执行，故包含main的这个主进程创建了一个子进程。 </p>
+<p>由于子进程会复制父进程，而且子进程会根据fork()的返回值继续执行，就是说，在子进程中的<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fork()||fork()</span><br></pre></td></tr></table></figure><br>这条语句左边表达式的返回值是0，所以||右边的表达式要执行，这时在子进程中又创建了一个进程， </p>
+<p>即main进程-&gt;子进程-&gt;孙子进程，一共创建了3个进程。 </p>
+<p><strong>fork函数在父进程中返回新创建子进程的进程ID</strong>，大于0，此时父进程根据左值优先原则，不在与后面进行异或；<br><strong>fork函数在子进程中返回0</strong>，此时子进程仍然需要进行下一个fork函数。</p>
+<h3 id="代码验证"><a href="#代码验证" class="headerlink" title="代码验证"></a>代码验证</h3><figure class="highlight c"><figcaption><span>forkTest.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    fork()||fork();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"num\n"</span>);</span><br><span class="line">    <span class="comment">// sleep(100);</span></span><br><span class="line">    wait(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost C_Test]# ls</span><br><span class="line">a.out       file1.txt  file3.txt  forkTest.c      redCharacter.out  terminalColor.c</span><br><span class="line">command.sh  file2.txt  file4.txt  redCharacter.c  strerror.c        terminalColor.out</span><br><span class="line">[root@localhost C_Test]# gcc forkTest.c -o forkTest.o</span><br><span class="line">[root@localhost C_Test]# ls</span><br><span class="line">a.out       file1.txt  file3.txt  forkTest.c  redCharacter.c    strerror.c       terminalColor.out</span><br><span class="line">command.sh  file2.txt  file4.txt  forkTest.o  redCharacter.out  terminalColor.c</span><br><span class="line">[root@localhost C_Test]# .&#x2F;forkTest.o </span><br><span class="line">num</span><br><span class="line">num</span><br><span class="line">num</span><br><span class="line">[root@localhost C_Test]#</span><br></pre></td></tr></table></figure></p>
+<h1 id="考点7-Linux守护进程"><a href="#考点7-Linux守护进程" class="headerlink" title="考点7:Linux守护进程"></a>考点7:Linux守护进程</h1><p>网络服务的daemon是:</p>
+<ul>
+<li>A <code>netd</code></li>
+<li>B <code>httpd</code></li>
+<li>C <code>inetd</code></li>
+<li>D <code>lpd</code></li>
+</ul>
+<h2 id="解析-6"><a href="#解析-6" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: A</details>
+
+<h3 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h3><p>1、 Service就是指常驻内存大一些程序，且可以提供一些系统或是网络功能。提供service的那个程序就成为daemon。Daemon和service可以视为等同，不必刻意去区分。</p>
+<h3 id="Daemon"><a href="#Daemon" class="headerlink" title="Daemon"></a>Daemon</h3><p>2、 Daemon可以分为两类，一类是可独立启动的，成为stand alone；另一类是通过一支super daemon来统一管理的服务。</p>
+<p>3、 Stand alone类型的daemon能够自动启动，常驻内存，对请求响应较快，如httpd、vsftpd等。<br>4、 Super daemon统一管理的是用户有请求，super daemon就唤醒响应daemon，如果用户请求结束，就kill掉该daemon。优点不用常驻内存，缺点装到内存需要时间。如telnet。这个super daemon早期是inetd，后来被xinetd取代。<br>这里说的是网络的daemon应该指的是network daemon，netd表示network的守护进程，netd主要负责一些网络的相关配置，操作，管理和查询功能的实现</p>
+<p>关于netd的资料找到的很少，以下是唯一找到的一片文章介绍的 <a href="http://gaozhipeng.me/posts/netd-learn1/" target="_blank">http://gaozhipeng.me/posts/netd-learn1/</a> &lt;/pre&gt;</p>
+<h3 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h3><blockquote>
+<p><a href="https://zh.wikipedia.org/zh-cn/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B" target="_blank" rel="noopener">https://zh.wikipedia.org/zh-cn/守护进程</a><br>在一个多任务的电脑操作系统中，守护进程（英语：daemon，/ˈdiːmən/或/ˈdeɪmən/）是一种在后台执行的电脑程序。此类程序会被以进程的形式初始化。守护进程程序的名称通常以字母“d”结尾：例如，syslogd就是指管理系统日志的守护进程。<br>通常，守护进程没有任何存在的父进程（即PPID=1），且在UNIX系统进程层级中直接位于init之下。守护进程程序通常通过如下方法使自己成为守护进程：对一个子进程运行fork，然后使其父进程立即终止，使得这个子进程能在init下运行。这种方法通常被称为“脱壳”。<br>系统通常在启动时一同引导守护进程。守护进程为对网络请求，硬件活动等进行响应，或其他通过某些任务对其他应用程序的请求进行回应提供支持。守护进程也能够对硬件进行配置（如在某些Linux系统上的devfsd），运行计划任务（例如cron），以及运行其他任务。<br>在DOS环境中，此类应用程序被称为驻留程序（TSR）。在Windows系统中，由称为Windows服务的应用程序来履行守护进程的职责。<br>在原本的Mac OS系统中，此类应用程序被称为“extensions”。而作为Unix-like的Mac OS X有守护进程。（在Mac OS X中也有“服务”，但他们与Windows中类似的程序在概念上完全不相同。）<br><a href="http://c.biancheng.net/view/5935.html" target="_blank" rel="noopener">http://c.biancheng.net/view/5935.html</a></p>
+<p><a href="https://baike.baidu.com/item/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B" target="_blank" rel="noopener">https://baike.baidu.com/item/守护进程</a><br>按照服务类型分为如下几个。<br>系统守护进程：syslogd、login、crond、at等。<br>网络守护进程：sendmail、httpd、xinetd、等。<br>独立启动的守护进程：httpd、named、xinetd等。<br>被动守护进程（由xinetd启动）：telnet、finger、ktalk等。</p>
+</blockquote>
+<h1 id="考点8-Linux多线程编程pthread库函数"><a href="#考点8-Linux多线程编程pthread库函数" class="headerlink" title="考点8:Linux多线程编程pthread库函数"></a>考点8:Linux多线程编程pthread库函数</h1><p>下述是Linux下多线程编程常用的pthread库提供的函数名和意义,说法正确的有？</p>
+<ul>
+<li>A <code>pthread_create</code> 创建一个线程</li>
+<li>B <code>pthread_join</code>用来等待一个线程的结束</li>
+<li>C <code>pthread_mutex_init</code> 初始化一个线程互斥锁</li>
+<li>D <code>pthread_exit</code>结束一个线程</li>
+</ul>
+<h2 id="解析-7"><a href="#解析-7" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: ABCD</details>
+
+
+<h1 id="考点9-Nginx配置文件nginx-conf"><a href="#考点9-Nginx配置文件nginx-conf" class="headerlink" title="考点9:Nginx配置文件nginx.conf"></a>考点9:Nginx配置文件nginx.conf</h1><p>下列有关Nginx配置文件nginx.conf的叙述正确的是()</p>
+<ul>
+<li>A <code>nginx</code>进程数设置为<code>CPU</code>总核心数最佳</li>
+<li>B 虚拟主机配置多个域名时,各域名间应用逗号隔开</li>
+<li>C <code>sendfile on;</code>表示为开启高效文件传输模式,对于执行下载操作等相关应用时,应设置为<code>on</code></li>
+<li>D 设置工作模式与连接数上限时,应考虑单个进程最大连接数(最大连接数=连接数*进程数)</li>
+</ul>
+<h2 id="解析-8"><a href="#解析-8" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: AD</details>
+
+<blockquote>
+<p>参考网络上的一篇总结。  Nginx配置文件nginx.conf中文详解<br>详见：<a href="&gt;http://www.2cto.com/os/201212/176520.html">&gt;http://www.2cto.com/os/201212/176520.html</a><br>A. 进程数设置为CPU总核心数最佳。  (正确)<br>B. 配置虚拟主机，多个域名时，用 <strong>空格</strong> 分隔。 (错误)<br>C. 设定http服务器中 sendfile on;   #开启高效文件传输模式<br>    普通应用设置为on； 用于进行下载等应用磁盘IO重负载应用，设置为<strong>off</strong>，以平衡磁盘与网络I/O处理速度，降低系统的负载。(错误)<br>D. 工作模式与连接数上限 ：（最大连接数 = 连接数 * 进程数）(正确) </p>
+</blockquote>
+<h1 id="考点10-DNS服务主配置文件有哪些"><a href="#考点10-DNS服务主配置文件有哪些" class="headerlink" title="考点10:DNS服务主配置文件有哪些"></a>考点10:DNS服务主配置文件有哪些</h1><p>下列不是dns服务主配置文件的是(      )。</p>
+<ul>
+<li>A <code>named.conf</code></li>
+<li>B <code>dns.conf</code></li>
+<li>C <code>name.conf</code></li>
+<li>D <code>named.local</code></li>
+</ul>
+<h2 id="解析-9"><a href="#解析-9" class="headerlink" title="解析"></a>解析</h2><details><summary>显示答案/隐藏答案</summary>正确答案: BCD</details>
+
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/exam/80108c66/" title="2021年04月11日Linux专项练习1">https://lanlan2017.github.io/exam/80108c66/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/exam/a22040b2/" rel="next" title="2021年04月09日Linux专项练习1">
+                  <i class="fa fa-chevron-left"></i> 2021年04月09日Linux专项练习1
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/exam/b9682126/" rel="prev" title="2021年04月12日Linux专项练习1">
+                  2021年04月12日Linux专项练习1 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#考点1-查看文件内容的命令"><span class="nav-number">1.</span> <span class="nav-text">考点1:查看文件内容的命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">1.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点2-查看线程信息功能的gdb命令"><span class="nav-number">2.</span> <span class="nav-text">考点2:查看线程信息功能的gdb命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-1"><span class="nav-number">2.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点3-八进制文件权限授权命令"><span class="nav-number">3.</span> <span class="nav-text">考点3:八进制文件权限授权命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-2"><span class="nav-number">3.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点4-查看硬盘占用空间和剩余空间"><span class="nav-number">4.</span> <span class="nav-text">考点4:查看硬盘占用空间和剩余空间</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-3"><span class="nav-number">4.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#du-disk-usage"><span class="nav-number">4.1.1.</span> <span class="nav-text">du(disk usage)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#df-disk-free"><span class="nav-number">4.1.2.</span> <span class="nav-text">df(disk free)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#free"><span class="nav-number">4.1.3.</span> <span class="nav-text">free</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vmstat"><span class="nav-number">4.1.4.</span> <span class="nav-text">vmstat</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点5-八进制文件权限"><span class="nav-number">5.</span> <span class="nav-text">考点5:八进制文件权限</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-4"><span class="nav-number">5.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-l第一列第1位含义"><span class="nav-number">5.1.1.</span> <span class="nav-text">ls -l第一列第1位含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-l第1列第2到10为含义"><span class="nav-number">5.1.2.</span> <span class="nav-text">ls -l第1列第2到10为含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chmod-八进制写法"><span class="nav-number">5.1.3.</span> <span class="nav-text">chmod 八进制写法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点6-fork-方法短路或"><span class="nav-number">6.</span> <span class="nav-text">考点6:fork()方法短路或</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-5"><span class="nav-number">6.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fork-返回值"><span class="nav-number">6.1.1.</span> <span class="nav-text">fork()返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码验证"><span class="nav-number">6.1.2.</span> <span class="nav-text">代码验证</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点7-Linux守护进程"><span class="nav-number">7.</span> <span class="nav-text">考点7:Linux守护进程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-6"><span class="nav-number">7.1.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-number">7.1.1.</span> <span class="nav-text">Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Daemon"><span class="nav-number">7.1.2.</span> <span class="nav-text">Daemon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#守护进程"><span class="nav-number">7.1.3.</span> <span class="nav-text">守护进程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点8-Linux多线程编程pthread库函数"><span class="nav-number">8.</span> <span class="nav-text">考点8:Linux多线程编程pthread库函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-7"><span class="nav-number">8.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点9-Nginx配置文件nginx-conf"><span class="nav-number">9.</span> <span class="nav-text">考点9:Nginx配置文件nginx.conf</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-8"><span class="nav-number">9.1.</span> <span class="nav-text">解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#考点10-DNS服务主配置文件有哪些"><span class="nav-number">10.</span> <span class="nav-text">考点10:DNS服务主配置文件有哪些</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解析-9"><span class="nav-number">10.1.</span> <span class="nav-text">解析</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/exam/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/exam/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/exam/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/exam/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/exam/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/exam/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/exam/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/exam/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/exam/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/exam/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/exam/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里写下你的评论吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

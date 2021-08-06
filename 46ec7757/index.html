@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/exam/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/exam/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/exam/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/exam/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="_Sly-yzHYmALHXzjFpPWsodMrjBSphw7bfRbMUH80Qc">
+  <meta name="msvalidate.01" content="B1CFD346B8DEBBFE0C983C2AF8955531">
+  <meta name="baidu-site-verification" content="vkMTwK56xr">
+
+<link rel="stylesheet" href="/exam/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/exam/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/exam/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="在校生的困境&amp;nbsp;建议&amp;nbsp;1. 明确目标，先说下公司面试应届生的标准&amp;nbsp;2. 面试中大多数应届生的实际表现&amp;nbsp;达不到标准的具体表现&amp;nbsp;3. 哪些大学里学到的知识点面试大概率不问（根本不用太费精力看的技术有哪些）&amp;nbsp;面试时需要掌握的最低技能标准&amp;nbsp;&#96;Java&#96;核心常问:&amp;nbsp;java核心不常问&amp;nbsp;数据库方面&amp;nbsp;框架方面&amp;nb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在校生如何面向面试地学习Java">
+<meta property="og:url" content="https://lanlan2017.github.io/exam/46ec7757/index.html">
+<meta property="og:site_name" content="笔试题|蓝蓝博客">
+<meta property="og:description" content="在校生的困境&amp;nbsp;建议&amp;nbsp;1. 明确目标，先说下公司面试应届生的标准&amp;nbsp;2. 面试中大多数应届生的实际表现&amp;nbsp;达不到标准的具体表现&amp;nbsp;3. 哪些大学里学到的知识点面试大概率不问（根本不用太费精力看的技术有哪些）&amp;nbsp;面试时需要掌握的最低技能标准&amp;nbsp;&#96;Java&#96;核心常问:&amp;nbsp;java核心不常问&amp;nbsp;数据库方面&amp;nbsp;框架方面&amp;nb">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-14T20:52:39.000Z">
+<meta property="article:modified_time" content="2021-03-20T20:39:04.000Z">
+<meta property="article:author" content="蓝蓝">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="读书">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="MySQL">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://lanlan2017.github.io/exam/46ec7757/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>在校生如何面向面试地学习Java | 笔试题|蓝蓝博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/exam/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">笔试题|蓝蓝博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/exam/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/exam/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/exam/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-dir">
+      
+    
+
+    <a href="/exam/dir/" rel="section"><i class="fa fa-fw fa-sitemap"></i>目录</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/exam/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-links">
+      
+    
+
+    <a href="/exam/links/" rel="section"><i class="fa fa-fw fa-link"></i>链接</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/lanlan2017" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lanlan2017.github.io/exam/exam/46ec7757/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝蓝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/exam/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔试题|蓝蓝博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">在校生如何面向面试地学习Java
+
+          
+        </h2>
+
+        <div class="post-meta">
+          <!-- 置顶插件添加 开始 -->
+          
+          <!-- 置顶插件添加 结束 -->
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-01-15 04:52:39" itemprop="dateCreated datePublished" datetime="2020-01-15T04:52:39+08:00">2020-01-15</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-21 04:39:04" itemprop="dateModified" datetime="2021-03-21T04:39:04+08:00">2021-03-21</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/exam/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/exam/46ec7757/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/exam/46ec7757/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><div id='my_toc'><a href="/exam/46ec7757/#在校生的困境" class="header_1">在校生的困境</a>&nbsp;<br><a href="/exam/46ec7757/#建议" class="header_1">建议</a>&nbsp;<br><a href="/exam/46ec7757/#1-明确目标，先说下公司面试应届生的标准" class="header_2">1. 明确目标，先说下公司面试应届生的标准</a>&nbsp;<br><a href="/exam/46ec7757/#2-面试中大多数应届生的实际表现" class="header_2">2. 面试中大多数应届生的实际表现</a>&nbsp;<br><a href="/exam/46ec7757/#达不到标准的具体表现" class="header_3">达不到标准的具体表现</a>&nbsp;<br><a href="/exam/46ec7757/#3-哪些大学里学到的知识点面试大概率不问（根本不用太费精力看的技术有哪些）" class="header_2">3. 哪些大学里学到的知识点面试大概率不问（根本不用太费精力看的技术有哪些）</a>&nbsp;<br><a href="/exam/46ec7757/#面试时需要掌握的最低技能标准" class="header_3">面试时需要掌握的最低技能标准</a>&nbsp;<br><a href="/exam/46ec7757/#-Java-核心常问" class="header_4">`Java`核心常问:</a>&nbsp;<br><a href="/exam/46ec7757/#java核心不常问" class="header_4">java核心不常问</a>&nbsp;<br><a href="/exam/46ec7757/#数据库方面" class="header_4">数据库方面</a>&nbsp;<br><a href="/exam/46ec7757/#框架方面" class="header_4">框架方面</a>&nbsp;<br><a href="/exam/46ec7757/#综合技能方面" class="header_4">综合技能方面</a>&nbsp;<br><a href="/exam/46ec7757/#看招聘要求查缺补漏" class="header_2">看招聘要求查缺补漏</a>&nbsp;<br><a href="/exam/46ec7757/#大学许多知识后面才用到" class="header_2">大学许多知识后面才用到</a>&nbsp;<br><a href="/exam/46ec7757/#4-用一个月的时间了解Java核心部分的内容" class="header_2">4. 用一个月的时间了解Java核心部分的内容</a>&nbsp;<br><a href="/exam/46ec7757/#5-用半个月的时间，以MySQL为例，了解数据库的大致操作" class="header_2">5. 用半个月的时间，以MySQL为例，了解数据库的大致操作</a>&nbsp;<br><a href="/exam/46ec7757/#6、用一个月的时间，了解基于Spring的web框架" class="header_2">6、用一个月的时间，了解基于Spring的web框架</a>&nbsp;<br><a href="/exam/46ec7757/#8、有学习项目经验后，争取找些商业项目的实践机会" class="header_2">8、有学习项目经验后，争取找些商业项目的实践机会</a>&nbsp;<br><a href="/exam/46ec7757/#9、毕业生准备简历的要点" class="header_2">9、毕业生准备简历的要点</a>&nbsp;<br><a href="/exam/46ec7757/#原文链接" class="header_1">原文链接</a>&nbsp;<br></div></p>
+<p><style>.header_1{margin-left: 1em;}.header_2{margin-left: 2em;}.header_3{margin-left: 3em;}.header_4{margin-left: 4em;}.header_5{margin-left: 5em;}.header_6{margin-left: 6em;}</style><br><a id="more"></a></p>
+<script>if (navigator.platform.search('arm')==-1){document.getElementById('my_toc').style.display = 'none';}var e,p = document.getElementsByTagName('p');while (p.length>0) {e = p[0];e.parentElement.removeChild(e);}</script>
+
+<!--end-->
+<h1 id="在校生的困境"><a href="#在校生的困境" class="headerlink" title="在校生的困境"></a>在校生的困境</h1><p>对于那些已经工作的同学，哪怕才工作不久，毕竟也能<strong>从项目实践里总结和探索<code>java</code>的学习途径和相关方法</strong>。但在校生同学由于没机会接触实际项目，在学习内容、进阶途径和学成标准这些方面都是两眼一抹黑，而大学里的内容可能偏重于理论，讲述的技术往往也和软件公司里常用的技术不匹配。<br>这就导致了很多上心的在校生，虽然很努力，但到毕业时，才发现自己起早贪黑学成的技能并不能帮他们找到工作。在本文里，就将结合我面试实习生和毕业生的标准，专门给在校生这个群体一些学习<code>Java</code>方面的建议。</p>
+<h1 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h1><h2 id="1-明确目标，先说下公司面试应届生的标准"><a href="#1-明确目标，先说下公司面试应届生的标准" class="headerlink" title="1. 明确目标，先说下公司面试应届生的标准"></a>1. 明确目标，先说下公司面试应届生的标准</h2><p>我最近可能都在大公司，到毕业季，会到一些学校去校招，校招的标准描述起来很简单：<code>Java</code>方面能干活，或者能经短期帮带后能干活，具体标准如下。</p>
+<ol>
+<li><code>Web</code>框架方面，需要以全栈的形式，了解<code>SSM</code>，或<code>Spring Boot</code>或<code>Spring Cloud</code>从前端到后端的基本语法，<strong>至少能在项目经理短期帮助下，能照着别人的例子写代码</strong>。应届生候选人只要能讲清楚相关框架的语法点和流程即可，最多再附带说明下<code>mybatis</code>等组件的用法，至于<code>redis</code>，<code>dubbo</code>，根本没要求。</li>
+<li>数据库方面，能会基本的增删改查即可，外带一些基本概念，比如事务怎么处理，<code>JDBC</code>里批处理怎么处理。</li>
+<li><code>Java</code>语法（也就是核心方面），其实如果能讲清楚<code>SSM</code>等<code>Web</code>框架技能，这块只要刷题就能过，比如就问些<code>ArrayList</code>和<code>LinkedList</code>的差别，以及多线程等的概念。</li>
+<li>人看上去听话，想法少，学习能力强，责任心强，不是刺头，这块其实大多数人都可以达标。</li>
+</ol>
+<p>以上不要求有商业项目经验，当然如果有，绝对是加分项，而且这还是大公司的面试应届生的标准。<strong>至于一些小公司，或者是一些外包公司，有时候能招到人就阿弥陀佛了</strong>（至于有些能力比较强的一本的应届生愿不愿意去还难说）。有些在招收应届生的时候，不少<strong>小公司</strong>甚至在“项目经验”方面没要求，哪怕没学习项目经验也不要紧，<strong>只会问些网上比较大路的面试题，能说上来即可</strong>。</p>
+<h2 id="2-面试中大多数应届生的实际表现"><a href="#2-面试中大多数应届生的实际表现" class="headerlink" title="2. 面试中大多数应届生的实际表现"></a>2. 面试中大多数应届生的实际表现</h2><p>从面试官角度来看，<strong>招收应届生的标准其实是很低的</strong>，对应的，在招初级开发时，多少都需要有商业项目经验。从这个角度来看，<strong>应届生最好在校期间就找到工作</strong>，毕业后两三个月找不到工作问题还不怎么大，但如果半年后再找不到工作，那么到时候被面试的标准就高于“应届生”的标准了。<br>这里我无意贬低应届生的水平，毕竟我们都是从这个阶段过来的，但从面试情况来看，至少有将近一半的应届生达不到标准。</p>
+<h3 id="达不到标准的具体表现"><a href="#达不到标准的具体表现" class="headerlink" title="达不到标准的具体表现"></a>达不到标准的具体表现</h3><ol>
+<li>没有框架开发的经验，这里最低要求是能自行搭建个<code>SSM</code>项目，但不少同学根本没有。</li>
+<li>数据库方面，就知道理论上的增删改查，甚至不会在<code>MySQL, Oracle</code>和<code>SQL Server</code>平台上运行过<code>SQL</code>语句。</li>
+<li><code>Java</code>核心方面，掌握了一大堆项目里一定不会用的，比如<code>Swing</code>之类的界面编程技术，但<strong>该掌握的多线程集合</strong>等，一些常用的概念也不清楚。</li>
+<li>论动手能力，有些同学甚至没有在<code>Eclipse</code>等<code>IDE</code>上运行通<code>Java</code>代码，或者出了基本的语法错误不知道如何自行解决，至于没有<strong><code>debug</code>调试经验</strong>的，就更加见怪不怪了，而在代码里需要加必要的<code>try...catch</code>异常处理语句，这就更加凤毛麟角了。</li>
+</ol>
+<p>在一些一本大学里，理论和实际操作能力较差的同学虽然不多，但也有，就更别提其它大学和大专了。我也和一些大学老师打过交道，也看过一些大学里用的Java和数据库等编程方面的教材，再结合诸多应届生在面试时的表现，我的感受是，或许<strong>大学阶段更会培养学生的理论素养</strong>，但大学生朋友在读大学阶段，一定要提升实际的编程能力，<strong>包含但不限于（SSM）框架的编程能力，数据库实际操作能力和Java核心部分代码的开发和调试能力</strong> 。</p>
+<h2 id="3-哪些大学里学到的知识点面试大概率不问（根本不用太费精力看的技术有哪些）"><a href="#3-哪些大学里学到的知识点面试大概率不问（根本不用太费精力看的技术有哪些）" class="headerlink" title="3. 哪些大学里学到的知识点面试大概率不问（根本不用太费精力看的技术有哪些）"></a>3. 哪些大学里学到的知识点面试大概率不问（根本不用太费精力看的技术有哪些）</h2><p>这里就将结合具体的知识点，列出面试时需要掌握的最低技能标准，除此之外,大概率不会问的</p>
+<h3 id="面试时需要掌握的最低技能标准"><a href="#面试时需要掌握的最低技能标准" class="headerlink" title="面试时需要掌握的最低技能标准"></a>面试时需要掌握的最低技能标准</h3><h4 id="Java核心常问"><a href="#Java核心常问" class="headerlink" title="Java核心常问:"></a><code>Java</code>核心常问:</h4><ul>
+<li>集合，</li>
+<li>多线程，</li>
+<li>异常处理，</li>
+<li><code>IO</code>，</li>
+<li><code>JDBC</code>，</li>
+<li>面向对象技能，</li>
+</ul>
+<p>这些大概率会问到</p>
+<h4 id="java核心不常问"><a href="#java核心不常问" class="headerlink" title="java核心不常问"></a>java核心不常问</h4><ul>
+<li>图形化界面，</li>
+<li><code>NIO</code>，</li>
+<li><code>Socket</code>网络编程，</li>
+<li>甚至<code>Applet</code>之类的</li>
+</ul>
+<h4 id="数据库方面"><a href="#数据库方面" class="headerlink" title="数据库方面"></a>数据库方面</h4><ul>
+<li>会写增删改查的<code>SQL</code>语句，</li>
+<li>知道存储过程之类的概念，</li>
+<li>会通过索引优化查询条件，</li>
+<li>会建表，</li>
+<li>会些诸如子查询,<code>group by,having</code>，</li>
+<li>表关联查询等基本<code>SQL</code>技能，</li>
+<li><strong>至少得用过一种商业化数据库</strong>。</li>
+</ul>
+<h4 id="框架方面"><a href="#框架方面" class="headerlink" title="框架方面"></a>框架方面</h4><p>需要有Spring+Spring MVC+mybatis框架的实际操作能力（不是商业项目开发能力），<br>至于有Spring Boot或Spring Cloud，那更好了。</p>
+<h4 id="综合技能方面"><a href="#综合技能方面" class="headerlink" title="综合技能方面"></a>综合技能方面</h4><ul>
+<li>能知道基本的数据结构知识（线性表外带排序外带一些树的技能），</li>
+<li>基本的操作系统知识（一般仅限于线程进程概念），</li>
+<li>基本网络通讯知识（一般仅限于网络通讯模型和tcp udp协议），</li>
+</ul>
+<p>这些要求是“需要知道”而已。</p>
+<h2 id="看招聘要求查缺补漏"><a href="#看招聘要求查缺补漏" class="headerlink" title="看招聘要求查缺补漏"></a>看招聘要求查缺补漏</h2><p>大家其实也可以通过看各种职位描述和招聘需求，看下哪些技能实际上是不会问的，对于这些知识，就不用学，从而把精力用到学实际Java相关技能上。</p>
+<h2 id="大学许多知识后面才用到"><a href="#大学许多知识后面才用到" class="headerlink" title="大学许多知识后面才用到"></a>大学许多知识后面才用到</h2><p>这里需要说明，在大学阶段学的很多知识，不能说没用。比如网络通讯里的tcp底层通讯细节，这些技能或者要等到工作5年后升级到高级开发或架构师的时候才会用到，而且以高级开发视角观察需要掌握的通讯协议细节知识，绝对要比大学阶段要复杂。</p>
+<p>换句话说，很多技能，在大学阶段也就“需要了解有这事”，以在大学阶段的经历，再多用时间学，估计也无法达到“实际项目的需求”，而且等到有实际项目经验时，再学这类技能也就是一两周的事情。两厢一对比，结论就很明确了：在<strong>校阶段应该更多积累实际开发能力</strong>，因为更得靠这个找工作。</p>
+<h2 id="4-用一个月的时间了解Java核心部分的内容"><a href="#4-用一个月的时间了解Java核心部分的内容" class="headerlink" title="4. 用一个月的时间了解Java核心部分的内容"></a>4. 用一个月的时间了解Java核心部分的内容</h2><ul>
+<li>着重观察<strong>集合</strong>，<strong>面向对象</strong>，<strong>多线程</strong>，<strong>IO处理</strong>，<strong>JDBC</strong>，<strong>异常处理</strong>相关章节，这个阶段，是<strong>以掌握API用法</strong>为主，在这基本上再看下诸如接口，抽象类，异常处理流程，垃圾回收之类的高级知识点。</li>
+<li>在上述基础上，如果可以通过资料的帮助，</li>
+<li><strong>用Java实现堆栈，链表，队列，散列表，树等的数据结构</strong>，</li>
+<li><strong>同时操练各种排序算法</strong>，这对找工作也有些帮助</li>
+</ul>
+<h2 id="5-用半个月的时间，以MySQL为例，了解数据库的大致操作"><a href="#5-用半个月的时间，以MySQL为例，了解数据库的大致操作" class="headerlink" title="5. 用半个月的时间，以MySQL为例，了解数据库的大致操作"></a>5. 用半个月的时间，以MySQL为例，了解数据库的大致操作</h2><p>在数据库方面，最好也去找本书，同时在<code>MYSQL</code>上实践。为什么选<code>MYSQL</code>,因为这比较轻，相比<code>Oracle</code>而言，好安装，当然如果有条件装<code>SQL Server</code>之类的，那就更好了。<br>1、在<code>MySQL</code>数据库上，实践各种增删改查的<code>SQL</code>语句，实践建表，建索引能技巧，同时实践一下诸如子查询，<code>with as</code>等等复杂的<code>SQL</code>语句。<br>2、用<code>JDBC</code>连同<code>MYSQL</code>，在<code>Java</code>代码里做各种<strong>增删改查</strong>的操作。<br>3、在此基础上，了解诸如索引，范式和锁等概念，这时候虽然认识也会很肤浅，但至少不会一头雾水了。</p>
+<p>这样，在数据库方面，好歹有实际操作经验了，这为之后的项目实践，能打下很好的基础。</p>
+<h2 id="6、用一个月的时间，了解基于Spring的web框架"><a href="#6、用一个月的时间，了解基于Spring的web框架" class="headerlink" title="6、用一个月的时间，了解基于Spring的web框架"></a>6、用一个月的时间，了解基于Spring的web框架</h2><p>面试时更看重的是框架经验，这块学习的建议如下。<br>1、先通过运行代码，了解<code>Spring</code>里<code>IOC, AOP</code>，这时应该注意各种配置。<br>2、熟悉<code>Spring</code>的基本概念后，可以尝试跑一个<code>SSM</code>的小例子，这个例子可以非常简答，就一个页面也行，但要包含<code>Spring MVC</code>和<code>Mybatis</code>诸多要素，这样大家好歹能知道框架的构成，在这个基础上，可以继续扩展，加些必要的业务，从而进一步了解这个框架。<br>在这个阶段，还是最好看书上的例子，因为书上的例子一定能通，而且还会带部署和运行的步骤，还是不建议自己敲代码，因为<code>SSM</code>框架相对复杂，在这个阶段如果自己敲，很有可能会因为问题太多而放弃。<br>3、在自己机器上跑通<code>SSM</code>框架的案例后，可以网上找个带业务的系统，比如<strong>图书管理系统</strong>等，从中看些前端和后端交互数据的流程，同时，结合业务看<code>Mybatis</code>里的<code>ORM</code>过程，以及<strong><code>Spring</code>里的常用注解</strong>。</p>
+<h2 id="8、有学习项目经验后，争取找些商业项目的实践机会"><a href="#8、有学习项目经验后，争取找些商业项目的实践机会" class="headerlink" title="8、有学习项目经验后，争取找些商业项目的实践机会"></a>8、有学习项目经验后，争取找些商业项目的实践机会</h2><p>拥有最基本的SSM以及其它Java和数据库相关技能后，要做的绝不是继续积累学习项目经验，而是尽可能去找实习的机会，以积累商业项目的经验。在找实习经验方面，大家可以参照如下的建议。<br>1、在我之前的博文里也提到，大三时，<strong>打听计算机学院里哪些老师和外面公司有合作</strong>，一般<strong>硕导</strong>都有这样的项目，然后直接去找老师，刚开始不要钱，只求经验，或许对各位在校生同学而言，这种方式是比较可行的，本人第一个商业项目经验也是由此得到的。<br>2、一般学校里都会安排实习，实习的过程中，一定要重视，这个是实打实的商业项目经验。<br>3、寒暑假，找软件公司，这可能会比较艰辛，因为在校阶段自己非常难找相关实习机会，但要去找。<br>5、如果实在找不到实习的机会，那么尽可能通过各种渠道，去找商业项目经验的案例</p>
+<p><strong>哪怕实际只干了三个月的商业项目经验，自己的技能也会很大程度提升</strong>，而且实际的商业项目经验，会让大家掌握书本上根本不会多提但项目里一定会用的技能，比如JVM内存调优或多线程并发。从这意义上来讲，只要有条件，大学生朋友应该挤破头去找商业项目的经验，而不是悠哉游哉地坐在机房里敲代码。只要你有商业项目的经验，哪怕就三个月，找工作时你就有代差优势。</p>
+<h2 id="9、毕业生准备简历的要点"><a href="#9、毕业生准备简历的要点" class="headerlink" title="9、毕业生准备简历的要点"></a>9、毕业生准备简历的要点</h2><p>在招聘毕业生时<br>，第一看项目经验，<br>第二看项目里包含的技能，<br>第三再问算法和理论问题，<br>至于逻辑题和情商题，只供参考</p>
+<p>毕业生在简历中，一定得突出做过的项目经验，优先挖掘商业项目经验，<br>实在没有学习项目也行。<br>如果没任何项目经验，那么找工作时会吃力很多</p>
+<h1 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a>原文链接</h1><p><a href="https://mp.weixin.qq.com/s/y_ozO8BnH6YkoFh_Oq8M1w" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/y_ozO8BnH6YkoFh_Oq8M1w</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>蓝蓝</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lanlan2017.github.io/exam/46ec7757/" title="在校生如何面向面试地学习Java">https://lanlan2017.github.io/exam/46ec7757/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！<br><strong><mark>如果图片无法显示</mark></strong>: <a href='https://lanlan2017.github.io/blog/9a6c2fdf/'>https://lanlan2017.github.io/blog/9a6c2fdf/</a></li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/exam/767b4928/" rel="next" title="面试攻略">
+                  <i class="fa fa-chevron-left"></i> 面试攻略
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/exam/58bca98f/" rel="prev" title="2019年12月23日 java1">
+                  2019年12月23日 java1 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在校生的困境"><span class="nav-number">1.</span> <span class="nav-text">在校生的困境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建议"><span class="nav-number">2.</span> <span class="nav-text">建议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-明确目标，先说下公司面试应届生的标准"><span class="nav-number">2.1.</span> <span class="nav-text">1. 明确目标，先说下公司面试应届生的标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-面试中大多数应届生的实际表现"><span class="nav-number">2.2.</span> <span class="nav-text">2. 面试中大多数应届生的实际表现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#达不到标准的具体表现"><span class="nav-number">2.2.1.</span> <span class="nav-text">达不到标准的具体表现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-哪些大学里学到的知识点面试大概率不问（根本不用太费精力看的技术有哪些）"><span class="nav-number">2.3.</span> <span class="nav-text">3. 哪些大学里学到的知识点面试大概率不问（根本不用太费精力看的技术有哪些）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试时需要掌握的最低技能标准"><span class="nav-number">2.3.1.</span> <span class="nav-text">面试时需要掌握的最低技能标准</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java核心常问"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">Java核心常问:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java核心不常问"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">java核心不常问</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库方面"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">数据库方面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#框架方面"><span class="nav-number">2.3.1.4.</span> <span class="nav-text">框架方面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#综合技能方面"><span class="nav-number">2.3.1.5.</span> <span class="nav-text">综合技能方面</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#看招聘要求查缺补漏"><span class="nav-number">2.4.</span> <span class="nav-text">看招聘要求查缺补漏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大学许多知识后面才用到"><span class="nav-number">2.5.</span> <span class="nav-text">大学许多知识后面才用到</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-用一个月的时间了解Java核心部分的内容"><span class="nav-number">2.6.</span> <span class="nav-text">4. 用一个月的时间了解Java核心部分的内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-用半个月的时间，以MySQL为例，了解数据库的大致操作"><span class="nav-number">2.7.</span> <span class="nav-text">5. 用半个月的时间，以MySQL为例，了解数据库的大致操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、用一个月的时间，了解基于Spring的web框架"><span class="nav-number">2.8.</span> <span class="nav-text">6、用一个月的时间，了解基于Spring的web框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、有学习项目经验后，争取找些商业项目的实践机会"><span class="nav-number">2.9.</span> <span class="nav-text">8、有学习项目经验后，争取找些商业项目的实践机会</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、毕业生准备简历的要点"><span class="nav-number">2.10.</span> <span class="nav-text">9、毕业生准备简历的要点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原文链接"><span class="nav-number">3.</span> <span class="nav-text">原文链接</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/exam/images/avatar.gif"
+      alt="蓝蓝">
+  <p class="site-author-name" itemprop="name">蓝蓝</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/exam/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/exam/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/exam/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝蓝</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.1</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/exam/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/exam/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/exam/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/exam/js/utils.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/motion.js?v=7.4.1.js"></script>
+
+
+<script src="/exam/js/schemes/pisces.js?v=7.4.1.js"></script>
+
+
+
+<script src="/exam/js/next-boot.js?v=7.4.1.js"></script>
+
+<script src="/exam/js/bookmark.js?v=7.4.1.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/exam/js/local-search.js?v=7.4.1.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KVtEjXUX9wDimI183iDfg6tK-MdYXbMMI',
+    appKey: 'mvmFgKF86C8Pi79KfVeFgzys',
+    placeholder: '在这里写下你的评论吧',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>
