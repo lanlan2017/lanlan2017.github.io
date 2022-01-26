@@ -1,0 +1,55 @@
+/**
+ * 单例模式：懒汉模式，需要的时候创建
+ */
+public class Singleton1 {
+	/*
+	 * 保存当前类的唯一实例的私有静态变量
+	 */
+	private static Singleton1 singleton;
+
+	/*
+	 * 1.私有构造函数
+	 */
+	private Singleton1() {
+	}
+
+	/**
+	 * 获取单例类
+	 * 懒汉模式
+	 * 
+	 * @return 当前类的唯一示例
+	 */
+	public static Singleton1 getSingleton() {
+		// 当需要使用单例类的时候
+		if (singleton == null)
+			// 再创建单例类的实例
+			singleton = new Singleton1();
+		return singleton;
+	}
+}
+
+/**
+ * 单例模式：饿汗模式，先创建单例，
+ * 调用的时候直接给出已经创建的单例对象。
+ */
+public class Singleton2 {
+	/**
+	 * 创建该类的实例，静态使得在该类加载时创建，私有使得外部无法访问
+	 */
+	private static Singleton2 singleton2 = new Singleton2();
+
+	/**
+	 * 私有化构造函数，使无法在该类之外创建对象
+	 */
+	private Singleton2() {
+	}
+
+	/**
+	 * 提供获取单例类的方法。
+	 * 
+	 * @return 当前类的唯一实例。
+	 */
+	public static Singleton2 getSingleton2() {
+		return singleton2;
+	}
+}

@@ -1,0 +1,23 @@
+/**
+ * 打印完数。
+ * 如果一个数恰好等于它的真因子之和，则称该数为“完全数”。
+ * 第一个完全数是6，第二个完全数是28，第三个完全数是496，后面的完全数还有8128、33550336等等。
+ * 截至2018年，相关研究者已经找到51个完全数。
+ */
+private static void perfectNum() {
+	for (int i = 2, sumOfFactors = 0; i < 10000; i++) {
+		// 因子的和
+		sumOfFactors = 0;
+		for (int j = 1; j < i; j++) {
+			// 如果j是i的因子
+			if (i % j == 0) {
+				// 因子累加
+				sumOfFactors += j;
+			}
+		}
+		// 如果一个数恰好等于它的因子之和，那么就是完数
+		if (i == sumOfFactors) {
+			System.out.println("完数：" + i);
+		}
+	}
+}

@@ -1,0 +1,28 @@
+/**
+ * 生成保存杨辉三角形的变长二维数组
+ * 
+ * @param length 要生成杨辉三角形的层数
+ * @return 保存杨辉三角形的变长二维数组。
+ */
+private static int[][] yangHui(int length) {
+	// 变长的二维数组
+	int[][] yh = new int[length][];
+	for (int i = 0; i < yh.length; i++) {
+		// 创建第2维的数组
+		yh[i] = new int[i + 1];
+	}
+	// 外层循环，控制生成的层数
+	for (int i = 0; i < length; i++) {
+		// 内层循环，控制生成的列数
+		for (int j = 0; j < yh[i].length; j++) {
+			// 第1列和最后一列的值为1
+			if (j == 0 || i == j) {
+				yh[i][j] = 1;
+			} else {
+				// 当前元素，等于正上方的元素 与 正上方的前一个元素的和
+				yh[i][j] = yh[i - 1][j] + yh[i - 1][j - 1];
+			}
+		}
+	}
+	return yh;
+}

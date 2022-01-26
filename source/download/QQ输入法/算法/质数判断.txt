@@ -1,0 +1,22 @@
+/**
+ * 判断一个数是否是质数
+ * 
+ * @param n 一个整数
+ * @return 如果n是质数，则返回true，否则返回false
+ */
+public static boolean isPrime(int n) {
+	// 2和3都是质数
+	if (n <= 3) {
+		// 质数都要大于1
+		return n > 1;
+	}
+	// 一个数n不可能被大于sqrt(n)的数整除。就像9不能被4整除sqrt(9)=3;
+	int sqrt = (int) Math.sqrt(n);
+	for (int i = 2; i <= sqrt; i++) {
+		// 如果n能被小于或等于sqrt(n)的整数整除的话，不符合质数的定义，则说明不是质数
+		if (n % i == 0) {
+			return false;
+		}
+	}
+	return true;
+}

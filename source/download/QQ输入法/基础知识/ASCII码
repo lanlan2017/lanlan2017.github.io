@@ -1,0 +1,7 @@
+'0'~'9':48~57;'A':65;'a':97;换行'LF':10,0x0A;回车'CR':13,0x0D。
+
+ASCII对照表:https://tool.oschina.net/commons?type=4
+https://baike.baidu.com/item/ASCII
+
+ASCII值	控制字符
+48	0

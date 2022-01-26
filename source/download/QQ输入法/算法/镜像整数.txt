@@ -1,0 +1,16 @@
+/**
+ * 获取一个整数的镜像。
+ * 12345 镜像后 54321
+ * 
+ * @param input 一个整数
+ * @return 镜像后的整数
+ */
+private static int mirroringNum(int input) {
+	int revese = 0;
+	int remainder = 0;
+	while ((remainder = input % 10) != 0) {
+		input = input / 10;
+		revese = revese * 10 + remainder;
+	}
+	return revese;
+}

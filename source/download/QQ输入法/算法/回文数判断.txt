@@ -1,0 +1,30 @@
+/**
+ * 判断一个整数是不是回文数.
+ * 
+ * @param n 整数
+ * @return 如果是回文数的话，就返回true,否则返回false.
+ */
+private static boolean isPalindromeNumberPerfect(int n) {
+	// 如果把这个整数的数字位，倒序之后还是和这个数相等的话，那么它就是回文数。
+	return n == reverseInt(n);
+}
+/**
+ * 反转一个整数，例如12345，反转后变成54321
+ * 
+ * @param m 一个整数
+ * @return 反转后的整数
+ */
+private static int reverseInt(int m) {
+	// 保存反转之后的数值
+	int inversion = 0;
+	// 余数
+	int remainder;
+	do {
+		remainder = m % 10;
+		m = m / 10;
+		// 根据10的余数，计算出反转的数值
+		inversion = inversion * 10 + remainder;
+	} while (m > 0);
+	// 返回反转后的数值
+	return inversion;
+}

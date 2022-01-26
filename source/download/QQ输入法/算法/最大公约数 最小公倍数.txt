@@ -1,0 +1,43 @@
+/**
+ * 辗转相除法求最大公约数入口
+ * @param a 整数a
+ * @param b 整数b
+ * @return 整数a和整数b的最大公约数.
+ */
+private static int getGCD(int a, int b) {
+	if (a > b) {
+		return gcd(a, b);
+	} else {
+		return gcd(b, a);
+	}
+}
+/**
+ * 辗转相除法求最大公约数
+ * 递归实现
+ * @param big 两个数中大的数
+ * @param small 两个数之中小的数
+ * @return 最大公约数的值
+ */
+private static int gcd(int big, int small) {
+	// 求余数
+	int remainder = big % small;
+	// 如果余数为0,说明small就是最大公约数
+	if (remainder == 0) {
+		return small;
+	} else {
+		// 等价于求小的数和余数的最大公约数
+		return gcd(small, remainder);
+	}
+}
+/**
+ * 求最小公倍数。
+ * a*b/最大公约数就等到a和b的最小公倍数。
+ * @param a 整数
+ * @param b 另一个整数
+ * @param gcd a和b的最大公约数
+ * @return a和b的最小公倍数
+ */
+private static int lcm(int a, int b, int gcd) {
+	// 两个数的乘积除以最大公约数就是最小公倍数
+	return (a * b) / gcd;
+}

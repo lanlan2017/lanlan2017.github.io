@@ -1,0 +1,58 @@
+/**
+ * 对整个数组执行快速排序。
+ * @param array 待排序的数组
+ */
+public static void quickSort(int array[]) {
+	// 合法性判断
+	if (array == null)
+		return;
+	// 对从第一个元素到最后一个元素的数组序列执行快速排序
+	quickSort(array, 0, array.length - 1);
+}
+/**
+ * 对数组中的一段连续的序列执行快速排序。
+ * @param array 待排序的数组
+ * @param left 数组中被分割的序列的开始位置
+ * @param right 数组中被分割的序列的结束位置
+ */
+private static void quickSort(int array[], int left, int right) {
+	// 执行一趟快速排序，并返回分割点
+	int mid = quickOne(array, left, right);
+	if (left < mid - 1) {
+		// 对分割点左侧的序列执行快速排序
+		quickSort(array, left, mid - 1);
+	}
+	if (mid + 1 < right) {
+		// 对分割点右侧的序列执行快速排序
+		quickSort(array, mid + 1, right);
+	}
+}
+/**
+ * 执行一趟快速排序
+ * @param array 待排序的数组
+ * @param left 被分割的序列的开始位置
+ * @param right 被分割的序列的结束位置
+ * @return 当前序列的分割点的位置
+ */
+private static int quickOne(int[] array, int left, int right) {
+	// 保存基准数
+	int pivot = array[left];
+	while (left < right) {
+		// 从右向左移动右指针，查找比基准数小的数
+		while (left < right && array[right] >= pivot) {
+			right--;
+		}
+		// 把比基准数小的放到基准数的位置
+		array[left] = array[right];
+		// 从左向右移动左指针，查找比基准数大的数
+		while (left < right && array[left] <= pivot) {
+			left++;
+		}
+		// 把基准数大的数放到后面
+		array[right] = array[left];
+	}
+	// 基准数放到分割点的位置
+	array[left] = pivot;
+	// 返回分割点的下标
+	return left;
+}

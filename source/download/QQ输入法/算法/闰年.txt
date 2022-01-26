@@ -1,0 +1,9 @@
+/**
+ * 判断一个年份是否是闰年
+ * 
+ * @param year 年份
+ * @return 如果该年份是闰年的话，返回true,否则返回false
+ */
+private static boolean isLeapYear(int year) {
+	return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+}

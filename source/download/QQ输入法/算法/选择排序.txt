@@ -1,0 +1,26 @@
+;/**
+; * 选择排序，升序排序
+; * 每次选择一个最小的值放到没有排序的序列的前方。
+; * @param a 待排序的数组。
+; */
+;public static void selectionSort(int[] a) {
+;	// n个元素，需要比较n-1次（2个元素，比较1次，3个元素，比较两次）
+;	for (int i = 0, temp; i < a.length - 1; i++) {
+;		// 默认最小值
+;		int min = i;
+;		// 遍历没有排序的元素
+;		for (int j = i + 1; j < a.length; j++) {
+;			// 如果找到更小的值
+;			if (a[j] < a[min]) {
+;				// 记录下这个更小的值
+;				min = j;
+;			}
+;		}
+;		// 如果找到了更小的值
+;		if (min > i) {
+;			temp = a[min];
+;			a[min] = a[i];
+;			a[i] = temp;
+;		}
+;	}
+;}
